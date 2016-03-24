@@ -10,7 +10,7 @@ Tested <sup>at this point **very** lightly</sup> on Mac OS X and Linux. Windows 
 ## Installation
 
 ```sh
-curl -o- https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
 ```   
 
 > Installer creates `~/.jabba` and adds initialization code to ~/.bashrc (and ~/.bash_profile, ~/.zshrc, ~/.profile) 
