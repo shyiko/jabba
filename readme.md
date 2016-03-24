@@ -5,7 +5,7 @@
 Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js). You might have come across similar beauty
 in Go ([gvm](https://github.com/moovweb/gvm)) or Ruby ([rvm](https://rvm.io)).
 
-Tested <sup>at this point **very** lightly</sup> on Mac OS X and Linux. Windows support is coming in [#1]().
+Tested <sup>at this point **very** lightly</sup> on Mac OS X and Linux. Windows support is coming in [#1](https://github.com/shyiko/jabba/issues/1).
 
 ## Installation
 
