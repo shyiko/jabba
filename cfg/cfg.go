@@ -15,5 +15,5 @@ func Dir() string {
 }
 
 func Index() string {
-	return "https://github.com/shyiko/jabba/blob/master/index.json"
+	return "https://github.com/shyiko/jabba/raw/master/index.json"
 }
