@@ -1,0 +1,6 @@
+language: go
+go:
+  - 1.6
+  - tip
+install: make fetch
+script: make test

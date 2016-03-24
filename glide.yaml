@@ -1,0 +1,8 @@
+package: jabba
+import:
+- package: github.com/spf13/cobra
+- package: github.com/spf13/pflag
+- package: github.com/wmark/semver
+- package: github.com/Sirupsen/logrus
+- package: github.com/mitchellh/go-homedir
+- package: github.com/mitchellh/ioprogress

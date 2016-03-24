@@ -1,0 +1,30 @@
+{
+  "darwin": {
+    "amd64": {
+      "jdk": {
+        "1.9.0-110": "dmg+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_osx-x64_bin.dmg",
+        "1.8.73": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u73-b02/jdk-8u73-macosx-x64.dmg",
+        "1.7.80": "dmg+http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jdk-7u80-macosx-x64.dmg",
+        "1.6.65": "dmg+https://support.apple.com/downloads/DL1572/en_US/javaforosx.dmg"
+      }
+    }
+  },
+  "linux": {
+    "386": {
+      "jdk": {
+        "1.9.0-110": "tgz+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_linux-x86_bin.tar.gz",
+        "1.8.72": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u72-b15/jdk-8u72-linux-i586.tar.gz",
+        "1.7.80": "tgz+http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jdk-7u80-linux-i586.tar.gz",
+        "1.6.45": "bin+http://download.oracle.com/otn-pub/java/jdk/6u45-b06/jdk-6u45-linux-i586.bin"
+      }
+    },
+    "amd64": {
+      "jdk": {
+        "1.9.0-110": "tgz+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_linux-x64_bin.tar.gz",
+        "1.8.72": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u72-b15/jdk-8u72-linux-x64.tar.gz",
+        "1.7.80": "tgz+http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jdk-7u80-linux-x64.tar.gz",
+        "1.6.45": "bin+http://download.oracle.com/otn-pub/java/jdk/6u45-b06/jdk-6u45-linux-x64.bin"
+      }
+    }
+  }
+}

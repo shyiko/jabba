@@ -1,0 +1,22 @@
+hash: 5ef9efafa4903ca4ac341d4255708ab01fb85cbf509d132458a02a9b7e136e6b
+updated: 2016-03-23T22:02:21.333172842-07:00
+imports:
+- name: github.com/inconshreveable/mousetrap
+  version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
+- name: github.com/mitchellh/go-homedir
+  version: 981ab348d865cf048eb7d17e78ac7192632d8415
+- name: github.com/mitchellh/ioprogress
+  version: 8163955264568045f462ae7e2d6d07b2001fc997
+- name: github.com/Sirupsen/logrus
+  version: 4b6ea7319e214d98c938f12692336f7ca9348d6b
+- name: github.com/spf13/cobra
+  version: c678ff029ee250b65714e518f4f5c5cb934955de
+- name: github.com/spf13/pflag
+  version: 7f60f83a2c81bc3c3c0d5297f61ddfa68da9d3b7
+- name: github.com/wmark/semver
+  version: 197125fdfe56b93cf69a1f8bfab76435e55b5d7c
+- name: golang.org/x/sys
+  version: afce3de5756ca82699128ebae46ac95ad59d6297
+  subpackages:
+  - unix
+devImports: []
