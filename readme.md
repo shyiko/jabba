@@ -18,7 +18,7 @@ curl -o- https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.ja
 
 ## Usage
 
-```
+```sh
 # install particular version of jdk
 jabba install 1.8 # "jabba use 1.8" will be called automatically  
 
