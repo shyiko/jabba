@@ -13,7 +13,7 @@ func Current() string {
 	javaPath, err := lookPath("java")
 	if err == nil {
 		prefix := path.Join(cfg.Dir(), "jdk") + "/"
-		if (strings.HasPrefix(javaPath, prefix)) {
+		if strings.HasPrefix(javaPath, prefix) {
 			index := strings.Index(javaPath[len(prefix):], "/")
 			if index != -1 {
 				return javaPath[len(prefix):len(prefix) + index]

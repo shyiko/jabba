@@ -41,6 +41,8 @@ jabba() {
     rm \${fd3}
     (exit \${exit_code})
 }
+
+[ ! -z "\$(jabba alias default)" ] && jabba use default
 EOF
 
 SOURCE_JABBA="\n[ -s \"$JABBA_DIR/jabba.sh\" ] && source \"$JABBA_DIR/jabba.sh\""
