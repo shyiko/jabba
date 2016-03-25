@@ -25,7 +25,7 @@ And you can install ANY version, not just the latest stable one. Wanna try upcom
  
 ## Installation
 
-> (you can use same command to upgrade)
+> (use the same command to upgrade)
 
 ```sh
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
