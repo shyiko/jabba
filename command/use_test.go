@@ -28,6 +28,7 @@ func TestUse(t *testing.T) {
 		}, nil
 	}
 	os.Setenv("PATH", "/usr/local/bin:" + cfg.Dir() + "/jdk/1.6.0/bin:/usr/bin")
+	os.Setenv("JAVA_HOME", "/system-jdk")
 	actual, err := Use("1.7")
 	if err != nil {
 		t.Fatalf("err: %v", err)
@@ -39,6 +40,7 @@ func TestUse(t *testing.T) {
 	expected := []string{
 		"export PATH=" + cfg.Dir() + "/jdk/1.7.2" + suffix + "/bin:/usr/local/bin:/usr/bin",
 		"export JAVA_HOME=" + cfg.Dir() + "/jdk/1.7.2" + suffix,
+		"export JAVA_HOME_BEFORE_JABBA=/system-jdk",
 	}
 	if !reflect.DeepEqual(actual, expected) {
 		t.Fatalf("actual: %v != expected: %v", actual, expected)
