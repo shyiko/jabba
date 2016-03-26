@@ -4,6 +4,7 @@ import (
 	"path"
 	"github.com/mitchellh/go-homedir"
 	log "github.com/Sirupsen/logrus"
+	"os"
 )
 
 func Dir() string {
@@ -15,5 +16,9 @@ func Dir() string {
 }
 
 func Index() string {
-	return "https://github.com/shyiko/jabba/raw/master/index.json"
+	registry := os.Getenv("JABBA_INDEX")
+	if registry == "" {
+		registry = "https://github.com/shyiko/jabba/raw/master/index.json"
+	}
+	return registry
 }
