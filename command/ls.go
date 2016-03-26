@@ -5,18 +5,45 @@ import (
 	"github.com/shyiko/jabba/cfg"
 	"github.com/shyiko/jabba/semver"
 	"path"
+	"sort"
+	"fmt"
 )
 
 var readDir = ioutil.ReadDir
 
-// returns installed versions in descending order
-func Ls() ([]string, error) {
+func Ls() ([]*semver.Version, error) {
 	files, _ := readDir(path.Join(cfg.Dir(), "jdk"))
-	var r []string
+	var r []*semver.Version
 	for _, f := range files {
 		if f.IsDir() {
-			r = append(r, f.Name())
+			v, err := semver.ParseVersion(f.Name())
+			if err != nil {
+				return nil, err
+			}
+			r = append(r, v)
 		}
 	}
-	return semver.Sort(r), nil
+	sort.Sort(sort.Reverse(semver.VersionSlice(r)))
+	return r, nil
+}
+
+func LsBestMatch(selector string) (ver string, err error) {
+	local, err := Ls()
+	if err != nil {
+		return
+	}
+	rng, err := semver.ParseRange(selector)
+	if err != nil {
+		return
+	}
+	for _, v := range local {
+		if rng.Contains(v) {
+			ver = v.String()
+			break
+		}
+	}
+	if ver == "" {
+		err = fmt.Errorf("%s isn't installed", rng)
+	}
+	return
 }

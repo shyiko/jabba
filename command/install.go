@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"runtime"
 	"errors"
-	"sort"
 	"strings"
 	"os"
 	"io/ioutil"
@@ -14,40 +13,47 @@ import (
 	"io"
 	"github.com/shyiko/jabba/cfg"
 	"github.com/shyiko/jabba/semver"
-	wmark "github.com/wmark/semver"
 	log "github.com/Sirupsen/logrus"
 	"regexp"
 	"github.com/mitchellh/ioprogress"
+	"sort"
+	"archive/zip"
 )
 
-func Install(qualifier string) (ver string, err error) {
-	var releaseMap map[string]string
-	if strings.Contains(qualifier, "=") {
-		// <version>=<url>
-		split := strings.SplitN(qualifier, "=", 2)
+func Install(selector string) (string, error) {
+	var releaseMap map[*semver.Version]string
+	var ver *semver.Version
+	var err error
+	// selector can be in form of <version>=<url>
+	if strings.Contains(selector, "=") {
+		split := strings.SplitN(selector, "=", 2)
+		selector = split[0]
 		// <version> has to be valid per semver
-		_, err = wmark.NewVersion(split[0])
+		ver, err = semver.ParseVersion(selector)
 		if err != nil {
-			return
+			return "", err
 		}
-		qualifier = split[0]
-		ver = qualifier
-		releaseMap = map[string]string{qualifier: split[1]}
+		releaseMap = map[*semver.Version]string{ver: split[1]}
+	} else {
+		// ... or a version (range will be tried over remote targets)
+		ver, _ = semver.ParseVersion(selector)
 	}
-	// check whether it's already installed
-	local, err := Ls()
-	if err != nil {
-		return
+	// check whether requested version is already installed
+	if ver != nil {
+		local, err := Ls()
+		if err != nil {
+			return "", err
+		}
+		for _, v := range local {
+			if ver.Equals(v) {
+				return ver.String(), nil
+			}
+		}
 	}
-	i := sort.Search(len(local), func(i int) bool {
-		return local[i] <= qualifier
-	})
-	if i < len(local) && local[i] == qualifier {
-		// already installed
-		return qualifier, nil
-	}
+	// ... apparently it's not
 	if releaseMap == nil {
-		rng, err := wmark.NewRange(qualifier)
+		ver = nil
+		rng, err := semver.ParseRange(selector)
 		if err != nil {
 			return "", err
 		}
@@ -55,31 +61,34 @@ func Install(qualifier string) (ver string, err error) {
 		if err != nil {
 			return "", err
 		}
-		var vs = make([]string, len(releaseMap))
+		var vs = make([]*semver.Version, len(releaseMap))
 		var i = 0
 		for k := range releaseMap {
 			vs[i] = k
 			i++
 		}
-		vs = semver.Sort(vs)
-		for i := range vs {
-			v, _ := wmark.NewVersion(vs[i])
+		sort.Sort(sort.Reverse(semver.VersionSlice(vs)))
+		for _, v := range vs {
 			if rng.Contains(v) {
-				ver = vs[i]
+				ver = v
 				break
 			}
 		}
-		if ver == "" {
-			return ver, errors.New("No compatible version found for " + qualifier +
-			"\nValid install targets: " + strings.Join(vs, ", "))
+		if ver == nil {
+			tt := make([]string, len(vs))
+			for i, v := range vs {
+				tt[i] = v.String()
+			}
+			return "", errors.New("No compatible version found for " + selector +
+			"\nValid install targets: " + strings.Join(tt, ", "))
 		}
 	}
 	url := releaseMap[ver]
 	if matched, _ := regexp.MatchString("^\\w+[+]\\w+://", url); !matched {
-		return ver, errors.New("URL must contain qualifier, e.g. tgz+http://...")
+		return "", errors.New("URL must contain qualifier, e.g. tgz+http://...")
 	}
 	var fileType string = url[0:strings.Index(url, "+")]
-	url = url[strings.Index(url, "+") + 1:len(url)]
+	url = url[strings.Index(url, "+") + 1:]
 	var file string
 	var deleteFileWhenFinnished bool
 	if strings.HasPrefix(url, "file://") {
@@ -88,22 +97,22 @@ func Install(qualifier string) (ver string, err error) {
 		log.Info("Downloading ", ver, " (", url, ")")
 		file, err = download(url)
 		if err != nil {
-			return
+			return "", err
 		}
 		deleteFileWhenFinnished = true
 	}
 	switch runtime.GOOS {
 	case "darwin":
-		err = installOnDarwin(ver, file, fileType)
+		err = installOnDarwin(ver.String(), file, fileType)
 	case "linux":
-		err = installOnLinux(ver, file, fileType)
+		err = installOnLinux(ver.String(), file, fileType)
 	default:
 		err = errors.New(runtime.GOOS + " OS is not supported")
 	}
 	if err == nil && deleteFileWhenFinnished {
 		os.Remove(file)
 	}
-	return
+	return ver.String(), err
 }
 
 type RedirectTracer struct {
@@ -167,47 +176,57 @@ func download(url string) (file string, err error) {
 	return
 }
 
-func installOnDarwin(ver string, file string, fileType string) error {
-	if fileType != "dmg" {
+func installOnDarwin(ver string, file string, fileType string) (err error) {
+	target := cfg.Dir() + "/jdk/" + ver
+	switch fileType {
+	case "dmg":
+		err = installFromDmg(file, target)
+	case "zip":
+		err = installFromZip(file, target + "/Contents/Home")
+	default:
 		return errors.New(fileType + " is not supported")
 	}
+	if err == nil {
+		err = assertContentIsValid(target + "/Contents/Home")
+	}
+	if err != nil {
+		os.RemoveAll(target)
+	}
+	return
+}
+
+func installFromDmg(source string, target string) error {
 	tmp, err := ioutil.TempDir("", "jabba-i-")
 	if err != nil {
 		return err
 	}
-	basename := path.Base(file)
+	basename := path.Base(source)
 	mountpoint := tmp + "/" + basename
-	target := cfg.Dir() + "/jdk/" + ver
-	err = executeSH([][]string{
-		[]string{"Mounting " + file, "hdiutil mount -mountpoint " + mountpoint + " " + file},
-		[]string{"Extracting " + file + " to " + target,
-			"pkgutil --expand " + mountpoint + "/*.pkg " + tmp + "/" + basename + "-pkg"},
+	pkgdir := tmp + "/" + basename + "-pkg"
+	err = executeInShell([][]string{
+		[]string{"Mounting " + source, "hdiutil mount -mountpoint " + mountpoint + " " + source},
+		[]string{"Extracting " + source + " to " + target,
+			"pkgutil --expand " + mountpoint + "/*.pkg " + pkgdir},
 		[]string{"", "mkdir -p " + target},
 
+		// todo: instead of relying on a certain pkg structure - find'n'extract all **/*/Payload
+
 		// oracle
-		[]string{"", "if [ -f " + tmp + "/" + basename + "-pkg/jdk*.pkg/Payload" + " ]; then " +
-		"tar xvf " + tmp + "/" + basename + "-pkg/jdk*.pkg/Payload -C " + target +
-		"; fi"},
+		[]string{"",
+			"if [ -f " + pkgdir + "/jdk*.pkg/Payload" + " ]; then " +
+			"tar xvf " + pkgdir + "/jdk*.pkg/Payload -C " + target +
+			"; fi"},
 
 		// apple
-		[]string{"", "if [ -f " + tmp + "/" + basename + "-pkg/JavaForOSX.pkg/Payload" + " ]; then " +
-		"tar -xzf " + tmp + "/" + basename + "-pkg/JavaForOSX.pkg/Payload -C " + tmp + "/" + basename + "-pkg &&" +
-		"mv " + tmp + "/" + basename + "-pkg/Library/Java/JavaVirtualMachines/*/Contents " + target + "/Contents" +
-		"; fi"},
+		[]string{"",
+			"if [ -f " + pkgdir + "/JavaForOSX.pkg/Payload" + " ]; then " +
+			"tar xzf " + pkgdir + "/JavaForOSX.pkg/Payload -C " + pkgdir + " &&" +
+			"mv " + pkgdir + "/Library/Java/JavaVirtualMachines/*/Contents " + target + "/Contents" +
+			"; fi"},
 
-		[]string{"Unmounting " + file, "hdiutil unmount " + mountpoint},
+		[]string{"Unmounting " + source, "hdiutil unmount " + mountpoint},
 	})
 	if err == nil {
-		if _, err := os.Stat(target + "/Contents/Home/bin/java"); os.IsNotExist(err) {
-			err = errors.New("Unsupported DMG structure. " +
-			"Please open a ticket at https://github.com/shyiko/jabba/issue " +
-			"(specify URI you tried to install)")
-		}
-	}
-	if err != nil {
-		// remove target ~/.jabba/jdk/<version>
-		os.RemoveAll(target)
-	} else {
 		os.RemoveAll(tmp)
 	}
 	return err
@@ -215,41 +234,109 @@ func installOnDarwin(ver string, file string, fileType string) error {
 
 func installOnLinux(ver string, file string, fileType string) (err error) {
 	target := cfg.Dir() + "/jdk/" + ver
-	var cmd [][]string
-	var tmp string
 	switch fileType {
 	case "bin":
-		tmp, err = ioutil.TempDir("", "jabba-i-")
-		if err != nil {
-			return
-		}
-		cmd = [][]string{
-			[]string{"", "mv " + file + " " + tmp},
-			[]string{"Extracting " + path.Join(tmp, path.Base(file)) + " to " + target,
-				"cd " + tmp + " && echo | sh " + path.Base(file) + " && mv jdk*/ " + target},
-		}
+		err = installFromBin(file, target)
 	case "tgz":
-		cmd = [][]string{
-			[]string{"", "mkdir -p " + target},
-			[]string{"Extracting " + file + " to " + target,
-				"tar xvf " + file + " --strip-components=1 -C " + target},
-		}
+		err = installFromTgz(file, target)
+	case "zip":
+		err = installFromZip(file, target)
 	default:
 		return errors.New(fileType + " is not supported")
 	}
-	err = executeSH(cmd)
+	if err == nil {
+		err = assertContentIsValid(target)
+	}
 	if err != nil {
-		// remove target ~/.jabba/jdk/<version>
 		os.RemoveAll(target)
-	} else {
-		if tmp != "" {
-			os.RemoveAll(tmp)
-		}
 	}
 	return
 }
 
-func executeSH(cmd [][]string) error {
+func installFromBin(source string, target string) (err error) {
+	tmp, err := ioutil.TempDir("", "jabba-i-")
+	if err != nil {
+		return
+	}
+	err = executeInShell([][]string{
+		[]string{"", "mv " + source + " " + tmp},
+		[]string{"Extracting " + path.Join(tmp, path.Base(source)) + " to " + target,
+			"cd " + tmp + " && echo | sh " + path.Base(source) + " && mv jdk*/ " + target},
+	})
+	if err == nil {
+		os.RemoveAll(tmp)
+	}
+	return
+}
+
+func installFromTgz(source string, target string) error {
+	return executeInShell([][]string{
+		[]string{"", "mkdir -p " + target},
+		[]string{"Extracting " + source + " to " + target,
+			"tar xvf " + source + " --strip-components=1 -C " + target},
+	})
+}
+
+func installFromZip(source string, target string) error {
+	log.Info("Extracting " + source + " to " + target)
+	return unzip(source, target, true)
+}
+
+func unzip(source string, target string, strip bool) error {
+	r, err := zip.OpenReader(source)
+	if err != nil {
+		return err
+	}
+	defer r.Close()
+	var prefixToStrip = ""
+	if strip {
+		entriesPerLevel := make(map[int]int)
+		prefixMap := make(map[int]string)
+		for _, f := range r.File {
+			level := 0
+			for _, c := range f.Name {
+				if c == '/' {
+					level++
+				}
+			}
+			if !f.Mode().IsDir() {
+				level++
+			} else {
+				prefixMap[level] = f.Name
+			}
+			entriesPerLevel[level]++
+		}
+		for i := 0; i < len(entriesPerLevel); i++ {
+			if entriesPerLevel[i] > 1 && i > 0 {
+				prefixToStrip = prefixMap[i - 1]
+				break
+			}
+		}
+	}
+	for _, f := range r.File {
+		name := strings.TrimPrefix(f.Name, prefixToStrip)
+		if f.Mode().IsDir() {
+			os.MkdirAll(path.Join(target, name), 0755)
+		} else {
+			fr, err := f.Open()
+			if err != nil {
+				return err
+			}
+			f, err := os.OpenFile(path.Join(target, name), os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
+			if err != nil {
+				return err
+			}
+			_, err = io.Copy(f, fr)
+			if err != nil {
+				return err
+			}
+			f.Close()
+		}
+	}
+	return nil
+}
+
+func executeInShell(cmd [][]string) error {
 	for _, command := range cmd {
 		if command[0] != "" {
 			log.Info(command[0])
@@ -261,4 +348,14 @@ func executeSH(cmd [][]string) error {
 		}
 	}
 	return nil
+}
+
+func assertContentIsValid(target string) error {
+	var err error
+	if _, err = os.Stat(target + "/bin/java"); os.IsNotExist(err) {
+		err = errors.New("<target>/bin/java wasn't found. " +
+		"If you believe this is an error - please create a ticket at https://github.com/shyiko/jabba/issue " +
+		"(specify OS and version/URL you tried to install)")
+	}
+	return err
 }

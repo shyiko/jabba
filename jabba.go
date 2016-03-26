@@ -8,6 +8,7 @@ import (
 	"github.com/shyiko/jabba/command"
 	"github.com/shyiko/jabba/semver"
 	log "github.com/Sirupsen/logrus"
+	"sort"
 )
 
 var version string
@@ -105,13 +106,14 @@ func main() {
 				if err != nil {
 					log.Fatal(err)
 				}
-				var vs = make([]string, len(releaseMap))
+				var vs = make([]*semver.Version, len(releaseMap))
 				var i = 0
 				for k := range releaseMap {
 					vs[i] = k
 					i++
 				}
-				for _, v := range semver.Sort(vs) {
+				sort.Sort(sort.Reverse(semver.VersionSlice(vs)))
+				for _, v := range vs {
 					fmt.Println(v)
 				}
 				return nil

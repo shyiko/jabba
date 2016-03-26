@@ -8,12 +8,12 @@ import (
 	"regexp"
 )
 
-func Use(ver string) ([]string, error) {
-	aliasValue := GetAlias(ver)
+func Use(selector string) ([]string, error) {
+	aliasValue := GetAlias(selector)
 	if aliasValue != "" {
-		ver = aliasValue
+		selector = aliasValue
 	}
-	resolved, err := resolveLocal(ver)
+	ver, err := LsBestMatch(selector)
 	if err != nil {
 		return nil, err
 	}
@@ -21,7 +21,7 @@ func Use(ver string) ([]string, error) {
 	rgxp := regexp.MustCompile(regexp.QuoteMeta(path.Join(cfg.Dir(), "jdk")) + "[^:]+[:]")
 	// strip references to ~/.jabba/jdk/*, otherwise leave unchanged
 	pth = rgxp.ReplaceAllString(pth, "")
-	javaHome := path.Join(cfg.Dir(), "jdk", resolved)
+	javaHome := path.Join(cfg.Dir(), "jdk", ver)
 	if runtime.GOOS == "darwin" {
 		javaHome = path.Join(javaHome, "Contents", "Home")
 	}

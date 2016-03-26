@@ -5,10 +5,14 @@ import (
 	"github.com/shyiko/jabba/cfg"
 )
 
-func Which(ver string) (string, error) {
-	resolved, err := resolveLocal(ver)
+func Which(selector string) (string, error) {
+	aliasValue := GetAlias(selector)
+	if aliasValue != "" {
+		selector = aliasValue
+	}
+	ver, err := LsBestMatch(selector)
 	if err != nil {
 		return "", err
 	}
-	return path.Join(cfg.Dir(), "jdk", resolved), nil
+	return path.Join(cfg.Dir(), "jdk", ver), nil
 }
