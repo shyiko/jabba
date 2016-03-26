@@ -29,10 +29,10 @@ And you can install ANY version, not just the latest stable one. Wanna try upcom
 
 ```sh
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
-```   
+```
 
-> Installer creates `~/.jabba` and adds initialization code to ~/.bashrc (and ~/.bash_profile, ~/.zshrc, ~/.profile) 
-(provided they exist).
+> In [fish](https://fishshell.com/) command looks a little bit different - 
+`curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash; and . ~/.jabba/jabba.fish` 
 
 ## Usage
 

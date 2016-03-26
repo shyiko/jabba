@@ -29,6 +29,7 @@ echo
 
 mkdir -p ${JABBA_DIR}/bin
 curl -sL ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
+
 cat >${JABBA_DIR}/jabba.sh<<-EOF
 # https://github.com/shyiko/jabba
 # This file is indented to be "sourced" (i.e. `. ~/.jabba/jabba.sh`)
@@ -47,29 +48,55 @@ EOF
 
 SOURCE_JABBA="\n[ -s \"$JABBA_DIR/jabba.sh\" ] && source \"$JABBA_DIR/jabba.sh\""
 
-profile_found=0
-files=("$PROFILE" "$HOME/.bashrc" "$HOME/.bash_profile" "$HOME/.zshrc" "$HOME/.profile")
+files=("$HOME/.bashrc" "$HOME/.bash_profile" "$HOME/.profile")
 for file in "${files[@]}"
 do
-    if [ -f "${file}" ]; then
-        profile_found=1
-        if ! grep -qc '/jabba.sh' "${file}"; then
-            echo "Adding source string to ${file}"
-            printf "$SOURCE_JABBA\n" >> "${file}"
-        else
-            echo "Skipped update of ${file} (source string already present)"
-        fi
+    touch ${file}
+    if ! grep -qc '/jabba.sh' "${file}"; then
+        echo "Adding source string to ${file}"
+        printf "$SOURCE_JABBA\n" >> "${file}"
+    else
+        echo "Skipped update of ${file} (source string already present)"
     fi
 done
 
-if [ "${profile_found}" == "0" ]; then
-  echo "Shell config file(s) not found (tried \$PROFILE, ~/.bashrc, ~/.bash_profile, ~/.zshrc, and ~/.profile)."
-  echo "Create one/several of them and run this script again"
-  echo "-or-"
-  echo "Append the following line(s) to the correct file yourself"
-  printf "$SOURCE_JABBA"
-  echo
-  exit 1
+if [ -f "$(which zsh)" ]; then
+    file="$HOME/.zshrc"
+    touch ${file}
+    if ! grep -qc '/jabba.sh' "${file}"; then
+        echo "Adding source string to ${file}"
+        printf "$SOURCE_JABBA\n" >> "${file}"
+    else
+        echo "Skipped update of ${file} (source string already present)"
+    fi
+fi
+
+cat >${JABBA_DIR}/jabba.fish<<-EOF
+# https://github.com/shyiko/jabba
+# This file is indented to be "sourced" (i.e. `. ~/.jabba/jabba.fish`)
+
+function jabba
+    set fd3 (mktemp /tmp/jabba-fd3.XXXXXX)
+    env JABBA_SHELL_INTEGRATION=ON ${JABBA_DIR}/bin/jabba \$argv 3> \$fd3
+    set exit_code \$status
+    eval (cat \$fd3 | sed "s/^export/set -x/g" | sed "s/^unset/set -e/g" | tr '=:' ' ' | tr '\n' ';')
+    rm \$fd3
+    return \$exit_code
+end
+EOF
+
+FISH_SOURCE_JABBA="\n[ -s \"$JABBA_DIR/jabba.fish\" ]; and source \"$JABBA_DIR/jabba.fish\""
+
+if [ -f "$(which fish)" ]; then
+    file="$HOME/.config/fish/config.fish"
+    mkdir -p $(dirname ${file})
+    touch ${file}
+    if ! grep -qc '/jabba.fish' "${file}"; then
+        echo "Adding source string to ${file}"
+        printf "$FISH_SOURCE_JABBA\n" >> "${file}"
+    else
+        echo "Skipped update of ${file} (source string already present)"
+    fi
 fi
 
 echo ""
