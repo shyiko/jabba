@@ -30,6 +30,9 @@ build-release:
 	-osarch="linux/386 linux/amd64 darwin/amd64" \
 	-output="release/{{.Dir}}-${VERSION}-{{.OS}}-{{.Arch}}" .
 
+install: build
+	JABBA_MAKE_INSTALL=true JABBA_VERSION=${VERSION} sh install.sh
+
 publish: clean build-release
 	test -n "$(GITHUB_TOKEN)" # $$GITHUB_TOKEN must be set
 	github-release release --user shyiko --repo jabba --tag ${VERSION} \

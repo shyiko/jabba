@@ -28,7 +28,12 @@ echo "Installing v$JABBA_VERSION..."
 echo
 
 mkdir -p ${JABBA_DIR}/bin
-curl -sL ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
+
+if [ "$JABBA_MAKE_INSTALL" == "true" ]; then
+    cp jabba ${JABBA_DIR}/bin
+else
+    curl -sL ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
+fi
 
 cat >${JABBA_DIR}/jabba.sh<<-EOF
 # https://github.com/shyiko/jabba
