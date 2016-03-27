@@ -159,6 +159,9 @@ func download(url string) (file string, err error) {
 		return nil
 	}
 	req, err := http.NewRequest("GET", url, nil)
+	if strings.Contains(url, "zulu") {
+		req.Header.Set("Referer", "http://www.azul.com/downloads/zulu/")
+	}
 	req.Header.Set("Cookie", "oraclelicense=accept-securebackup-cookie")
 	res, err := client.Do(req)
 	if err != nil {
