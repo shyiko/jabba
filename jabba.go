@@ -80,7 +80,7 @@ func main() {
 			Run: func(cmd *cobra.Command, args []string) {
 				ver := command.Current()
 				if ver != "" {
-					println(ver)
+					fmt.Println(ver)
 				}
 			},
 		},
