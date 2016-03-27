@@ -35,21 +35,21 @@ else
     curl -sL ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
 fi
 
-cat >${JABBA_DIR}/jabba.sh<<-EOF
-# https://github.com/shyiko/jabba
-# This file is indented to be "sourced" (i.e. `. ~/.jabba/jabba.sh`)
-
-jabba() {
-    local fd3=\$(mktemp /tmp/jabba-fd3.XXXXXX)
-    (JABBA_SHELL_INTEGRATION=ON ${JABBA_DIR}/bin/jabba "\$@" 3> \${fd3})
-    local exit_code=\$?
-    eval \$(cat \${fd3})
-    rm \${fd3}
-    (exit \${exit_code})
-}
-
-[ ! -z "\$(jabba alias default)" ] && jabba use default
-EOF
+{
+echo "# https://github.com/shyiko/jabba"
+echo "# This file is indented to be \"sourced\" (i.e. \". ~/.jabba/jabba.sh\")"
+echo ""
+echo "jabba() {"
+echo "    local fd3=\$(mktemp /tmp/jabba-fd3.XXXXXX)"
+echo "    (JABBA_SHELL_INTEGRATION=ON ${JABBA_DIR}/bin/jabba \"\$@\" 3> \${fd3})"
+echo "    local exit_code=\$?"
+echo "    eval \$(cat \${fd3})"
+echo "    rm \${fd3}"
+echo "    (exit \${exit_code})"
+echo "}"
+echo ""
+echo "[ ! -z \"\$(jabba alias default)\" ] && jabba use default"
+} > ${JABBA_DIR}/jabba.sh
 
 SOURCE_JABBA="\n[ -s \"$JABBA_DIR/jabba.sh\" ] && source \"$JABBA_DIR/jabba.sh\""
 
@@ -65,7 +65,7 @@ do
     fi
 done
 
-if [ -f "$(which zsh)" ]; then
+if [ -f "$(which zsh 2>/dev/null)" ]; then
     file="$HOME/.zshrc"
     touch ${file}
     if ! grep -qc '/jabba.sh' "${file}"; then
@@ -76,23 +76,25 @@ if [ -f "$(which zsh)" ]; then
     fi
 fi
 
-cat >${JABBA_DIR}/jabba.fish<<-EOF
-# https://github.com/shyiko/jabba
-# This file is indented to be "sourced" (i.e. `. ~/.jabba/jabba.fish`)
-
-function jabba
-    set fd3 (mktemp /tmp/jabba-fd3.XXXXXX)
-    env JABBA_SHELL_INTEGRATION=ON ${JABBA_DIR}/bin/jabba \$argv 3> \$fd3
-    set exit_code \$status
-    eval (cat \$fd3 | sed "s/^export/set -x/g" | sed "s/^unset/set -e/g" | tr '=:' ' ' | tr '\n' ';')
-    rm \$fd3
-    return \$exit_code
-end
-EOF
+{
+echo "# https://github.com/shyiko/jabba"
+echo "# This file is indented to be \"sourced\" (i.e. \". ~/.jabba/jabba.fish\")"
+echo ""
+echo "function jabba"
+echo "    set fd3 (mktemp /tmp/jabba-fd3.XXXXXX)"
+echo "    env JABBA_SHELL_INTEGRATION=ON ${JABBA_DIR}/bin/jabba \$argv 3> \$fd3"
+echo "    set exit_code \$status"
+echo "    eval (cat \$fd3 | sed \"s/^export/set -x/g\" | sed \"s/^unset/set -e/g\" | tr '=:' ' ' | tr '\\\\n' ';')"
+echo "    rm \$fd3"
+echo "    return \$exit_code"
+echo "end"
+echo ""
+echo "[ ! -z (echo (jabba alias default)) ]; and jabba use default"
+} > ${JABBA_DIR}/jabba.fish
 
 FISH_SOURCE_JABBA="\n[ -s \"$JABBA_DIR/jabba.fish\" ]; and source \"$JABBA_DIR/jabba.fish\""
 
-if [ -f "$(which fish)" ]; then
+if [ -f "$(which fish 2>/dev/null)" ]; then
     file="$HOME/.config/fish/config.fish"
     mkdir -p $(dirname ${file})
     touch ${file}
