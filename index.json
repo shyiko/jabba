@@ -97,6 +97,8 @@
       },
       "jdk@zulu": {
         "1.9.0-3": "tgz+http://cdn.azul.com/zulu-pre/bin/zulu9.0.0.3-ea-jdk9.0.0-linux_x64.tar.gz",
+        "1.8.72": "tgz+http://cdn.azul.com/zulu/bin/zulu8.13.0.5-jdk8.0.72-linux_x64.tar.gz",
+        "1.8.71": "tgz+http://cdn.azul.com/zulu/bin/zulu8.12.0.1-jdk8.0.71-linux_x64.tar.gz",
         "1.8.66": "zip+http://cdn.azulsystems.com/zulu/bin/zulu1.8.0_66-8.11.0.1-x86lx64.zip",
         "1.8.65": "zip+http://cdn.azulsystems.com/zulu/bin/zulu1.8.0_65-8.10.0.1-x86lx64.zip",
         "1.8.60": "zip+http://cdn.azulsystems.com/zulu/bin/zulu1.8.0_60-8.9.0.4-x86lx64.zip",
