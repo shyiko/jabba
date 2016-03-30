@@ -217,14 +217,17 @@ func installFromDmg(source string, target string) error {
 		// oracle
 		[]string{"",
 			"if [ -f " + pkgdir + "/jdk*.pkg/Payload" + " ]; then " +
-			"tar xvf " + pkgdir + "/jdk*.pkg/Payload -C " + target +
+			"cd " + pkgdir + "/jdk*.pkg && " +
+			"cat Payload | gzip -d | cpio -i && " +
+			"mv Contents " + target + "/" +
 			"; fi"},
 
 		// apple
 		[]string{"",
 			"if [ -f " + pkgdir + "/JavaForOSX.pkg/Payload" + " ]; then " +
-			"tar xzf " + pkgdir + "/JavaForOSX.pkg/Payload -C " + pkgdir + " &&" +
-			"mv " + pkgdir + "/Library/Java/JavaVirtualMachines/*/Contents " + target + "/Contents" +
+			"cd " + pkgdir + "/JavaForOSX.pkg && " +
+			"cat Payload | gzip -d | cpio -i && " +
+			"mv Library/Java/JavaVirtualMachines/*/Contents " + target + "/" +
 			"; fi"},
 
 		[]string{"Unmounting " + source, "hdiutil unmount " + mountpoint},
