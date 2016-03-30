@@ -279,7 +279,7 @@ func installFromTgz(source string, target string) error {
 	return executeInShell([][]string{
 		[]string{"", "mkdir -p " + target},
 		[]string{"Extracting " + source + " to " + target,
-			"tar xvf " + source + " --strip-components=1 -C " + target},
+			"tar xzf " + source + " --strip-components=1 -C " + target},
 	})
 }
 
