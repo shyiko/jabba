@@ -16,9 +16,11 @@ the whole thing in PowerShell or whatever.
 
 The goal is to provide unified pain-free experience of installing (and switching between different versions of) JDK.
 
-> `jabba` has single responsibility - managing different versions of JDK. Maven/Gradle/SBT/... are out of scope (for those use
-[mvnw](https://github.com/shyiko/mvnw)/[gradlew](https://docs.gradle.org/current/userguide/gradle_wrapper.html)/[sbt-launcher](http://www.scala-sbt.org/0.13/docs/Manual-Installation.html)/...).
- 
+> `jabba` has a single responsibility - managing different versions of JDK. For an easy way to install Scala/Kotlin/Ceylon/Groovy SBT/Maven/Gradle/Ant (+ a lot more) see [SDKMAN](http://sdkman.io/). It's an excellent project and I highly recommend you give it a try.
+
+> On a side note, SBT/Maven/Gradle ~~can~~ should be taken care of by 
+[sbt-launcher](http://www.scala-sbt.org/0.13/docs/Manual-Installation.html)/[mvnw](https://github.com/shyiko/mvnw)/[gradlew](https://docs.gradle.org/current/userguide/gradle_wrapper.html) (see gradlew link for the rationale).
+
 ## Installation
 
 > (use the same command to upgrade)
