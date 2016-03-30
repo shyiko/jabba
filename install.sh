@@ -6,7 +6,7 @@ JABBA_VERSION=${JABBA_VERSION:-latest}
 
 if [ "$JABBA_VERSION" == "latest" ]; then
     # resolving "latest" to an actual tag
-    JABBA_VERSION=$(curl -o- https://api.github.com/repos/shyiko/jabba/releases/latest | grep 'tag_name' | cut -d\" -f4)
+    JABBA_VERSION=$(curl -sL https://shyiko.github.com/jabba/latest)
 fi
 
 case "$OSTYPE" in
