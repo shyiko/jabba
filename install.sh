@@ -52,7 +52,9 @@ echo "    rm \${fd3}"
 echo "    (exit \${exit_code})"
 echo "}"
 echo ""
-echo "[ ! -z \"\$(jabba alias default)\" ] && jabba use default"
+echo "if [ ! -z \"\$(jabba alias default)\" ]; then"
+echo "    jabba use default"
+echo "fi"
 } > ${JABBA_DIR}/jabba.sh
 
 SOURCE_JABBA="\n[ -s \"$JABBA_DIR/jabba.sh\" ] && source \"$JABBA_DIR/jabba.sh\""
