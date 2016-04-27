@@ -32,7 +32,11 @@ mkdir -p ${JABBA_DIR}/bin
 if [ "$JABBA_MAKE_INSTALL" == "true" ]; then
     cp jabba ${JABBA_DIR}/bin
 else
-    curl -sL ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
+    FETCH="wget -qO-"
+    if [ -f "$(which curl 2>/dev/null)" ]; then
+        FETCH="curl -sL"
+    fi
+    $FETCH ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
 fi
 
 {

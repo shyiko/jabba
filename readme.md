@@ -29,6 +29,8 @@ curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.ja
 > In [fish](https://fishshell.com/) command looks a little bit different - 
 `curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash; and . ~/.jabba/jabba.fish` 
 
+> If you don't have `curl` installed - replace `curl -sL` with `wget -qO-`.
+
 ## Usage
 
 ```sh
