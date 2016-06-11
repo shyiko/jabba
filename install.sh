@@ -4,6 +4,10 @@
 JABBA_DIR=${JABBA_DIR:-$HOME/.jabba}
 JABBA_VERSION=${JABBA_VERSION:-latest}
 
+# curl looks for HTTPS_PROXY while wget for https_proxy
+https_proxy=${https_proxy:-$HTTPS_PROXY}
+HTTPS_PROXY=${HTTPS_PROXY:-$https_proxy}
+
 GET="wget -qO-"
 if [ -f "$(which curl 2>/dev/null)" ]; then
     GET="curl -sL"
