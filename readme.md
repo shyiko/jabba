@@ -31,6 +31,11 @@ curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.ja
 
 > If you don't have `curl` installed - replace `curl -sL` with `wget -qO-`.
 
+> If you are behind a proxy see -
+[curl](https://curl.haxx.se/docs/manpage.html#ENVIRONMENT) / 
+[wget](https://www.gnu.org/software/wget/manual/wget.html#Proxies) manpage. 
+Usually simple `http_proxy=http://proxy-server:port https_proxy=http://proxy-server:port curl -sL ...` is enough. 
+
 ## Usage
 
 ```sh
