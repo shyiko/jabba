@@ -18,6 +18,12 @@ if [ "$JABBA_VERSION" == "latest" ]; then
     JABBA_VERSION=$($GET https://shyiko.github.com/jabba/latest)
 fi
 
+# http://semver.org/spec/v2.0.0.html
+if [[ ! "$JABBA_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.+-]+)?$ ]]; then
+    echo "'$JABBA_VERSION' is not a valid version."
+    exit 1
+fi
+
 case "$OSTYPE" in
     darwin*)
     BINARY_URL=https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-darwin-amd64
@@ -28,7 +34,7 @@ case "$OSTYPE" in
     ;;
     *)
     echo "Unsupported OS $OSTYPE. If you believe this is an error -
-please create a ticket at https://github.com/shyiko/jabba/issue. Thank you"
+please create a ticket at https://github.com/shyiko/jabba/issue."
     exit 1
     ;;
 esac
@@ -42,6 +48,14 @@ if [ "$JABBA_MAKE_INSTALL" == "true" ]; then
     cp jabba ${JABBA_DIR}/bin
 else
     $GET ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
+fi
+
+if ! ${JABBA_DIR}/bin/jabba --version &>/dev/null; then
+    echo "${JABBA_DIR}/bin/jabba does not appear to be a valid binary.
+
+Check your Internet connection / proxy settings and try again.
+If the problem persists - please create a ticket at https://github.com/shyiko/jabba/issue."
+    exit 1
 fi
 
 {
