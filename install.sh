@@ -4,9 +4,14 @@
 JABBA_DIR=${JABBA_DIR:-$HOME/.jabba}
 JABBA_VERSION=${JABBA_VERSION:-latest}
 
+GET="wget -qO-"
+if [ -f "$(which curl 2>/dev/null)" ]; then
+    GET="curl -sL"
+fi
+
 if [ "$JABBA_VERSION" == "latest" ]; then
     # resolving "latest" to an actual tag
-    JABBA_VERSION=$(curl -sL https://shyiko.github.com/jabba/latest)
+    JABBA_VERSION=$($GET https://shyiko.github.com/jabba/latest)
 fi
 
 case "$OSTYPE" in
@@ -32,11 +37,7 @@ mkdir -p ${JABBA_DIR}/bin
 if [ "$JABBA_MAKE_INSTALL" == "true" ]; then
     cp jabba ${JABBA_DIR}/bin
 else
-    FETCH="wget -qO-"
-    if [ -f "$(which curl 2>/dev/null)" ]; then
-        FETCH="curl -sL"
-    fi
-    $FETCH ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
+    $GET ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
 fi
 
 {
