@@ -8,14 +8,17 @@ JABBA_VERSION=${JABBA_VERSION:-latest}
 https_proxy=${https_proxy:-$HTTPS_PROXY}
 HTTPS_PROXY=${HTTPS_PROXY:-$https_proxy}
 
-GET="wget -qO-"
-if [ -f "$(which curl 2>/dev/null)" ]; then
-    GET="curl -sL"
+if [ "$JABBA_GET" == "" ]; then
+    if [ -f "$(which curl 2>/dev/null)" ]; then
+        JABBA_GET="curl -sL"
+    else
+        JABBA_GET="wget -qO-"
+    fi
 fi
 
 if [ "$JABBA_VERSION" == "latest" ]; then
     # resolving "latest" to an actual tag
-    JABBA_VERSION=$($GET https://shyiko.github.com/jabba/latest)
+    JABBA_VERSION=$($JABBA_GET https://shyiko.github.com/jabba/latest)
 fi
 
 # http://semver.org/spec/v2.0.0.html
@@ -47,7 +50,7 @@ mkdir -p ${JABBA_DIR}/bin
 if [ "$JABBA_MAKE_INSTALL" == "true" ]; then
     cp jabba ${JABBA_DIR}/bin
 else
-    $GET ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
+    $JABBA_GET ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
 fi
 
 if ! ${JABBA_DIR}/bin/jabba --version &>/dev/null; then
