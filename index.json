@@ -3,6 +3,7 @@
     "amd64": {
       "jdk": {
         "1.9.0-110": "dmg+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_osx-x64_bin.dmg",
+        "1.8.91": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-macosx-x64.dmg",
         "1.8.77": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jdk-8u77-macosx-x64.dmg",
         "1.8.74": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u74-b02/jdk-8u74-macosx-x64.dmg",
         "1.8.73": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u73-b02/jdk-8u73-macosx-x64.dmg",
@@ -25,6 +26,7 @@
       },
       "jdk@zulu": {
         "1.9.0-3": "zip+http://cdn.azul.com/zulu-pre/bin/zulu9.0.0.3-ea-jdk9.0.0-macosx_x64.zip",
+        "1.8.91": "zip+http://cdn.azul.com/zulu/bin/zulu8.14.0.1-jdk8.0.91-macosx_x64.zip",
         "1.8.72": "zip+http://cdn.azul.com/zulu/bin/zulu8.13.0.5-jdk8.0.72-macosx_x64.zip",
         "1.8.71": "zip+http://cdn.azul.com/zulu/bin/zulu8.12.0.1-jdk8.0.71-macosx_x64.zip",
         "1.8.66": "zip+http://cdn.azulsystems.com/zulu/bin/zulu1.8.0_66-8.11.0.1-macosx.zip",
@@ -54,6 +56,7 @@
     "386": {
       "jdk": {
         "1.9.0-110": "tgz+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_linux-x86_bin.tar.gz",
+        "1.8.91": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-i586.tar.gz",
         "1.8.77": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jdk-8u77-linux-i586.tar.gz",
         "1.8.74": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u74-b02/jdk-8u74-linux-i586.tar.gz",
         "1.8.73": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u73-b02/jdk-8u73-linux-i586.tar.gz",
@@ -78,6 +81,7 @@
     "amd64": {
       "jdk": {
         "1.9.0-110": "tgz+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_linux-x64_bin.tar.gz",
+        "1.8.91": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.tar.gz",
         "1.8.77": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jdk-8u77-linux-x64.tar.gz",
         "1.8.74": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u74-b02/jdk-8u74-linux-x64.tar.gz",
         "1.8.73": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u73-b02/jdk-8u73-linux-x64.tar.gz",
@@ -100,6 +104,7 @@
       },
       "jdk@zulu": {
         "1.9.0-3": "tgz+http://cdn.azul.com/zulu-pre/bin/zulu9.0.0.3-ea-jdk9.0.0-linux_x64.tar.gz",
+        "1.8.91": "tgz+http://cdn.azul.com/zulu/bin/zulu8.14.0.1-jdk8.0.91-linux_x64.tar.gz",
         "1.8.72": "tgz+http://cdn.azul.com/zulu/bin/zulu8.13.0.5-jdk8.0.72-linux_x64.tar.gz",
         "1.8.71": "tgz+http://cdn.azul.com/zulu/bin/zulu8.12.0.1-jdk8.0.71-linux_x64.tar.gz",
         "1.8.66": "zip+http://cdn.azulsystems.com/zulu/bin/zulu1.8.0_66-8.11.0.1-x86lx64.zip",
