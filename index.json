@@ -3,6 +3,7 @@
     "amd64": {
       "jdk": {
         "1.9.0-110": "dmg+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_osx-x64_bin.dmg",
+        "1.8.101": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-macosx-x64.dmg",
         "1.8.91": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-macosx-x64.dmg",
         "1.8.77": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jdk-8u77-macosx-x64.dmg",
         "1.8.74": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u74-b02/jdk-8u74-macosx-x64.dmg",
@@ -56,6 +57,7 @@
     "386": {
       "jdk": {
         "1.9.0-110": "tgz+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_linux-x86_bin.tar.gz",
+        "1.8.101": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-i586.tar.gz",
         "1.8.91": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-i586.tar.gz",
         "1.8.77": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jdk-8u77-linux-i586.tar.gz",
         "1.8.74": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u74-b02/jdk-8u74-linux-i586.tar.gz",
@@ -81,6 +83,7 @@
     "amd64": {
       "jdk": {
         "1.9.0-110": "tgz+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_linux-x64_bin.tar.gz",
+        "1.8.101": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz",
         "1.8.91": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.tar.gz",
         "1.8.77": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jdk-8u77-linux-x64.tar.gz",
         "1.8.74": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u74-b02/jdk-8u74-linux-x64.tar.gz",
