@@ -3,6 +3,7 @@
     "amd64": {
       "jdk": {
         "1.9.0-110": "dmg+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_osx-x64_bin.dmg",
+        "1.8.102": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-macosx-x64.dmg",
         "1.8.101": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-macosx-x64.dmg",
         "1.8.92": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-macosx-x64.dmg",
         "1.8.91": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-macosx-x64.dmg",
@@ -60,6 +61,7 @@
     "386": {
       "jdk": {
         "1.9.0-110": "tgz+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_linux-x86_bin.tar.gz",
+        "1.8.102": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-i586.tar.gz",
         "1.8.101": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-i586.tar.gz",
         "1.8.92": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.tar.gz",
         "1.8.91": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-i586.tar.gz",
@@ -87,6 +89,7 @@
     "amd64": {
       "jdk": {
         "1.9.0-110": "tgz+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_linux-x64_bin.tar.gz",
+        "1.8.102": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.tar.gz",
         "1.8.101": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz",
         "1.8.92": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-x64.tar.gz",
         "1.8.91": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.tar.gz",
@@ -159,6 +162,8 @@
     "amd64": {
       "jdk": {
         "1.9.0-110": "exe+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_windows-x64_bin.exe",
+        "1.8.102": "exe+http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-windows-x64.exe",
+        "1.8.101": "exe+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-windows-x64.exe",
         "1.8.92": "exe+http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-windows-x64.exe",
         "1.8.91": "exe+http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-windows-x64.exe",
         "1.8.77": "exe+http://download.oracle.com/otn-pub/java/jdk/8u77-b03/jdk-8u77-windows-x64.exe",
