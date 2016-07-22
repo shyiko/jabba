@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.0](https://github.com/shyiko/jabba/compare/0.3.3...0.4.0) - 2016-07-22
+
+### Added
+* Windows 10 support.
+* `link`/`unlink` commands.
+
+### Fixed
+* `bin+file://` handling (original file is now copied instead of being moved).
+
 ## [0.3.3](https://github.com/shyiko/jabba/compare/0.3.2...0.3.3) - 2016-03-30
 
 ### Fixed
