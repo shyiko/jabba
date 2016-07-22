@@ -312,6 +312,7 @@ func installFromBin(source string, target string) (err error) {
 }
 
 func installFromExe(source string, target string) error {
+	log.Info("Unpacking " + source + " to " + target)
 	// using ShellExecute instead of exec.Command so user could decide whether to trust the installer when UAC is active
 	return w32.ShellExecuteAndWait(w32.HWND(0), "open", source, "/s INSTALLDIR=\"" + target +
 		"\" STATIC=1 AUTO_UPDATE=0 WEB_JAVA=0 WEB_ANALYTICS=0 REBOOT=0", "", 3)

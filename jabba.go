@@ -11,14 +11,28 @@ import (
 	"sort"
 	"io/ioutil"
 	"strings"
+	"bytes"
 )
 
 var version string
 var rootCmd *cobra.Command
 
 func init() {
+	log.SetFormatter(&SimpleFormatter{})
 	// todo: make it configurable through the command line
 	log.SetLevel(log.InfoLevel)
+}
+
+type SimpleFormatter struct {}
+
+func (f *SimpleFormatter) Format(entry *log.Entry) ([]byte, error) {
+	b := &bytes.Buffer{}
+	fmt.Fprintf(b, "%s ", entry.Message)
+	for k, v := range entry.Data {
+		fmt.Fprintf(b, "%s=%+v ", k, v)
+	}
+	b.WriteByte('\n')
+	return b.Bytes(), nil
 }
 
 func main() {
