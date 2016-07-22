@@ -29,6 +29,8 @@ SBT/Maven/Gradle should <u>ideally</u> be "fixed in place" by [sbt-launcher][1]/
 
 * Linux/Mac OS X
 
+> (in bash/zsh/...)
+
 ```sh
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
 ```
@@ -122,9 +124,9 @@ jabba use ...
 
 # modify global PATH & JAVA_HOME
 $envRegKey = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey('SYSTEM\CurrentControlSet\Control\Session Manager\Environment', $true)
-$envPath=$regKey.GetValue('Path', $null, "DoNotExpandEnvironmentNames").replace('%JAVA_HOME%/bin;', '')
+$envPath=$envRegKey.GetValue('Path', $null, "DoNotExpandEnvironmentNames").replace('%JAVA_HOME%\bin;', '')
 setx JAVA_HOME "$(jabba which $(jabba current))" /m
-setx PATH "%JAVA_HOME%/bin;%PATH%" /m
+setx PATH "%JAVA_HOME%\bin;$envPath" /m
 </pre>
 
 ## License
