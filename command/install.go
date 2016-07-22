@@ -148,15 +148,20 @@ func download(url string, fileType string) (file string, err error) {
 		return
 	}
 	if fileType == "exe" {
-		err = os.Rename(file, file + ".exe")
+		err = tmp.Close()
 		if err != nil {
 			return
 		}
-		tmp, err = os.OpenFile(file + ".exe", os.O_RDWR, 0600)
+		err = os.Rename(tmp.Name(), tmp.Name() + ".exe")
+		if err != nil {
+			return
+		}
+		tmp, err = os.OpenFile(tmp.Name() + ".exe", os.O_RDWR, 0600)
 		if err != nil {
 			return
 		}
 	}
+	defer tmp.Close()
 	file = tmp.Name()
 	log.Debug("Saving ", url, " to ", file)
 	// todo: timeout
