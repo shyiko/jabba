@@ -38,9 +38,9 @@ func TestUse(t *testing.T) {
 		suffix = "/Contents/Home"
 	}
 	expected := []string{
-		"export PATH=" + cfg.Dir() + "/jdk/1.7.2" + suffix + "/bin:/usr/local/bin:/usr/bin",
-		"export JAVA_HOME=" + cfg.Dir() + "/jdk/1.7.2" + suffix,
-		"export JAVA_HOME_BEFORE_JABBA=/system-jdk",
+		"export PATH=\"" + cfg.Dir() + "/jdk/1.7.2" + suffix + "/bin:/usr/local/bin:/usr/bin\"",
+		"export JAVA_HOME=\"" + cfg.Dir() + "/jdk/1.7.2" + suffix + "\"",
+		"export JAVA_HOME_BEFORE_JABBA=\"/system-jdk\"",
 	}
 	if !reflect.DeepEqual(actual, expected) {
 		t.Fatalf("actual: %v != expected: %v", actual, expected)
