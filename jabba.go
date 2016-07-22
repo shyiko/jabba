@@ -64,6 +64,39 @@ func main() {
 			Example: "  jabba uninstall 1.8",
 		},
 		&cobra.Command{
+			Use:   "link [name] [path]",
+			Short: "Resolve or update a link",
+			RunE: func(cmd *cobra.Command, args []string) error {
+				if len(args) == 0 {
+					return pflag.ErrHelp
+				}
+				if len(args) == 1 {
+					if value := command.GetLink(args[0]); value != "" {
+						fmt.Println(value)
+					}
+				} else
+				if err := command.Link(args[0], args[1]); err != nil {
+					log.Fatal(err)
+				}
+				return nil
+			},
+			Example: "  jabba link system@1.8.20 /Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk" +
+			"  jabba link system@1.8.20 # show link target",
+		},
+		&cobra.Command{
+			Use:   "unlink [name]",
+			Short: "Delete a link",
+			RunE: func(cmd *cobra.Command, args []string) error {
+				if len(args) == 0 {
+					return pflag.ErrHelp
+				}
+				if err := command.Link(args[0], ""); err != nil {
+					log.Fatal(err)
+				}
+				return nil
+			},
+		},
+		&cobra.Command{
 			Use:   "use [version to use]",
 			Short: "Modify PATH & JAVA_HOME to use specific JDK",
 			RunE: func(cmd *cobra.Command, args []string) error {

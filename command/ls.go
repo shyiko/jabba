@@ -7,6 +7,7 @@ import (
 	"path"
 	"sort"
 	"fmt"
+	"os"
 )
 
 var readDir = ioutil.ReadDir
@@ -15,7 +16,7 @@ func Ls() ([]*semver.Version, error) {
 	files, _ := readDir(path.Join(cfg.Dir(), "jdk"))
 	var r []*semver.Version
 	for _, f := range files {
-		if f.IsDir() {
+		if f.IsDir() || f.Mode() & os.ModeSymlink == os.ModeSymlink {
 			v, err := semver.ParseVersion(f.Name())
 			if err != nil {
 				return nil, err

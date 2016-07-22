@@ -190,7 +190,7 @@ func installOnDarwin(ver string, file string, fileType string) (err error) {
 		return errors.New(fileType + " is not supported")
 	}
 	if err == nil {
-		err = assertContentIsValid(target + "/Contents/Home")
+		err = assertJavaDistribution(target)
 	}
 	if err != nil {
 		os.RemoveAll(target)
@@ -251,7 +251,7 @@ func installOnLinux(ver string, file string, fileType string) (err error) {
 		return errors.New(fileType + " is not supported")
 	}
 	if err == nil {
-		err = assertContentIsValid(target)
+		err = assertJavaDistribution(target)
 	}
 	if err != nil {
 		os.RemoveAll(target)
@@ -356,12 +356,20 @@ func executeInShell(cmd [][]string) error {
 	return nil
 }
 
-func assertContentIsValid(target string) error {
+func assertJavaDistribution(target string) error {
+	if runtime.GOOS == "darwin" {
+		target += "/Contents/Home"
+	}
+	var javaBin = "java"
+	if runtime.GOOS == "windows" {
+		javaBin += ".exe"
+	}
+	var path = path.Join(target, "bin", javaBin)
 	var err error
-	if _, err = os.Stat(target + "/bin/java"); os.IsNotExist(err) {
-		err = errors.New("<target>/bin/java wasn't found. " +
+	if _, err = os.Stat(path); os.IsNotExist(err) {
+		err = errors.New(path + " wasn't found. " +
 		"If you believe this is an error - please create a ticket at https://github.com/shyiko/jabba/issue " +
-		"(specify OS and version/URL you tried to install)")
+		"(specify OS and command that was used)")
 	}
 	return err
 }
