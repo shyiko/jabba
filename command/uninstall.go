@@ -2,7 +2,7 @@ package command
 
 import (
 	"github.com/shyiko/jabba/cfg"
-	"path"
+	"path/filepath"
 	"os"
 )
 
@@ -11,5 +11,5 @@ func Uninstall(selector string) error {
 	if err != nil {
 		return err
 	}
-	return os.RemoveAll(path.Join(cfg.Dir(), "jdk", ver))
+	return os.RemoveAll(filepath.Join(cfg.Dir(), "jdk", ver))
 }

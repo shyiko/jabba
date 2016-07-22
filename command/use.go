@@ -3,7 +3,7 @@ package command
 import (
 	"os"
 	"github.com/shyiko/jabba/cfg"
-	"path"
+	"path/filepath"
 	"runtime"
 	"regexp"
 )
@@ -18,20 +18,20 @@ func Use(selector string) ([]string, error) {
 		return nil, err
 	}
 	pth, _ := os.LookupEnv("PATH")
-	rgxp := regexp.MustCompile(regexp.QuoteMeta(path.Join(cfg.Dir(), "jdk")) + "[^:]+[:]")
+	rgxp := regexp.MustCompile(regexp.QuoteMeta(filepath.Join(cfg.Dir(), "jdk")) + "[^:]+[:]")
 	// strip references to ~/.jabba/jdk/*, otherwise leave unchanged
 	pth = rgxp.ReplaceAllString(pth, "")
-	javaHome := path.Join(cfg.Dir(), "jdk", ver)
+	javaHome := filepath.Join(cfg.Dir(), "jdk", ver)
 	if runtime.GOOS == "darwin" {
-		javaHome = path.Join(javaHome, "Contents", "Home")
+		javaHome = filepath.Join(javaHome, "Contents", "Home")
 	}
 	systemJavaHome, overrideWasSet := os.LookupEnv("JAVA_HOME_BEFORE_JABBA")
 	if !overrideWasSet {
 		systemJavaHome, _ = os.LookupEnv("JAVA_HOME")
 	}
 	return []string{
-		"export PATH=" + path.Join(javaHome, "bin") + ":" + pth,
-		"export JAVA_HOME=" + javaHome,
-		"export JAVA_HOME_BEFORE_JABBA=" + systemJavaHome,
+		"export PATH=\"" + filepath.Join(javaHome, "bin") + string(os.PathListSeparator) + pth + "\"",
+		"export JAVA_HOME=\"" + javaHome + "\"",
+		"export JAVA_HOME_BEFORE_JABBA=\"" + systemJavaHome + "\"",
 	}, nil
 }

@@ -9,9 +9,12 @@ import (
 	"github.com/shyiko/jabba/semver"
 	log "github.com/Sirupsen/logrus"
 	"sort"
+	"io/ioutil"
+	"strings"
 )
 
 var version string
+var rootCmd *cobra.Command
 
 func init() {
 	// todo: make it configurable through the command line
@@ -19,7 +22,7 @@ func init() {
 }
 
 func main() {
-	var rootCmd = &cobra.Command{
+	rootCmd = &cobra.Command{
 		Use: "jabba",
 		Long: "Java Version Manager (https://github.com/shyiko/jabba).",
 		RunE: func(cmd *cobra.Command, args []string) error {
@@ -213,6 +216,8 @@ func main() {
 		},
 	)
 	rootCmd.Flags().Bool("version", false, "version of jabba")
+	rootCmd.PersistentFlags().String("fd3", "", "")
+	rootCmd.PersistentFlags().MarkHidden("fd3")
 	if err := rootCmd.Execute(); err != nil {
 		os.Exit(-1);
 	}
@@ -228,8 +233,13 @@ func use(ver string) error {
 }
 
 func printForShellToEval(out []string) {
-	fd3 := os.NewFile(3, "fd3")
-	for _, line := range out {
-		fmt.Fprintln(fd3, line)
+	fd3, _ := rootCmd.Flags().GetString("fd3")
+	if fd3 != "" {
+		ioutil.WriteFile(fd3, []byte(strings.Join(out, "\n")), 0666)
+	} else {
+		fd3 := os.NewFile(3, "fd3")
+		for _, line := range out {
+			fmt.Fprintln(fd3, line)
+		}
 	}
 }

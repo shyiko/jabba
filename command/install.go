@@ -8,7 +8,7 @@ import (
 	"strings"
 	"os"
 	"io/ioutil"
-	"path"
+	"path/filepath"
 	"net/http"
 	"io"
 	"github.com/shyiko/jabba/cfg"
@@ -18,6 +18,7 @@ import (
 	"github.com/mitchellh/ioprogress"
 	"sort"
 	"archive/zip"
+	"github.com/shyiko/jabba/w32"
 )
 
 func Install(selector string) (string, error) {
@@ -93,9 +94,13 @@ func Install(selector string) (string, error) {
 	var deleteFileWhenFinnished bool
 	if strings.HasPrefix(url, "file://") {
 		file = strings.TrimPrefix(url, "file://")
+		if runtime.GOOS == "windows" {
+			// file:///C:/path/...
+			file = strings.Replace(strings.TrimPrefix(file, "/"), "/", "\\", -1)
+		}
 	} else {
 		log.Info("Downloading ", ver, " (", url, ")")
-		file, err = download(url)
+		file, err = download(url, fileType)
 		if err != nil {
 			return "", err
 		}
@@ -106,6 +111,8 @@ func Install(selector string) (string, error) {
 		err = installOnDarwin(ver.String(), file, fileType)
 	case "linux":
 		err = installOnLinux(ver.String(), file, fileType)
+	case "windows":
+		err = installOnWindows(ver.String(), file, fileType)
 	default:
 		err = errors.New(runtime.GOOS + " OS is not supported")
 	}
@@ -135,10 +142,20 @@ func (self RedirectTracer) RoundTrip(req *http.Request) (resp *http.Response, er
 	return
 }
 
-func download(url string) (file string, err error) {
+func download(url string, fileType string) (file string, err error) {
 	tmp, err := ioutil.TempFile("", "jabba-d-")
 	if err != nil {
 		return
+	}
+	if fileType == "exe" {
+		err = os.Rename(file, file + ".exe")
+		if err != nil {
+			return
+		}
+		tmp, err = os.OpenFile(file + ".exe", os.O_RDWR, 0600)
+		if err != nil {
+			return
+		}
 	}
 	file = tmp.Name()
 	log.Debug("Saving ", url, " to ", file)
@@ -203,7 +220,7 @@ func installFromDmg(source string, target string) error {
 	if err != nil {
 		return err
 	}
-	basename := path.Base(source)
+	basename := filepath.Base(source)
 	mountpoint := tmp + "/" + basename
 	pkgdir := tmp + "/" + basename + "-pkg"
 	err = executeInShell([][]string{
@@ -259,6 +276,25 @@ func installOnLinux(ver string, file string, fileType string) (err error) {
 	return
 }
 
+func installOnWindows(ver string, file string, fileType string) (err error) {
+	target := filepath.Join(cfg.Dir(), "jdk", ver)
+	switch fileType {
+	case "exe":
+		err = installFromExe(file, target)
+	case "zip":
+		err = installFromZip(file, target)
+	default:
+		return errors.New(fileType + " is not supported")
+	}
+	if err == nil {
+		err = assertJavaDistribution(target)
+	}
+	if err != nil {
+		os.RemoveAll(target)
+	}
+	return
+}
+
 func installFromBin(source string, target string) (err error) {
 	tmp, err := ioutil.TempDir("", "jabba-i-")
 	if err != nil {
@@ -266,13 +302,19 @@ func installFromBin(source string, target string) (err error) {
 	}
 	err = executeInShell([][]string{
 		[]string{"", "cp " + source + " " + tmp},
-		[]string{"Extracting " + path.Join(tmp, path.Base(source)) + " to " + target,
-			"cd " + tmp + " && echo | sh " + path.Base(source) + " && mv jdk*/ " + target},
+		[]string{"Extracting " + filepath.Join(tmp, filepath.Base(source)) + " to " + target,
+			"cd " + tmp + " && echo | sh " + filepath.Base(source) + " && mv jdk*/ " + target},
 	})
 	if err == nil {
 		os.RemoveAll(tmp)
 	}
 	return
+}
+
+func installFromExe(source string, target string) error {
+	// using ShellExecute instead of exec.Command so user could decide whether to trust the installer when UAC is active
+	return w32.ShellExecuteAndWait(w32.HWND(0), "open", source, "/s INSTALLDIR=\"" + target +
+		"\" STATIC=1 AUTO_UPDATE=0 WEB_JAVA=0 WEB_ANALYTICS=0 REBOOT=0", "", 3)
 }
 
 func installFromTgz(source string, target string) error {
@@ -322,13 +364,13 @@ func unzip(source string, target string, strip bool) error {
 	for _, f := range r.File {
 		name := strings.TrimPrefix(f.Name, prefixToStrip)
 		if f.Mode().IsDir() {
-			os.MkdirAll(path.Join(target, name), 0755)
+			os.MkdirAll(filepath.Join(target, name), 0755)
 		} else {
 			fr, err := f.Open()
 			if err != nil {
 				return err
 			}
-			f, err := os.OpenFile(path.Join(target, name), os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
+			f, err := os.OpenFile(filepath.Join(target, name), os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
 			if err != nil {
 				return err
 			}
@@ -347,7 +389,13 @@ func executeInShell(cmd [][]string) error {
 		if command[0] != "" {
 			log.Info(command[0])
 		}
-		out, err := exec.Command("sh", "-c", command[1]).CombinedOutput()
+		var execArg []string
+		if runtime.GOOS == "windows" {
+			execArg = []string{"cmd", "/C"}
+		} else {
+			execArg = []string{"sh", "-c"}
+		}
+		out, err := exec.Command(execArg[0], execArg[1], command[1]).CombinedOutput()
 		if err != nil {
 			log.Error(string(out))
 			return errors.New("'" + command[1] + "' failed: " + err.Error())
@@ -364,7 +412,7 @@ func assertJavaDistribution(target string) error {
 	if runtime.GOOS == "windows" {
 		javaBin += ".exe"
 	}
-	var path = path.Join(target, "bin", javaBin)
+	var path = filepath.Join(target, "bin", javaBin)
 	var err error
 	if _, err = os.Stat(path); os.IsNotExist(err) {
 		err = errors.New(path + " wasn't found. " +

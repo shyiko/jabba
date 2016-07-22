@@ -4,7 +4,7 @@ import (
 	"io/ioutil"
 	"github.com/shyiko/jabba/cfg"
 	"github.com/shyiko/jabba/semver"
-	"path"
+	"path/filepath"
 	"sort"
 	"fmt"
 	"os"
@@ -13,7 +13,7 @@ import (
 var readDir = ioutil.ReadDir
 
 func Ls() ([]*semver.Version, error) {
-	files, _ := readDir(path.Join(cfg.Dir(), "jdk"))
+	files, _ := readDir(filepath.Join(cfg.Dir(), "jdk"))
 	var r []*semver.Version
 	for _, f := range files {
 		if f.IsDir() || f.Mode() & os.ModeSymlink == os.ModeSymlink {
