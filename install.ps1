@@ -20,7 +20,14 @@ echo ""
 
 mkdir -Force $jabbaDir/bin | Out-Null
 
-(wget https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing).Content > $jabbaDir/bin/jabba.exe
+If ($env:JABBA_MAKE_INSTALL -eq "true")
+{
+    cp jabba.exe $jabbaDir/bin
+}
+else
+{
+    (wget https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing).Content > $jabbaDir/bin/jabba.exe
+}
 
 $ErrorActionPreference="SilentlyContinue"
 & $jabbaDir\bin\jabba.exe --version | Out-Null
@@ -54,7 +61,7 @@ $sourceJabba="if (Test-Path `"$jabbaDir\jabba.ps1`") { . `"$jabbaDir\jabba.ps1`"
 
 if (-not $(Test-Path $profile))
 {
-    New-Item -path $profile -type file –force | Out-Null
+    New-Item -path $profile -type file -force | Out-Null
 }
 
 if ("$(cat $profile | Select-String "\\jabba.ps1")" -eq "")
@@ -66,6 +73,8 @@ else
 {
     echo "Skipped update of $profile (source string already present)"
 }
+
+. "$jabbaDir\jabba.ps1"
 
 echo ""
 echo "Installation completed`
