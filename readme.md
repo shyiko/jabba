@@ -1,4 +1,4 @@
-# jabba ![Latest Version](https://img.shields.io/badge/latest-0.3.2-blue.svg) [![Build Status](https://travis-ci.org/shyiko/jabba.svg?branch=master)](https://travis-ci.org/shyiko/jabba)
+# jabba ![Latest Version](https://img.shields.io/badge/latest-0.4.0-blue.svg) [![Build Status](https://travis-ci.org/shyiko/jabba.svg?branch=master)](https://travis-ci.org/shyiko/jabba)
 
 ![jabba-the-hutt](https://cloud.githubusercontent.com/assets/370176/13943697/e6098ed0-efbb-11e5-9630-3ff0d0d0403d.jpg)
 
@@ -8,19 +8,26 @@ in Go ([gvm](https://github.com/moovweb/gvm)) or Ruby ([rvm](https://rvm.io)).
 Supports installation of [Oracle JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html) (default), 
 [Zulu OpenJDK](http://zulu.org/) (since 0.3.0) and from custom URLs.
 
-Tested on Mac OS X and Linux. Windows support is coming in [#1](https://github.com/shyiko/jabba/issues/1).
-
 It's written in [Go](https://golang.org/) to make maintenance easier (significantly shorter, easier to understand and less prone to errors 
-compared to pure shell implementation). Plus it enables us to support Windows natively (no Cygwin) without rewriting 
+compared to pure shell implementation). Plus it enables us to support Windows natively (no need for Cygwin) without rewriting 
 the whole thing in PowerShell or whatever. 
 
-The goal is to provide unified pain-free experience of installing (and switching between different versions of) JDK.
+The goal is to provide unified pain-free experience of **installing** (and **switching** between different versions of) JDK regardless of
+the OS. 
 
-> `jabba` has a single responsibility - managing different versions of JDK. For an easy way to install Scala/Kotlin/Ceylon/Groovy SBT/Maven/Gradle/Ant (+ a lot more) see [SDKMAN](http://sdkman.io/). It's an excellent project and I highly recommend you give it a try.
-
+> **jabba** has a single responsibility - managing different versions of JDK. For an easy way to install Scala/Kotlin/Groovy (+ a lot more) see [SDKMAN][0]. 
+SBT/Maven/Gradle should <u>ideally</u> be "fixed in place" by [sbt-launcher][1]/[mvnw][2]/[gradlew][3].
+ 
+[0]: http://sdkman.io/  
+[1]: http://www.scala-sbt.org/0.13/docs/Manual-Installation.html
+[2]: https://github.com/shyiko/mvnw
+[3]: https://docs.gradle.org/current/userguide/gradle_wrapper.html
+ 
 ## Installation
 
 > (use the same command to upgrade)
+
+* Linux/Mac OS X
 
 ```sh
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
@@ -35,6 +42,14 @@ curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.ja
 [curl](https://curl.haxx.se/docs/manpage.html#ENVIRONMENT) / 
 [wget](https://www.gnu.org/software/wget/manual/wget.html#Proxies) manpage. 
 Usually simple `http_proxy=http://proxy-server:port https_proxy=http://proxy-server:port curl -sL ...` is enough. 
+
+* Windows 10
+
+> (in powershell)
+
+```powershell
+Invoke-Expression (wget https://github.com/shyiko/jabba/raw/master/install.ps1 -UseBasicParsing).Content
+```
 
 ## Usage
 
@@ -59,8 +74,11 @@ jabba use 1.6.65
 jabba ls-remote
 
 # set default java version on shell (since 0.2.0)
+# this version will automatically be "jabba use"d every time you open up a new terminal
 jabba alias default 1.6.65
 ```
+
+> jsyk: **jabba** keeps everything under `~/.jabba` (on Linux/Mac OS X) / `%USERPROFILE%/.jabba` (on Windows).
 
 For more information see `jabba --help`.  
 
@@ -84,18 +102,30 @@ make build # or "build-release" (latter is cross-compiling jabba to different OS
 
 ## FAQ
 
-**Q**: How does it compare to "apt-get install" (and alike)?
-
-A: Single command (`jabba install <version>`) works regardless of the OS (so you don't need to remember different ways to 
-   install JDK on Mac OS X, Arch and two versions of Debian). Package name no longer matters, as well as, whether LTS is over
-   or not.
-   And you can install ANY version, not just the latest stable one. Eager to try upcoming 1.9.0 release? No need to wait -
-   `jabba install 1.9.0-110`. How about specific build of 1.8? No problem - `jabba install 1.8.73`.
-
 **Q**: What if I already have `java` installed?
 
-A: `jabba` feels perfectly fine in the environment where `java` has already been installed using some other means. You 
- can continue using system JDK and switch to `jabba`-provided one only when needed (`jabba use 1.6.65`).
+A: It's fine. You can switch between system JDK and `jabba`-provided one whenever you feel like it (`jabba use ...` / `jabba deactivate`). 
+They are not gonna conflict with each other.
+
+**Q**: How do I switch `java` globally?
+
+A: **jabba** doesn't have this functionality built-in because the exact way varies greatly between the operation systems and usually 
+involves elevated permissions. But. Here are the snippets that <u>should</u> work:    
+
+* Windows
+
+> (in powershell as administrator)
+
+<pre style="word-wrap: break-word;">
+# select jdk
+jabba use ...
+
+# modify global PATH & JAVA_HOME
+$envRegKey = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey('SYSTEM\CurrentControlSet\Control\Session Manager\Environment', $true)
+$envPath=$regKey.GetValue('Path', $null, "DoNotExpandEnvironmentNames").replace('%JAVA_HOME%/bin;', '')
+setx JAVA_HOME "$(jabba which $(jabba current))" /m
+setx PATH "%JAVA_HOME%/bin;%PATH%" /m
+</pre>
 
 ## License
 
