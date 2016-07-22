@@ -265,7 +265,7 @@ func installFromBin(source string, target string) (err error) {
 		return
 	}
 	err = executeInShell([][]string{
-		[]string{"", "mv " + source + " " + tmp},
+		[]string{"", "cp " + source + " " + tmp},
 		[]string{"Extracting " + path.Join(tmp, path.Base(source)) + " to " + target,
 			"cd " + tmp + " && echo | sh " + path.Base(source) + " && mv jdk*/ " + target},
 	})
