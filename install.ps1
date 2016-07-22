@@ -26,7 +26,7 @@ If ($env:JABBA_MAKE_INSTALL -eq "true")
 }
 else
 {
-    (wget https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing).Content > $jabbaDir/bin/jabba.exe
+    wget https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaDir/bin/jabba.exe
 }
 
 $ErrorActionPreference="SilentlyContinue"
