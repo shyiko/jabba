@@ -81,7 +81,11 @@ echo "fi"
 
 SOURCE_JABBA="\n[ -s \"$JABBA_DIR/jabba.sh\" ] && source \"$JABBA_DIR/jabba.sh\""
 
-files=("$HOME/.bashrc" "$HOME/.bash_profile" "$HOME/.profile")
+files=("$HOME/.bashrc" "$HOME/.profile")
+if [ -f "$HOME/.bash_profile" ]; then
+    files+=("$HOME/.bash_profile")
+fi
+
 for file in "${files[@]}"
 do
     touch ${file}
