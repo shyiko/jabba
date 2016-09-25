@@ -129,6 +129,20 @@ setx JAVA_HOME "$(jabba which $(jabba current))" /m
 setx PATH "%JAVA_HOME%\bin;$envPath" /m
 </pre>
 
+* Linux
+
+> (tested on Debian/Ubuntu)
+
+<pre style="word-wrap: break-word;">
+# select jdk
+jabba use ...
+
+sudo update-alternatives --install /usr/bin/java java ${JAVA_HOME%*/}/bin/java 20000
+sudo update-alternatives --install /usr/bin/javac javac ${JAVA_HOME%*/}/bin/javac 20000
+</pre>
+
+> To switch between multiple GLOBAL alternatives use `sudo update-alternatives --config java`.
+
 ## License
 
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
