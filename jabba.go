@@ -97,7 +97,7 @@ func main() {
 				}
 				return nil
 			},
-			Example: "  jabba link system@1.8.20 /Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk" +
+			Example: "  jabba link system@1.8.20 /Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk\n" +
 			"  jabba link system@1.8.20 # show link target",
 		},
 		&cobra.Command{
