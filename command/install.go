@@ -26,7 +26,7 @@ func Install(selector string) (string, error) {
 	var ver *semver.Version
 	var err error
 	// selector can be in form of <version>=<url>
-	if strings.Contains(selector, "=") {
+	if strings.Contains(selector, "=") && strings.Contains(selector, "://") {
 		split := strings.SplitN(selector, "=", 2)
 		selector = split[0]
 		// <version> has to be valid per semver
