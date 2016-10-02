@@ -112,6 +112,7 @@ func main() {
 				}
 				return nil
 			},
+			Example: "  jabba unlink system@1.8.20",
 		},
 		&cobra.Command{
 			Use:   "use [version to use]",
