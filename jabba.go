@@ -72,6 +72,10 @@ func main() {
 				if len(args) == 0 {
 					return pflag.ErrHelp
 				}
+				if strings.HasPrefix(args[0], "system@") {
+					log.Fatal("Link to system JDK can only be removed with 'unlink'" +
+						" (e.g. 'jabba unlink " + args[0] + "')")
+				}
 				err := command.Uninstall(args[0])
 				if err != nil {
 					log.Fatal(err)
