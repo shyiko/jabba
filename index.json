@@ -2,7 +2,7 @@
   "darwin": {
     "amd64": {
       "jdk": {
-        "1.9.0-140": "dmg+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+140_osx-x64_bin.dmg",
+        "1.9.0-140": "dmg+http://download.java.net/java/jdk9/archive/140/binaries/jdk-9-ea+140_osx-x64_bin.dmg",
         "1.9.0-110": "dmg+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_osx-x64_bin.dmg",
         "1.8.112": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u112-b16/jdk-8u112-macosx-x64.dmg",
         "1.8.111": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-macosx-x64.dmg",
