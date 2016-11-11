@@ -72,6 +72,10 @@ jabba ls
 # switch to a different version of JDK
 jabba use 1.6.65
 
+echo "1.8" > .jabbarc
+# switch to the JDK specified in .jabbarc (since 0.5.0)
+jabba use
+
 # list available JDK's
 jabba ls-remote
 
@@ -79,6 +83,9 @@ jabba ls-remote
 # this version will automatically be "jabba use"d every time you open up a new terminal
 jabba alias default 1.6.65
 ```
+
+> `.jabbarc` has to be a valid YAML file. JDK version can be specified as `jdk: 1.8` or simply as `1.8` 
+(same as `~1.8`, `1.8.x` `">=1.8.0 <1.9.0"` (mind the quotes)).
 
 > jsyk: **jabba** keeps everything under `~/.jabba` (on Linux/Mac OS X) / `%USERPROFILE%/.jabba` (on Windows).
 

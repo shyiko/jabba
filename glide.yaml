@@ -6,3 +6,4 @@ import:
 - package: github.com/Sirupsen/logrus
 - package: github.com/mitchellh/go-homedir
 - package: github.com/mitchellh/ioprogress
+- package: gopkg.in/yaml.v2

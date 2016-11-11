@@ -1,5 +1,5 @@
-hash: 5ef9efafa4903ca4ac341d4255708ab01fb85cbf509d132458a02a9b7e136e6b
-updated: 2016-03-23T22:02:21.333172842-07:00
+hash: e1986c4228684b36aa21e7d2dc1847d2df8a617d68b05e5963d08f934eeabd5b
+updated: 2016-10-02T19:48:08.191307746-07:00
 imports:
 - name: github.com/inconshreveable/mousetrap
   version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
@@ -19,4 +19,6 @@ imports:
   version: afce3de5756ca82699128ebae46ac95ad59d6297
   subpackages:
   - unix
+- name: gopkg.in/yaml.v2
+  version: a5b47d31c556af34a302ce5d659e6fea44d90de0
 devImports: []
