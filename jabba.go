@@ -12,6 +12,7 @@ import (
 	"io/ioutil"
 	"strings"
 	"bytes"
+	"gopkg.in/yaml.v2"
 )
 
 var version string
@@ -52,10 +53,16 @@ func main() {
 			Use:   "install [version to install]",
 			Short: "Download and install JDK",
 			RunE: func(cmd *cobra.Command, args []string) error {
+				var ver string
 				if len(args) == 0 {
-					return pflag.ErrHelp
+					ver = rc().JDK
+					if ver == "" {
+						return pflag.ErrHelp
+					}
+				} else {
+					ver = args[0]
 				}
-				ver, err := command.Install(args[0])
+				ver, err := command.Install(ver)
 				if err != nil {
 					log.Fatal(err)
 				}
@@ -122,12 +129,19 @@ func main() {
 			Use:   "use [version to use]",
 			Short: "Modify PATH & JAVA_HOME to use specific JDK",
 			RunE: func(cmd *cobra.Command, args []string) error {
+				var ver string
 				if len(args) == 0 {
-					return pflag.ErrHelp
+					ver = rc().JDK
+					if ver == "" {
+						return pflag.ErrHelp
+					}
+				} else {
+					ver = args[0]
 				}
-				return use(args[0])
+				return use(ver)
 			},
-			Example: "  jabba use 1.8",
+			Example: "  jabba use 1.8\n" +
+			"  jabba use ~1.8.73 # same as \">=1.8.73 <1.9.0\"",
 		},
 		&cobra.Command{
 			Use:   "current",
@@ -223,10 +237,16 @@ func main() {
 			Use:   "which [version]",
 			Short: "Display path to installed JDK",
 			RunE: func(cmd *cobra.Command, args []string) error {
+				var ver string
 				if len(args) == 0 {
-					return pflag.ErrHelp
+					ver = rc().JDK
+					if ver == "" {
+						return pflag.ErrHelp
+					}
+				} else {
+					ver = args[0]
 				}
-				dir, _ := command.Which(args[0])
+				dir, _ := command.Which(ver)
 				if dir != "" {
 					fmt.Println(dir)
 				}
@@ -238,8 +258,29 @@ func main() {
 	rootCmd.PersistentFlags().String("fd3", "", "")
 	rootCmd.PersistentFlags().MarkHidden("fd3")
 	if err := rootCmd.Execute(); err != nil {
-		os.Exit(-1);
+		os.Exit(-1)
 	}
+}
+
+type jabbarc struct {
+	JDK string
+}
+
+func rc() (rc jabbarc) {
+	b, err := ioutil.ReadFile(".jabbarc")
+	if err != nil {
+		return
+	}
+	// content can be a string (jdk version)
+	err = yaml.Unmarshal(b, &rc.JDK)
+	if err != nil {
+		// or a struct
+		err = yaml.Unmarshal(b, &rc)
+		if err != nil {
+			log.Fatal(".jabbarc is not valid")
+		}
+	}
+	return
 }
 
 func use(ver string) error {

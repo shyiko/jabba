@@ -65,8 +65,8 @@
       "jdk": {
         "1.9.0-140": "tgz+http://download.java.net/java/jdk9/archive/140/binaries/jdk-9-ea+140_linux-x86_bin.tar.gz",
         "1.9.0-110": "tgz+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_linux-x86_bin.tar.gz",
-        "1.8.112": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u102-b15/jdk-8u112-linux-i586.tar.gz",
-        "1.8.111": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u101-b14/jdk-8u111-linux-i586.tar.gz",
+        "1.8.112": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-i586.tar.gz",
+        "1.8.111": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-i586.tar.gz",
         "1.8.102": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-i586.tar.gz",
         "1.8.101": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-i586.tar.gz",
         "1.8.92": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-i586.tar.gz",
@@ -96,8 +96,8 @@
       "jdk": {
         "1.9.0-140": "tgz+http://download.java.net/java/jdk9/archive/140/binaries/jdk-9-ea+140_linux-x64_bin.tar.gz",
         "1.9.0-110": "tgz+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_linux-x64_bin.tar.gz",
-        "1.8.112": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u102-b15/jdk-8u112-linux-x64.tar.gz",
-        "1.8.111": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u101-b14/jdk-8u111-linux-x64.tar.gz",
+        "1.8.112": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz",
+        "1.8.111": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-linux-x64.tar.gz",
         "1.8.102": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.tar.gz",
         "1.8.101": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-linux-x64.tar.gz",
         "1.8.92": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-x64.tar.gz",
