@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.5.1](https://github.com/shyiko/jabba/compare/0.5.0...0.5.1) - 2016-11-28
+
+### Fixed
+* `link` command (it was missing `mkdir -p ...` call).
+
 ## [0.5.0](https://github.com/shyiko/jabba/compare/0.4.0...0.5.0) - 2016-11-11
 
 ### Added
