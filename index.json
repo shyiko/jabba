@@ -186,7 +186,6 @@
         "1.9.0-110": "exe+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_windows-x64_bin.exe",
         "1.8.112": "exe+http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-windows-x64.exe",
         "1.8.111": "exe+http://download.oracle.com/otn-pub/java/jdk/8u111-b14/jdk-8u111-windows-x64.exe",
-        "1.9.0-110": "exe+http://download.java.net/java/jdk9/archive/110/binaries/jdk-9-ea+110_windows-x64_bin.exe",
         "1.8.102": "exe+http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-windows-x64.exe",
         "1.8.101": "exe+http://download.oracle.com/otn-pub/java/jdk/8u101-b13/jdk-8u101-windows-x64.exe",
         "1.8.92": "exe+http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-windows-x64.exe",

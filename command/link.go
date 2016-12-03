@@ -27,6 +27,9 @@ func Link(selector string, dir string) error {
 		if err := assertJavaDistribution(dir); err != nil {
 			return err
 		}
+		if err := os.MkdirAll(filepath.Join(cfg.Dir(), "jdk"), 0755); err != nil {
+			return err
+		}
 		return os.Symlink(dir, filepath.Join(cfg.Dir(), "jdk", selector))
 	}
 }
