@@ -265,6 +265,8 @@ func installOnLinux(ver string, file string, fileType string) (err error) {
 	switch fileType {
 	case "bin":
 		err = installFromBin(file, target)
+	case "ia":
+		err = installFromIa(file, target)
 	case "tgz":
 		err = installFromTgz(file, target)
 	case "zip":
@@ -309,6 +311,23 @@ func installFromBin(source string, target string) (err error) {
 		[]string{"", "cp " + source + " " + tmp},
 		[]string{"Extracting " + filepath.Join(tmp, filepath.Base(source)) + " to " + target,
 			"cd " + tmp + " && echo | sh " + filepath.Base(source) + " && mv jdk*/ " + target},
+	})
+	if err == nil {
+		os.RemoveAll(tmp)
+	}
+	return
+}
+
+func installFromIa(source string, target string) (err error) {
+	tmp, err := ioutil.TempDir("", "jabba-i-")
+	if err != nil {
+		return
+	}
+	err = executeInShell([][]string{
+		[]string{"", "printf 'LICENSE_ACCEPTED=TRUE\\nUSER_INSTALL_DIR=" + target + "' > " +
+			filepath.Join(tmp, "installer.properties")},
+		[]string{"Extracting " + source + " to " + target,
+			"echo | sh " + source + " -i silent -f " + filepath.Join(tmp, "installer.properties")},
 	})
 	if err == nil {
 		os.RemoveAll(tmp)
