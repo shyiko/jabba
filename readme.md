@@ -1,4 +1,4 @@
-# jabba ![Latest Version](https://img.shields.io/badge/latest-0.5.1-blue.svg) [![Build Status](https://travis-ci.org/shyiko/jabba.svg?branch=master)](https://travis-ci.org/shyiko/jabba)
+# jabba ![Latest Version](https://img.shields.io/badge/latest-0.6.0-blue.svg) [![Build Status](https://travis-ci.org/shyiko/jabba.svg?branch=master)](https://travis-ci.org/shyiko/jabba)
 
 ![jabba-the-hutt](https://cloud.githubusercontent.com/assets/370176/13943697/e6098ed0-efbb-11e5-9630-3ff0d0d0403d.jpg)
 
@@ -6,7 +6,7 @@ Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.
 in Go ([gvm](https://github.com/moovweb/gvm)) or Ruby ([rvm](https://rvm.io)).
 
 Supports installation of [Oracle JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html) (default), 
-[Zulu OpenJDK](http://zulu.org/) (since 0.3.0) and from custom URLs.
+[Zulu OpenJDK](http://zulu.org/) (since 0.3.0), [IBM SDK, Java Technology Edition](https://developer.ibm.com/javasdk/) (since 0.6.0) and from custom URLs.
 
 It's written in [Go](https://golang.org/) to make maintenance easier (significantly shorter, easier to understand and less prone to errors 
 compared to pure shell implementation). Plus it enables us to support Windows natively (no need for Cygwin) without rewriting 
@@ -61,6 +61,9 @@ jabba install 1.8 # "jabba use 1.8" will be called automatically
 
 # install Zulu OpenJDK (since 0.3.0)
 jabba install zulu@1.8.72
+
+# install IBM SDK, Java Technology Edition (since 0.6.0)
+jabba install ibm@1.8.0-3.21
 
 # install from custom URL (supported qualifiers: zip (since 0.3.0), tgz, dmg, bin)
 jabba install 1.8.0-custom=tgz+http://example.com/distribution.tar.gz
@@ -154,9 +157,11 @@ sudo update-alternatives --install /usr/bin/javac javac ${JAVA_HOME%*/}/bin/java
 
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-By using this software you agree to [Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX](http://www.oracle.com/technetwork/java/javase/terms/license/index.html)
-and [Oracle Technology Network Early Adopter Development License Agreement](http://www.oracle.com/technetwork/licenses/ea-license-152003.html) (in case of EA releases) 
-(... and Apple's Software License Agreement in case of "Java for OS X"). 
+By using this software you agree to
+- [Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX](http://www.oracle.com/technetwork/java/javase/terms/license/index.html)
+- [Oracle Technology Network Early Adopter Development License Agreement](http://www.oracle.com/technetwork/licenses/ea-license-noexhibits-1938914.html) in case of EA releases
+- Apple's Software License Agreement in case of "Java for OS X"
+- [International License Agreement for Non-Warranted Programs](http://www14.software.ibm.com/cgi-bin/weblap/lap.pl?la_formnum=&li_formnum=L-PMAA-A3Z8P2&l=en) in case of IBM SDK, Java Technology Edition.
 
 This software is for educational purposes only.  
 Use it at your own risk. 
