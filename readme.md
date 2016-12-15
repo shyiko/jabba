@@ -69,6 +69,9 @@ jabba install ibm@1.8.0-3.21
 jabba install 1.8.0-custom=tgz+http://example.com/distribution.tar.gz
 jabba install 1.8.0-custom=zip+file:///opt/distribution.zip
 
+# link system JDK
+jabba link system@1.8.72 /Library/Java/JavaVirtualMachines/jdk1.8.0_72.jdk
+
 # list all installed JDK's
 jabba ls
 
