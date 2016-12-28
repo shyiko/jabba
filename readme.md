@@ -93,7 +93,7 @@ jabba alias default 1.6.65
 > `.jabbarc` has to be a valid YAML file. JDK version can be specified as `jdk: 1.8` or simply as `1.8` 
 (same as `~1.8`, `1.8.x` `">=1.8.0 <1.9.0"` (mind the quotes)).
 
-> jsyk: **jabba** keeps everything under `~/.jabba` (on Linux/Mac OS X) / `%USERPROFILE%/.jabba` (on Windows).
+> jsyk: **jabba** keeps everything under `~/.jabba` (on Linux/Mac OS X) / `%USERPROFILE%/.jabba` (on Windows). If at any point of time you decide to uninstall **jabba** - just remove this directory. 
 
 For more information see `jabba --help`.  
 
