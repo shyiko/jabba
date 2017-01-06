@@ -2,6 +2,7 @@
   "darwin": {
     "amd64": {
       "jdk": {
+        "1.9.0-151": "dmg+http://download.java.net/java/jdk9/archive/151/binaries/jdk-9-ea+151_osx-x64_bin.dmg",
         "1.9.0-150": "dmg+http://download.java.net/java/jdk9/archive/150/binaries/jdk-9-ea+150_osx-x64_bin.dmg",
         "1.9.0-149": "dmg+http://download.java.net/java/jdk9/archive/149/binaries/jdk-9-ea+149_osx-x64_bin.dmg",
         "1.9.0-148": "dmg+http://download.java.net/java/jdk9/archive/148/binaries/jdk-9-ea+148_osx-x64_bin.dmg",
@@ -119,6 +120,7 @@
   "linux": {
     "386": {
       "jdk": {
+        "1.9.0-151": "tgz+http://download.java.net/java/jdk9/archive/151/binaries/jdk-9-ea+151_linux-x86_bin.tar.gz",
         "1.9.0-150": "tgz+http://download.java.net/java/jdk9/archive/150/binaries/jdk-9-ea+150_linux-x86_bin.tar.gz",
         "1.9.0-149": "tgz+http://download.java.net/java/jdk9/archive/149/binaries/jdk-9-ea+149_linux-x86_bin.tar.gz",
         "1.9.0-148": "tgz+http://download.java.net/java/jdk9/archive/148/binaries/jdk-9-ea+148_linux-x86_bin.tar.gz",
@@ -253,6 +255,7 @@
     },
     "amd64": {
       "jdk": {
+        "1.9.0-151": "tgz+http://download.java.net/java/jdk9/archive/151/binaries/jdk-9-ea+151_linux-x64_bin.tar.gz",
         "1.9.0-150": "tgz+http://download.java.net/java/jdk9/archive/150/binaries/jdk-9-ea+150_linux-x64_bin.tar.gz",
         "1.9.0-149": "tgz+http://download.java.net/java/jdk9/archive/149/binaries/jdk-9-ea+149_linux-x64_bin.tar.gz",
         "1.9.0-148": "tgz+http://download.java.net/java/jdk9/archive/148/binaries/jdk-9-ea+148_linux-x64_bin.tar.gz",
@@ -434,6 +437,7 @@
   "windows": {
     "amd64": {
       "jdk": {
+        "1.9.0-151": "exe+http://download.java.net/java/jdk9/archive/151/binaries/jdk-9-ea+151_windows-x64_bin.exe",
         "1.9.0-150": "exe+http://download.java.net/java/jdk9/archive/150/binaries/jdk-9-ea+150_windows-x64_bin.exe",
         "1.9.0-149": "exe+http://download.java.net/java/jdk9/archive/149/binaries/jdk-9-ea+149_windows-x64_bin.exe",
         "1.9.0-148": "exe+http://download.java.net/java/jdk9/archive/148/binaries/jdk-9-ea+148_windows-x64_bin.exe",
