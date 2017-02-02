@@ -254,6 +254,7 @@
         "1.6.0": "bin+http://download.oracle.com/otn-pub/java/jdk/6/jdk-6-linux-i586.bin"
       },
       "jdk@ibm": {
+        "1.8.0-4.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.4.0/linux/x86/ibm-java-sdk-8.0-4.0-i386-archive.bin",
         "1.8.0-3.22": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.3.22/linux/x86/ibm-java-sdk-8.0-3.22-i386-archive.bin",
         "1.8.0-3.21": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.3.21/linux/x86/ibm-java-sdk-8.0-3.21-i386-archive.bin",
         "1.7.1-3.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.3.60/linux/x86/ibm-java-sdk-7.1-3.60-i386-archive.bin",
@@ -389,6 +390,7 @@
         "1.6.5": "bin+http://download.oracle.com/otn-pub/java/jdk/6u5b/jdk-6u5-linux-x64.bin"
       },
       "jdk@ibm": {
+        "1.8.0-4.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.4.0/linux/x64/ibm-java-sdk-8.0-4.0-x86_64-archive.bin",
         "1.8.0-3.22": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.3.22/linux/x64/ibm-java-sdk-8.0-3.22-x86_64-archive.bin",
         "1.8.0-3.21": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.3.21/linux/x64/ibm-java-sdk-8.0-3.21-x86_64-archive.bin",
         "1.7.1-3.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.3.60/linux/x64/ibm-java-sdk-7.1-3.60-x86_64-archive.bin",
