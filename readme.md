@@ -25,15 +25,15 @@ SBT/Maven/Gradle should <u>ideally</u> be "fixed in place" by [sbt-launcher][1]/
  
 ## Installation
 
-> (use the same command to upgrade)
-
-* Linux/Mac OS X
+* **macOS / Linux**
 
 > (in bash/zsh/...)
 
 ```sh
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
 ```
+
+> (use the same command to upgrade)
 
 > In [fish](https://fishshell.com/) command looks a little bit different - 
 `curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash; and . ~/.jabba/jabba.fish` 
@@ -45,13 +45,48 @@ curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.ja
 [wget](https://www.gnu.org/software/wget/manual/wget.html#Proxies) manpage. 
 Usually simple `http_proxy=http://proxy-server:port https_proxy=http://proxy-server:port curl -sL ...` is enough. 
 
-* Windows 10
+* **Docker**
+
+While you can obviously use the same snippet as above, chances are you don't want jabba binary & shell 
+integration script(s) to be included in the final Docker image, all you want is a JDK. In this case 
+use the following `Dockerfile` (this is just an example, adjust if needed)
+
+```dockerfile
+FROM buildpack-deps:jessie-curl
+
+# Server JRE (https://goo.gl/2MsPoh)
+ENV JAVA_VERSION "sjre@1.8.121"
+
+RUN curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | \
+    JABBA_COMMAND="install $JAVA_VERSION" bash
+
+ENV JAVA_HOME /root/.jabba/jdk/$JAVA_VERSION
+ENV PATH $JAVA_HOME/bin:$PATH
+```
+
+> (build & run as usual)
+
+```sh
+$ docker build -t sjre:1.8.121 .
+
+$ docker run -it --rm sjre:1.8.121 java -version
+
+java version "1.8.0_121"
+Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
+Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
+```
+
+* **Windows 10**
 
 > (in powershell)
 
 ```powershell
-Invoke-Expression (wget https://github.com/shyiko/jabba/raw/master/install.ps1 -UseBasicParsing).Content
+Invoke-Expression (
+        wget https://github.com/shyiko/jabba/raw/master/install.ps1 -UseBasicParsing
+    ).Content
 ```
+
+> (use the same command to upgrade)
 
 ## Usage
 
