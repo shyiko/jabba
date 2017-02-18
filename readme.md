@@ -49,7 +49,8 @@ Usually simple `http_proxy=http://proxy-server:port https_proxy=http://proxy-ser
 
 While you can obviously use the same snippet as above, chances are you don't want jabba binary & shell 
 integration script(s) to be included in the final Docker image, all you want is a JDK. In this case 
-use the following `Dockerfile` (this is just an example, adjust if needed)
+use the following `Dockerfile` (this is just an example; adjust if needed) (when `JABBA_COMMAND` env variable is set 
+`install.sh` downloads `jabba` binary, executes specified command and then deletes the binary)
 
 ```dockerfile
 FROM buildpack-deps:jessie-curl
