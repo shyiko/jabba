@@ -25,7 +25,7 @@ SBT/Maven/Gradle should <u>ideally</u> be "fixed in place" by [sbt-launcher][1]/
  
 ## Installation
 
-* **macOS / Linux**
+#### macOS / Linux
 
 > (in bash/zsh/...)
 
@@ -45,7 +45,7 @@ curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.ja
 [wget](https://www.gnu.org/software/wget/manual/wget.html#Proxies) manpage. 
 Usually simple `http_proxy=http://proxy-server:port https_proxy=http://proxy-server:port curl -sL ...` is enough. 
 
-* **Docker**
+#### Docker
 
 While you can obviously use the same snippet as above, chances are you don't want jabba binary & shell 
 integration script(s) to be included in the final Docker image, all you want is a JDK. In this case 
@@ -77,7 +77,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
 Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
 ```
 
-* **Windows 10**
+#### Windows 10
 
 > (in powershell)
 
