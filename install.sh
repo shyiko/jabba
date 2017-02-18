@@ -45,6 +45,10 @@ esac
 echo "Installing v$JABBA_VERSION..."
 echo
 
+if [ ! -f "${JABBA_DIR}/bin/jabba" ]; then
+    JABBA_SELF_DESTRUCT_AFTER_COMMAND="true"
+fi
+
 mkdir -p ${JABBA_DIR}/bin
 
 if [ "$JABBA_MAKE_INSTALL" == "true" ]; then
@@ -59,6 +63,15 @@ if ! ${JABBA_DIR}/bin/jabba --version &>/dev/null; then
 Check your Internet connection / proxy settings and try again.
 If the problem persists - please create a ticket at https://github.com/shyiko/jabba/issue."
     exit 1
+fi
+
+if [ "$JABBA_COMMAND" != "" ]; then
+    ${JABBA_DIR}/bin/jabba $JABBA_COMMAND
+    if [ "$JABBA_SELF_DESTRUCT_AFTER_COMMAND" == "true" ]; then
+        rm -f ${JABBA_DIR}/bin/jabba
+        rmdir ${JABBA_DIR}/bin
+        exit 0
+    fi
 fi
 
 {
