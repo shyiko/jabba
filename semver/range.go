@@ -1,9 +1,9 @@
 package semver
 
 import (
+	"fmt"
 	"github.com/wmark/semver"
 	"strings"
-	"fmt"
 )
 
 type Range struct {
@@ -26,7 +26,7 @@ func ParseRange(raw string) (*Range, error) {
 	// selector can be either <version> or <qualifier>@<version>
 	if strings.Contains(raw, "@") {
 		p.qualifier = raw[0:strings.Index(raw, "@")]
-		raw = raw[strings.Index(raw, "@") + 1:len(raw)]
+		raw = raw[strings.Index(raw, "@")+1:]
 	}
 	parsed, err := semver.NewRange(raw)
 	if err != nil {

@@ -4,8 +4,8 @@ import (
 	"errors"
 	"github.com/shyiko/jabba/cfg"
 	"github.com/shyiko/jabba/semver"
-	"path/filepath"
 	"os"
+	"path/filepath"
 	"strings"
 )
 

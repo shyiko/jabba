@@ -1,9 +1,9 @@
 package semver
 
 import (
+	"fmt"
 	"github.com/wmark/semver"
 	"strings"
-	"fmt"
 )
 
 type Version struct {
@@ -33,7 +33,7 @@ func ParseVersion(raw string) (*Version, error) {
 	// selector can be either <version> or <qualifier>@<version>
 	if strings.Contains(raw, "@") {
 		p.qualifier = raw[0:strings.Index(raw, "@")]
-		raw = raw[strings.Index(raw, "@") + 1:len(raw)]
+		raw = raw[strings.Index(raw, "@")+1:]
 	}
 	parsed, err := semver.NewVersion(raw)
 	if err != nil {

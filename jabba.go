@@ -1,32 +1,34 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
+	"io/ioutil"
 	"os"
-	"github.com/spf13/cobra"
-	"github.com/spf13/pflag"
+	"sort"
+	"strings"
+
+	yaml "gopkg.in/yaml.v2"
+
+	log "github.com/Sirupsen/logrus"
 	"github.com/shyiko/jabba/command"
 	"github.com/shyiko/jabba/semver"
-	log "github.com/Sirupsen/logrus"
-	"sort"
-	"io/ioutil"
-	"strings"
-	"bytes"
-	"gopkg.in/yaml.v2"
+	"github.com/spf13/cobra"
+	"github.com/spf13/pflag"
 )
 
 var version string
 var rootCmd *cobra.Command
 
 func init() {
-	log.SetFormatter(&SimpleFormatter{})
+	log.SetFormatter(&simpleFormatter{})
 	// todo: make it configurable through the command line
 	log.SetLevel(log.InfoLevel)
 }
 
-type SimpleFormatter struct {}
+type simpleFormatter struct{}
 
-func (f *SimpleFormatter) Format(entry *log.Entry) ([]byte, error) {
+func (f *simpleFormatter) Format(entry *log.Entry) ([]byte, error) {
 	b := &bytes.Buffer{}
 	fmt.Fprintf(b, "%s ", entry.Message)
 	for k, v := range entry.Data {
@@ -38,7 +40,7 @@ func (f *SimpleFormatter) Format(entry *log.Entry) ([]byte, error) {
 
 func main() {
 	rootCmd = &cobra.Command{
-		Use: "jabba",
+		Use:  "jabba",
 		Long: "Java Version Manager (https://github.com/shyiko/jabba).",
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if showVersion, _ := cmd.Flags().GetBool("version"); !showVersion {
@@ -69,8 +71,8 @@ func main() {
 				return use(ver)
 			},
 			Example: "  jabba install 1.8\n" +
-			"  jabba install ~1.8.73 # same as \">=1.8.73 <1.9.0\"\n" +
-			"  jabba install 1.8.73=dmg+http://.../jdk-9-ea+110_osx-x64_bin.dmg",
+				"  jabba install ~1.8.73 # same as \">=1.8.73 <1.9.0\"\n" +
+				"  jabba install 1.8.73=dmg+http://.../jdk-9-ea+110_osx-x64_bin.dmg",
 		},
 		&cobra.Command{
 			Use:   "uninstall [version to uninstall]",
@@ -102,14 +104,13 @@ func main() {
 					if value := command.GetLink(args[0]); value != "" {
 						fmt.Println(value)
 					}
-				} else
-				if err := command.Link(args[0], args[1]); err != nil {
+				} else if err := command.Link(args[0], args[1]); err != nil {
 					log.Fatal(err)
 				}
 				return nil
 			},
 			Example: "  jabba link system@1.8.20 /Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk\n" +
-			"  jabba link system@1.8.20 # show link target",
+				"  jabba link system@1.8.20 # show link target",
 		},
 		&cobra.Command{
 			Use:   "unlink [name]",
@@ -141,7 +142,7 @@ func main() {
 				return use(ver)
 			},
 			Example: "  jabba use 1.8\n" +
-			"  jabba use ~1.8.73 # same as \">=1.8.73 <1.9.0\"",
+				"  jabba use ~1.8.73 # same as \">=1.8.73 <1.9.0\"",
 		},
 		&cobra.Command{
 			Use:   "current",
@@ -211,14 +212,13 @@ func main() {
 					if value := command.GetAlias(args[0]); value != "" {
 						fmt.Println(value)
 					}
-				} else
-				if err := command.SetAlias(args[0], args[1]); err != nil {
+				} else if err := command.SetAlias(args[0], args[1]); err != nil {
 					log.Fatal(err)
 				}
 				return nil
 			},
 			Example: "  jabba alias default 1.8\n" +
-			"  jabba alias default # show value bound to an alias",
+				"  jabba alias default # show value bound to an alias",
 		},
 		&cobra.Command{
 			Use:   "unalias [name]",

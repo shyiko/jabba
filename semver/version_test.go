@@ -1,9 +1,9 @@
 package semver
 
 import (
-	"testing"
 	"reflect"
 	"sort"
+	"testing"
 )
 
 func TestSort(t *testing.T) {

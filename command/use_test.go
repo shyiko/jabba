@@ -1,21 +1,22 @@
 package command
 
 import (
-	"testing"
-	"time"
-	"os"
 	"github.com/shyiko/jabba/cfg"
+	"os"
 	"reflect"
 	"runtime"
+	"testing"
+	"time"
 )
 
 type FileInfoMock string
-func (f FileInfoMock) Name() string { return string(f) }
-func (f FileInfoMock) Size() int64 { return 0 }
-func (f FileInfoMock) Mode() os.FileMode { return os.FileMode(0) }
-func (f FileInfoMock) ModTime() time.Time {	return time.Time{} }
-func (f FileInfoMock) IsDir() bool { return true }
-func (f FileInfoMock) Sys() interface{} { return nil }
+
+func (f FileInfoMock) Name() string       { return string(f) }
+func (f FileInfoMock) Size() int64        { return 0 }
+func (f FileInfoMock) Mode() os.FileMode  { return os.FileMode(0) }
+func (f FileInfoMock) ModTime() time.Time { return time.Time{} }
+func (f FileInfoMock) IsDir() bool        { return true }
+func (f FileInfoMock) Sys() interface{}   { return nil }
 
 func TestUse(t *testing.T) {
 	prevPath := os.Getenv("PATH")
@@ -27,7 +28,7 @@ func TestUse(t *testing.T) {
 			FileInfoMock("1.6.0"), FileInfoMock("1.7.0"), FileInfoMock("1.7.2"), FileInfoMock("1.8.0"),
 		}, nil
 	}
-	os.Setenv("PATH", "/usr/local/bin:" + cfg.Dir() + "/jdk/1.6.0/bin:/usr/bin")
+	os.Setenv("PATH", "/usr/local/bin:"+cfg.Dir()+"/jdk/1.6.0/bin:/usr/bin")
 	os.Setenv("JAVA_HOME", "/system-jdk")
 	actual, err := Use("1.7")
 	if err != nil {

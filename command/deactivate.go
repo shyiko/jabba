@@ -1,8 +1,8 @@
 package command
 
 import (
-	"os"
 	"github.com/shyiko/jabba/cfg"
+	"os"
 	"path/filepath"
 	"regexp"
 )

@@ -2,10 +2,10 @@ package w32
 
 import (
 	"errors"
+	"fmt"
+	"os"
 	"syscall"
 	"unsafe"
-	"os"
-	"fmt"
 )
 
 var (
@@ -29,13 +29,13 @@ func ShellExecuteAndWait(hwnd HWND, lpOperation, lpFile, lpParameters, lpDirecto
 		lpctstrDirectory = LPCTSTR(unsafe.Pointer(syscall.StringToUTF16Ptr(lpDirectory)))
 	}
 	i := &SHELLEXECUTEINFO{
-		fMask: SEE_MASK_NOCLOSEPROCESS,
-		hwnd: hwnd,
-		lpVerb: lpctstrVerb,
-		lpFile: LPCTSTR(unsafe.Pointer(syscall.StringToUTF16Ptr(lpFile))),
+		fMask:        SEE_MASK_NOCLOSEPROCESS,
+		hwnd:         hwnd,
+		lpVerb:       lpctstrVerb,
+		lpFile:       LPCTSTR(unsafe.Pointer(syscall.StringToUTF16Ptr(lpFile))),
 		lpParameters: lpctstrParameters,
-		lpDirectory: lpctstrDirectory,
-		nShow: nShowCmd,
+		lpDirectory:  lpctstrDirectory,
+		nShow:        nShowCmd,
 	}
 	i.cbSize = DWORD(unsafe.Sizeof(*i))
 	return ShellExecuteEx(i)
@@ -43,7 +43,7 @@ func ShellExecuteAndWait(hwnd HWND, lpOperation, lpFile, lpParameters, lpDirecto
 
 func ShellExecuteEx(pExecInfo *SHELLEXECUTEINFO) error {
 	ret, _, _ := procShellExecuteEx.Call(uintptr(unsafe.Pointer(pExecInfo)))
-	if ret == 1 && pExecInfo.fMask & SEE_MASK_NOCLOSEPROCESS != 0 {
+	if ret == 1 && pExecInfo.fMask&SEE_MASK_NOCLOSEPROCESS != 0 {
 		s, e := syscall.WaitForSingleObject(syscall.Handle(pExecInfo.hProcess), syscall.INFINITE)
 		switch s {
 		case syscall.WAIT_OBJECT_0:

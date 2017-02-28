@@ -12,7 +12,12 @@ clean:
 	rm -f ./jabba
 	rm -rf ./build
 
+fmt:
+	gofmt -l -s -w `find . -type f -name '*.go' -not -path "./vendor/*"`
+
 test:
+	go vet `go list ./... | grep -v /vendor/`
+	SRC=`find . -type f -name '*.go' -not -path "./vendor/*"` && gofmt -l -s $$SRC | read && gofmt -l -s -d $$SRC && exit 1 || true
 	go test `go list ./... | grep -v /vendor/`
 
 test-coverage:

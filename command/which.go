@@ -1,8 +1,8 @@
 package command
 
 import (
-	"path/filepath"
 	"github.com/shyiko/jabba/cfg"
+	"path/filepath"
 )
 
 func Which(selector string) (string, error) {

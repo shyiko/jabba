@@ -1,24 +1,24 @@
 package command
 
 import (
-	"os/exec"
-	"fmt"
-	"runtime"
+	"archive/zip"
 	"errors"
-	"strings"
-	"os"
-	"io/ioutil"
-	"path/filepath"
-	"net/http"
-	"io"
+	"fmt"
+	log "github.com/Sirupsen/logrus"
+	"github.com/mitchellh/ioprogress"
 	"github.com/shyiko/jabba/cfg"
 	"github.com/shyiko/jabba/semver"
-	log "github.com/Sirupsen/logrus"
-	"regexp"
-	"github.com/mitchellh/ioprogress"
-	"sort"
-	"archive/zip"
 	"github.com/shyiko/jabba/w32"
+	"io"
+	"io/ioutil"
+	"net/http"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"regexp"
+	"runtime"
+	"sort"
+	"strings"
 )
 
 func Install(selector string) (string, error) {
@@ -81,7 +81,7 @@ func Install(selector string) (string, error) {
 				tt[i] = v.String()
 			}
 			return "", errors.New("No compatible version found for " + selector +
-			"\nValid install targets: " + strings.Join(tt, ", "))
+				"\nValid install targets: " + strings.Join(tt, ", "))
 		}
 	}
 	url := releaseMap[ver]
@@ -89,7 +89,7 @@ func Install(selector string) (string, error) {
 		return "", errors.New("URL must contain qualifier, e.g. tgz+http://...")
 	}
 	var fileType string = url[0:strings.Index(url, "+")]
-	url = url[strings.Index(url, "+") + 1:]
+	url = url[strings.Index(url, "+")+1:]
 	var file string
 	var deleteFileWhenFinnished bool
 	if strings.HasPrefix(url, "file://") {
@@ -152,11 +152,11 @@ func download(url string, fileType string) (file string, err error) {
 		if err != nil {
 			return
 		}
-		err = os.Rename(tmp.Name(), tmp.Name() + ".exe")
+		err = os.Rename(tmp.Name(), tmp.Name()+".exe")
 		if err != nil {
 			return
 		}
-		tmp, err = os.OpenFile(tmp.Name() + ".exe", os.O_RDWR, 0600)
+		tmp, err = os.OpenFile(tmp.Name()+".exe", os.O_RDWR, 0600)
 		if err != nil {
 			return
 		}
@@ -192,7 +192,7 @@ func download(url string, fileType string) (file string, err error) {
 	defer res.Body.Close()
 	progressTracker := &ioprogress.Reader{
 		Reader: res.Body,
-		Size: res.ContentLength,
+		Size:   res.ContentLength,
 	}
 	_, err = io.Copy(tmp, progressTracker)
 	if err != nil {
@@ -207,7 +207,7 @@ func installOnDarwin(ver string, file string, fileType string) (err error) {
 	case "dmg":
 		err = installFromDmg(file, target)
 	case "zip":
-		err = installFromZip(file, target + "/Contents/Home")
+		err = installFromZip(file, target+"/Contents/Home")
 	default:
 		return errors.New(fileType + " is not supported")
 	}
@@ -229,30 +229,30 @@ func installFromDmg(source string, target string) error {
 	mountpoint := tmp + "/" + basename
 	pkgdir := tmp + "/" + basename + "-pkg"
 	err = executeInShell([][]string{
-		[]string{"Mounting " + source, "hdiutil mount -mountpoint " + mountpoint + " " + source},
-		[]string{"Extracting " + source + " to " + target,
+		{"Mounting " + source, "hdiutil mount -mountpoint " + mountpoint + " " + source},
+		{"Extracting " + source + " to " + target,
 			"pkgutil --expand " + mountpoint + "/*.pkg " + pkgdir},
-		[]string{"", "mkdir -p " + target},
+		{"", "mkdir -p " + target},
 
 		// todo: instead of relying on a certain pkg structure - find'n'extract all **/*/Payload
 
 		// oracle
-		[]string{"",
+		{"",
 			"if [ -f " + pkgdir + "/jdk*.pkg/Payload" + " ]; then " +
-			"cd " + pkgdir + "/jdk*.pkg && " +
-			"cat Payload | gzip -d | cpio -i && " +
-			"mv Contents " + target + "/" +
-			"; fi"},
+				"cd " + pkgdir + "/jdk*.pkg && " +
+				"cat Payload | gzip -d | cpio -i && " +
+				"mv Contents " + target + "/" +
+				"; fi"},
 
 		// apple
-		[]string{"",
+		{"",
 			"if [ -f " + pkgdir + "/JavaForOSX.pkg/Payload" + " ]; then " +
-			"cd " + pkgdir + "/JavaForOSX.pkg && " +
-			"cat Payload | gzip -d | cpio -i && " +
-			"mv Library/Java/JavaVirtualMachines/*/Contents " + target + "/" +
-			"; fi"},
+				"cd " + pkgdir + "/JavaForOSX.pkg && " +
+				"cat Payload | gzip -d | cpio -i && " +
+				"mv Library/Java/JavaVirtualMachines/*/Contents " + target + "/" +
+				"; fi"},
 
-		[]string{"Unmounting " + source, "hdiutil unmount " + mountpoint},
+		{"Unmounting " + source, "hdiutil unmount " + mountpoint},
 	})
 	if err == nil {
 		os.RemoveAll(tmp)
@@ -308,8 +308,8 @@ func installFromBin(source string, target string) (err error) {
 		return
 	}
 	err = executeInShell([][]string{
-		[]string{"", "cp " + source + " " + tmp},
-		[]string{"Extracting " + filepath.Join(tmp, filepath.Base(source)) + " to " + target,
+		{"", "cp " + source + " " + tmp},
+		{"Extracting " + filepath.Join(tmp, filepath.Base(source)) + " to " + target,
 			"cd " + tmp + " && echo | sh " + filepath.Base(source) + " && mv jdk*/ " + target},
 	})
 	if err == nil {
@@ -324,9 +324,9 @@ func installFromIa(source string, target string) (err error) {
 		return
 	}
 	err = executeInShell([][]string{
-		[]string{"", "printf 'LICENSE_ACCEPTED=TRUE\\nUSER_INSTALL_DIR=" + target + "' > " +
+		{"", "printf 'LICENSE_ACCEPTED=TRUE\\nUSER_INSTALL_DIR=" + target + "' > " +
 			filepath.Join(tmp, "installer.properties")},
-		[]string{"Extracting " + source + " to " + target,
+		{"Extracting " + source + " to " + target,
 			"echo | sh " + source + " -i silent -f " + filepath.Join(tmp, "installer.properties")},
 	})
 	if err == nil {
@@ -338,14 +338,14 @@ func installFromIa(source string, target string) (err error) {
 func installFromExe(source string, target string) error {
 	log.Info("Unpacking " + source + " to " + target)
 	// using ShellExecute instead of exec.Command so user could decide whether to trust the installer when UAC is active
-	return w32.ShellExecuteAndWait(w32.HWND(0), "open", source, "/s INSTALLDIR=\"" + target +
+	return w32.ShellExecuteAndWait(w32.HWND(0), "open", source, "/s INSTALLDIR=\""+target+
 		"\" STATIC=1 AUTO_UPDATE=0 WEB_JAVA=0 WEB_ANALYTICS=0 REBOOT=0", "", 3)
 }
 
 func installFromTgz(source string, target string) error {
 	return executeInShell([][]string{
-		[]string{"", "mkdir -p " + target},
-		[]string{"Extracting " + source + " to " + target,
+		{"", "mkdir -p " + target},
+		{"Extracting " + source + " to " + target,
 			"tar xzf " + source + " --strip-components=1 -C " + target},
 	})
 }
@@ -381,7 +381,7 @@ func unzip(source string, target string, strip bool) error {
 		}
 		for i := 0; i < len(entriesPerLevel); i++ {
 			if entriesPerLevel[i] > 1 && i > 0 {
-				prefixToStrip = prefixMap[i - 1]
+				prefixToStrip = prefixMap[i-1]
 				break
 			}
 		}
@@ -441,8 +441,8 @@ func assertJavaDistribution(target string) error {
 	var err error
 	if _, err = os.Stat(path); os.IsNotExist(err) {
 		err = errors.New(path + " wasn't found. " +
-		"If you believe this is an error - please create a ticket at https://github.com/shyiko/jabba/issue " +
-		"(specify OS and command that was used)")
+			"If you believe this is an error - please create a ticket at https://github.com/shyiko/jabba/issue " +
+			"(specify OS and command that was used)")
 	}
 	return err
 }

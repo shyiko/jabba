@@ -1,13 +1,14 @@
 package command
 
 import (
-	"io/ioutil"
 	"encoding/json"
-	"runtime"
-	"net/http"
 	"errors"
+	"io/ioutil"
+	"net/http"
+	"runtime"
 	"strconv"
 	"strings"
+
 	"github.com/shyiko/jabba/cfg"
 	"github.com/shyiko/jabba/semver"
 )
@@ -33,7 +34,7 @@ func LsRemote() (map[*semver.Version]string, error) {
 			if !strings.Contains(key, "@") {
 				continue
 			}
-			prefix = key[strings.Index(key, "@") + 1:] + "@"
+			prefix = key[strings.Index(key, "@")+1:] + "@"
 		}
 		for ver, url := range value {
 			v, err := semver.ParseVersion(prefix + ver)

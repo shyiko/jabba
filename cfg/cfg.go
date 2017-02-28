@@ -1,10 +1,10 @@
 package cfg
 
 import (
-	"path"
-	"github.com/mitchellh/go-homedir"
 	log "github.com/Sirupsen/logrus"
+	"github.com/mitchellh/go-homedir"
 	"os"
+	"path"
 )
 
 func Dir() string {
