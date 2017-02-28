@@ -2,6 +2,9 @@
   "darwin": {
     "amd64": {
       "jdk": {
+        "1.9.0-158": "dmg+http://download.java.net/java/jdk9/archive/158/binaries/jdk-9-ea+158_osx-x64_bin.dmg",
+        "1.9.0-157": "dmg+http://download.java.net/java/jdk9/archive/157/binaries/jdk-9-ea+157_osx-x64_bin.dmg",
+        "1.9.0-156": "dmg+http://download.java.net/java/jdk9/archive/156/binaries/jdk-9-ea+156_osx-x64_bin.dmg",
         "1.9.0-155": "dmg+http://download.java.net/java/jdk9/archive/155/binaries/jdk-9-ea+155_osx-x64_bin.dmg",
         "1.9.0-154": "dmg+http://download.java.net/java/jdk9/archive/154/binaries/jdk-9-ea+154_osx-x64_bin.dmg",
         "1.9.0-153": "dmg+http://download.java.net/java/jdk9/archive/153/binaries/jdk-9-ea+153_osx-x64_bin.dmg",
@@ -125,6 +128,9 @@
   "linux": {
     "386": {
       "jdk": {
+        "1.9.0-158": "tgz+http://download.java.net/java/jdk9/archive/158/binaries/jdk-9-ea+158_linux-x86_bin.tar.gz",
+        "1.9.0-157": "tgz+http://download.java.net/java/jdk9/archive/157/binaries/jdk-9-ea+157_linux-x86_bin.tar.gz",
+        "1.9.0-156": "tgz+http://download.java.net/java/jdk9/archive/156/binaries/jdk-9-ea+156_linux-x86_bin.tar.gz",
         "1.9.0-155": "tgz+http://download.java.net/java/jdk9/archive/155/binaries/jdk-9-ea+155_linux-x86_bin.tar.gz",
         "1.9.0-154": "tgz+http://download.java.net/java/jdk9/archive/154/binaries/jdk-9-ea+154_linux-x86_bin.tar.gz",
         "1.9.0-153": "tgz+http://download.java.net/java/jdk9/archive/153/binaries/jdk-9-ea+153_linux-x86_bin.tar.gz",
@@ -273,6 +279,9 @@
     },
     "amd64": {
       "jdk": {
+        "1.9.0-158": "tgz+http://download.java.net/java/jdk9/archive/158/binaries/jdk-9-ea+158_linux-x64_bin.tar.gz",
+        "1.9.0-157": "tgz+http://download.java.net/java/jdk9/archive/157/binaries/jdk-9-ea+157_linux-x64_bin.tar.gz",
+        "1.9.0-156": "tgz+http://download.java.net/java/jdk9/archive/156/binaries/jdk-9-ea+156_linux-x64_bin.tar.gz",
         "1.9.0-155": "tgz+http://download.java.net/java/jdk9/archive/155/binaries/jdk-9-ea+155_linux-x64_bin.tar.gz",
         "1.9.0-154": "tgz+http://download.java.net/java/jdk9/archive/154/binaries/jdk-9-ea+154_linux-x64_bin.tar.gz",
         "1.9.0-153": "tgz+http://download.java.net/java/jdk9/archive/153/binaries/jdk-9-ea+153_linux-x64_bin.tar.gz",
@@ -512,6 +521,9 @@
   "windows": {
     "amd64": {
       "jdk": {
+        "1.9.0-158": "exe+http://download.java.net/java/jdk9/archive/158/binaries/jdk-9-ea+158_windows-x64_bin.exe",
+        "1.9.0-157": "exe+http://download.java.net/java/jdk9/archive/157/binaries/jdk-9-ea+157_windows-x64_bin.exe",
+        "1.9.0-156": "exe+http://download.java.net/java/jdk9/archive/156/binaries/jdk-9-ea+156_windows-x64_bin.exe",
         "1.9.0-155": "exe+http://download.java.net/java/jdk9/archive/155/binaries/jdk-9-ea+155_windows-x64_bin.exe",
         "1.9.0-154": "exe+http://download.java.net/java/jdk9/archive/154/binaries/jdk-9-ea+154_windows-x64_bin.exe",
         "1.9.0-153": "exe+http://download.java.net/java/jdk9/archive/153/binaries/jdk-9-ea+153_windows-x64_bin.exe",
