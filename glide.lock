@@ -1,6 +1,8 @@
-hash: e1986c4228684b36aa21e7d2dc1847d2df8a617d68b05e5963d08f934eeabd5b
-updated: 2016-10-02T19:48:08.191307746-07:00
+hash: a43628af8a74048156fb6184a2065f2ee2445810e0c6f06c647b66c9a960fb4b
+updated: 2017-02-27T18:10:41.882588613-08:00
 imports:
+- name: github.com/hashicorp/go-rootcerts
+  version: 6bb64b370b90e7ef1fa532be9e591a81c3493e00
 - name: github.com/inconshreveable/mousetrap
   version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
 - name: github.com/mitchellh/go-homedir
@@ -21,4 +23,4 @@ imports:
   - unix
 - name: gopkg.in/yaml.v2
   version: a5b47d31c556af34a302ce5d659e6fea44d90de0
-devImports: []
+testImports: []

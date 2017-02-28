@@ -7,3 +7,4 @@ import:
 - package: github.com/mitchellh/go-homedir
 - package: github.com/mitchellh/ioprogress
 - package: gopkg.in/yaml.v2
+- package: github.com/hashicorp/go-rootcerts
