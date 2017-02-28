@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.6.1](https://github.com/shyiko/jabba/compare/0.6.0...0.6.1) - 2017-02-27
 
 ### Fixed
-* `x509: certificate signed by unknown authority` while executing `jabba ls-remote` ([#56](https://github.com/shyiko/jabba/issues/56)).
+* `x509: certificate signed by unknown authority` while executing `jabba ls-remote` (macOS) ([#56](https://github.com/shyiko/jabba/issues/56)).
 
 ## [0.6.0](https://github.com/shyiko/jabba/compare/0.5.1...0.6.0) - 2016-12-10
 
