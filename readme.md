@@ -2,8 +2,7 @@
 
 ![jabba-the-hutt](https://cloud.githubusercontent.com/assets/370176/13943697/e6098ed0-efbb-11e5-9630-3ff0d0d0403d.jpg)
 
-Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js). You might have come across similar beauty
-in Go ([gvm](https://github.com/moovweb/gvm)) or Ruby ([rvm](https://rvm.io)).
+Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js) / [rvm](https://rvm.io) (Ruby).
 
 Supports installation of [Oracle JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html) (default), 
 [Zulu OpenJDK](http://zulu.org/) (since 0.3.0), [IBM SDK, Java Technology Edition](https://developer.ibm.com/javasdk/) (since 0.6.0) and from custom URLs.
