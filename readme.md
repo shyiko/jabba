@@ -166,7 +166,7 @@ involves elevated permissions. But. Here are the snippets that <u>should</u> wor
 
 > (in powershell as administrator)
 
-<pre style="word-wrap: break-word;">
+```
 # select jdk
 jabba use ...
 
@@ -175,19 +175,19 @@ $envRegKey = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey('SYSTEM\Current
 $envPath=$envRegKey.GetValue('Path', $null, "DoNotExpandEnvironmentNames").replace('%JAVA_HOME%\bin;', '')
 [Environment]::SetEnvironmentVariable('JAVA_HOME', "$(jabba which $(jabba current))", 'Machine')
 [Environment]::SetEnvironmentVariable('PATH', "%JAVA_HOME%\bin;$envPath", 'Machine')
-</pre>
+```
 
 * Linux
 
 > (tested on Debian/Ubuntu)
 
-<pre style="word-wrap: break-word;">
+```
 # select jdk
 jabba use ...
 
 sudo update-alternatives --install /usr/bin/java java ${JAVA_HOME%*/}/bin/java 20000
 sudo update-alternatives --install /usr/bin/javac javac ${JAVA_HOME%*/}/bin/javac 20000
-</pre>
+```
 
 > To switch between multiple GLOBAL alternatives use `sudo update-alternatives --config java`.
 
