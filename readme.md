@@ -173,8 +173,8 @@ jabba use ...
 # modify global PATH & JAVA_HOME
 $envRegKey = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey('SYSTEM\CurrentControlSet\Control\Session Manager\Environment', $true)
 $envPath=$envRegKey.GetValue('Path', $null, "DoNotExpandEnvironmentNames").replace('%JAVA_HOME%\bin;', '')
-setx JAVA_HOME "$(jabba which $(jabba current))" /m
-setx PATH "%JAVA_HOME%\bin;$envPath" /m
+[Environment]::SetEnvironmentVariable('JAVA_HOME', "$(jabba which $(jabba current))", 'Machine')
+[Environment]::SetEnvironmentVariable('PATH', "%JAVA_HOME%\bin;$envPath", 'Machine')
 </pre>
 
 * Linux
