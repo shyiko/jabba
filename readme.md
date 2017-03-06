@@ -4,7 +4,7 @@
 
 Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js) / [rvm](https://rvm.io) (Ruby).
 
-Supports installation of [Oracle JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html) (default), 
+Supports installation of [Oracle JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html) (default)/ [Server JRE](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html), 
 [Zulu OpenJDK](http://zulu.org/) (since 0.3.0), [IBM SDK, Java Technology Edition](https://developer.ibm.com/javasdk/) (since 0.6.0) and from custom URLs.
 
 It's written in [Go](https://golang.org/) to make maintenance easier (significantly shorter, easier to understand and less prone to errors 
