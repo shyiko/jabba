@@ -2,6 +2,19 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.7.0](https://github.com/shyiko/jabba/compare/0.6.1...0.7.0) - 2017-05-12
+
+### Added
+* Ability to change the location of `~/.jabba` with `JABBA_HOME` env variable (e.g.
+`curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | JABBA_HOME=/opt/jabba bash && . ~/.jabba/jabba.sh`)
+
+### Changed
+* `~` directory referencing inside shell integration scripts (path to home directory is now determined by `$PATH`).
+
+### Fixed
+* `jabba deactivate` escaping.
+* `JAVA_HOME` propagation in Fish shell on CentOS 7.
+
 ## [0.6.1](https://github.com/shyiko/jabba/compare/0.6.0...0.6.1) - 2017-02-27
 
 ### Fixed
