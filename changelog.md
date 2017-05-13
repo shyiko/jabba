@@ -7,6 +7,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 * Ability to change the location of `~/.jabba` with `JABBA_HOME` env variable (e.g.
 `curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | JABBA_HOME=/opt/jabba bash && . ~/.jabba/jabba.sh`)
+* `--home` flag for `jabba which` (`jabba which --home <jdk_version>` returns `$JABBA_DIR/jdk/<jdk_version>/Contents/Home` on macOS and
+`$JABBA_DIR/jdk/<jdk_version>` everywhere else)
 
 ### Changed
 * `~` directory referencing inside shell integration scripts (path to home directory is now determined by `$PATH`).
