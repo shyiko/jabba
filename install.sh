@@ -1,8 +1,15 @@
 #!/bin/bash -e
 { # this ensures the entire script is downloaded
 
-JABBA_HOME=${JABBA_HOME:-${JABBA_DIR:-$HOME/.jabba}} # JABBA_DIR is here for backward-compatibility
+JABBA_HOME=${JABBA_HOME:-$JABBA_DIR} # JABBA_DIR is here for backward-compatibility
 JABBA_VERSION=${JABBA_VERSION:-latest}
+
+if [ "$JABBA_HOME" == "" ]; then
+    JABBA_HOME=$HOME/.jabba
+    JABBA_HOME_TO_EXPORT=\$HOME/.jabba
+else
+    JABBA_HOME_TO_EXPORT=$JABBA_HOME
+fi
 
 # curl looks for HTTPS_PROXY while wget for https_proxy
 https_proxy=${https_proxy:-$HTTPS_PROXY}
@@ -78,7 +85,7 @@ fi
 echo "# https://github.com/shyiko/jabba"
 echo "# This file is indented to be \"sourced\" (i.e. \". ~/.jabba/jabba.sh\")"
 echo ""
-echo "export JABBA_HOME=\"${JABBA_HOME}\""
+echo "export JABBA_HOME=\"${JABBA_HOME_TO_EXPORT}\""
 echo ""
 echo "jabba() {"
 echo "    local fd3=\$(mktemp /tmp/jabba-fd3.XXXXXX)"
@@ -134,7 +141,7 @@ fi
 echo "# https://github.com/shyiko/jabba"
 echo "# This file is indented to be \"sourced\" (i.e. \". ~/.jabba/jabba.fish\")"
 echo ""
-echo "set -xg JABBA_HOME \"${JABBA_HOME}\""
+echo "set -xg JABBA_HOME \"${JABBA_HOME_TO_EXPORT}\""
 echo ""
 echo "function jabba"
 echo "    set fd3 (mktemp /tmp/jabba-fd3.XXXXXX)"
