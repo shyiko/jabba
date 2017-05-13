@@ -1,7 +1,7 @@
 #!/bin/bash -e
 { # this ensures the entire script is downloaded
 
-JABBA_DIR=${JABBA_DIR:-$HOME/.jabba}
+JABBA_HOME=${JABBA_HOME:-${JABBA_DIR:-$HOME/.jabba}} # JABBA_DIR is here for backward-compatibility
 JABBA_VERSION=${JABBA_VERSION:-latest}
 
 # curl looks for HTTPS_PROXY while wget for https_proxy
@@ -45,20 +45,20 @@ esac
 echo "Installing v$JABBA_VERSION..."
 echo
 
-if [ ! -f "${JABBA_DIR}/bin/jabba" ]; then
+if [ ! -f "${JABBA_HOME}/bin/jabba" ]; then
     JABBA_SELF_DESTRUCT_AFTER_COMMAND="true"
 fi
 
-mkdir -p ${JABBA_DIR}/bin
+mkdir -p ${JABBA_HOME}/bin
 
 if [ "$JABBA_MAKE_INSTALL" == "true" ]; then
-    cp jabba ${JABBA_DIR}/bin
+    cp jabba ${JABBA_HOME}/bin
 else
-    $JABBA_GET ${BINARY_URL} > ${JABBA_DIR}/bin/jabba && chmod a+x ${JABBA_DIR}/bin/jabba
+    $JABBA_GET ${BINARY_URL} > ${JABBA_HOME}/bin/jabba && chmod a+x ${JABBA_HOME}/bin/jabba
 fi
 
-if ! ${JABBA_DIR}/bin/jabba --version &>/dev/null; then
-    echo "${JABBA_DIR}/bin/jabba does not appear to be a valid binary.
+if ! ${JABBA_HOME}/bin/jabba --version &>/dev/null; then
+    echo "${JABBA_HOME}/bin/jabba does not appear to be a valid binary.
 
 Check your Internet connection / proxy settings and try again.
 If the problem persists - please create a ticket at https://github.com/shyiko/jabba/issue."
@@ -66,10 +66,10 @@ If the problem persists - please create a ticket at https://github.com/shyiko/ja
 fi
 
 if [ "$JABBA_COMMAND" != "" ]; then
-    ${JABBA_DIR}/bin/jabba $JABBA_COMMAND
+    ${JABBA_HOME}/bin/jabba $JABBA_COMMAND
     if [ "$JABBA_SELF_DESTRUCT_AFTER_COMMAND" == "true" ]; then
-        rm -f ${JABBA_DIR}/bin/jabba
-        rmdir ${JABBA_DIR}/bin
+        rm -f ${JABBA_HOME}/bin/jabba
+        rmdir ${JABBA_HOME}/bin
         exit 0
     fi
 fi
@@ -78,9 +78,11 @@ fi
 echo "# https://github.com/shyiko/jabba"
 echo "# This file is indented to be \"sourced\" (i.e. \". ~/.jabba/jabba.sh\")"
 echo ""
+echo "export JABBA_HOME=\"${JABBA_HOME}\""
+echo ""
 echo "jabba() {"
 echo "    local fd3=\$(mktemp /tmp/jabba-fd3.XXXXXX)"
-echo "    (JABBA_SHELL_INTEGRATION=ON ${JABBA_DIR}/bin/jabba \"\$@\" 3>| \${fd3})"
+echo "    (JABBA_SHELL_INTEGRATION=ON \$JABBA_HOME/bin/jabba \"\$@\" 3>| \${fd3})"
 echo "    local exit_code=\$?"
 echo "    eval \$(cat \${fd3})"
 echo "    rm -f \${fd3}"
@@ -90,9 +92,9 @@ echo ""
 echo "if [ ! -z \"\$(jabba alias default)\" ]; then"
 echo "    jabba use default"
 echo "fi"
-} > ${JABBA_DIR}/jabba.sh
+} > ${JABBA_HOME}/jabba.sh
 
-SOURCE_JABBA="\n[ -s \"$JABBA_DIR/jabba.sh\" ] && source \"$JABBA_DIR/jabba.sh\""
+SOURCE_JABBA="\n[ -s \"$JABBA_HOME/jabba.sh\" ] && source \"$JABBA_HOME/jabba.sh\""
 
 files=("$HOME/.bashrc")
 
@@ -132,9 +134,11 @@ fi
 echo "# https://github.com/shyiko/jabba"
 echo "# This file is indented to be \"sourced\" (i.e. \". ~/.jabba/jabba.fish\")"
 echo ""
+echo "set -xg JABBA_HOME \"${JABBA_HOME}\""
+echo ""
 echo "function jabba"
 echo "    set fd3 (mktemp /tmp/jabba-fd3.XXXXXX)"
-echo "    env JABBA_SHELL_INTEGRATION=ON ${JABBA_DIR}/bin/jabba \$argv 3> \$fd3"
+echo "    env JABBA_SHELL_INTEGRATION=ON \$JABBA_HOME/bin/jabba \$argv 3> \$fd3"
 echo "    set exit_code \$status"
 echo "    eval (cat \$fd3 | sed \"s/^export/set -xg/g\" | sed \"s/^unset/set -e/g\" | tr '=' ' ' | sed \"s/:/\\\" \\\"/g\" | tr '\\\\n' ';')"
 echo "    rm -f \$fd3"
@@ -142,9 +146,9 @@ echo "    return \$exit_code"
 echo "end"
 echo ""
 echo "[ ! -z (echo (jabba alias default)) ]; and jabba use default"
-} > ${JABBA_DIR}/jabba.fish
+} > ${JABBA_HOME}/jabba.fish
 
-FISH_SOURCE_JABBA="\n[ -s \"$JABBA_DIR/jabba.fish\" ]; and source \"$JABBA_DIR/jabba.fish\""
+FISH_SOURCE_JABBA="\n[ -s \"$JABBA_HOME/jabba.fish\" ]; and source \"$JABBA_HOME/jabba.fish\""
 
 if [ -f "$(which fish 2>/dev/null)" ]; then
     file="$HOME/.config/fish/config.fish"

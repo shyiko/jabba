@@ -202,7 +202,7 @@ func download(url string, fileType string) (file string, err error) {
 }
 
 func installOnDarwin(ver string, file string, fileType string) (err error) {
-	target := cfg.Dir() + "/jdk/" + ver
+	target := filepath.Join(cfg.Dir(), "jdk", ver)
 	switch fileType {
 	case "dmg":
 		err = installFromDmg(file, target)
@@ -261,7 +261,7 @@ func installFromDmg(source string, target string) error {
 }
 
 func installOnLinux(ver string, file string, fileType string) (err error) {
-	target := cfg.Dir() + "/jdk/" + ver
+	target := filepath.Join(cfg.Dir(), "jdk", ver)
 	switch fileType {
 	case "bin":
 		err = installFromBin(file, target)
