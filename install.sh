@@ -4,7 +4,7 @@
 JABBA_HOME=${JABBA_HOME:-$JABBA_DIR} # JABBA_DIR is here for backward-compatibility
 JABBA_VERSION=${JABBA_VERSION:-latest}
 
-if [ "$JABBA_HOME" == "" ]; then
+if [ "$JABBA_HOME" == "" ] || [ "$JABBA_HOME" == "$HOME/.jabba" ]; then
     JABBA_HOME=$HOME/.jabba
     JABBA_HOME_TO_EXPORT=\$HOME/.jabba
 else
@@ -85,11 +85,11 @@ fi
 echo "# https://github.com/shyiko/jabba"
 echo "# This file is indented to be \"sourced\" (i.e. \". ~/.jabba/jabba.sh\")"
 echo ""
-echo "export JABBA_HOME=\"${JABBA_HOME_TO_EXPORT}\""
+echo "export JABBA_HOME=\"$JABBA_HOME_TO_EXPORT\""
 echo ""
 echo "jabba() {"
 echo "    local fd3=\$(mktemp /tmp/jabba-fd3.XXXXXX)"
-echo "    (JABBA_SHELL_INTEGRATION=ON \$JABBA_HOME/bin/jabba \"\$@\" 3>| \${fd3})"
+echo "    (JABBA_SHELL_INTEGRATION=ON $JABBA_HOME_TO_EXPORT/bin/jabba \"\$@\" 3>| \${fd3})"
 echo "    local exit_code=\$?"
 echo "    eval \$(cat \${fd3})"
 echo "    rm -f \${fd3}"
@@ -141,11 +141,11 @@ fi
 echo "# https://github.com/shyiko/jabba"
 echo "# This file is indented to be \"sourced\" (i.e. \". ~/.jabba/jabba.fish\")"
 echo ""
-echo "set -xg JABBA_HOME \"${JABBA_HOME_TO_EXPORT}\""
+echo "set -xg JABBA_HOME \"$JABBA_HOME_TO_EXPORT\""
 echo ""
 echo "function jabba"
 echo "    set fd3 (mktemp /tmp/jabba-fd3.XXXXXX)"
-echo "    env JABBA_SHELL_INTEGRATION=ON \$JABBA_HOME/bin/jabba \$argv 3> \$fd3"
+echo "    env JABBA_SHELL_INTEGRATION=ON $JABBA_HOME_TO_EXPORT/bin/jabba \$argv 3> \$fd3"
 echo "    set exit_code \$status"
 echo "    eval (cat \$fd3 | sed \"s/^export/set -xg/g\" | sed \"s/^unset/set -e/g\" | tr '=' ' ' | sed \"s/:/\\\" \\\"/g\" | tr '\\\\n' ';')"
 echo "    rm -f \$fd3"
