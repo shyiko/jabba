@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$jabbaDir = If ($env:JABBA_HOME) { $env:JABBA_HOME } else { If ($env:JABBA_DIR) { $env:JABBA_DIR } else { "$env:USERPROFILE\.jabba" } }
+$jabbaHome = If ($env:JABBA_HOME) { $env:JABBA_HOME } else { If ($env:JABBA_DIR) { $env:JABBA_DIR } else { "$env:USERPROFILE\.jabba" } }
 $jabbaVersion = If ($env:JABBA_VERSION) { $env:JABBA_VERSION } else { "latest" }
 
 If ($jabbaVersion -eq "latest")
@@ -18,24 +18,24 @@ If ($jabbaVersion -notmatch '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.+-]+)?$')
 echo "Installing v$jabbaVersion..."
 echo ""
 
-mkdir -Force $jabbaDir/bin | Out-Null
+mkdir -Force $jabbaHome/bin | Out-Null
 
 If ($env:JABBA_MAKE_INSTALL -eq "true")
 {
-    cp jabba.exe $jabbaDir/bin
+    cp jabba.exe $jabbaHome/bin
 }
 else
 {
-    wget https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaDir/bin/jabba.exe
+    wget https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaHome/bin/jabba.exe
 }
 
 $ErrorActionPreference="SilentlyContinue"
-& $jabbaDir\bin\jabba.exe --version | Out-Null
+& $jabbaHome\bin\jabba.exe --version | Out-Null
 $binaryValid = $?
 $ErrorActionPreference="Continue"
 if (-not $binaryValid)
 {
-    echo "$jabbaDir\bin\jabba does not appear to be a valid binary.
+    echo "$jabbaHome\bin\jabba does not appear to be a valid binary.
 
 Check your Internet connection / proxy settings and try again.
 If the problem persists - please create a ticket at https://github.com/shyiko/jabba/issue."
@@ -43,10 +43,12 @@ If the problem persists - please create a ticket at https://github.com/shyiko/ja
 }
 
 echo @"
+`$env:JABBA_HOME="$jabbaHome"
+
 function jabba
 {
     `$fd3=`$([System.IO.Path]::GetTempFileName())
-    `$command="$jabbaDir\bin\jabba.exe `$args --fd3 `$fd3"
+    `$command="$jabbaHome\bin\jabba.exe `$args --fd3 `$fd3"
     & { `$env:JABBA_SHELL_INTEGRATION="ON"; Invoke-Expression `$command }
     `$fd3content=`$(cat `$fd3)
     if (`$fd3content) {
@@ -55,9 +57,9 @@ function jabba
     }
     rm -Force `$fd3
 }
-"@ > $jabbaDir/jabba.ps1
+"@ > $jabbaHome/jabba.ps1
 
-$sourceJabba="if (Test-Path `"$jabbaDir\jabba.ps1`") { . `"$jabbaDir\jabba.ps1`" }"
+$sourceJabba="if (Test-Path `"$jabbaHome\jabba.ps1`") { . `"$jabbaHome\jabba.ps1`" }"
 
 if (-not $(Test-Path $profile))
 {
@@ -74,7 +76,7 @@ else
     echo "Skipped update of $profile (source string already present)"
 }
 
-. "$jabbaDir\jabba.ps1"
+. "$jabbaHome\jabba.ps1"
 
 echo ""
 echo "Installation completed`
