@@ -17,8 +17,8 @@ func Deactivate() ([]string, error) {
 		javaHome, _ = os.LookupEnv("JAVA_HOME")
 	}
 	return []string{
-		"export PATH=" + pth,
-		"export JAVA_HOME=" + javaHome,
+		"export PATH=\"" + pth + "\"",
+		"export JAVA_HOME=\"" + javaHome + "\"",
 		"unset JAVA_HOME_BEFORE_JABBA",
 	}, nil
 }
