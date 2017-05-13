@@ -3,9 +3,10 @@ package command
 import (
 	"github.com/shyiko/jabba/cfg"
 	"path/filepath"
+	"runtime"
 )
 
-func Which(selector string) (string, error) {
+func Which(selector string, home bool) (string, error) {
 	aliasValue := GetAlias(selector)
 	if aliasValue != "" {
 		selector = aliasValue
@@ -14,5 +15,9 @@ func Which(selector string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return filepath.Join(cfg.Dir(), "jdk", ver), nil
+	path := filepath.Join(cfg.Dir(), "jdk", ver)
+	if home && runtime.GOOS == "darwin" {
+		path = filepath.Join(path, "Contents", "Home")
+	}
+	return path, nil
 }

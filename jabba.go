@@ -64,6 +64,29 @@ func main() {
 			return nil
 		},
 	}
+	var whichHome bool
+	whichCmd := &cobra.Command{
+		Use:   "which [version]",
+		Short: "Display path to installed JDK",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			var ver string
+			if len(args) == 0 {
+				ver = rc().JDK
+				if ver == "" {
+					return pflag.ErrHelp
+				}
+			} else {
+				ver = args[0]
+			}
+			dir, _ := command.Which(ver, whichHome)
+			if dir != "" {
+				fmt.Println(dir)
+			}
+			return nil
+		},
+	}
+	whichCmd.Flags().BoolVarP(&whichHome, "home", "", false,
+		"Account for platform differences so that value could be used as JAVA_HOME (e.g. append \"/Contents/Home\" on macOS)")
 	rootCmd.AddCommand(
 		&cobra.Command{
 			Use:   "install [version to install]",
@@ -247,26 +270,7 @@ func main() {
 				return nil
 			},
 		},
-		&cobra.Command{
-			Use:   "which [version]",
-			Short: "Display path to installed JDK",
-			RunE: func(cmd *cobra.Command, args []string) error {
-				var ver string
-				if len(args) == 0 {
-					ver = rc().JDK
-					if ver == "" {
-						return pflag.ErrHelp
-					}
-				} else {
-					ver = args[0]
-				}
-				dir, _ := command.Which(ver)
-				if dir != "" {
-					fmt.Println(dir)
-				}
-				return nil
-			},
-		},
+		whichCmd,
 	)
 	rootCmd.Flags().Bool("version", false, "version of jabba")
 	rootCmd.PersistentFlags().String("fd3", "", "")
