@@ -134,7 +134,7 @@ For more information see `jabba --help`.
 
 ## Development
 
-> PREREQUISITE: [go1.6](https://github.com/moovweb/gvm)
+> PREREQUISITE: [go1.8](https://github.com/moovweb/gvm)
 
 ```sh
 git clone https://github.com/shyiko/jabba $GOPATH/src/github.com/shyiko/jabba 
