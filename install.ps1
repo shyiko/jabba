@@ -42,22 +42,11 @@ If the problem persists - please create a ticket at https://github.com/shyiko/ja
     exit 1
 }
 
-echo @"
-`$env:JABBA_HOME="$jabbaHome"
+# Get the jabba powershell wrapper.
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/shyiko/jabba/$jabbaVersion/jabba.ps1 -OutFile $jabbaHome/jabba.ps1
 
-function jabba
-{
-    `$fd3=`$([System.IO.Path]::GetTempFileName())
-    `$command="$jabbaHome\bin\jabba.exe `$args --fd3 `$fd3"
-    & { `$env:JABBA_SHELL_INTEGRATION="ON"; Invoke-Expression `$command }
-    `$fd3content=`$(cat `$fd3)
-    if (`$fd3content) {
-        `$expression=`$fd3content.replace("export ","```$env:") -join "``n"
-        if (-not `$expression -eq "") { Invoke-Expression `$expression }
-    }
-    rm -Force `$fd3
-}
-"@ > $jabbaHome/jabba.ps1
+# Get the jabba batchscript wrapper.
+Invoke-WebRequest -Uri https://raw.githubusercontent.com/shyiko/jabba/$jabbaVersion/jabba.bat -OutFile $jabbaHome/jabba.bat
 
 $sourceJabba="if (Test-Path `"$jabbaHome\jabba.ps1`") { . `"$jabbaHome\jabba.ps1`" }"
 
@@ -79,5 +68,10 @@ else
 . "$jabbaHome\jabba.ps1"
 
 echo ""
-echo "Installation completed`
-(if you have any problems please report them at https://github.com/shyiko/jabba/issue)"
+echo "Installation completed!"
+echo ""
+echo "You will be able to use jabba directly from your PowerShell environment."
+echo "if you want to use jabba from a cmd.exe command prompt, copy $jabbaHome\jabba.bat"
+echo "to a directory on your PATH or add $jabbaHome to your PATH environment variable."
+echo ""
+echo "(if you have any problems please report them at https://github.com/shyiko/jabba/issue)"
