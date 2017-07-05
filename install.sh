@@ -39,7 +39,14 @@ case "$OSTYPE" in
     BINARY_URL=https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-darwin-amd64
     ;;
     linux*)
-    if [ `getconf LONG_BIT` = "64" ]; then OSARCH=amd64; else OSARCH=386; fi
+    case "$(uname -m)" in
+        arm*)
+        if [ `getconf LONG_BIT` = "64" ]; then OSARCH=arm64; else OSARCH=arm; fi
+        ;;
+        *)
+        if [ `getconf LONG_BIT` = "64" ]; then OSARCH=amd64; else OSARCH=386; fi
+        ;;
+    esac
     BINARY_URL=https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-linux-${OSARCH}
     ;;
     *)
