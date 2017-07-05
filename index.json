@@ -136,6 +136,24 @@
         "1.6.47": "zip+http://cdn.azulsystems.com/zulu/2014-03-7.3-bin/zulu1.6.0_47-6.3.0.3-x86lx64.zip",
         "1.6.42": "zip+http://cdn.azulsystems.com/zulu/2014-01-7.2-bin/zulu1.6.0_42-6.2.0.9-x86lx64.zip"
       }
+    },
+    "arm": {
+      "jdk": {
+        "1.9.0-176": "tgz+http://download.java.net/java/jdk9/archive/176/binaries/jdk-9+176_linux-arm32-vfp-hflt_bin.tar.gz",
+        "1.8.131": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-arm32-vfp-hflt.tar.gz"
+      },
+      "jdk@zulu": {
+        "1.8.121": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf.tar.gz"
+      }
+    },
+    "arm64": {
+      "jdk": {
+        "1.9.0-176": "tgz+http://download.java.net/java/jdk9/archive/176/binaries/jdk-9+176_linux-arm64-vfp-hflt_bin.tar.gz",
+        "1.8.131": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-arm64-vfp-hflt.tar.gz"
+      },
+      "jdk@zulu": {
+        "1.8.121": "tgz+http://cdn.azul.com/zulu/bin/zulu8.21.0.1-jdk8.0.131-linux_x64.tar.gz"
+      }
     }
   },
   "windows": {
