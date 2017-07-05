@@ -30,9 +30,9 @@ build:
 	go build -ldflags "-X main.version=${VERSION}"
 
 build-release:
-	gox -verbose \
+	GOARM=7 gox -verbose \
 	-ldflags "-X main.version=${VERSION}" \
-	-osarch="windows/amd64 linux/386 linux/amd64 darwin/amd64" \
+	-osarch="windows/amd64 linux/386 linux/amd64 darwin/amd64 linux/arm linux/arm64" \
 	-output="release/{{.Dir}}-${VERSION}-{{.OS}}-{{.Arch}}" .
 
 install: build
