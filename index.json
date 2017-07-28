@@ -2,7 +2,7 @@
   "darwin": {
     "amd64": {
       "jdk": {
-        "1.9.0-179": "dmg+http://download.java.net/java/jdk9/archive/179/binaries/jdk-9+179_osx-x64_bin.dmg",
+        "1.9.0-180": "dmg+http://download.java.net/java/jdk9/archive/180/binaries/jdk-9+180_osx-x64_bin.dmg",
         "1.8.144": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-macosx-x64.dmg",
         "1.6.65": "dmg+https://support.apple.com/downloads/DL1572/en_US/javaforosx.dmg"
       },
@@ -39,7 +39,7 @@
   "linux": {
     "386": {
       "jdk": {
-        "1.9.0-179": "tgz+http://download.java.net/java/jdk9/archive/179/binaries/jdk-9+179_linux-x86_bin.tar.gz",
+        "1.9.0-180": "tgz+http://download.java.net/java/jdk9/archive/180/binaries/jdk-9+180_linux-x86_bin.tar.gz",
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-i586.tar.gz"
       },
       "jdk@ibm": {
@@ -60,7 +60,7 @@
     },
     "amd64": {
       "jdk": {
-        "1.9.0-179": "tgz+http://download.java.net/java/jdk9/archive/179/binaries/jdk-9+179_linux-x64_bin.tar.gz",
+        "1.9.0-180": "tgz+http://download.java.net/java/jdk9/archive/180/binaries/jdk-9+180_linux-x64_bin.tar.gz",
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz"
       },
       "jdk@ibm": {
@@ -139,7 +139,7 @@
     },
     "arm": {
       "jdk": {
-        "1.9.0-179": "tgz+http://download.java.net/java/jdk9/archive/179/binaries/jdk-9+179_linux-arm32-vfp-hflt_bin.tar.gz",
+        "1.9.0-180": "tgz+http://download.java.net/java/jdk9/archive/180/binaries/jdk-9+180_linux-arm32-vfp-hflt_bin.tar.gz",
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-arm32-vfp-hflt.tar.gz"
       },
       "jdk@zulu": {
@@ -148,7 +148,7 @@
     },
     "arm64": {
       "jdk": {
-        "1.9.0-179": "tgz+http://download.java.net/java/jdk9/archive/179/binaries/jdk-9+179_linux-arm64-vfp-hflt_bin.tar.gz",
+        "1.9.0-180": "tgz+http://download.java.net/java/jdk9/archive/180/binaries/jdk-9+180_linux-arm64-vfp-hflt_bin.tar.gz",
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-arm64-vfp-hflt.tar.gz"
       },
       "jdk@zulu": {
@@ -159,7 +159,7 @@
   "windows": {
     "amd64": {
       "jdk": {
-        "1.9.0-179": "exe+http://download.java.net/java/jdk9/archive/179/binaries/jdk-9+179_windows-x64_bin.exe",
+        "1.9.0-180": "exe+http://download.java.net/java/jdk9/archive/180/binaries/jdk-9+180_windows-x64_bin.exe",
         "1.8.144": "exe+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-windows-x64.exe"
       },
       "jdk@sjre": {
