@@ -40,7 +40,7 @@ case "$OSTYPE" in
     ;;
     linux*)
     case "$(uname -m)" in
-        arm*)
+        arm*|aarch*)
         if [ `getconf LONG_BIT` = "64" ]; then OSARCH=arm64; else OSARCH=arm; fi
         ;;
         *)
