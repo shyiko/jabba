@@ -195,11 +195,22 @@ func main() {
 			Use:   "ls",
 			Short: "List installed versions",
 			RunE: func(cmd *cobra.Command, args []string) error {
+				var r *semver.Range
+				if len(args) > 0 {
+					var err error
+					r, err = semver.ParseRange(args[0])
+					if err != nil {
+						log.Fatal(err)
+					}
+				}
 				releases, err := command.Ls()
 				if err != nil {
 					log.Fatal(err)
 				}
 				for _, v := range releases {
+					if r != nil && !r.Contains(v) {
+						continue
+					}
 					fmt.Println(v)
 				}
 				return nil
@@ -209,6 +220,14 @@ func main() {
 			Use:   "ls-remote",
 			Short: "List remote versions available for install",
 			RunE: func(cmd *cobra.Command, args []string) error {
+				var r *semver.Range
+				if len(args) > 0 {
+					var err error
+					r, err = semver.ParseRange(args[0])
+					if err != nil {
+						log.Fatal(err)
+					}
+				}
 				releaseMap, err := command.LsRemote()
 				if err != nil {
 					log.Fatal(err)
@@ -221,6 +240,9 @@ func main() {
 				}
 				sort.Sort(sort.Reverse(semver.VersionSlice(vs)))
 				for _, v := range vs {
+					if r != nil && !r.Contains(v) {
+						continue
+					}
 					fmt.Println(v)
 				}
 				return nil
