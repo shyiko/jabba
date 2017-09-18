@@ -21,7 +21,7 @@ import (
 	"strings"
 )
 
-func Install(selector string) (string, error) {
+func Install(selector string, dest string) (string, error) {
 	var releaseMap map[*semver.Version]string
 	var ver *semver.Version
 	var err error
@@ -40,7 +40,7 @@ func Install(selector string) (string, error) {
 		ver, _ = semver.ParseVersion(selector)
 	}
 	// check whether requested version is already installed
-	if ver != nil {
+	if ver != nil && dest == "" {
 		local, err := Ls()
 		if err != nil {
 			return "", err
@@ -88,6 +88,20 @@ func Install(selector string) (string, error) {
 	if matched, _ := regexp.MatchString("^\\w+[+]\\w+://", url); !matched {
 		return "", errors.New("URL must contain qualifier, e.g. tgz+http://...")
 	}
+	if dest == "" {
+		dest = filepath.Join(cfg.Dir(), "jdk", ver.String())
+	} else {
+		if _, err := os.Stat(dest); !os.IsNotExist(err) {
+			if err == nil { // dest exists
+				if empty, _ := isEmptyDir(dest); !empty {
+					err = fmt.Errorf("\"%s\" is not empty", dest)
+				}
+			} // or is inaccessible
+			if err != nil {
+				return "", err
+			}
+		}
+	}
 	var fileType string = url[0:strings.Index(url, "+")]
 	url = url[strings.Index(url, "+")+1:]
 	var file string
@@ -108,11 +122,11 @@ func Install(selector string) (string, error) {
 	}
 	switch runtime.GOOS {
 	case "darwin":
-		err = installOnDarwin(ver.String(), file, fileType)
+		err = installOnDarwin(ver.String(), file, fileType, dest)
 	case "linux":
-		err = installOnLinux(ver.String(), file, fileType)
+		err = installOnLinux(ver.String(), file, fileType, dest)
 	case "windows":
-		err = installOnWindows(ver.String(), file, fileType)
+		err = installOnWindows(ver.String(), file, fileType, dest)
 	default:
 		err = errors.New(runtime.GOOS + " OS is not supported")
 	}
@@ -120,6 +134,14 @@ func Install(selector string) (string, error) {
 		os.Remove(file)
 	}
 	return ver.String(), err
+}
+
+func isEmptyDir(name string) (bool, error) {
+	entries, err := ioutil.ReadDir(name)
+	if err != nil {
+		return false, err
+	}
+	return len(entries) == 0, nil
 }
 
 type RedirectTracer struct {
@@ -201,21 +223,20 @@ func download(url string, fileType string) (file string, err error) {
 	return
 }
 
-func installOnDarwin(ver string, file string, fileType string) (err error) {
-	target := filepath.Join(cfg.Dir(), "jdk", ver)
+func installOnDarwin(ver string, file string, fileType string, dest string) (err error) {
 	switch fileType {
 	case "dmg":
-		err = installFromDmg(file, target)
+		err = installFromDmg(file, dest)
 	case "zip":
-		err = installFromZip(file, target+"/Contents/Home")
+		err = installFromZip(file, dest+"/Contents/Home")
 	default:
 		return errors.New(fileType + " is not supported")
 	}
 	if err == nil {
-		err = assertJavaDistribution(target)
+		err = assertJavaDistribution(dest)
 	}
 	if err != nil {
-		os.RemoveAll(target)
+		os.RemoveAll(dest)
 	}
 	return
 }
@@ -260,44 +281,42 @@ func installFromDmg(source string, target string) error {
 	return err
 }
 
-func installOnLinux(ver string, file string, fileType string) (err error) {
-	target := filepath.Join(cfg.Dir(), "jdk", ver)
+func installOnLinux(ver string, file string, fileType string, dest string) (err error) {
 	switch fileType {
 	case "bin":
-		err = installFromBin(file, target)
+		err = installFromBin(file, dest)
 	case "ia":
-		err = installFromIa(file, target)
+		err = installFromIa(file, dest)
 	case "tgz":
-		err = installFromTgz(file, target)
+		err = installFromTgz(file, dest)
 	case "zip":
-		err = installFromZip(file, target)
+		err = installFromZip(file, dest)
 	default:
 		return errors.New(fileType + " is not supported")
 	}
 	if err == nil {
-		err = assertJavaDistribution(target)
+		err = assertJavaDistribution(dest)
 	}
 	if err != nil {
-		os.RemoveAll(target)
+		os.RemoveAll(dest)
 	}
 	return
 }
 
-func installOnWindows(ver string, file string, fileType string) (err error) {
-	target := filepath.Join(cfg.Dir(), "jdk", ver)
+func installOnWindows(ver string, file string, fileType string, dest string) (err error) {
 	switch fileType {
 	case "exe":
-		err = installFromExe(file, target)
+		err = installFromExe(file, dest)
 	case "zip":
-		err = installFromZip(file, target)
+		err = installFromZip(file, dest)
 	default:
 		return errors.New(fileType + " is not supported")
 	}
 	if err == nil {
-		err = assertJavaDistribution(target)
+		err = assertJavaDistribution(dest)
 	}
 	if err != nil {
-		os.RemoveAll(target)
+		//os.RemoveAll(dest)
 	}
 	return
 }
