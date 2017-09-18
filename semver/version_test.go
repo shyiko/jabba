@@ -8,10 +8,10 @@ import (
 
 func TestSort(t *testing.T) {
 	actual := asVersionSlice(t,
-		"0.2.0", "a@1.8.10", "b@1.8.2", "0.1.20", "a@1.8.2", "0.1.10", "0.1.2")
+		"0.2.0", "a@1.8.10", "b@1.8.2", "0.1.20", "a@1.8.2", "0.1.10", "0.1.2", "1.9.0-10.1", "1.9.0-9.60")
 	sort.Sort(sort.Reverse(VersionSlice(actual)))
 	expected := asVersionSlice(t,
-		"0.2.0", "0.1.20", "0.1.10", "0.1.2", "a@1.8.10", "a@1.8.2", "b@1.8.2")
+		"1.9.0-10.1", "1.9.0-9.60", "0.2.0", "0.1.20", "0.1.10", "0.1.2", "a@1.8.10", "a@1.8.2", "b@1.8.2")
 	if !reflect.DeepEqual(actual, expected) {
 		t.Fatalf("actual: %v != expected: %v", actual, expected)
 	}

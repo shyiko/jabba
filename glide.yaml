@@ -2,9 +2,9 @@ package: jabba
 import:
 - package: github.com/spf13/cobra
 - package: github.com/spf13/pflag
-- package: github.com/wmark/semver
 - package: github.com/Sirupsen/logrus
 - package: github.com/mitchellh/go-homedir
 - package: github.com/mitchellh/ioprogress
 - package: gopkg.in/yaml.v2
 - package: github.com/hashicorp/go-rootcerts
+- package: github.com/Masterminds/semver

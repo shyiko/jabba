@@ -2,7 +2,7 @@ package semver
 
 import (
 	"fmt"
-	"github.com/wmark/semver"
+	"github.com/Masterminds/semver"
 	"strings"
 )
 
@@ -14,7 +14,7 @@ type Version struct {
 
 func (l *Version) LessThan(r *Version) bool {
 	if l.qualifier == r.qualifier {
-		return l.ver.Less(r.ver)
+		return l.ver.LessThan(r.ver)
 	}
 	return l.qualifier > r.qualifier
 }

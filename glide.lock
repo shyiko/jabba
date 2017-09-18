@@ -1,10 +1,10 @@
-hash: a43628af8a74048156fb6184a2065f2ee2445810e0c6f06c647b66c9a960fb4b
-updated: 2017-02-27T18:10:41.882588613-08:00
+hash: 0074853916ac51991846d128da07ff876df2020aba70214dd9adbc3f390995a9
+updated: 2017-09-17T20:57:10.94855998-07:00
 imports:
 - name: github.com/hashicorp/go-rootcerts
   version: 6bb64b370b90e7ef1fa532be9e591a81c3493e00
-- name: github.com/inconshreveable/mousetrap
-  version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
+- name: github.com/Masterminds/semver
+  version: 517734cc7d6470c0d07130e40fd40bdeb9bcd3fd
 - name: github.com/mitchellh/go-homedir
   version: 981ab348d865cf048eb7d17e78ac7192632d8415
 - name: github.com/mitchellh/ioprogress
@@ -15,12 +15,6 @@ imports:
   version: c678ff029ee250b65714e518f4f5c5cb934955de
 - name: github.com/spf13/pflag
   version: 7f60f83a2c81bc3c3c0d5297f61ddfa68da9d3b7
-- name: github.com/wmark/semver
-  version: 197125fdfe56b93cf69a1f8bfab76435e55b5d7c
-- name: golang.org/x/sys
-  version: afce3de5756ca82699128ebae46ac95ad59d6297
-  subpackages:
-  - unix
 - name: gopkg.in/yaml.v2
   version: a5b47d31c556af34a302ce5d659e6fea44d90de0
 testImports: []
