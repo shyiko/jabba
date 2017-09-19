@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.0](https://github.com/shyiko/jabba/compare/0.8.0...0.9.0) - 2017-09-19 
+
+### Added
+- Latest JDK / `default` alias linking ([#6](https://github.com/shyiko/jabba/issues/6))
+
+    ```sh
+    $ ll ~/.jabba/jdk/
+    lrwxrwxrwx  1 shyiko shyiko   30 Sep 19  2017  1.8 -> /home/shyiko/.jabba/jdk/1.8.144/
+    drwxr-xr-x  8 shyiko shyiko 4096 Sep 19  2017  1.8.144/
+    drwxr-xr-x  8 shyiko shyiko 4096 Sep 19  2017  1.8.141/
+    lrwxrwxrwx  8 shyiko shyiko   30 Sep 19  2017  zulu@1.6 -> /home/shyiko/.jabba/jdk/zulu@1.6.97/
+    drwxr-xr-x  8 shyiko shyiko 4096 Sep 19  2017  zulu@1.6.97/
+    lrwxrwxrwx  1 shyiko shyiko   30 Sep 19  2017  default -> /home/shyiko/.jabba/jdk/1.8.144/
+    ```
+
 ## [0.8.0](https://github.com/shyiko/jabba/compare/0.7.0...0.8.0) - 2017-09-19 
 
 ### Added
