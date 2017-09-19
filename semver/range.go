@@ -42,7 +42,7 @@ type Range struct {
 }
 
 func (l *Range) Contains(r *Version) bool {
-	return l.qualifier == r.qualifier && l.rng.Check(r.ver)
+	return (l.qualifier == r.qualifier || l.qualifier == "*") && l.rng.Check(r.ver)
 }
 
 func (t *Range) String() string {
