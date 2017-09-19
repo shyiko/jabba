@@ -117,6 +117,74 @@ func main() {
 	}
 	installCmd.Flags().StringVarP(&customInstallDestination, "output", "o", "",
 		"Custom destination (any JDK outside of $JABBA_HOME/jdk is considered to be unmanaged, i.e. not available to jabba ls, use, etc. (unless `jabba link`ed))")
+	var trimTo string
+	lsCmd := &cobra.Command{
+		Use:   "ls",
+		Short: "List installed versions",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			var r *semver.Range
+			if len(args) > 0 {
+				var err error
+				r, err = semver.ParseRange(args[0])
+				if err != nil {
+					log.Fatal(err)
+				}
+			}
+			vs, err := command.Ls()
+			if err != nil {
+				log.Fatal(err)
+			}
+			if trimTo != "" {
+				vs = semver.VersionSlice(vs).TrimTo(parseTrimTo(trimTo))
+			}
+			for _, v := range vs {
+				if r != nil && !r.Contains(v) {
+					continue
+				}
+				fmt.Println(v)
+			}
+			return nil
+		},
+	}
+	lsRemoteCmd := &cobra.Command{
+		Use:   "ls-remote",
+		Short: "List remote versions available for install",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			var r *semver.Range
+			if len(args) > 0 {
+				var err error
+				r, err = semver.ParseRange(args[0])
+				if err != nil {
+					log.Fatal(err)
+				}
+			}
+			releaseMap, err := command.LsRemote()
+			if err != nil {
+				log.Fatal(err)
+			}
+			var vs = make([]*semver.Version, len(releaseMap))
+			var i = 0
+			for k := range releaseMap {
+				vs[i] = k
+				i++
+			}
+			sort.Sort(sort.Reverse(semver.VersionSlice(vs)))
+			if trimTo != "" {
+				vs = semver.VersionSlice(vs).TrimTo(parseTrimTo(trimTo))
+			}
+			for _, v := range vs {
+				if r != nil && !r.Contains(v) {
+					continue
+				}
+				fmt.Println(v)
+			}
+			return nil
+		},
+	}
+	for _, cmd := range []*cobra.Command{lsCmd, lsRemoteCmd} {
+		cmd.Flags().StringVar(&trimTo, "latest", "",
+			"Part of the version to trim to (\"major\", \"minor\" or \"patch\")")
+	}
 	rootCmd.AddCommand(
 		installCmd,
 		&cobra.Command{
@@ -199,63 +267,8 @@ func main() {
 				}
 			},
 		},
-		&cobra.Command{
-			Use:   "ls",
-			Short: "List installed versions",
-			RunE: func(cmd *cobra.Command, args []string) error {
-				var r *semver.Range
-				if len(args) > 0 {
-					var err error
-					r, err = semver.ParseRange(args[0])
-					if err != nil {
-						log.Fatal(err)
-					}
-				}
-				releases, err := command.Ls()
-				if err != nil {
-					log.Fatal(err)
-				}
-				for _, v := range releases {
-					if r != nil && !r.Contains(v) {
-						continue
-					}
-					fmt.Println(v)
-				}
-				return nil
-			},
-		},
-		&cobra.Command{
-			Use:   "ls-remote",
-			Short: "List remote versions available for install",
-			RunE: func(cmd *cobra.Command, args []string) error {
-				var r *semver.Range
-				if len(args) > 0 {
-					var err error
-					r, err = semver.ParseRange(args[0])
-					if err != nil {
-						log.Fatal(err)
-					}
-				}
-				releaseMap, err := command.LsRemote()
-				if err != nil {
-					log.Fatal(err)
-				}
-				var vs = make([]*semver.Version, len(releaseMap))
-				var i = 0
-				for k := range releaseMap {
-					vs[i] = k
-					i++
-				}
-				sort.Sort(sort.Reverse(semver.VersionSlice(vs)))
-				for _, v := range vs {
-					if r != nil && !r.Contains(v) {
-						continue
-					}
-					fmt.Println(v)
-				}
-				return nil
-			},
-		},
+		lsCmd,
+		lsRemoteCmd,
 		&cobra.Command{
 			Use:   "deactivate",
 			Short: "Undo effects of `jabba` on current shell",
@@ -307,6 +320,17 @@ func main() {
 	rootCmd.PersistentFlags().MarkHidden("fd3")
 	if err := rootCmd.Execute(); err != nil {
 		os.Exit(-1)
+	}
+}
+
+func parseTrimTo(value string) semver.VersionPart {
+	switch strings.ToLower(value) {
+	case "major": return semver.VFMajor
+	case "minor": return semver.VFMinor
+	case "patch": return semver.VFPatch
+	default:
+		log.Fatal("Unexpected value of --latest (must be either \"major\", \"minor\" or \"patch\")")
+		return -1
 	}
 }
 
