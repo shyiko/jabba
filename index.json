@@ -8,16 +8,12 @@
       },
       "jdk@adopt": {
         "1.9.0-181": "tgz+https://github.com/AdoptOpenJDK/openjdk9-releases/releases/download/jdk-9%2B181/OpenJDK9_x64_Mac_jdk-9.181.tar.gz",
-        "1.8.162": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u162-b00/OpenJDK8_x64_Mac_jdk8u162-b00.tar.gz",
         "1.8.162-00": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u162-b00/OpenJDK8_x64_Mac_jdk8u162-b00.tar.gz",
-        "1.8.152": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b04/OpenJDK8_x64_Mac_jdk8u152-b04.tar.gz",
         "1.8.152-04": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b04/OpenJDK8_x64_Mac_jdk8u152-b04.tar.gz",
         "1.8.152-03": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b03/OpenJDK8_x64_Mac_jdk8u152-b03.tar.gz",
         "1.8.152-02": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b02/OpenJDK8_x64_Mac_jdk8u152-b02.tar.gz",
         "1.8.152-01": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b01/OpenJDK8_x64_Mac_jdk8u152-b01.tar.gz",
-        "1.8.144": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_x64_Mac_jdk8u144-b01.tar.gz",
         "1.8.144-01": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_x64_Mac_jdk8u144-b01.tar.gz",
-        "1.8.141": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Mac_jdk8u141-b15.tar.gz",
         "1.8.141-15": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Mac_jdk8u141-b15.tar.gz"
       },
       "jdk@zulu": {
@@ -78,16 +74,12 @@
       },
       "jdk@adopt": {
         "1.9.0-181": "tgz+https://github.com/AdoptOpenJDK/openjdk9-releases/releases/download/jdk-9%2B181/OpenJDK9_x64_Linux_jdk-9.181.tar.gz",
-        "1.8.162": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u162-b00/OpenJDK8_x64_Linux_jdk8u162-b00.tar.gz",
         "1.8.162-00": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u162-b00/OpenJDK8_x64_Linux_jdk8u162-b00.tar.gz",
-        "1.8.152": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b04/OpenJDK8_x64_Linux_jdk8u152-b04.tar.gz",
         "1.8.152-04": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b04/OpenJDK8_x64_Linux_jdk8u152-b04.tar.gz",
         "1.8.152-03": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b03/OpenJDK8_x64_Linux_jdk8u152-b03.tar.gz",
         "1.8.152-02": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b02/OpenJDK8_x64_Linux_jdk8u152-b02.tar.gz",
         "1.8.152-01": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b01/OpenJDK8_x64_Linux_jdk8u152-b01.tar.gz",
-        "1.8.144": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_x64_Linux_jdk8u144-b01.tar.gz",
         "1.8.144-01": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_x64_Linux_jdk8u144-b01.tar.gz",
-        "1.8.141": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Linux_jdk8u141-b15.tar.gz",
         "1.8.141-15": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Linux_jdk8u141-b15.tar.gz"
       },
       "jdk@adopt-openj9": {
@@ -172,14 +164,10 @@
       },
       "jdk@adopt": {
         "1.9.0-181": "tgz+https://github.com/AdoptOpenJDK/openjdk9-releases/releases/download/jdk-9%2B181/OpenJDK9_aarch64_Linux_jdk-9.181.tar.gz",
-        "1.8.162": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u162-b00/OpenJDK8_aarch64_Linux_jdk8u162-b00.tar.gz",
         "1.8.162-00": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u162-b00/OpenJDK8_aarch64_Linux_jdk8u162-b00.tar.gz",
-        "1.8.152": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b04/OpenJDK8_aarch64_Linux_jdk8u152-b04.tar.gz",
         "1.8.152-04": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b04/OpenJDK8_aarch64_Linux_jdk8u152-b04.tar.gz",
         "1.8.152-03": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b03/OpenJDK8_aarch64_Linux_jdk8u152-b03.tar.gz",
-        "1.8.144": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_aarch64_Linux_jdk8u144-b01.tar.gz",
         "1.8.144-01": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_aarch64_Linux_jdk8u144-b01.tar.gz",
-        "1.8.141": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_aarch64_Linux_jdk8u141-b15.tar.gz",
         "1.8.141-15": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_aarch64_Linux_jdk8u141-b15.tar.gz"
       },
       "jdk@zulu": {
@@ -195,13 +183,9 @@
       },
       "jdk@adopt": {
         "1.9.0-181": "zip+https://github.com/AdoptOpenJDK/openjdk9-releases/releases/download/jdk-9%2B181/OpenJDK9_x64_Win_jdk-9.181.zip",
-        "1.8.162": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u162-b00/OpenJDK8_x64_Win_jdk8u162-b00.zip",
         "1.8.162-00": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u162-b00/OpenJDK8_x64_Win_jdk8u162-b00.zip",
-        "1.8.152": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b04/OpenJDK8_x64_Win_jdk8u152-b04.zip",
         "1.8.152-04": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b04/OpenJDK8_x64_Win_jdk8u152-b04.zip",
-        "1.8.144": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_x64_Win_jdk8u144-b01.zip",
         "1.8.144-01": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_x64_Win_jdk8u144-b01.zip",
-        "1.8.141": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Win_jdk8u141-b15.zip",
         "1.8.141-15": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Win_jdk8u141-b15.zip"
       },
       "jdk@sjre": {
