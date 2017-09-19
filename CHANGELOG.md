@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.9.0](https://github.com/shyiko/jabba/compare/0.8.0...0.9.0) - 2017-09-19 
 
 ### Added
-- Latest JDK / `default` alias linking ([#6](https://github.com/shyiko/jabba/issues/6))
+- Latest JDK / `default` alias (automatic) linking ([#6](https://github.com/shyiko/jabba/issues/6))
 
     ```sh
     $ ll ~/.jabba/jdk/
