@@ -44,17 +44,17 @@ func LinkLatest() error {
 	cache := make(map[string]string)
 	for _, f := range files {
 		if f.IsDir() || f.Mode()&os.ModeSymlink == os.ModeSymlink {
-			filename := f.Name()
-			if strings.Count(filename, ".") == 1 && !strings.HasPrefix(filename, "system@") {
-				target := GetLink(filename)
-				_, err := LsBestMatchWithVersionSlice(vs, filename)
+			sourceVersion := f.Name()
+			if strings.Count(sourceVersion, ".") == 1 && !strings.HasPrefix(sourceVersion, "system@") {
+				target := GetLink(sourceVersion)
+				_, err := LsBestMatchWithVersionSlice(vs, sourceVersion)
 				if err != nil {
-					log.Info(filename + " -/> " + target)
-					if err := os.Remove(target); err != nil {
+					log.Info(sourceVersion + " -/> " + target)
+					if err := os.Remove(filepath.Join(cfg.Dir(), "jdk", sourceVersion)); !os.IsNotExist(err) {
 						return err
 					}
 				} else {
-					cache[filename] = target
+					cache[sourceVersion] = target
 				}
 			}
 		}
