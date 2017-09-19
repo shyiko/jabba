@@ -19,6 +19,8 @@ import (
 	"runtime"
 	"sort"
 	"strings"
+	"compress/gzip"
+	"archive/tar"
 )
 
 func Install(selector string, dest string) (string, error) {
@@ -362,11 +364,107 @@ func installFromExe(source string, target string) error {
 }
 
 func installFromTgz(source string, target string) error {
-	return executeInShell([][]string{
-		{"", "mkdir -p " + target},
-		{"Extracting " + source + " to " + target,
-			"tar xzf " + source + " --strip-components=1 -C " + target},
-	})
+	log.Info("Extracting " + source + " to " + target)
+	return untgz(source, target, true)
+}
+
+func untgz(source string, target string, strip bool) error {
+	gzFile, err := os.Open(source)
+	if err != nil {
+		return err
+	}
+	defer gzFile.Close()
+	var prefixToStrip string
+	if strip {
+		gzr, err := gzip.NewReader(gzFile)
+		if err != nil {
+			return err
+		}
+		defer gzr.Close()
+		r := tar.NewReader(gzr)
+		var prefix []string
+		for {
+			header, err := r.Next()
+			if err == io.EOF {
+				break
+			}
+			if err != nil {
+				return err
+			}
+			var dir string
+			if header.Typeflag != tar.TypeDir {
+				dir = filepath.Dir(header.Name)
+			} else {
+				dir = filepath.Clean(header.Name)
+			}
+			if prefix != nil {
+				dirSplit := strings.Split(dir, "/")
+				i, e, dse := 0, len(prefix), len(dirSplit)
+				if dse < e {
+					e = dse
+				}
+				for i < e {
+					if prefix[i] != dirSplit[i] {
+						prefix = prefix[0:i]
+						break
+					}
+					i++
+				}
+			} else {
+				prefix = strings.Split(dir, "/")
+			}
+		}
+		prefixToStrip = strings.Join(prefix, "/")
+	}
+	gzFile.Seek(0, 0)
+	gzr, err := gzip.NewReader(gzFile)
+	if err != nil {
+		return err
+	}
+	defer gzr.Close()
+	r := tar.NewReader(gzr)
+	dirCache := make(map[string]bool) // todo: radix tree would perform better here
+	//println("mkdir -p " + target)
+	os.MkdirAll(target, 0755)
+	for {
+		header, err := r.Next()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return err
+		}
+		var dir string
+		if header.Typeflag != tar.TypeDir {
+			dir = filepath.Dir(header.Name)
+		} else {
+			dir = filepath.Clean(header.Name)
+		}
+		dir = strings.TrimPrefix(dir, prefixToStrip)
+		if dir != "" && dir != "." {
+			cached := dirCache[dir]
+			if !cached {
+				//println("mkdir -p " + filepath.Join(target, dir))
+				os.MkdirAll(filepath.Join(target, dir), 0755)
+				dirCache[dir] = true
+			}
+		}
+		if header.Typeflag != tar.TypeDir {
+			name := filepath.Base(header.Name)
+			//println("touch " + filepath.Join(target, dir, name))
+			f, err := os.OpenFile(filepath.Join(target, dir, name),
+				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode))
+			if err != nil {
+				return err
+			}
+			_, err = io.Copy(f, r)
+			if err != nil {
+				return err
+			}
+			f.Close()
+		}
+	}
+	return nil
 }
 
 func installFromZip(source string, target string) error {
@@ -380,41 +478,63 @@ func unzip(source string, target string, strip bool) error {
 		return err
 	}
 	defer r.Close()
-	var prefixToStrip = ""
+	var prefixToStrip string
 	if strip {
-		entriesPerLevel := make(map[int]int)
-		prefixMap := make(map[int]string)
+		var prefix []string
 		for _, f := range r.File {
-			level := 0
-			for _, c := range f.Name {
-				if c == '/' {
-					level++
-				}
-			}
+			var dir string
 			if !f.Mode().IsDir() {
-				level++
+				dir = filepath.Dir(f.Name)
 			} else {
-				prefixMap[level] = f.Name
+				dir = filepath.Clean(f.Name)
 			}
-			entriesPerLevel[level]++
-		}
-		for i := 0; i < len(entriesPerLevel); i++ {
-			if entriesPerLevel[i] > 1 && i > 0 {
-				prefixToStrip = prefixMap[i-1]
-				break
+			if prefix != nil {
+				dirSplit := strings.Split(dir, "/")
+				i, e, dse := 0, len(prefix), len(dirSplit)
+				if dse < e {
+					e = dse
+				}
+				for i < e {
+					if prefix[i] != dirSplit[i] {
+						prefix = prefix[0:i]
+						break
+					}
+					i++
+				}
+			} else {
+				prefix = strings.Split(dir, "/")
 			}
 		}
+		prefixToStrip = strings.Join(prefix, "/")
 	}
+	dirCache := make(map[string]bool) // todo: radix tree would perform better here
+	//println("mkdir -p " + target)
+	os.MkdirAll(target, 0755)
 	for _, f := range r.File {
-		name := strings.TrimPrefix(f.Name, prefixToStrip)
-		if f.Mode().IsDir() {
-			os.MkdirAll(filepath.Join(target, name), 0755)
+		var dir string
+		if !f.Mode().IsDir() {
+			dir = filepath.Dir(f.Name)
 		} else {
+			dir = filepath.Clean(f.Name)
+		}
+		dir = strings.TrimPrefix(dir, prefixToStrip)
+		if dir != "" && dir != "." {
+			cached := dirCache[dir]
+			if !cached {
+				//println("mkdir -p " + filepath.Join(target, dir))
+				os.MkdirAll(filepath.Join(target, dir), 0755)
+				dirCache[dir] = true
+			}
+		}
+		if !f.Mode().IsDir() {
+			name := filepath.Base(f.Name)
+			//println("touch " + filepath.Join(target, dir, name))
 			fr, err := f.Open()
 			if err != nil {
 				return err
 			}
-			f, err := os.OpenFile(filepath.Join(target, name), os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
+			f, err := os.OpenFile(filepath.Join(target, dir, name),
+				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
 			if err != nil {
 				return err
 			}
