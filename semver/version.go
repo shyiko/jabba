@@ -27,6 +27,22 @@ func (t *Version) String() string {
 	return t.raw
 }
 
+func (t *Version) TrimTo(part VersionPart) string {
+	prefix := t.qualifier
+	if prefix != "" {
+		prefix += "@"
+	}
+	switch part {
+	case VPMajor:
+		return fmt.Sprintf("%v%v", prefix, t.ver.Major())
+	case VPMinor:
+		return fmt.Sprintf("%v%v.%v", prefix, t.ver.Major(), t.ver.Minor())
+	case VPPatch:
+		return fmt.Sprintf("%v%v.%v.%v", prefix, t.ver.Major(), t.ver.Minor(), t.ver.Patch())
+	}
+	return t.raw
+}
+
 func (t *Version) Major() int64 {
 	return t.ver.Major()
 }
@@ -37,6 +53,10 @@ func (t *Version) Minor() int64 {
 
 func (t *Version) Patch() int64 {
 	return t.ver.Patch()
+}
+
+func (t *Version) Prerelease() string {
+	return t.ver.Prerelease()
 }
 
 func ParseVersion(raw string) (*Version, error) {
@@ -72,9 +92,9 @@ func (c VersionSlice) Less(i, j int) bool {
 type VersionPart int
 
 const (
-	VFMajor VersionPart = iota
-	VFMinor
-	VFPatch
+	VPMajor VersionPart = iota
+	VPMinor
+	VPPatch
 )
 
 func (c VersionSlice) TrimTo(part VersionPart) VersionSlice {
@@ -83,15 +103,15 @@ func (c VersionSlice) TrimTo(part VersionPart) VersionSlice {
 	var pMajor, pMinor, pPatch int64
 	for _, v := range c {
 		switch part {
-		case VFMajor:
+		case VPMajor:
 			if pQualifier == v.qualifier && pMajor == v.Major() {
 				continue
 			}
-		case VFMinor:
+		case VPMinor:
 			if pQualifier == v.qualifier && pMajor == v.Major() && pMinor == v.Minor() {
 				continue
 			}
-		case VFPatch:
+		case VPPatch:
 			if pQualifier == v.qualifier && pMajor == v.Major() && pMinor == v.Minor() && pPatch == v.Patch() {
 				continue
 			}

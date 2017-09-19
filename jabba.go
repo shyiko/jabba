@@ -106,6 +106,9 @@ func main() {
 				log.Fatal(err)
 			}
 			if customInstallDestination == "" {
+				if err := command.LinkLatest(); err != nil {
+					log.Fatal(err)
+				}
 				return use(ver)
 			} else {
 				return nil
@@ -202,6 +205,9 @@ func main() {
 				if err != nil {
 					log.Fatal(err)
 				}
+				if err := command.LinkLatest(); err != nil {
+					log.Fatal(err)
+				}
 				return nil
 			},
 			Example: "  jabba uninstall 1.8",
@@ -211,7 +217,10 @@ func main() {
 			Short: "Resolve or update a link",
 			RunE: func(cmd *cobra.Command, args []string) error {
 				if len(args) == 0 {
-					return pflag.ErrHelp
+					if err := command.LinkLatest(); err != nil {
+						log.Fatal(err)
+					}
+					return nil
 				}
 				if len(args) == 1 {
 					if value := command.GetLink(args[0]); value != "" {
@@ -288,11 +297,17 @@ func main() {
 				if len(args) == 0 {
 					return pflag.ErrHelp
 				}
+				name := args[0]
 				if len(args) == 1 {
-					if value := command.GetAlias(args[0]); value != "" {
+					if value := command.GetAlias(name); value != "" {
 						fmt.Println(value)
 					}
-				} else if err := command.SetAlias(args[0], args[1]); err != nil {
+					return nil
+				}
+				if err := command.SetAlias(name, args[1]); err != nil {
+					log.Fatal(err)
+				}
+				if err := command.LinkAlias(name); err != nil {
 					log.Fatal(err)
 				}
 				return nil
@@ -325,9 +340,9 @@ func main() {
 
 func parseTrimTo(value string) semver.VersionPart {
 	switch strings.ToLower(value) {
-	case "major": return semver.VFMajor
-	case "minor": return semver.VFMinor
-	case "patch": return semver.VFPatch
+	case "major": return semver.VPMajor
+	case "minor": return semver.VPMinor
+	case "patch": return semver.VPPatch
 	default:
 		log.Fatal("Unexpected value of --latest (must be either \"major\", \"minor\" or \"patch\")")
 		return -1
