@@ -2,11 +2,32 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.8.0](https://github.com/shyiko/jabba/compare/0.7.0...0.8.0) - 2017-09-19 
+
+### Added
+- [Adopt OpenJDK](https://adoptopenjdk.net/) support.
+- `jabba ls <semver_range>` & `jabba ls-remote <semver_range>`.
+- `jabba ls --latest=<major|minor|patch>` & `jabba ls-remote --latest=<major|minor|patch>`.
+
+    ```sh
+    $ jabba ls-remote "zulu@<1.9" --latest=minor
+    zulu@1.8.144
+    zulu@1.7.154
+    zulu@1.6.97
+    ```
+
+- Ability to install JDK in a custom location (`jabba install -o /jdk/destination`)  
+NOTE: any JDK installed in this way is considered to be unmanaged, i.e. not available to `jabba ls`, `jabba use`, etc. (unless `jabba link`ed).
+
+### Changed
+- semver library to [masterminds/semver](https://github.com/Masterminds/semver)  
+(previously used library proved unreliable when given certain input (e.g. `>=1.6`)).
+
 ## [0.7.0](https://github.com/shyiko/jabba/compare/0.6.1...0.7.0) - 2017-05-12
 
 ### Added
 * Ability to change the location of `~/.jabba` with `JABBA_HOME` env variable (e.g.
-`curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | JABBA_HOME=/opt/jabba bash && . ~/.jabba/jabba.sh`)
+`curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | JABBA_HOME=/opt/jabba bash && . /opt/jabba/jabba.sh`)
 * `--home` flag for `jabba which` (`jabba which --home <jdk_version>` returns `$JABBA_DIR/jdk/<jdk_version>/Contents/Home` on macOS and
 `$JABBA_DIR/jdk/<jdk_version>` everywhere else)
 
