@@ -1,27 +1,23 @@
-# jabba ![Latest Version](https://img.shields.io/badge/latest-0.7.0-blue.svg) [![Build Status](https://travis-ci.org/shyiko/jabba.svg?branch=master)](https://travis-ci.org/shyiko/jabba)
+# jabba ![Latest Version](https://img.shields.io/badge/latest-0.8.0-blue.svg) [![Build Status](https://travis-ci.org/shyiko/jabba.svg?branch=master)](https://travis-ci.org/shyiko/jabba)
 
 ![jabba-the-hutt](https://cloud.githubusercontent.com/assets/370176/13943697/e6098ed0-efbb-11e5-9630-3ff0d0d0403d.jpg)
 
-Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js) / [rvm](https://rvm.io) (Ruby).
-
-Supports installation of [Oracle JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html) (default) / [Server JRE](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html), 
-[Zulu OpenJDK](http://zulu.org/) (since 0.3.0), [IBM SDK, Java Technology Edition](https://developer.ibm.com/javasdk/) (since 0.6.0) and from custom URLs.
-
-It's written in [Go](https://golang.org/) to make maintenance easier (significantly shorter, easier to understand and less prone to errors 
-compared to pure shell implementation). Plus it enables us to support Windows natively (no need for Cygwin) without rewriting 
-the whole thing in PowerShell or whatever. 
+Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js). Written in Go.
 
 The goal is to provide unified pain-free experience of **installing** (and **switching** between different versions of) JDK regardless of
 the OS. 
 
-> **jabba** has a single responsibility - managing different versions of JDK. For an easy way to install Scala/Kotlin/Groovy (+ a lot more) see [SDKMAN][0]. 
-SBT/Maven/Gradle should <u>ideally</u> be "fixed in place" by [sbt-launcher][1]/[mvnw][2]/[gradlew][3].
- 
-[0]: http://sdkman.io/  
-[1]: http://www.scala-sbt.org/0.13/docs/Manual-Installation.html
-[2]: https://github.com/shyiko/mvnw
-[3]: https://docs.gradle.org/current/userguide/gradle_wrapper.html
- 
+`jabba` knows how to install
+- [Oracle JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html) (latest-version only)
+- [Oracle Server JRE](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) (latest-version only), 
+- [Adopt OpenJDK](https://adoptopenjdk.net/) <sup>(jabba >=0.8.0 is required)</sup> 
+  - Hotspot 
+  - [Eclipse OpenJ9](https://www.eclipse.org/openj9/oj9_faq.html)
+- [Zulu OpenJDK](http://zulu.org/) <sup>(jabba >=0.3.0 is required)</sup>
+- [IBM SDK, Java Technology Edition](https://developer.ibm.com/javasdk/) <sup>(jabba >=0.6.0 is required)</sup> 
+
+... and from custom URLs.
+
 ## Installation
 
 #### macOS / Linux
@@ -46,34 +42,26 @@ Usually simple `http_proxy=http://proxy-server:port https_proxy=http://proxy-ser
 
 #### Docker
 
-While you can obviously use the same snippet as above, chances are you don't want jabba binary & shell 
-integration script(s) to be included in the final Docker image, all you want is a JDK. In this case 
-use the following `Dockerfile` (this is just an example; adjust if needed) (when `JABBA_COMMAND` env variable is set 
-`install.sh` downloads `jabba` binary, executes specified command and then deletes the binary)
+While you can use the same snippet as above, chances are you don't want jabba binary & shell 
+integration script(s) to be included in the final Docker image, all you want is a JDK. Here is the `Dockerfile` showing how this can be done:
 
 ```dockerfile
 FROM buildpack-deps:jessie-curl
 
-# Server JRE (https://goo.gl/2MsPoh)
-ENV JAVA_VERSION "sjre@1.8.121"
-
 RUN curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | \
-    JABBA_COMMAND="install $JAVA_VERSION" bash
+    JABBA_COMMAND="install 1.8 -o /jdk" bash
 
-ENV JAVA_HOME /root/.jabba/jdk/$JAVA_VERSION
+ENV JAVA_HOME /jdk
 ENV PATH $JAVA_HOME/bin:$PATH
 ```
 
-> (build & run as usual)
+> (when `JABBA_COMMAND` env variable is set `install.sh` downloads `jabba` binary, executes specified command and then deletes the binary)
 
 ```sh
-$ docker build -t sjre:1.8.121 .
+$ docker build -t <image_name>:<image_tag> .
+$ docker run -it --rm <image_name>:<image_tag> java -version
 
-$ docker run -it --rm sjre:1.8.121 java -version
-
-java version "1.8.0_121"
-Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
-Java HotSpot(TM) 64-Bit Server VM (build 25.121-b13, mixed mode)
+java version "1.8....
 ```
 
 #### Windows 10
@@ -91,14 +79,25 @@ Invoke-Expression (
 ## Usage
 
 ```sh
+# list available JDK's
+jabba ls-remote
+# you can use any valid semver range to narrow down the list
+jabba ls-remote zulu@~1.8.60
+jabba ls-remote "*@>=1.6.45 <1.9" --latest=minor
+
 # install Oracle JDK
-jabba install 1.8 # "jabba use 1.8" will be called automatically  
-
-# install Zulu OpenJDK (since 0.3.0)
-jabba install zulu@1.8.72
-
-# install IBM SDK, Java Technology Edition (since 0.6.0)
-jabba install ibm@1.8.0-3.21
+jabba install 1.8
+# install Oracle Server JRE
+jabba install sjre@1.8  
+# install Adopt OpenJDK (Hotspot)
+jabba install adopt@1.8-0
+# install Adopt OpenJDK (Eclipse OpenJ9)
+jabba install adopt-openj9@1.9-0
+# install Zulu OpenJDK
+jabba install zulu@1.8
+jabba install zulu@~1.8.144 # same as "zulu@>=1.8.144 <1.9" 
+# install IBM SDK, Java Technology Edition
+jabba install ibm@1.8
 
 # install from custom URL (supported qualifiers: zip (since 0.3.0), tgz, dmg, bin)
 jabba install 1.8.0-custom=tgz+http://example.com/distribution.tar.gz
@@ -110,19 +109,17 @@ jabba link system@1.8.72 /Library/Java/JavaVirtualMachines/jdk1.8.0_72.jdk
 # list all installed JDK's
 jabba ls
 
-# switch to a different version of JDK
-jabba use 1.6.65
+# switch to a different version of JDK (it must be already `install`ed)
+jabba use adopt@1.8
+jabba use zulu@~1.6.97
 
 echo "1.8" > .jabbarc
 # switch to the JDK specified in .jabbarc (since 0.5.0)
 jabba use
 
-# list available JDK's
-jabba ls-remote
-
 # set default java version on shell (since 0.2.0)
 # this version will automatically be "jabba use"d every time you open up a new terminal
-jabba alias default 1.6.65
+jabba alias default 1.8
 ```
 
 > `.jabbarc` has to be a valid YAML file. JDK version can be specified as `jdk: 1.8` or simply as `1.8` 
