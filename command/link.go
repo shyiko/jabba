@@ -100,8 +100,11 @@ func linkAlias(name string, vs []*semver.Version) error {
 			}
 		}
 	} else {
-		log.Info(sourceRef + " -/> " + sourceTarget)
-		if err := os.Remove(source); !os.IsNotExist(err) {
+		err := os.Remove(source)
+		if err == nil {
+			log.Info(sourceRef + " -/> " + sourceTarget)
+		}
+		if !os.IsNotExist(err) {
 			return err
 		}
 	}
