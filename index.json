@@ -2,7 +2,7 @@
   "darwin": {
     "amd64": {
       "jdk": {
-        "1.9.0-181": "dmg+http://download.java.net/java/jdk9/archive/181/binaries/jdk-9+181_osx-x64_bin.dmg",
+        "1.9.0": "dmg+http://download.oracle.com/otn-pub/java/jdk/9+181/jdk-9_osx-x64_bin.dmg",
         "1.8.144": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-macosx-x64.dmg",
         "1.6.65": "dmg+https://support.apple.com/downloads/DL1572/en_US/javaforosx.dmg"
       },
@@ -30,7 +30,6 @@
   "linux": {
     "386": {
       "jdk": {
-        "1.9.0-181": "tgz+http://download.java.net/java/jdk9/archive/181/binaries/jdk-9+181_linux-x86_bin.tar.gz",
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-i586.tar.gz"
       },
       "jdk@ibm": {
@@ -69,7 +68,7 @@
     },
     "amd64": {
       "jdk": {
-        "1.9.0-181": "tgz+http://download.java.net/java/jdk9/archive/181/binaries/jdk-9+181_linux-x64_bin.tar.gz",
+        "1.9.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/9+181/jdk-9_linux-x64_bin.tar.gz",
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.tar.gz"
       },
       "jdk@adopt": {
@@ -119,6 +118,7 @@
         "1.6.0-16.35": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/6.0.16.35/linux/x64/ibm-java-sdk-6.0-16.35-linux-x86_64.bin"
       },
       "jdk@sjre": {
+        "1.9.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/9+181/serverjre-9_linux-x64_bin.tar.gz",
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/server-jre-8u144-linux-x64.tar.gz"
       },
       "jdk@zulu": {
@@ -150,7 +150,6 @@
     },
     "arm": {
       "jdk": {
-        "1.9.0-181": "tgz+http://download.java.net/java/jdk9/archive/181/binaries/jdk-9+181_linux-arm32-vfp-hflt_bin.tar.gz",
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-arm32-vfp-hflt.tar.gz"
       },
       "jdk@zulu": {
@@ -159,7 +158,6 @@
     },
     "arm64": {
       "jdk": {
-        "1.9.0-181": "tgz+http://download.java.net/java/jdk9/archive/181/binaries/jdk-9+181_linux-arm64-vfp-hflt_bin.tar.gz",
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-arm64-vfp-hflt.tar.gz"
       },
       "jdk@adopt": {
@@ -178,7 +176,7 @@
   "windows": {
     "amd64": {
       "jdk": {
-        "1.9.0-181": "exe+http://download.java.net/java/jdk9/archive/181/binaries/jdk-9+181_windows-x64_bin.exe",
+        "1.9.0": "exe+http://download.oracle.com/otn-pub/java/jdk/9+181/jdk-9_windows-x64_bin.exe",
         "1.8.144": "exe+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-windows-x64.exe"
       },
       "jdk@adopt": {
@@ -189,6 +187,7 @@
         "1.8.141-15": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Win_jdk8u141-b15.zip"
       },
       "jdk@sjre": {
+        "1.9.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/9+181/serverjre-9_windows-x64_bin.tar.gz",
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/server-jre-8u144-windows-x64.tar.gz"
       },
       "jdk@zulu": {
