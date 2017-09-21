@@ -7,7 +7,7 @@ Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.
 The goal is to provide unified pain-free experience of **installing** (and **switching** between different versions of) JDK regardless of
 the OS. 
 
-`jabba` knows how to install
+`jabba install`
 - [Oracle JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html) (latest-version only)
 - [Oracle Server JRE](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) (latest-version only), 
 - [Adopt OpenJDK](https://adoptopenjdk.net/) <sup>(jabba >=0.8.0 is required)</sup> 
