@@ -161,6 +161,7 @@
         "1.8.144": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-arm32-vfp-hflt.tar.gz"
       },
       "jdk@zulu": {
+        "1.8.131": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_131-8.21.0.57-eval-linux_aarch32hf.tar.gz",
         "1.8.121": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf.tar.gz"
       }
     },
@@ -177,7 +178,7 @@
         "1.8.141-15": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_aarch64_Linux_jdk8u141-b15.tar.gz"
       },
       "jdk@zulu": {
-        "1.8.121": "tgz+http://cdn.azul.com/zulu/bin/zulu8.21.0.1-jdk8.0.131-linux_x64.tar.gz"
+        "1.8.144": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_144-8.23.0.70-eval-linux_aarch64.tar.gz"
       }
     }
   },
