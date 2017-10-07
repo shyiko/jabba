@@ -5,7 +5,7 @@
 Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js). Written in Go.
 
 The goal is to provide unified pain-free experience of **installing** (and **switching** between different versions of) JDK regardless of
-the OS. 
+the OS (macOS, Linux x86/x86_64/ARMv7+, Windows x86_64). 
 
 `jabba install`
 - [Oracle JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html) (latest-version only)
