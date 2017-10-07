@@ -45,7 +45,7 @@ publish: clean build-release
 	--name "${VERSION}" --description "${VERSION}" && \
 	github-release upload --user shyiko --repo jabba --tag ${VERSION} \
 	--name "jabba-${VERSION}-windows-amd64.exe" --file release/jabba-${VERSION}-windows-amd64.exe; \
-	for qualifier in darwin-amd64 linux-386 linux-amd64 ; do \
+	for qualifier in darwin-amd64 linux-386 linux-amd64 linux-arm linux-arm64; do \
 		github-release upload --user shyiko --repo jabba --tag ${VERSION} \
 		--name "jabba-${VERSION}-$$qualifier" --file release/jabba-${VERSION}-$$qualifier; \
 	done
