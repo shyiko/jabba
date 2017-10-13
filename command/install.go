@@ -229,6 +229,8 @@ func installOnDarwin(ver string, file string, fileType string, dest string) (err
 	switch fileType {
 	case "dmg":
 		err = installFromDmg(file, dest)
+	case "tgz":
+		err = installFromTgz(file, dest+"/Contents/Home")
 	case "zip":
 		err = installFromZip(file, dest+"/Contents/Home")
 	default:
@@ -309,6 +311,8 @@ func installOnWindows(ver string, file string, fileType string, dest string) (er
 	switch fileType {
 	case "exe":
 		err = installFromExe(file, dest)
+	case "tgz":
+		err = installFromTgz(file, dest)
 	case "zip":
 		err = installFromZip(file, dest)
 	default:
@@ -318,7 +322,7 @@ func installOnWindows(ver string, file string, fileType string, dest string) (er
 		err = assertJavaDistribution(dest)
 	}
 	if err != nil {
-		//os.RemoveAll(dest)
+		os.RemoveAll(dest)
 	}
 	return
 }
