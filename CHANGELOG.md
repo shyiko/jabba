@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.1](https://github.com/shyiko/jabba/compare/0.9.0...0.9.1) - 2017-10-12 
+
+### Fixed
+- `tgz is not supported` when trying to install JDK from `tar.gz` on macOS & Windows. 
+
 ## [0.9.0](https://github.com/shyiko/jabba/compare/0.8.0...0.9.0) - 2017-09-19 
 
 ### Added
