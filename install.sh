@@ -100,7 +100,7 @@ echo "    (JABBA_SHELL_INTEGRATION=ON $JABBA_HOME_TO_EXPORT/bin/jabba \"\$@\" 3>
 echo "    local exit_code=\$?"
 echo "    eval \$(cat \${fd3})"
 echo "    rm -f \${fd3}"
-echo "    (return \${exit_code})"
+echo "    return \${exit_code}"
 echo "}"
 echo ""
 echo "if [ ! -z \"\$(jabba alias default)\" ]; then"
