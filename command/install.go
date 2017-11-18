@@ -402,7 +402,7 @@ func untgz(source string, target string, strip bool) error {
 				dir = filepath.Clean(header.Name)
 			}
 			if prefix != nil {
-				dirSplit := strings.Split(dir, "/")
+				dirSplit := strings.Split(dir, string(filepath.Separator))
 				i, e, dse := 0, len(prefix), len(dirSplit)
 				if dse < e {
 					e = dse
@@ -415,10 +415,10 @@ func untgz(source string, target string, strip bool) error {
 					i++
 				}
 			} else {
-				prefix = strings.Split(dir, "/")
+				prefix = strings.Split(dir, string(filepath.Separator))
 			}
 		}
-		prefixToStrip = strings.Join(prefix, "/")
+		prefixToStrip = strings.Join(prefix, string(filepath.Separator))
 	}
 	gzFile.Seek(0, 0)
 	gzr, err := gzip.NewReader(gzFile)
@@ -493,7 +493,7 @@ func unzip(source string, target string, strip bool) error {
 				dir = filepath.Clean(f.Name)
 			}
 			if prefix != nil {
-				dirSplit := strings.Split(dir, "/")
+				dirSplit := strings.Split(dir, string(filepath.Separator))
 				i, e, dse := 0, len(prefix), len(dirSplit)
 				if dse < e {
 					e = dse
@@ -506,10 +506,10 @@ func unzip(source string, target string, strip bool) error {
 					i++
 				}
 			} else {
-				prefix = strings.Split(dir, "/")
+				prefix = strings.Split(dir, string(filepath.Separator))
 			}
 		}
-		prefixToStrip = strings.Join(prefix, "/")
+		prefixToStrip = strings.Join(prefix, string(filepath.Separator))
 	}
 	dirCache := make(map[string]bool) // todo: radix tree would perform better here
 	//println("mkdir -p " + target)
