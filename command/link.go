@@ -49,8 +49,11 @@ func LinkLatest() error {
 				target := GetLink(sourceVersion)
 				_, err := LsBestMatchWithVersionSlice(vs, sourceVersion)
 				if err != nil {
-					log.Info(sourceVersion + " -/> " + target)
-					if err := os.Remove(filepath.Join(cfg.Dir(), "jdk", sourceVersion)); !os.IsNotExist(err) {
+					err := os.Remove(filepath.Join(cfg.Dir(), "jdk", sourceVersion))
+					if err == nil {
+						log.Info(sourceVersion + " -/> " + target)
+					}
+					if !os.IsNotExist(err) {
 						return err
 					}
 				} else {
