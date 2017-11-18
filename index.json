@@ -2,7 +2,7 @@
   "darwin": {
     "amd64": {
       "jdk": {
-        "1.10.0-31": "dmg+http://download.java.net/java/jdk10/archive/31/binaries/jdk-10-ea+31_osx-x64_bin.dmg",
+        "1.10.0-32": "dmg+http://download.java.net/java/jdk10/archive/32/binaries/jdk-10-ea+32_osx-x64_bin.dmg",
         "1.9.0": "dmg+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_osx-x64_bin.dmg",
         "1.9.0-1": "dmg+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_osx-x64_bin.dmg",
         "1.6.65": "dmg+https://support.apple.com/downloads/DL1572/en_US/javaforosx.dmg"
@@ -78,7 +78,7 @@
     },
     "amd64": {
       "jdk": {
-        "1.10.0-31": "tgz+http://download.java.net/java/jdk10/archive/31/binaries/jdk-10-ea+31_linux-x64_bin.tar.gz",
+        "1.10.0-32": "tgz+http://download.java.net/java/jdk10/archive/32/binaries/jdk-10-ea+32_linux-x64_bin.tar.gz",
         "1.9.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_linux-x64_bin.tar.gz",
         "1.9.0-1": "tgz+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_linux-x64_bin.tar.gz"
       },
@@ -168,6 +168,7 @@
       "jdk": {
       },
       "jdk@zulu": {
+        "1.8.152": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_152-8.25.0.76-eval-linux_aarch32hf.tar.gz",
         "1.8.131": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_131-8.21.0.57-eval-linux_aarch32hf.tar.gz",
         "1.8.121": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf.tar.gz"
       }
@@ -184,6 +185,7 @@
         "1.8.141-15": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_aarch64_Linux_jdk8u141-b15.tar.gz"
       },
       "jdk@zulu": {
+        "1.8.152": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_152-8.25.0.79-eval-linux_aarch64.tar.gz",
         "1.8.144": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_144-8.23.0.70-eval-linux_aarch64.tar.gz"
       }
     }
@@ -191,7 +193,7 @@
   "windows": {
     "amd64": {
       "jdk": {
-        "1.10.0-31": "exe+http://download.java.net/java/jdk10/archive/31/binaries/jdk-10-ea+31_windows-x64_bin.exe",
+        "1.10.0-32": "exe+http://download.java.net/java/jdk10/archive/32/binaries/jdk-10-ea+32_windows-x64_bin.exe",
         "1.9.0": "exe+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_windows-x64_bin.exe",
         "1.9.0-1": "exe+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_windows-x64_bin.exe"
       },
