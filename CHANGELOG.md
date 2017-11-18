@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.2](https://github.com/shyiko/jabba/compare/0.9.1...0.9.2) - 2017-11-18 
+
+### Fixed
+- `zip` & `tgz` stripping on Windows ([#116](https://github.com/shyiko/jabba/issues/116)).
+
 ## [0.9.1](https://github.com/shyiko/jabba/compare/0.9.0...0.9.1) - 2017-10-12 
 
 ### Fixed
