@@ -2,7 +2,7 @@
   "darwin": {
     "amd64": {
       "jdk": {
-        "1.10.0-35": "dmg+http://download.java.net/java/jdk10/archive/35/binaries/jdk-10-ea+35_osx-x64_bin.dmg",
+        "1.10.0-36": "dmg+http://download.java.net/java/jdk10/archive/36/binaries/jdk-10-ea+36_osx-x64_bin.dmg",
         "1.9.0": "dmg+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_osx-x64_bin.dmg",
         "1.9.0-1": "dmg+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_osx-x64_bin.dmg",
         "1.6.65": "dmg+https://support.apple.com/downloads/DL1572/en_US/javaforosx.dmg"
@@ -82,7 +82,7 @@
     },
     "amd64": {
       "jdk": {
-        "1.10.0-35": "tgz+http://download.java.net/java/jdk10/archive/35/binaries/jdk-10-ea+35_linux-x64_bin.tar.gz",
+        "1.10.0-36": "tgz+http://download.java.net/java/jdk10/archive/36/binaries/jdk-10-ea+36_linux-x64_bin.tar.gz",
         "1.9.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_linux-x64_bin.tar.gz",
         "1.9.0-1": "tgz+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_linux-x64_bin.tar.gz"
       },
@@ -201,7 +201,7 @@
   "windows": {
     "amd64": {
       "jdk": {
-        "1.10.0-35": "exe+http://download.java.net/java/jdk10/archive/35/binaries/jdk-10-ea+35_windows-x64_bin.exe",
+        "1.10.0-36": "exe+http://download.java.net/java/jdk10/archive/36/binaries/jdk-10-ea+36_windows-x64_bin.exe",
         "1.9.0": "exe+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_windows-x64_bin.exe",
         "1.9.0-1": "exe+http://download.oracle.com/otn-pub/java/jdk/9.0.1+11/jdk-9.0.1_windows-x64_bin.exe"
       },
