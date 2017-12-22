@@ -38,7 +38,7 @@ if (-not $binaryValid)
     echo "$jabbaHome\bin\jabba does not appear to be a valid binary.
 
 Check your Internet connection / proxy settings and try again.
-If the problem persists - please create a ticket at https://github.com/shyiko/jabba/issue."
+If the problem persists - please create a ticket at https://github.com/shyiko/jabba/issues."
     exit 1
 }
 
@@ -80,4 +80,4 @@ else
 
 echo ""
 echo "Installation completed`
-(if you have any problems please report them at https://github.com/shyiko/jabba/issue)"
+(if you have any problems please report them at https://github.com/shyiko/jabba/issues)"

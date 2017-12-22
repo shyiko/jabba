@@ -584,7 +584,7 @@ func assertJavaDistribution(target string) error {
 	var err error
 	if _, err = os.Stat(path); os.IsNotExist(err) {
 		err = errors.New(path + " wasn't found. " +
-			"If you believe this is an error - please create a ticket at https://github.com/shyiko/jabba/issue " +
+			"If you believe this is an error - please create a ticket at https://github.com/shyiko/jabba/issues " +
 			"(specify OS and command that was used)")
 	}
 	return err

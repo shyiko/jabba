@@ -51,7 +51,7 @@ case "$OSTYPE" in
     ;;
     *)
     echo "Unsupported OS $OSTYPE. If you believe this is an error -
-please create a ticket at https://github.com/shyiko/jabba/issue."
+please create a ticket at https://github.com/shyiko/jabba/issues."
     exit 1
     ;;
 esac
@@ -75,7 +75,7 @@ if ! ${JABBA_HOME}/bin/jabba --version &>/dev/null; then
     echo "${JABBA_HOME}/bin/jabba does not appear to be a valid binary.
 
 Check your Internet connection / proxy settings and try again.
-If the problem persists - please create a ticket at https://github.com/shyiko/jabba/issue."
+If the problem persists - please create a ticket at https://github.com/shyiko/jabba/issues."
     exit 1
 fi
 
@@ -178,6 +178,6 @@ fi
 
 echo ""
 echo "Installation completed
-(if you have any problems please report them at https://github.com/shyiko/jabba/issue)"
+(if you have any problems please report them at https://github.com/shyiko/jabba/issues)"
 
 } # this ensures the entire script is downloaded
