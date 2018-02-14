@@ -2,7 +2,6 @@
   "darwin": {
     "amd64": {
       "jdk": {
-        "1.10.0-42": "dmg+http://download.java.net/java/jdk10/archive/42/BCL/jdk-10-ea+42_osx-x64_bin.dmg",
         "1.9.0": "dmg+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_osx-x64_bin.dmg",
         "1.9.0-4": "dmg+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_osx-x64_bin.dmg",
         "1.6.65": "dmg+https://support.apple.com/downloads/DL1572/en_US/javaforosx.dmg"
@@ -74,7 +73,6 @@
     },
     "amd64": {
       "jdk": {
-        "1.10.0-42": "tgz+http://download.java.net/java/jdk10/archive/42/BCL/jdk-10-ea+42_linux-x64_bin.tar.gz",
         "1.9.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz",
         "1.9.0-4": "tgz+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz"
       },
@@ -146,6 +144,7 @@
         "1.7.111": "tgz+http://cdn.azul.com/zulu/bin/zulu7.15.0.1-jdk7.0.111-linux_x64.tar.gz",
         "1.7.101": "tgz+http://cdn.azul.com/zulu/bin/zulu7.14.0.5-jdk7.0.101-linux_x64.tar.gz",
         "1.7.95": "tgz+http://cdn.azul.com/zulu/bin/zulu7.13.0.1-jdk7.0.95-linux_x64.tar.gz",
+        "1.6.103": "tgz+http://cdn.azul.com/zulu/bin/zulu6.19.0.1-jdk6.0.103-linux_x64.tar.gz",
         "1.6.99": "tgz+http://cdn.azul.com/zulu/bin/zulu6.18.0.3-jdk6.0.99-linux_x64.tar.gz",
         "1.6.97": "tgz+http://cdn.azul.com/zulu/bin/zulu6.17.0.1-jdk6.0.97-linux_x64.tar.gz",
         "1.6.93": "tgz+http://cdn.azul.com/zulu/bin/zulu6.16.0.1-jdk6.0.93-linux_x64.tar.gz",
@@ -185,7 +184,6 @@
   "windows": {
     "amd64": {
       "jdk": {
-        "1.10.0-42": "exe+http://download.java.net/java/jdk10/archive/42/BCL/jdk-10-ea+42_windows-x64_bin.exe",
         "1.9.0": "exe+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_windows-x64_bin.exe",
         "1.9.0-4": "exe+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_windows-x64_bin.exe"
       },
@@ -251,6 +249,7 @@
         "1.7.45": "zip+http://cdn.azul.com/zulu/bin/zulu1.7.0_45-7.2.1.5-win64.zip",
         "1.7.40": "zip+http://azure.azulsystems.com/zulu/zulu1.7.0_40-7.1.0.0-win64.zip",
         "1.7.25": "zip+http://azure.azulsystems.com/zulu/zulu1.7.0_25-7.0.0.0-win64.zip",
+        "1.6.103": "zip+https://cdn.azul.com/zulu/bin/zulu6.19.0.1-jdk6.0.103-win_x64.zip",
         "1.6.99": "zip+https://cdn.azul.com/zulu/bin/zulu6.18.1.5-jdk6.0.99-win_x64.zip",
         "1.6.97": "zip+http://cdn.azul.com/zulu/bin/zulu6.17.0.1-jdk6.0.97-win_x64.zip",
         "1.6.93": "zip+http://cdn.azul.com/zulu/bin/zulu6.16.0.1-jdk6.0.93-win_x64.zip",
