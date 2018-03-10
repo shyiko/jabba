@@ -3,7 +3,7 @@
     "amd64": {
       "jdk": {
         "1.11.0-3": "dmg+http://download.java.net/java/early_access/jdk11/3/BCL/jdk-11-ea+3_osx-x64_bin.dmg",
-        "1.10.0-45": "dmg+http://download.java.net/java/jdk10/archive/45/BCL/jdk-10+45_osx-x64_bin.dmg",
+        "1.10.0-46": "dmg+http://download.java.net/java/jdk10/archive/46/BCL/jdk-10+46_osx-x64_bin.dmg",
         "1.9.0": "dmg+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_osx-x64_bin.dmg",
         "1.9.0-4": "dmg+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_osx-x64_bin.dmg",
         "1.8.162": "dmg+http://download.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/jdk-8u162-macosx-x64.dmg",
@@ -84,7 +84,7 @@
     "amd64": {
       "jdk": {
         "1.11.0-3": "tgz+http://download.java.net/java/early_access/jdk11/3/BCL/jdk-11-ea+3_linux-x64_bin.tar.gz",
-        "1.10.0-45": "tgz+http://download.java.net/java/jdk10/archive/45/BCL/jdk-10+45_linux-x64_bin.tar.gz",
+        "1.10.0-46": "tgz+http://download.java.net/java/jdk10/archive/46/BCL/jdk-10+46_linux-x64_bin.tar.gz",
         "1.9.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz",
         "1.9.0-4": "tgz+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.tar.gz",
         "1.8.162": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/jdk-8u162-linux-x64.tar.gz",
@@ -209,7 +209,7 @@
     "amd64": {
       "jdk": {
         "1.11.0-3": "exe+http://download.java.net/java/early_access/jdk11/3/BCL/jdk-11-ea+3_windows-x64_bin.exe",
-        "1.10.0-45": "exe+http://download.java.net/java/jdk10/archive/45/BCL/jdk-10+45_windows-x64_bin.exe",
+        "1.10.0-46": "exe+http://download.java.net/java/jdk10/archive/46/BCL/jdk-10+46_windows-x64_bin.exe",
         "1.9.0": "exe+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_windows-x64_bin.exe",
         "1.9.0-4": "exe+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_windows-x64_bin.exe",
         "1.8.162": "exe+http://download.oracle.com/otn-pub/java/jdk/8u162-b12/0da788060d494f5095bf8624735fa2f1/jdk-8u162-windows-x64.exe",
