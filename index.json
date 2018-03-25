@@ -20,6 +20,9 @@
         "1.8.144-01": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_x64_Mac_jdk8u144-b01.tar.gz",
         "1.8.141-15": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Mac_jdk8u141-b15.tar.gz"
       },
+      "jdk@openjdk": {
+        "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_osx-x64_bin.tar.gz"
+      },
       "jdk@zulu": {
         "1.10.0": "zip+https://cdn.azul.com/zulu/bin/zulu10.1+11-jdk10-macosx_x64.zip",
         "1.9.0": "tgz+https://cdn.azul.com/zulu/bin/zulu9.0.4.1-jdk9.0.4-macosx_x64.tar.gz",
@@ -133,6 +136,9 @@
         "1.6.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/6.0.16.50/linux/x86_64/ibm-java-sdk-6.0-16.50-linux-x86_64.bin",
         "1.6.0-16.50": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/6.0.16.50/linux/x86_64/ibm-java-sdk-6.0-16.50-linux-x86_64.bin"
       },
+      "jdk@openjdk": {
+        "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_linux-x64_bin.tar.gz"
+      },
       "jdk@sjre": {
         "1.10.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/10+46/76eac37278c24557a3c4199677f19b62/serverjre-10_linux-x64_bin.tar.gz",
         "1.9.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/serverjre-9.0.4_linux-x64_bin.tar.gz",
@@ -224,6 +230,9 @@
         "1.8.152-04": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u152-b04/OpenJDK8_x64_Win_jdk8u152-b04.zip",
         "1.8.144-01": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u144-b01/OpenJDK8_x64_Win_jdk8u144-b01.zip",
         "1.8.141-15": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Win_jdk8u141-b15.zip"
+      },
+      "jdk@openjdk": {
+        "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_windows-x64_bin.tar.gz"
       },
       "jdk@sjre": {
         "1.10.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/10+46/76eac37278c24557a3c4199677f19b62/serverjre-10_windows-x64_bin.tar.gz",
