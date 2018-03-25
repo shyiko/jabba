@@ -21,6 +21,7 @@
         "1.8.141-15": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Mac_jdk8u141-b15.tar.gz"
       },
       "jdk@openjdk": {
+        "1.11.0-5": "tgz+https://download.java.net/java/early_access/jdk11/5/GPL/openjdk-11-ea+5_osx-x64_bin.tar.gz",
         "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_osx-x64_bin.tar.gz"
       },
       "jdk@zulu": {
@@ -137,6 +138,7 @@
         "1.6.0-16.50": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/6.0.16.50/linux/x86_64/ibm-java-sdk-6.0-16.50-linux-x86_64.bin"
       },
       "jdk@openjdk": {
+        "1.11.0-5": "tgz+https://download.java.net/java/early_access/jdk11/5/GPL/openjdk-11-ea+5_linux-x64_bin.tar.gz",
         "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_linux-x64_bin.tar.gz"
       },
       "jdk@sjre": {
@@ -232,6 +234,7 @@
         "1.8.141-15": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u141-b15/OpenJDK8_x64_Win_jdk8u141-b15.zip"
       },
       "jdk@openjdk": {
+        "1.11.0-5": "tgz+https://download.java.net/java/early_access/jdk11/5/GPL/openjdk-11-ea+5_windows-x64_bin.tar.gz",
         "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_windows-x64_bin.tar.gz"
       },
       "jdk@sjre": {
