@@ -46,6 +46,10 @@
         "1.7.131": "zip+http://cdn.azul.com/zulu/bin/zulu7.17.0.5-jdk7.0.131-macosx_x64.zip",
         "1.7.101": "zip+http://cdn.azul.com/zulu/bin/zulu7.14.0.5-jdk7.0.101-macosx_x64.zip",
         "1.7.95": "zip+http://cdn.azul.com/zulu/bin/zulu7.13.0.1-jdk7.0.95-macosx_x64.zip"
+      },
+      "openjdk": {
+        "1.11.0-5": "tgz+https://download.java.net/java/early_access/jdk11/5/GPL/openjdk-11-ea+5_osx-x64_bin.tar.gz",
+        "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_osx-x64_bin.tar.gz"
       }
     }
   },
@@ -182,6 +186,10 @@
         "1.6.83": "tgz+http://cdn.azul.com/zulu/bin/zulu6.13.0.3-jdk6.0.83-linux_x64.tar.gz",
         "1.6.79": "tgz+http://cdn.azul.com/zulu/bin/zulu6.12.0.2-jdk6.0.79-linux_x64.tar.gz",
         "1.6.77": "tgz+http://cdn.azul.com/zulu/bin/zulu6.11.0.2-jdk6.0.77-linux_x64.tar.gz"
+      },
+      "openjdk": {
+        "1.11.0-5": "tgz+https://download.java.net/java/early_access/jdk11/5/GPL/openjdk-11-ea+5_linux-x64_bin.tar.gz",
+        "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_linux-x64_bin.tar.gz"
       }
     },
     "arm": {
@@ -311,6 +319,10 @@
         "1.6.53": "zip+http://cdn.azul.com/zulu/bin/zulu1.6.0_53-6.5.0.2-win64.zip",
         "1.6.49": "zip+http://cdn.azul.com/zulu/bin/zulu1.6.0_49-6.4.0.6-win64.zip",
         "1.6.47": "zip+http://cdn.azul.com/zulu/bin/zulu1.6.0_47-6.3.0.3-win64.zip"
+      },
+      "openjdk": {
+        "1.11.0-5": "tgz+https://download.java.net/java/early_access/jdk11/5/GPL/openjdk-11-ea+5_windows-x64_bin.tar.gz",
+        "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10/binaries/openjdk-10_windows-x64_bin.tar.gz"
       }
     }
   }
