@@ -108,6 +108,9 @@
       "jdk@adopt-openj9": {
         "1.9.0-181": "tgz+https://github.com/AdoptOpenJDK/openjdk9-openj9-releases/releases/download/jdk-9%2B181/OpenJDK9-OPENJ9_x64_Linux_jdk-9.181.tar.gz"
       },
+      "jdk@graalvm": {
+        "1.0.0-1": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc1/graalvm-ce-1.0.0-rc1-linux-amd64.tar.gz"
+      },
       "jdk@ibm": {
         "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.4.1/linux/x86_64/ibm-java-sdk-8.0-4.1-x86_64-archive.bin",
         "1.8.0-5.11": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.11/linux/x86_64/ibm-java-sdk-8.0-5.11-x86_64-archive.bin",
