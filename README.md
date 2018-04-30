@@ -69,9 +69,10 @@ java version "1.8....
 > (in powershell)
 
 ```powershell
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-Expression (
-        wget https://github.com/shyiko/jabba/raw/master/install.ps1 -UseBasicParsing
-    ).Content
+  Invoke-WebRequest https://github.com/shyiko/jabba/raw/master/install.ps1 -UseBasicParsing
+).Content
 ```
 
 > (use the same command to upgrade)
