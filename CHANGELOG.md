@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.3](https://github.com/shyiko/jabba/compare/0.9.2...0.9.3) - 2018-04-30
+
+### Fixed
+- `Contents/Home` handling (macOS) ([#187](https://github.com/shyiko/jabba/issues/187)).
+
 ## [0.9.2](https://github.com/shyiko/jabba/compare/0.9.1...0.9.2) - 2017-11-18 
 
 ### Fixed
