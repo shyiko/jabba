@@ -1,7 +1,9 @@
 package command
 
 import (
+	"archive/tar"
 	"archive/zip"
+	"compress/gzip"
 	"errors"
 	"fmt"
 	log "github.com/Sirupsen/logrus"
@@ -19,8 +21,6 @@ import (
 	"runtime"
 	"sort"
 	"strings"
-	"compress/gzip"
-	"archive/tar"
 )
 
 func Install(selector string, dest string) (string, error) {
@@ -230,19 +230,49 @@ func installOnDarwin(ver string, file string, fileType string, dest string) (err
 	case "dmg":
 		err = installFromDmg(file, dest)
 	case "tgz":
-		err = installFromTgz(file, dest+"/Contents/Home")
+		err = installFromTgz(file, dest)
 	case "zip":
-		err = installFromZip(file, dest+"/Contents/Home")
+		err = installFromZip(file, dest)
 	default:
 		return errors.New(fileType + " is not supported")
 	}
 	if err == nil {
-		err = assertJavaDistribution(dest)
+		err = ensureContentsHomeHierarchy(dest)
+		if err == nil {
+			err = assertJavaDistribution(dest)
+		}
 	}
 	if err != nil {
 		os.RemoveAll(dest)
 	}
 	return
+}
+
+func ensureContentsHomeHierarchy(dir string) error {
+	dir = filepath.Clean(dir)
+	var err error
+	stat, err := os.Stat(dir)
+	if err == nil {
+		// <dir>/bin/java -> <dir>/Contents/Home/<* in <dir>>
+		if _, err = os.Stat(filepath.Join(dir, "bin", "java")); !os.IsNotExist(err) {
+			// as <dir> cannot be moved to a subdirectory of itself we do it in two steps
+			if err = os.Rename(dir, filepath.Join(dir+"~jabba")); err == nil {
+				if err = os.MkdirAll(filepath.Join(dir, "Contents"), stat.Mode()); err == nil {
+					err = os.Rename(filepath.Join(dir+"~jabba"), filepath.Join(dir, "Contents", "Home"))
+				}
+			}
+		} else
+		// <dir>/Home/bin/java -> <dir>/Contents/<* in <dir>>
+		if _, err = os.Stat(filepath.Join(dir, "Home", "bin", "java")); !os.IsNotExist(err) {
+			// as <dir> cannot be moved to a subdirectory of itself we do it in two steps
+			if err = os.Rename(dir, filepath.Join(dir+"~jabba")); err == nil {
+				if err = os.MkdirAll(filepath.Join(dir), stat.Mode()); err == nil {
+					err = os.Rename(filepath.Join(dir+"~jabba"), filepath.Join(dir, "Contents"))
+				}
+			}
+		}
+	}
+	return err
 }
 
 func installFromDmg(source string, target string) error {
@@ -399,7 +429,7 @@ func untgz(source string, target string, strip bool) error {
 			if header.Typeflag != tar.TypeDir {
 				dir = filepath.Dir(header.Name)
 			} else {
-				dir = filepath.Clean(header.Name)
+				continue
 			}
 			if prefix != nil {
 				dirSplit := strings.Split(dir, string(filepath.Separator))
@@ -443,6 +473,9 @@ func untgz(source string, target string, strip bool) error {
 			dir = filepath.Dir(header.Name)
 		} else {
 			dir = filepath.Clean(header.Name)
+			if !strings.HasPrefix(dir, prefixToStrip) {
+				continue
+			}
 		}
 		dir = strings.TrimPrefix(dir, prefixToStrip)
 		if dir != "" && dir != "." {
@@ -490,7 +523,7 @@ func unzip(source string, target string, strip bool) error {
 			if !f.Mode().IsDir() {
 				dir = filepath.Dir(f.Name)
 			} else {
-				dir = filepath.Clean(f.Name)
+				continue
 			}
 			if prefix != nil {
 				dirSplit := strings.Split(dir, string(filepath.Separator))
@@ -520,6 +553,9 @@ func unzip(source string, target string, strip bool) error {
 			dir = filepath.Dir(f.Name)
 		} else {
 			dir = filepath.Clean(f.Name)
+			if !strings.HasPrefix(dir, prefixToStrip) {
+				continue
+			}
 		}
 		dir = strings.TrimPrefix(dir, prefixToStrip)
 		if dir != "" && dir != "." {

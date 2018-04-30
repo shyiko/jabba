@@ -116,10 +116,10 @@ func (c VersionSlice) TrimTo(part VersionPart) VersionSlice {
 				continue
 			}
 		}
-		pQualifier =  v.qualifier
-		pMajor =  v.Major()
-		pMinor =  v.Minor()
-		pPatch =  v.Patch()
+		pQualifier = v.qualifier
+		pMajor = v.Major()
+		pMinor = v.Minor()
+		pPatch = v.Patch()
 		r = append(r, v)
 	}
 	return r

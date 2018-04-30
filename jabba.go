@@ -340,9 +340,12 @@ func main() {
 
 func parseTrimTo(value string) semver.VersionPart {
 	switch strings.ToLower(value) {
-	case "major": return semver.VPMajor
-	case "minor": return semver.VPMinor
-	case "patch": return semver.VPPatch
+	case "major":
+		return semver.VPMajor
+	case "minor":
+		return semver.VPMinor
+	case "patch":
+		return semver.VPPatch
 	default:
 		log.Fatal("Unexpected value of --latest (must be either \"major\", \"minor\" or \"patch\")")
 		return -1

@@ -2,12 +2,12 @@ package command
 
 import (
 	"errors"
+	log "github.com/Sirupsen/logrus"
 	"github.com/shyiko/jabba/cfg"
 	"github.com/shyiko/jabba/semver"
 	"os"
 	"path/filepath"
 	"strings"
-	log "github.com/Sirupsen/logrus"
 )
 
 func Link(selector string, dir string) error {
@@ -90,7 +90,7 @@ func linkAlias(name string, vs []*semver.Version) error {
 	if defaultAlias != "" {
 		defaultAlias, _ = LsBestMatchWithVersionSlice(vs, defaultAlias)
 	}
-	sourceRef := /*"alias@" + */name
+	sourceRef := /*"alias@" + */ name
 	source := filepath.Join(cfg.Dir(), "jdk", sourceRef)
 	sourceTarget := GetLink(sourceRef)
 	if defaultAlias != "" {
