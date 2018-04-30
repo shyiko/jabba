@@ -15,6 +15,7 @@ the OS (macOS, Linux x86/x86_64/ARMv7+, Windows x86_64).
   - [Eclipse OpenJ9](https://www.eclipse.org/openj9/oj9_faq.html)
 - [Zulu OpenJDK](http://zulu.org/) <sup>(jabba >=0.3.0 is required)</sup>
 - [IBM SDK, Java Technology Edition](https://developer.ibm.com/javasdk/) <sup>(jabba >=0.6.0 is required)</sup> 
+- [GraalVM CE](https://www.graalvm.org/)
 
 ... and from custom URLs.
 
