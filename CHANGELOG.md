@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.4](https://github.com/shyiko/jabba/compare/0.9.3...0.9.4) - 2018-05-01
+
+### Fixed
+- Installation from sources containing `Contents/Home` (macOS) (regression introduced in 0.9.3).
+
 ## [0.9.3](https://github.com/shyiko/jabba/compare/0.9.2...0.9.3) - 2018-04-30
 
 ### Fixed
