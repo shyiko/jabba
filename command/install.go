@@ -254,7 +254,7 @@ func ensureContentsHomeHierarchy(dir string) error {
 	stat, err := os.Stat(dir)
 	if err == nil {
 		// <dir>/bin/java -> <dir>/Contents/Home/<* in <dir>>
-		if _, err = os.Stat(filepath.Join(dir, "bin", "java")); !os.IsNotExist(err) {
+		if _, errj := os.Stat(filepath.Join(dir, "bin", "java")); !os.IsNotExist(errj) {
 			// as <dir> cannot be moved to a subdirectory of itself we do it in two steps
 			if err = os.Rename(dir, filepath.Join(dir+"~jabba")); err == nil {
 				if err = os.MkdirAll(filepath.Join(dir, "Contents"), stat.Mode()); err == nil {
@@ -263,7 +263,7 @@ func ensureContentsHomeHierarchy(dir string) error {
 			}
 		} else
 		// <dir>/Home/bin/java -> <dir>/Contents/<* in <dir>>
-		if _, err = os.Stat(filepath.Join(dir, "Home", "bin", "java")); !os.IsNotExist(err) {
+		if _, errj := os.Stat(filepath.Join(dir, "Home", "bin", "java")); !os.IsNotExist(errj) {
 			// as <dir> cannot be moved to a subdirectory of itself we do it in two steps
 			if err = os.Rename(dir, filepath.Join(dir+"~jabba")); err == nil {
 				if err = os.MkdirAll(filepath.Join(dir), stat.Mode()); err == nil {
