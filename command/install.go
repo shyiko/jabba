@@ -459,7 +459,9 @@ func untgz(source string, target string, strip bool) error {
 	r := tar.NewReader(gzr)
 	dirCache := make(map[string]bool) // todo: radix tree would perform better here
 	//println("mkdir -p " + target)
-	os.MkdirAll(target, 0755)
+	if err := os.MkdirAll(target, 0755); err != nil {
+		return err
+	}
 	for {
 		header, err := r.Next()
 		if err == io.EOF {
@@ -482,7 +484,9 @@ func untgz(source string, target string, strip bool) error {
 			cached := dirCache[dir]
 			if !cached {
 				//println("mkdir -p " + filepath.Join(target, dir))
-				os.MkdirAll(filepath.Join(target, dir), 0755)
+				if err := os.MkdirAll(filepath.Join(target, dir), 0755); err != nil {
+					return err
+				}
 				dirCache[dir] = true
 			}
 		}
@@ -490,7 +494,7 @@ func untgz(source string, target string, strip bool) error {
 			name := filepath.Base(header.Name)
 			//println("touch " + filepath.Join(target, dir, name))
 			f, err := os.OpenFile(filepath.Join(target, dir, name),
-				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode))
+				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode|0600))
 			if err != nil {
 				return err
 			}
@@ -546,7 +550,9 @@ func unzip(source string, target string, strip bool) error {
 	}
 	dirCache := make(map[string]bool) // todo: radix tree would perform better here
 	//println("mkdir -p " + target)
-	os.MkdirAll(target, 0755)
+	if err := os.MkdirAll(target, 0755); err != nil {
+		return err
+	}
 	for _, f := range r.File {
 		var dir string
 		if !f.Mode().IsDir() {
@@ -562,7 +568,9 @@ func unzip(source string, target string, strip bool) error {
 			cached := dirCache[dir]
 			if !cached {
 				//println("mkdir -p " + filepath.Join(target, dir))
-				os.MkdirAll(filepath.Join(target, dir), 0755)
+				if err := os.MkdirAll(filepath.Join(target, dir), 0755); err != nil {
+					return err
+				}
 				dirCache[dir] = true
 			}
 		}
@@ -574,7 +582,7 @@ func unzip(source string, target string, strip bool) error {
 				return err
 			}
 			f, err := os.OpenFile(filepath.Join(target, dir, name),
-				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode())
+				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode()|0600)
 			if err != nil {
 				return err
 			}
