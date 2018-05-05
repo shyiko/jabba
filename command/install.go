@@ -493,16 +493,19 @@ func untgz(source string, target string, strip bool) error {
 		if header.Typeflag != tar.TypeDir {
 			name := filepath.Base(header.Name)
 			//println("touch " + filepath.Join(target, dir, name))
-			f, err := os.OpenFile(filepath.Join(target, dir, name),
-				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode|0600)&0777)
+			path := filepath.Join(target, dir, name)
+			d, err := os.Create(path)
 			if err != nil {
 				return err
 			}
-			_, err = io.Copy(f, r)
+			_, err = io.Copy(d, r)
+			d.Close()
 			if err != nil {
 				return err
 			}
-			f.Close()
+			if err := os.Chmod(path, os.FileMode(header.Mode|0600)&0777); err != nil {
+				return err
+			}
 		}
 	}
 	return nil
@@ -581,16 +584,19 @@ func unzip(source string, target string, strip bool) error {
 			if err != nil {
 				return err
 			}
-			f, err := os.OpenFile(filepath.Join(target, dir, name),
-				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, (f.Mode()|0600)&0777)
+			path := filepath.Join(target, dir, name)
+			d, err := os.Create(path)
 			if err != nil {
 				return err
 			}
-			_, err = io.Copy(f, fr)
+			_, err = io.Copy(d, fr)
+			d.Close()
 			if err != nil {
 				return err
 			}
-			f.Close()
+			if err := os.Chmod(path, (f.Mode()|0600)&0777); err != nil {
+				return err
+			}
 		}
 	}
 	return nil
