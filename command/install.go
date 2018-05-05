@@ -494,7 +494,7 @@ func untgz(source string, target string, strip bool) error {
 			name := filepath.Base(header.Name)
 			//println("touch " + filepath.Join(target, dir, name))
 			f, err := os.OpenFile(filepath.Join(target, dir, name),
-				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode|0600))
+				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode|0600)&0777)
 			if err != nil {
 				return err
 			}
@@ -582,7 +582,7 @@ func unzip(source string, target string, strip bool) error {
 				return err
 			}
 			f, err := os.OpenFile(filepath.Join(target, dir, name),
-				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, f.Mode()|0600)
+				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, (f.Mode()|0600)&0777)
 			if err != nil {
 				return err
 			}
