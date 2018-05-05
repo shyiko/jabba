@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.9.5](https://github.com/shyiko/jabba/compare/0.9.4...0.9.5) - 2018-05-04
+
+### Fixed
+- Sporadic "open: permission denied" when installing from tgz/zip's ([travis-ci/travis-ci#9572](https://github.com/travis-ci/travis-ci/issues/9572)).
+
 ## [0.9.4](https://github.com/shyiko/jabba/compare/0.9.3...0.9.4) - 2018-05-01
 
 ### Fixed
