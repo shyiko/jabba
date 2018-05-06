@@ -1,4 +1,4 @@
-# jabba ![Latest Version](https://img.shields.io/badge/latest-0.9.6-blue.svg) [![Build Status](https://travis-ci.org/shyiko/jabba.svg?branch=master)](https://travis-ci.org/shyiko/jabba)
+# jabba ![Latest Version](https://img.shields.io/badge/latest-0.10.0-blue.svg) [![Build Status](https://travis-ci.org/shyiko/jabba.svg?branch=master)](https://travis-ci.org/shyiko/jabba)
 
 ![jabba-the-hutt](https://cloud.githubusercontent.com/assets/370176/13943697/e6098ed0-efbb-11e5-9630-3ff0d0d0403d.jpg)
 
@@ -16,6 +16,8 @@ the OS (macOS, Linux x86/x86_64/ARMv7+, Windows x86_64).
 - [Zulu OpenJDK](http://zulu.org/) <sup>(jabba >=0.3.0 is required)</sup>
 - [IBM SDK, Java Technology Edition](https://developer.ibm.com/javasdk/) <sup>(jabba >=0.6.0 is required)</sup> 
 - [GraalVM CE](https://www.graalvm.org/)
+- [OpenJDK](http://openjdk.java.net/)
+- [OpenJDK with Shenandoah GC](https://wiki.openjdk.java.net/display/shenandoah/Main) <sup>(jabba >=0.10.0 is required)</sup>
 
 ... and from custom URLs.
 
@@ -100,9 +102,17 @@ jabba install zulu@1.8
 jabba install zulu@~1.8.144 # same as "zulu@>=1.8.144 <1.9" 
 # install IBM SDK, Java Technology Edition
 jabba install ibm@1.8
+# install GraalVM CE
+jabba install graalvm@1.0-0
+# install OpenJDK
+jabba install openjdk@1.10-0
+# install OpenJDK with Shenandoah GC
+jabba install openjdk-shenandoah@1.10-0
 
-# install from custom URL (supported qualifiers: zip (since 0.3.0), tgz, dmg, bin)
+# install from custom URL
+# (supported qualifiers: zip (since 0.3.0), tgz, tgx (since 0.10.0), dmg, bin, exe)
 jabba install 1.8.0-custom=tgz+http://example.com/distribution.tar.gz
+jabba install 1.8.0-custom=tgx+http://example.com/distribution.tar.xz
 jabba install 1.8.0-custom=zip+file:///opt/distribution.zip
 
 # link system JDK
