@@ -123,6 +123,7 @@ func Install(selector string, dest string) (string, error) {
 		}
 		deleteFileWhenFinnished = true
 	}
+	runtime.LockOSThread()
 	switch runtime.GOOS {
 	case "darwin":
 		err = installOnDarwin(file, fileType, dest)
@@ -133,6 +134,7 @@ func Install(selector string, dest string) (string, error) {
 	default:
 		err = errors.New(runtime.GOOS + " OS is not supported")
 	}
+	runtime.UnlockOSThread()
 	if err == nil && deleteFileWhenFinnished {
 		os.Remove(file)
 	}
