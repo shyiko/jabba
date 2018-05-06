@@ -11,6 +11,7 @@ import (
 	"github.com/shyiko/jabba/cfg"
 	"github.com/shyiko/jabba/semver"
 	"github.com/shyiko/jabba/w32"
+	"github.com/xi2/xz"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -124,11 +125,11 @@ func Install(selector string, dest string) (string, error) {
 	}
 	switch runtime.GOOS {
 	case "darwin":
-		err = installOnDarwin(ver.String(), file, fileType, dest)
+		err = installOnDarwin(file, fileType, dest)
 	case "linux":
-		err = installOnLinux(ver.String(), file, fileType, dest)
+		err = installOnLinux(file, fileType, dest)
 	case "windows":
-		err = installOnWindows(ver.String(), file, fileType, dest)
+		err = installOnWindows(file, fileType, dest)
 	default:
 		err = errors.New(runtime.GOOS + " OS is not supported")
 	}
@@ -225,12 +226,14 @@ func download(url string, fileType string) (file string, err error) {
 	return
 }
 
-func installOnDarwin(ver string, file string, fileType string, dest string) (err error) {
+func installOnDarwin(file string, fileType string, dest string) (err error) {
 	switch fileType {
 	case "dmg":
 		err = installFromDmg(file, dest)
 	case "tgz":
 		err = installFromTgz(file, dest)
+	case "tgx":
+		err = installFromTgx(file, dest)
 	case "zip":
 		err = installFromZip(file, dest)
 	default:
@@ -315,7 +318,7 @@ func installFromDmg(source string, target string) error {
 	return err
 }
 
-func installOnLinux(ver string, file string, fileType string, dest string) (err error) {
+func installOnLinux(file string, fileType string, dest string) (err error) {
 	switch fileType {
 	case "bin":
 		err = installFromBin(file, dest)
@@ -323,6 +326,8 @@ func installOnLinux(ver string, file string, fileType string, dest string) (err 
 		err = installFromIa(file, dest)
 	case "tgz":
 		err = installFromTgz(file, dest)
+	case "tgx":
+		err = installFromTgx(file, dest)
 	case "zip":
 		err = installFromZip(file, dest)
 	default:
@@ -337,12 +342,14 @@ func installOnLinux(ver string, file string, fileType string, dest string) (err 
 	return
 }
 
-func installOnWindows(ver string, file string, fileType string, dest string) (err error) {
+func installOnWindows(file string, fileType string, dest string) (err error) {
 	switch fileType {
 	case "exe":
 		err = installFromExe(file, dest)
 	case "tgz":
 		err = installFromTgz(file, dest)
+	case "tgx":
+		err = installFromTgx(file, dest)
 	case "zip":
 		err = installFromZip(file, dest)
 	default:
@@ -493,8 +500,8 @@ func untgz(source string, target string, strip bool) error {
 		if header.Typeflag != tar.TypeDir {
 			name := filepath.Base(header.Name)
 			//println("touch " + filepath.Join(target, dir, name))
-			path := filepath.Join(target, dir, name)
-			d, err := os.Create(path)
+			d, err := os.OpenFile(filepath.Join(target, dir, name),
+				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode|0600)&0777)
 			if err != nil {
 				return err
 			}
@@ -503,7 +510,115 @@ func untgz(source string, target string, strip bool) error {
 			if err != nil {
 				return err
 			}
-			if err := os.Chmod(path, os.FileMode(header.Mode|0600)&0777); err != nil {
+		}
+	}
+	return nil
+}
+
+func installFromTgx(source string, target string) error {
+	log.Info("Extracting " + source + " to " + target)
+	return untgx(source, target, true)
+}
+
+func untgx(source string, target string, strip bool) error {
+	xzFile, err := os.Open(source)
+	if err != nil {
+		return err
+	}
+	defer xzFile.Close()
+	var prefixToStrip string
+	if strip {
+		xzr, err := xz.NewReader(xzFile, 0)
+		if err != nil {
+			return err
+		}
+		//defer xzr.Close()
+		r := tar.NewReader(xzr)
+		var prefix []string
+		for {
+			header, err := r.Next()
+			if err == io.EOF {
+				break
+			}
+			if err != nil {
+				return err
+			}
+			var dir string
+			if header.Typeflag != tar.TypeDir {
+				dir = filepath.Dir(header.Name)
+			} else {
+				continue
+			}
+			if prefix != nil {
+				dirSplit := strings.Split(dir, string(filepath.Separator))
+				i, e, dse := 0, len(prefix), len(dirSplit)
+				if dse < e {
+					e = dse
+				}
+				for i < e {
+					if prefix[i] != dirSplit[i] {
+						prefix = prefix[0:i]
+						break
+					}
+					i++
+				}
+			} else {
+				prefix = strings.Split(dir, string(filepath.Separator))
+			}
+		}
+		prefixToStrip = strings.Join(prefix, string(filepath.Separator))
+	}
+	xzFile.Seek(0, 0)
+	xzr, err := xz.NewReader(xzFile, 0)
+	if err != nil {
+		return err
+	}
+	//defer xzr.Close()
+	r := tar.NewReader(xzr)
+	dirCache := make(map[string]bool) // todo: radix tree would perform better here
+	//println("mkdir -p " + target)
+	if err := os.MkdirAll(target, 0755); err != nil {
+		return err
+	}
+	for {
+		header, err := r.Next()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			return err
+		}
+		var dir string
+		if header.Typeflag != tar.TypeDir {
+			dir = filepath.Dir(header.Name)
+		} else {
+			dir = filepath.Clean(header.Name)
+			if !strings.HasPrefix(dir, prefixToStrip) {
+				continue
+			}
+		}
+		dir = strings.TrimPrefix(dir, prefixToStrip)
+		if dir != "" && dir != "." {
+			cached := dirCache[dir]
+			if !cached {
+				//println("mkdir -p " + filepath.Join(target, dir))
+				if err := os.MkdirAll(filepath.Join(target, dir), 0755); err != nil {
+					return err
+				}
+				dirCache[dir] = true
+			}
+		}
+		if header.Typeflag != tar.TypeDir {
+			name := filepath.Base(header.Name)
+			//println("touch " + filepath.Join(target, dir, name))
+			d, err := os.OpenFile(filepath.Join(target, dir, name),
+				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode|0600)&0777)
+			if err != nil {
+				return err
+			}
+			_, err = io.Copy(d, r)
+			d.Close()
+			if err != nil {
 				return err
 			}
 		}
@@ -584,17 +699,14 @@ func unzip(source string, target string, strip bool) error {
 			if err != nil {
 				return err
 			}
-			path := filepath.Join(target, dir, name)
-			d, err := os.Create(path)
+			d, err := os.OpenFile(filepath.Join(target, dir, name),
+				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, (f.Mode()|0600)&0777)
 			if err != nil {
 				return err
 			}
 			_, err = io.Copy(d, fr)
 			d.Close()
 			if err != nil {
-				return err
-			}
-			if err := os.Chmod(path, (f.Mode()|0600)&0777); err != nil {
 				return err
 			}
 		}

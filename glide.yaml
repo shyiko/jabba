@@ -9,3 +9,4 @@ import:
 - package: github.com/hashicorp/go-rootcerts
 - package: github.com/Masterminds/semver
 - package: github.com/inconshreveable/mousetrap
+- package: github.com/xi2/xz

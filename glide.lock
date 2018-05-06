@@ -1,5 +1,5 @@
-hash: 8f7f69987798aef0f4f591ee02bead430b17168b992f297807d85ad00832dcde
-updated: 2017-09-19T01:02:32.248951162-07:00
+hash: d0bdfd6d2a9c4621081dd9e95c799ae9616074cc149a9a25f12182c9281f68a4
+updated: 2018-05-06T09:59:22.870340859-07:00
 imports:
 - name: github.com/hashicorp/go-rootcerts
   version: 6bb64b370b90e7ef1fa532be9e591a81c3493e00
@@ -17,6 +17,8 @@ imports:
   version: c678ff029ee250b65714e518f4f5c5cb934955de
 - name: github.com/spf13/pflag
   version: 7f60f83a2c81bc3c3c0d5297f61ddfa68da9d3b7
+- name: github.com/xi2/xz
+  version: 48954b6210f8d154cb5f8484d3a3e1f83489309e
 - name: golang.org/x/sys
   version: afce3de5756ca82699128ebae46ac95ad59d6297
   subpackages:
