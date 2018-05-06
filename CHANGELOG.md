@@ -4,9 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [0.10.0](https://github.com/shyiko/jabba/compare/0.9.6...0.10.0) - 2018-05-06
 
-- [OpenJDK with Shenandoah GC](https://wiki.openjdk.java.net/display/shenandoah/Main) support ([#191](https://github.com/shyiko/jabba/issues/191))
+- [OpenJDK with Shenandoah GC](https://wiki.openjdk.java.net/display/shenandoah/Main) support ([#191](https://github.com/shyiko/jabba/issues/191))  
 (e.g. `jabba install openjdk-shenandoah@1.9`).
-- Ability to install JDK from `tar.xz` archives
+- Ability to install JDK from `tar.xz` archives  
 (e.g. `jabba install openjdk-shenandoah@1.9.0-220=tgx+file://$PWD/local-copy-of-openjdk-shenandoah-jdk9-b220-x86-release.tar.xz`).
 
 ## [0.9.6](https://github.com/shyiko/jabba/compare/0.9.5...0.9.6) - 2018-05-05
