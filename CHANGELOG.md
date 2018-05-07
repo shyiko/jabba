@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.10.1](https://github.com/shyiko/jabba/compare/0.10.0...0.10.1) - 2018-05-07
+
+### Fixed
+- `jabba install <semver>` not checking whether JDK is already installed. 
+
 ## [0.10.0](https://github.com/shyiko/jabba/compare/0.9.6...0.10.0) - 2018-05-06
 
 - [OpenJDK with Shenandoah GC](https://wiki.openjdk.java.net/display/shenandoah/Main) support ([#191](https://github.com/shyiko/jabba/issues/191))  
