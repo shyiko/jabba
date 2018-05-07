@@ -42,18 +42,6 @@ func Install(selector string, dest string) (string, error) {
 		// ... or a version (range will be tried over remote targets)
 		ver, _ = semver.ParseVersion(selector)
 	}
-	// check whether requested version is already installed
-	if ver != nil && dest == "" {
-		local, err := Ls()
-		if err != nil {
-			return "", err
-		}
-		for _, v := range local {
-			if ver.Equals(v) {
-				return ver.String(), nil
-			}
-		}
-	}
 	// ... apparently it's not
 	if releaseMap == nil {
 		ver = nil
@@ -87,6 +75,18 @@ func Install(selector string, dest string) (string, error) {
 				"\nValid install targets: " + strings.Join(tt, ", "))
 		}
 	}
+	// check whether requested version is already installed
+	if ver != nil && dest == "" {
+		local, err := Ls()
+		if err != nil {
+			return "", err
+		}
+		for _, v := range local {
+			if ver.Equals(v) {
+				return ver.String(), nil
+			}
+		}
+	}
 	url := releaseMap[ver]
 	if matched, _ := regexp.MatchString("^\\w+[+]\\w+://", url); !matched {
 		return "", errors.New("URL must contain qualifier, e.g. tgz+http://...")
@@ -105,7 +105,7 @@ func Install(selector string, dest string) (string, error) {
 			}
 		}
 	}
-	var fileType string = url[0:strings.Index(url, "+")]
+	var fileType = url[0:strings.Index(url, "+")]
 	url = url[strings.Index(url, "+")+1:]
 	var file string
 	var deleteFileWhenFinnished bool
