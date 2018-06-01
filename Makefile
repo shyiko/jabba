@@ -6,7 +6,13 @@ fetch:
 	github.com/mitchellh/gox \
 	github.com/Masterminds/glide \
 	github.com/modocache/gover \
-	github.com/aktau/github-release && \
+	github.com/aktau/github-release \
+	github.com/hashicorp/go-rootcerts \
+	github.com/shyiko/jabba/command \
+	github.com/shyiko/jabba/semver \
+	github.com/spf13/cobra \
+	github.com/spf13/pflag \
+	gopkg.in/yaml.v2 && \
 	glide install
 
 clean:
