@@ -209,10 +209,8 @@
       },
       "jdk@openjdk-shenandoah": {
         "1.10.0-248": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b248-x86_64-release.tar.xz",
-        "1.10.0-247": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b247-x86_64-release.tar.xz",
         "1.10.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b248-x86_64-release.tar.xz",
         "1.8.0-244": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b244-x86_64-release.tar.xz",
-        "1.8.0-243": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b243-x86_64-release.tar.xz",
         "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b244-x86_64-release.tar.xz"
       },
       "jdk@openjdk": {
