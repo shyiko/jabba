@@ -126,10 +126,8 @@
       },
       "jdk@openjdk-shenandoah": {
         "1.10.0-248": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b248-aarch64-release.tar.xz",
-        "1.10.0-247": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b247-aarch64-release.tar.xz",
         "1.10.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b248-aarch64-release.tar.xz",
         "1.8.0-244": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b244-aarch64-release.tar.xz",
-        "1.8.0-243": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b243-aarch64-release.tar.xz",
         "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b244-aarch64-release.tar.xz"
       },
       "jdk@adopt": {
@@ -150,7 +148,6 @@
       },
       "jdk@openjdk-shenandoah": {
         "1.10.0-248": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b248-arm32-hflt-release.tar.xz",
-        "1.10.0-247": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b247-arm32-hflt-release.tar.xz",
         "1.10.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b248-arm32-hflt-release.tar.xz"
       },
       "jdk": {
@@ -208,10 +205,12 @@
         "1.8.171": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/server-jre-8u171-linux-x64.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
+        "1.10.0-249": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b249-x86_64-release.tar.xz",
         "1.10.0-248": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b248-x86_64-release.tar.xz",
-        "1.10.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b248-x86_64-release.tar.xz",
+        "1.10.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b249-x86_64-release.tar.xz",
+        "1.8.0-245": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b245-x86_64-release.tar.xz",
         "1.8.0-244": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b244-x86_64-release.tar.xz",
-        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b244-x86_64-release.tar.xz"
+        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b245-x86_64-release.tar.xz"
       },
       "jdk@openjdk": {
         "1.11.0-17": "tgz+https://download.java.net/java/early_access/jdk11/17/GPL/openjdk-11-ea+17_linux-x64_bin.tar.gz",
@@ -273,10 +272,8 @@
       },
       "jdk@openjdk-shenandoah": {
         "1.10.0-248": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b248-x86-release.tar.xz",
-        "1.10.0-247": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b247-x86-release.tar.xz",
         "1.10.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b248-x86-release.tar.xz",
         "1.8.0-244": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b244-x86-release.tar.xz",
-        "1.8.0-243": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b243-x86-release.tar.xz",
         "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b244-x86-release.tar.xz"
       },
       "jdk@ibm": {
