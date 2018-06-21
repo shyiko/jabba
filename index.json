@@ -205,10 +205,12 @@
         "1.8.171": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/server-jre-8u171-linux-x64.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
+        "1.10.0-252": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b252-x86_64-release.tar.xz",
         "1.10.0-251": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b251-x86_64-release.tar.xz",
-        "1.10.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b251-x86_64-release.tar.xz",
+        "1.10.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk10/openjdk-shenandoah-jdk10-b252-x86_64-release.tar.xz",
+        "1.8.0-247": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b247-x86_64-release.tar.xz",
         "1.8.0-246": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b246-x86_64-release.tar.xz",
-        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b246-x86_64-release.tar.xz"
+        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b247-x86_64-release.tar.xz"
       },
       "jdk@openjdk": {
         "1.11.0-18": "tgz+https://download.java.net/java/early_access/jdk11/18/GPL/openjdk-11-ea+18_linux-x64_bin.tar.gz",
@@ -266,6 +268,7 @@
       "jdk@ibm": {
         "1.8.0-5.16": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.16/linux/i386/ibm-java-sdk-8.0-5.16-i386-archive.bin",
         "1.8.0-5.15": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.15/linux/i386/ibm-java-sdk-8.0-5.15-i386-archive.bin",
+        "1.8.0-5.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.6/linux/i386/ibm-java-sdk-8.0-5.6-i386-archive.bin",
         "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.16/linux/i386/ibm-java-sdk-8.0-5.16-i386-archive.bin",
         "1.7.1-4.25": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.25/linux/i386/ibm-java-sdk-7.1-4.25-i386-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.25/linux/i386/ibm-java-sdk-7.1-4.25-i386-archive.bin",
