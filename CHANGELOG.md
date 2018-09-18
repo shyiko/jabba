@@ -1,24 +1,29 @@
 # Changelog
-All notable changes to this project will be documented in this file.  
+All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
+
+## [0.11.0](https://github.com/shyiko/jabba/compare/0.10.1...0.11.0) - 2018-05-07
+
+### Added
+- Support for `jabba exec JVM_VERSION -- command -with args` (#285)[https://github.com/shyiko/jabba/issues/285]
 
 ## [0.10.1](https://github.com/shyiko/jabba/compare/0.10.0...0.10.1) - 2018-05-07
 
 ### Fixed
-- `jabba install <semver>` not checking whether JDK is already installed. 
+- `jabba install <semver>` not checking whether JDK is already installed.
 
 ## [0.10.0](https://github.com/shyiko/jabba/compare/0.9.6...0.10.0) - 2018-05-06
 
-- [OpenJDK with Shenandoah GC](https://wiki.openjdk.java.net/display/shenandoah/Main) support ([#191](https://github.com/shyiko/jabba/issues/191))  
+- [OpenJDK with Shenandoah GC](https://wiki.openjdk.java.net/display/shenandoah/Main) support ([#191](https://github.com/shyiko/jabba/issues/191))
 (e.g. `jabba install openjdk-shenandoah@1.9`).
-- Ability to install JDK from `tar.xz` archives  
+- Ability to install JDK from `tar.xz` archives
 (e.g. `jabba install openjdk-shenandoah@1.9.0-220=tgx+file://$PWD/local-copy-of-openjdk-shenandoah-jdk9-b220-x86-release.tar.xz`).
 
 ## [0.9.6](https://github.com/shyiko/jabba/compare/0.9.5...0.9.6) - 2018-05-05
 
 ### Fixed
-- Sporadic "open: permission denied" when installing from tgz/zip's ([#190](https://github.com/shyiko/jabba/issues/190)).  
-Fix applied in 0.9.5 proved to be incomplete. 
+- Sporadic "open: permission denied" when installing from tgz/zip's ([#190](https://github.com/shyiko/jabba/issues/190)).
+Fix applied in 0.9.5 proved to be incomplete.
 
 ## [0.9.5](https://github.com/shyiko/jabba/compare/0.9.4...0.9.5) - 2018-05-04
 
@@ -35,17 +40,17 @@ Fix applied in 0.9.5 proved to be incomplete.
 ### Fixed
 - `Contents/Home` handling (macOS) ([#187](https://github.com/shyiko/jabba/issues/187)).
 
-## [0.9.2](https://github.com/shyiko/jabba/compare/0.9.1...0.9.2) - 2017-11-18 
+## [0.9.2](https://github.com/shyiko/jabba/compare/0.9.1...0.9.2) - 2017-11-18
 
 ### Fixed
 - `zip` & `tgz` stripping on Windows ([#116](https://github.com/shyiko/jabba/issues/116)).
 
-## [0.9.1](https://github.com/shyiko/jabba/compare/0.9.0...0.9.1) - 2017-10-12 
+## [0.9.1](https://github.com/shyiko/jabba/compare/0.9.0...0.9.1) - 2017-10-12
 
 ### Fixed
-- `tgz is not supported` when trying to install JDK from `tar.gz` on macOS & Windows. 
+- `tgz is not supported` when trying to install JDK from `tar.gz` on macOS & Windows.
 
-## [0.9.0](https://github.com/shyiko/jabba/compare/0.8.0...0.9.0) - 2017-09-19 
+## [0.9.0](https://github.com/shyiko/jabba/compare/0.8.0...0.9.0) - 2017-09-19
 
 ### Added
 - Latest JDK / `default` alias (automatic) linking ([#6](https://github.com/shyiko/jabba/issues/6))
@@ -60,7 +65,7 @@ Fix applied in 0.9.5 proved to be incomplete.
     lrwxrwxrwx  1 shyiko shyiko   30 Sep 19  2017  default -> /home/shyiko/.jabba/jdk/1.8.144/
     ```
 
-## [0.8.0](https://github.com/shyiko/jabba/compare/0.7.0...0.8.0) - 2017-09-19 
+## [0.8.0](https://github.com/shyiko/jabba/compare/0.7.0...0.8.0) - 2017-09-19
 
 ### Added
 - [Adopt OpenJDK](https://adoptopenjdk.net/) support.
@@ -74,11 +79,11 @@ Fix applied in 0.9.5 proved to be incomplete.
     zulu@1.6.97
     ```
 
-- Ability to install JDK in a custom location (`jabba install -o /jdk/destination`)  
+- Ability to install JDK in a custom location (`jabba install -o /jdk/destination`)
 NOTE: any JDK installed in this way is considered to be unmanaged, i.e. not available to `jabba ls`, `jabba use`, etc. (unless `jabba link`ed).
 
 ### Changed
-- semver library to [masterminds/semver](https://github.com/Masterminds/semver)  
+- semver library to [masterminds/semver](https://github.com/Masterminds/semver)
 (previously used library proved unreliable when given certain input (e.g. `>=1.6`)).
 
 ## [0.7.0](https://github.com/shyiko/jabba/compare/0.6.1...0.7.0) - 2017-05-12
@@ -114,7 +119,7 @@ NOTE: any JDK installed in this way is considered to be unmanaged, i.e. not avai
 ## [0.5.0](https://github.com/shyiko/jabba/compare/0.4.0...0.5.0) - 2016-11-11
 
 ### Added
-* `.jabbarc` support. 
+* `.jabbarc` support.
 
 ## [0.4.0](https://github.com/shyiko/jabba/compare/0.3.3...0.4.0) - 2016-07-22
 
@@ -145,14 +150,14 @@ NOTE: any JDK installed in this way is considered to be unmanaged, i.e. not avai
 ### Added
 * Zulu OpenJDK support (e.g. `jabba install zulu@<version>`).
 * Ability to install JDK from `zip` archives (in addition to already implemented `dmg`/`tar.gz`/`bin`).
-* Support for custom registries (e.g. `JABBA_INDEX=https://github.com/shyiko/jabba/raw/master/index.json jabba install ...`). 
+* Support for custom registries (e.g. `JABBA_INDEX=https://github.com/shyiko/jabba/raw/master/index.json jabba install ...`).
 
 ### Fixed
 * `which <alias>`.
 
 ## [0.2.0](https://github.com/shyiko/jabba/compare/0.1.0...0.2.0) - 2016-03-24
 
-### Added 
-* `alias default`/`unalias default`, `which`, `deactivate` commands. 
+### Added
+* `alias default`/`unalias default`, `which`, `deactivate` commands.
 
 ## 0.1.0 - 2016-03-23
