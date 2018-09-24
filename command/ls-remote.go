@@ -5,7 +5,6 @@ import (
 	"errors"
 	"io/ioutil"
 	"net/http"
-	"runtime"
 	"strconv"
 	"strings"
 
@@ -17,7 +16,7 @@ type byOS map[string]byArch
 type byArch map[string]byDistribution
 type byDistribution map[string]map[string]string
 
-func LsRemote() (map[*semver.Version]string, error) {
+func LsRemote(os, arch string) (map[*semver.Version]string, error) {
 	cnt, err := fetch(cfg.Index())
 	if err != nil {
 		return nil, err
@@ -28,7 +27,7 @@ func LsRemote() (map[*semver.Version]string, error) {
 		return nil, err
 	}
 	releaseMap := make(map[*semver.Version]string)
-	for key, value := range index[runtime.GOOS][runtime.GOARCH] {
+	for key, value := range index[os][arch] {
 		var prefix string
 		if key != "jdk" {
 			if !strings.Contains(key, "@") {

@@ -49,7 +49,7 @@ func Install(selector string, dest string) (string, error) {
 		if err != nil {
 			return "", err
 		}
-		releaseMap, err = LsRemote()
+		releaseMap, err = LsRemote("", "")
 		if err != nil {
 			return "", err
 		}
