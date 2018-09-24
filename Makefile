@@ -28,7 +28,7 @@ test-coverage:
 	rm *.coverprofile
 
 build:
-	go build -ldflags "-X main.version=${VERSION}"
+	go build -ldflags "-s -w -X main.version=${VERSION}"
 
 build-release:
 	GOARM=7 gox -verbose \
