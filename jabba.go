@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"runtime"
 	"sort"
 	"strings"
 
@@ -161,7 +162,9 @@ func main() {
 					log.Fatal(err)
 				}
 			}
-			releaseMap, err := command.LsRemote()
+			os, _ := cmd.Flags().GetString("os")
+			arch, _ := cmd.Flags().GetString("arch")
+			releaseMap, err := command.LsRemote(os, arch)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -184,6 +187,8 @@ func main() {
 			return nil
 		},
 	}
+	lsRemoteCmd.Flags().String("os", runtime.GOOS, "Name of the architecture to lookup (amd64 for 64 bit, 386 for 32 bit)")
+	lsRemoteCmd.Flags().String("arch", runtime.GOARCH, "Name of  the os to lookup (darwin, linux, windows)")
 	for _, cmd := range []*cobra.Command{lsCmd, lsRemoteCmd} {
 		cmd.Flags().StringVar(&trimTo, "latest", "",
 			"Part of the version to trim to (\"major\", \"minor\" or \"patch\")")
