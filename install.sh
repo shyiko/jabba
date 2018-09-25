@@ -16,7 +16,7 @@ https_proxy=${https_proxy:-$HTTPS_PROXY}
 HTTPS_PROXY=${HTTPS_PROXY:-$https_proxy}
 
 if [ "$JABBA_GET" == "" ]; then
-    if [ -f "$(which curl 2>/dev/null)" ]; then
+    if [ -z "$(curl -V 1>/dev/null)" ]; then
         JABBA_GET="curl -sL"
     else
         JABBA_GET="wget -qO-"
