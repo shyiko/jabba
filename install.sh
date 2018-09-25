@@ -33,8 +33,6 @@ if [ "$JABBA_GET" == "" ]; then
     fi
 fi
 
-echo "$JABBA_GET"
-
 if [ "$JABBA_VERSION" == "latest" ]; then
     # resolving "latest" to an actual tag
     JABBA_VERSION=$($JABBA_GET https://shyiko.github.com/jabba/latest)
