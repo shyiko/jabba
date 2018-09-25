@@ -11,17 +11,29 @@ else
     JABBA_HOME_TO_EXPORT=$JABBA_HOME
 fi
 
+has_command() {
+    if ! command -v "$1" > /dev/null 2>&1
+    then echo 1;
+    else echo 0;
+    fi
+}
+
 # curl looks for HTTPS_PROXY while wget for https_proxy
 https_proxy=${https_proxy:-$HTTPS_PROXY}
 HTTPS_PROXY=${HTTPS_PROXY:-$https_proxy}
 
 if [ "$JABBA_GET" == "" ]; then
-    if [ -z "$(curl -V 1>/dev/null)" ]; then
+    if [ 0 -eq  $(has_command curl) ]; then
         JABBA_GET="curl -sL"
-    else
+    elif [ 0 -eq $(has_command wget) ]; then
         JABBA_GET="wget -qO-"
+    else
+        echo "[ERROR] This script needs wget or curl to be installed."
+        exit 1
     fi
 fi
+
+echo "$JABBA_GET"
 
 if [ "$JABBA_VERSION" == "latest" ]; then
     # resolving "latest" to an actual tag
