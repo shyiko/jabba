@@ -1,11 +1,12 @@
 package command
 
 import (
-	"github.com/shyiko/jabba/cfg"
 	"os"
 	"path/filepath"
 	"regexp"
 	"runtime"
+
+	"github.com/shyiko/jabba/cfg"
 )
 
 func Use(selector string) ([]string, error) {
@@ -20,7 +21,7 @@ func Use(selector string) ([]string, error) {
 	return usePath(filepath.Join(cfg.Dir(), "jdk", ver))
 }
 
-func usePath(path string) ([]string, error) {
+func GetVars(path string) (map[string]string, error) {
 	path, err := filepath.Abs(path)
 	if err != nil {
 		return nil, err
@@ -36,9 +37,26 @@ func usePath(path string) ([]string, error) {
 	if !overrideWasSet {
 		systemJavaHome, _ = os.LookupEnv("JAVA_HOME")
 	}
-	return []string{
-		"export PATH=\"" + filepath.Join(path, "bin") + string(os.PathListSeparator) + pth + "\"",
-		"export JAVA_HOME=\"" + path + "\"",
-		"export JAVA_HOME_BEFORE_JABBA=\"" + systemJavaHome + "\"",
-	}, nil
+
+	paths := make(map[string]string)
+	paths["PATH"] = filepath.Join(path, "bin") + string(os.PathListSeparator) + pth
+	paths["JAVA_HOME"] = path
+	paths["JAVA_HOME_BEFORE_JABBA"] = systemJavaHome
+
+	return paths, nil
+}
+
+func usePath(path string) ([]string, error) {
+	vars, err := GetVars(path)
+	if err != nil {
+		return nil, err
+	}
+
+	paths := []string{}
+
+	for variableName, variableValue := range vars {
+		paths = append(paths, "export "+variableName+"=\""+variableValue+"\"")
+	}
+
+	return paths, nil
 }

@@ -334,6 +334,28 @@ func main() {
 			},
 		},
 		whichCmd,
+		&cobra.Command{
+			Use:   "exec [version] [--] [command] [args]",
+			Short: "Execute a command the specified JVM version",
+			RunE: func(cmd *cobra.Command, args []string) error {
+				if len(args) < 2 {
+					return pflag.ErrHelp
+				}
+
+				version := args[0]
+				executable := args[1]
+				commandArgs := args[1:]
+
+				err := command.Exec(version, executable, commandArgs)
+				if err != nil {
+					log.Fatal(err)
+				}
+				return nil
+			},
+			Example: "  jabba exec system@1.8.20 ./gradlew clean assemble\n" +
+				"  jabba exec ~1.8.73 -- java -version # use -- separator if using args\n" +
+				"  jabba exec ~1.8.73 ./gradlew clean assemble # same as \">=1.8.73 <1.9.0\"",
+		},
 	)
 	rootCmd.Flags().Bool("version", false, "version of jabba")
 	rootCmd.PersistentFlags().String("fd3", "", "")
