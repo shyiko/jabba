@@ -50,7 +50,7 @@ func Install(selector string, dst string) (string, error) {
 		if err != nil {
 			return "", err
 		}
-		releaseMap, err = LsRemote("", "")
+		releaseMap, err = LsRemote(runtime.GOOS, runtime.GOARCH)
 		if err != nil {
 			return "", err
 		}
