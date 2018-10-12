@@ -7,6 +7,7 @@ import (
 	"github.com/shyiko/jabba/semver"
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 )
 
@@ -25,7 +26,7 @@ func Link(selector string, dir string) error {
 		}
 		return os.Remove(filepath.Join(cfg.Dir(), "jdk", ver))
 	} else {
-		if err := assertJavaDistribution(dir); err != nil {
+		if err := assertJavaDistribution(dir, runtime.GOOS); err != nil {
 			return err
 		}
 		if err := os.MkdirAll(filepath.Join(cfg.Dir(), "jdk"), 0755); err != nil {

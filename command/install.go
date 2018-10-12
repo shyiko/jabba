@@ -9,6 +9,7 @@ import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/mitchellh/ioprogress"
 	"github.com/shyiko/jabba/cfg"
+	"github.com/shyiko/jabba/command/fileiter"
 	"github.com/shyiko/jabba/semver"
 	"github.com/shyiko/jabba/w32"
 	"github.com/xi2/xz"
@@ -24,7 +25,7 @@ import (
 	"strings"
 )
 
-func Install(selector string, dest string) (string, error) {
+func Install(selector string, dst string) (string, error) {
 	var releaseMap map[*semver.Version]string
 	var ver *semver.Version
 	var err error
@@ -76,7 +77,7 @@ func Install(selector string, dest string) (string, error) {
 		}
 	}
 	// check whether requested version is already installed
-	if ver != nil && dest == "" {
+	if ver != nil && dst == "" {
 		local, err := Ls()
 		if err != nil {
 			return "", err
@@ -91,13 +92,13 @@ func Install(selector string, dest string) (string, error) {
 	if matched, _ := regexp.MatchString("^\\w+[+]\\w+://", url); !matched {
 		return "", errors.New("URL must contain qualifier, e.g. tgz+http://...")
 	}
-	if dest == "" {
-		dest = filepath.Join(cfg.Dir(), "jdk", ver.String())
+	if dst == "" {
+		dst = filepath.Join(cfg.Dir(), "jdk", ver.String())
 	} else {
-		if _, err := os.Stat(dest); !os.IsNotExist(err) {
-			if err == nil { // dest exists
-				if empty, _ := isEmptyDir(dest); !empty {
-					err = fmt.Errorf("\"%s\" is not empty", dest)
+		if _, err := os.Stat(dst); !os.IsNotExist(err) {
+			if err == nil { // dst exists
+				if empty, _ := isEmptyDir(dst); !empty {
+					err = fmt.Errorf("\"%s\" is not empty", dst)
 				}
 			} // or is inaccessible
 			if err != nil {
@@ -125,11 +126,11 @@ func Install(selector string, dest string) (string, error) {
 	}
 	switch runtime.GOOS {
 	case "darwin":
-		err = installOnDarwin(file, fileType, dest)
+		err = installOnDarwin(file, fileType, dst)
 	case "linux":
-		err = installOnLinux(file, fileType, dest)
+		err = installOnLinux(file, fileType, dst)
 	case "windows":
-		err = installOnWindows(file, fileType, dest)
+		err = installOnWindows(file, fileType, dst)
 	default:
 		err = errors.New(runtime.GOOS + " OS is not supported")
 	}
@@ -226,191 +227,233 @@ func download(url string, fileType string) (file string, err error) {
 	return
 }
 
-func installOnDarwin(file string, fileType string, dest string) (err error) {
+func installOnDarwin(file string, fileType string, dst string) (err error) {
 	switch fileType {
 	case "dmg":
-		err = installFromDmg(file, dest)
+		err = installFromDmg(file, dst)
 	case "tgz":
-		err = installFromTgz(file, dest)
+		err = installFromTgz(file, dst)
 	case "tgx":
-		err = installFromTgx(file, dest)
+		err = installFromTgx(file, dst)
 	case "zip":
-		err = installFromZip(file, dest)
+		err = installFromZip(file, dst)
 	default:
 		return errors.New(fileType + " is not supported")
 	}
 	if err == nil {
-		err = ensureContentsHomeHierarchy(dest)
-		if err == nil {
-			err = assertJavaDistribution(dest)
-		}
+		err = normalizePathToBinJava(dst, runtime.GOOS)
 	}
 	if err != nil {
-		os.RemoveAll(dest)
+		os.RemoveAll(dst)
 	}
 	return
 }
 
-func ensureContentsHomeHierarchy(dir string) error {
+// **/{Contents/Home,Home,}bin/java -> <dir>/Contents/Home/bin/java
+func normalizePathToBinJava(dir string, goos string) error {
 	dir = filepath.Clean(dir)
-	var err error
-	stat, err := os.Stat(dir)
-	if err == nil {
-		// <dir>/bin/java -> <dir>/Contents/Home/<* in <dir>>
-		if _, errj := os.Stat(filepath.Join(dir, "bin", "java")); !os.IsNotExist(errj) {
-			// as <dir> cannot be moved to a subdirectory of itself we do it in two steps
-			if err = os.Rename(dir, filepath.Join(dir+"~jabba")); err == nil {
-				if err = os.MkdirAll(filepath.Join(dir, "Contents"), stat.Mode()); err == nil {
-					err = os.Rename(filepath.Join(dir+"~jabba"), filepath.Join(dir, "Contents", "Home"))
-				}
+	if _, err := os.Stat(expectedJavaPath(dir, goos)); os.IsNotExist(err) {
+		java := "java"
+		if goos == "windows" {
+			java = "java.exe"
+		}
+		var javaPath string
+		for it := fileiter.New(dir, fileiter.BreadthFirst()); it.Next(); {
+			if err := it.Err(); err != nil {
+				return err
 			}
-		} else
-		// <dir>/Home/bin/java -> <dir>/Contents/<* in <dir>>
-		if _, errj := os.Stat(filepath.Join(dir, "Home", "bin", "java")); !os.IsNotExist(errj) {
-			// as <dir> cannot be moved to a subdirectory of itself we do it in two steps
-			if err = os.Rename(dir, filepath.Join(dir+"~jabba")); err == nil {
-				if err = os.MkdirAll(filepath.Join(dir), stat.Mode()); err == nil {
-					err = os.Rename(filepath.Join(dir+"~jabba"), filepath.Join(dir, "Contents"))
-				}
+			if !it.IsDir() && filepath.Base(it.Dir()) == "bin" && it.Name() == java {
+				javaPath = filepath.Join(it.Dir(), it.Name())
+				break
 			}
 		}
+		if javaPath != "" {
+			log.Debugf("Found %s", javaPath)
+			tmp := dir + "~"
+			javaPath = strings.Replace(javaPath, dir, tmp, 1)
+			log.Debugf("Moving %s to %s", dir, tmp)
+			if err := os.Rename(dir, tmp); err != nil {
+				return err
+			}
+			defer func() {
+				log.Debugf("Removing %s", tmp)
+				os.RemoveAll(tmp)
+			}()
+			homeDir := filepath.Dir(filepath.Dir(javaPath))
+			var src, dst string
+			if goos == "darwin" {
+				if filepath.Base(homeDir) == "Home" {
+					src = filepath.Dir(homeDir)
+					dst = filepath.Join(dir, "Contents")
+				} else {
+					src = homeDir
+					dst = filepath.Join(dir, "Contents", "Home")
+				}
+			} else {
+				src = homeDir
+				dst = dir
+			}
+			log.Debugf("Moving %s to %s", src, dst)
+			if err := os.MkdirAll(filepath.Dir(dst), 0755); err != nil {
+				return err
+			}
+			if err = os.Rename(src, dst); err != nil {
+				return err
+			}
+		}
+		return assertJavaDistribution(dir, goos)
+	}
+	return nil
+}
+
+func expectedJavaPath(dir string, goos string) string {
+	var osSpecificSubDir = ""
+	if goos == "darwin" {
+		osSpecificSubDir = filepath.Join("Contents", "Home")
+	}
+	java := "java"
+	if goos == "windows" {
+		java = "java.exe"
+	}
+	return filepath.Join(dir, osSpecificSubDir, "bin", java)
+}
+
+func assertJavaDistribution(dir string, goos string) error {
+	var path = expectedJavaPath(dir, goos)
+	var err error
+	if _, err = os.Stat(path); os.IsNotExist(err) {
+		err = errors.New(path + " wasn't found. " +
+			"If you believe this is an error - please create a ticket at https://github.com/shyiko/jabba/issues " +
+			"(specify OS and command that was used)")
 	}
 	return err
 }
 
-func installFromDmg(source string, target string) error {
+func installFromDmg(src string, dst string) error {
 	tmp, err := ioutil.TempDir("", "jabba-i-")
 	if err != nil {
 		return err
 	}
-	basename := filepath.Base(source)
-	mountpoint := tmp + "/" + basename
-	pkgdir := tmp + "/" + basename + "-pkg"
-	err = executeInShell([][]string{
-		{"Mounting " + source, "hdiutil mount -mountpoint " + mountpoint + " " + source},
-		{"Extracting " + source + " to " + target,
-			"pkgutil --expand " + mountpoint + "/*.pkg " + pkgdir},
-		{"", "mkdir -p " + target},
-
-		// todo: instead of relying on a certain pkg structure - find'n'extract all **/*/Payload
-
-		// oracle
-		{"",
-			"if [ -f " + pkgdir + "/jdk*.pkg/Payload" + " ]; then " +
-				"cd " + pkgdir + "/jdk*.pkg && " +
-				"cat Payload | gzip -d | cpio -i && " +
-				"mv Contents " + target + "/" +
-				"; fi"},
-
-		// apple
-		{"",
-			"if [ -f " + pkgdir + "/JavaForOSX.pkg/Payload" + " ]; then " +
-				"cd " + pkgdir + "/JavaForOSX.pkg && " +
-				"cat Payload | gzip -d | cpio -i && " +
-				"mv Library/Java/JavaVirtualMachines/*/Contents " + target + "/" +
-				"; fi"},
-
-		{"Unmounting " + source, "hdiutil unmount " + mountpoint},
-	})
+	defer os.RemoveAll(tmp)
+	srcName := filepath.Base(src)
+	pkgdir := tmp + "/" + srcName + "-pkg"
+	mountpoint := tmp + "/" + srcName
+	log.Info("Mounting " + src)
+	err = sh(fmt.Sprintf(`hdiutil mount -mountpoint "%s" "%s"`, mountpoint, src))
+	if err != nil {
+		return err
+	}
+	defer func() {
+		log.Info("Unmounting " + mountpoint)
+		sh(fmt.Sprintf(`hdiutil unmount "%s"`, mountpoint))
+	}()
+	log.Info("Extracting " + mountpoint + "/*.pkg")
+	err = sh(fmt.Sprintf(`pkgutil --expand "%s"/*.pkg "%s"`, mountpoint, pkgdir))
 	if err == nil {
-		os.RemoveAll(tmp)
+		pathToPayload := ""
+		for it := fileiter.New(pkgdir, fileiter.BreadthFirst()); it.Next(); {
+			if !it.IsDir() && it.Name() == "Payload" {
+				pathToPayload = filepath.Join(it.Dir(), it.Name())
+				break
+			}
+		}
+		if pathToPayload != "" {
+			log.Info("Extracting " + pathToPayload)
+			err = sh(fmt.Sprintf(`mkdir -p "%s" && cd "%s" && gzip -dc "%s" | cpio -i`, dst, dst, pathToPayload))
+		}
 	}
 	return err
 }
 
-func installOnLinux(file string, fileType string, dest string) (err error) {
+func installOnLinux(file string, fileType string, dst string) (err error) {
 	switch fileType {
 	case "bin":
-		err = installFromBin(file, dest)
+		err = installFromBin(file, dst)
 	case "ia":
-		err = installFromIa(file, dest)
+		err = installFromIa(file, dst)
 	case "tgz":
-		err = installFromTgz(file, dest)
+		err = installFromTgz(file, dst)
 	case "tgx":
-		err = installFromTgx(file, dest)
+		err = installFromTgx(file, dst)
 	case "zip":
-		err = installFromZip(file, dest)
+		err = installFromZip(file, dst)
 	default:
 		return errors.New(fileType + " is not supported")
 	}
 	if err == nil {
-		err = assertJavaDistribution(dest)
+		err = normalizePathToBinJava(dst, runtime.GOOS)
 	}
 	if err != nil {
-		os.RemoveAll(dest)
+		os.RemoveAll(dst)
 	}
 	return
 }
 
-func installOnWindows(file string, fileType string, dest string) (err error) {
+func installOnWindows(file string, fileType string, dst string) (err error) {
 	switch fileType {
 	case "exe":
-		err = installFromExe(file, dest)
+		err = installFromExe(file, dst)
 	case "tgz":
-		err = installFromTgz(file, dest)
+		err = installFromTgz(file, dst)
 	case "tgx":
-		err = installFromTgx(file, dest)
+		err = installFromTgx(file, dst)
 	case "zip":
-		err = installFromZip(file, dest)
+		err = installFromZip(file, dst)
 	default:
 		return errors.New(fileType + " is not supported")
 	}
 	if err == nil {
-		err = assertJavaDistribution(dest)
+		err = normalizePathToBinJava(dst, runtime.GOOS)
 	}
 	if err != nil {
-		os.RemoveAll(dest)
+		os.RemoveAll(dst)
 	}
 	return
 }
 
-func installFromBin(source string, target string) (err error) {
+func installFromBin(src string, dst string) (err error) {
 	tmp, err := ioutil.TempDir("", "jabba-i-")
 	if err != nil {
 		return
 	}
-	err = executeInShell([][]string{
-		{"", "cp " + source + " " + tmp},
-		{"Extracting " + filepath.Join(tmp, filepath.Base(source)) + " to " + target,
-			"cd " + tmp + " && echo | sh " + filepath.Base(source) + " && mv jdk*/ " + target},
-	})
+	defer os.RemoveAll(tmp)
+	err = sh("cp " + src + " " + tmp)
 	if err == nil {
-		os.RemoveAll(tmp)
+		log.Info("Extracting " + filepath.Join(tmp, filepath.Base(src)) + " to " + dst)
+		err = sh("cd " + tmp + " && echo | sh " + filepath.Base(src) + " && mv jdk*/ " + dst)
 	}
 	return
 }
 
-func installFromIa(source string, target string) (err error) {
+func installFromIa(src string, dst string) error {
 	tmp, err := ioutil.TempDir("", "jabba-i-")
 	if err != nil {
-		return
+		return err
 	}
-	err = executeInShell([][]string{
-		{"", "printf 'LICENSE_ACCEPTED=TRUE\\nUSER_INSTALL_DIR=" + target + "' > " +
-			filepath.Join(tmp, "installer.properties")},
-		{"Extracting " + source + " to " + target,
-			"echo | sh " + source + " -i silent -f " + filepath.Join(tmp, "installer.properties")},
-	})
+	defer os.RemoveAll(tmp)
+	err = sh("printf 'LICENSE_ACCEPTED=TRUE\\nUSER_INSTALL_DIR=" + dst + "' > " +
+		filepath.Join(tmp, "installer.properties"))
 	if err == nil {
-		os.RemoveAll(tmp)
+		log.Info("Extracting " + src + " to " + dst)
+		err = sh("echo | sh " + src + " -i silent -f " + filepath.Join(tmp, "installer.properties"))
 	}
-	return
+	return err
 }
 
-func installFromExe(source string, target string) error {
-	log.Info("Unpacking " + source + " to " + target)
+func installFromExe(src string, dst string) error {
+	log.Info("Unpacking " + src + " to " + dst)
 	// using ShellExecute instead of exec.Command so user could decide whether to trust the installer when UAC is active
-	return w32.ShellExecuteAndWait(w32.HWND(0), "open", source, "/s INSTALLDIR=\""+target+
+	return w32.ShellExecuteAndWait(w32.HWND(0), "open", src, "/s INSTALLDIR=\""+dst+
 		"\" STATIC=1 AUTO_UPDATE=0 WEB_JAVA=0 WEB_ANALYTICS=0 REBOOT=0", "", 3)
 }
 
-func installFromTgz(source string, target string) error {
-	log.Info("Extracting " + source + " to " + target)
-	return untgz(source, target, true)
+func installFromTgz(src string, dst string) error {
+	log.Info("Extracting " + src + " to " + dst)
+	return untgz(src, dst, true)
 }
 
-func untgz(source string, target string, strip bool) error {
-	gzFile, err := os.Open(source)
+func untgz(src string, dst string, strip bool) error {
+	gzFile, err := os.Open(src)
 	if err != nil {
 		return err
 	}
@@ -465,8 +508,7 @@ func untgz(source string, target string, strip bool) error {
 	defer gzr.Close()
 	r := tar.NewReader(gzr)
 	dirCache := make(map[string]bool) // todo: radix tree would perform better here
-	//println("mkdir -p " + target)
-	if err := os.MkdirAll(target, 0755); err != nil {
+	if err := os.MkdirAll(dst, 0755); err != nil {
 		return err
 	}
 	for {
@@ -490,8 +532,7 @@ func untgz(source string, target string, strip bool) error {
 		if dir != "" && dir != "." {
 			cached := dirCache[dir]
 			if !cached {
-				//println("mkdir -p " + filepath.Join(target, dir))
-				if err := os.MkdirAll(filepath.Join(target, dir), 0755); err != nil {
+				if err := os.MkdirAll(filepath.Join(dst, dir), 0755); err != nil {
 					return err
 				}
 				dirCache[dir] = true
@@ -499,8 +540,7 @@ func untgz(source string, target string, strip bool) error {
 		}
 		if header.Typeflag != tar.TypeDir {
 			name := filepath.Base(header.Name)
-			//println("touch " + filepath.Join(target, dir, name))
-			d, err := os.OpenFile(filepath.Join(target, dir, name),
+			d, err := os.OpenFile(filepath.Join(dst, dir, name),
 				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode|0600)&0777)
 			if err != nil {
 				return err
@@ -515,13 +555,13 @@ func untgz(source string, target string, strip bool) error {
 	return nil
 }
 
-func installFromTgx(source string, target string) error {
-	log.Info("Extracting " + source + " to " + target)
-	return untgx(source, target, true)
+func installFromTgx(src string, dst string) error {
+	log.Info("Extracting " + src + " to " + dst)
+	return untgx(src, dst, true)
 }
 
-func untgx(source string, target string, strip bool) error {
-	xzFile, err := os.Open(source)
+func untgx(src string, dst string, strip bool) error {
+	xzFile, err := os.Open(src)
 	if err != nil {
 		return err
 	}
@@ -532,7 +572,6 @@ func untgx(source string, target string, strip bool) error {
 		if err != nil {
 			return err
 		}
-		//defer xzr.Close()
 		r := tar.NewReader(xzr)
 		var prefix []string
 		for {
@@ -573,11 +612,9 @@ func untgx(source string, target string, strip bool) error {
 	if err != nil {
 		return err
 	}
-	//defer xzr.Close()
 	r := tar.NewReader(xzr)
 	dirCache := make(map[string]bool) // todo: radix tree would perform better here
-	//println("mkdir -p " + target)
-	if err := os.MkdirAll(target, 0755); err != nil {
+	if err := os.MkdirAll(dst, 0755); err != nil {
 		return err
 	}
 	for {
@@ -601,8 +638,7 @@ func untgx(source string, target string, strip bool) error {
 		if dir != "" && dir != "." {
 			cached := dirCache[dir]
 			if !cached {
-				//println("mkdir -p " + filepath.Join(target, dir))
-				if err := os.MkdirAll(filepath.Join(target, dir), 0755); err != nil {
+				if err := os.MkdirAll(filepath.Join(dst, dir), 0755); err != nil {
 					return err
 				}
 				dirCache[dir] = true
@@ -610,8 +646,7 @@ func untgx(source string, target string, strip bool) error {
 		}
 		if header.Typeflag != tar.TypeDir {
 			name := filepath.Base(header.Name)
-			//println("touch " + filepath.Join(target, dir, name))
-			d, err := os.OpenFile(filepath.Join(target, dir, name),
+			d, err := os.OpenFile(filepath.Join(dst, dir, name),
 				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode|0600)&0777)
 			if err != nil {
 				return err
@@ -626,13 +661,13 @@ func untgx(source string, target string, strip bool) error {
 	return nil
 }
 
-func installFromZip(source string, target string) error {
-	log.Info("Extracting " + source + " to " + target)
-	return unzip(source, target, true)
+func installFromZip(src string, dst string) error {
+	log.Info("Extracting " + src + " to " + dst)
+	return unzip(src, dst, true)
 }
 
-func unzip(source string, target string, strip bool) error {
-	r, err := zip.OpenReader(source)
+func unzip(src string, dst string, strip bool) error {
+	r, err := zip.OpenReader(src)
 	if err != nil {
 		return err
 	}
@@ -667,8 +702,7 @@ func unzip(source string, target string, strip bool) error {
 		prefixToStrip = strings.Join(prefix, string(filepath.Separator))
 	}
 	dirCache := make(map[string]bool) // todo: radix tree would perform better here
-	//println("mkdir -p " + target)
-	if err := os.MkdirAll(target, 0755); err != nil {
+	if err := os.MkdirAll(dst, 0755); err != nil {
 		return err
 	}
 	for _, f := range r.File {
@@ -685,8 +719,7 @@ func unzip(source string, target string, strip bool) error {
 		if dir != "" && dir != "." {
 			cached := dirCache[dir]
 			if !cached {
-				//println("mkdir -p " + filepath.Join(target, dir))
-				if err := os.MkdirAll(filepath.Join(target, dir), 0755); err != nil {
+				if err := os.MkdirAll(filepath.Join(dst, dir), 0755); err != nil {
 					return err
 				}
 				dirCache[dir] = true
@@ -694,12 +727,11 @@ func unzip(source string, target string, strip bool) error {
 		}
 		if !f.Mode().IsDir() {
 			name := filepath.Base(f.Name)
-			//println("touch " + filepath.Join(target, dir, name))
 			fr, err := f.Open()
 			if err != nil {
 				return err
 			}
-			d, err := os.OpenFile(filepath.Join(target, dir, name),
+			d, err := os.OpenFile(filepath.Join(dst, dir, name),
 				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, (f.Mode()|0600)&0777)
 			if err != nil {
 				return err
@@ -714,40 +746,17 @@ func unzip(source string, target string, strip bool) error {
 	return nil
 }
 
-func executeInShell(cmd [][]string) error {
-	for _, command := range cmd {
-		if command[0] != "" {
-			log.Info(command[0])
-		}
-		var execArg []string
-		if runtime.GOOS == "windows" {
-			execArg = []string{"cmd", "/C"}
-		} else {
-			execArg = []string{"sh", "-c"}
-		}
-		out, err := exec.Command(execArg[0], execArg[1], command[1]).CombinedOutput()
-		if err != nil {
-			log.Error(string(out))
-			return errors.New("'" + command[1] + "' failed: " + err.Error())
-		}
+func sh(cmd string) error {
+	var execArg []string
+	if runtime.GOOS == "windows" {
+		execArg = []string{"cmd", "/C"}
+	} else {
+		execArg = []string{"sh", "-c"}
+	}
+	out, err := exec.Command(execArg[0], execArg[1], cmd).CombinedOutput()
+	if err != nil {
+		log.Error(string(out))
+		return errors.New("'" + cmd + "' failed: " + err.Error())
 	}
 	return nil
-}
-
-func assertJavaDistribution(target string) error {
-	if runtime.GOOS == "darwin" {
-		target += "/Contents/Home"
-	}
-	var javaBin = "java"
-	if runtime.GOOS == "windows" {
-		javaBin += ".exe"
-	}
-	var path = filepath.Join(target, "bin", javaBin)
-	var err error
-	if _, err = os.Stat(path); os.IsNotExist(err) {
-		err = errors.New(path + " wasn't found. " +
-			"If you believe this is an error - please create a ticket at https://github.com/shyiko/jabba/issues " +
-			"(specify OS and command that was used)")
-	}
-	return err
 }
