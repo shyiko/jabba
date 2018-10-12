@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.11.0](https://github.com/shyiko/jabba/compare/0.10.1...0.11.0) - 2018-10-11
+
+### Added
+- Flags to filter remote versions by `--os` and `--arch` (e.g. `jabba ls-remote --os=windows`) ([#240](https://github.com/shyiko/jabba/issues/240))
+
+### Fixed
+- File tree normalization  
+(Adopt OpenJDK 11 distributions contain meta file at the root level causing untgz --strip to fail) ([#311](https://github.com/shyiko/jabba/issues/311)). 
+
 ## [0.10.1](https://github.com/shyiko/jabba/compare/0.10.0...0.10.1) - 2018-05-07
 
 ### Fixed
