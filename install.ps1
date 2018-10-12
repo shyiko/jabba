@@ -52,7 +52,7 @@ function jabba
     & { `$env:JABBA_SHELL_INTEGRATION="ON"; Invoke-Expression `$command }
     `$fd3content=`$(cat `$fd3)
     if (`$fd3content) {
-        `$expression=`$fd3content.replace("export ","```$env:") -join "``n"
+        `$expression=`$fd3content.replace("export ","```$env:").replace("unset ","Remove-Item env:") -join "``n"
         if (-not `$expression -eq "") { Invoke-Expression `$expression }
     }
     rm -Force `$fd3
