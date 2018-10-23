@@ -115,6 +115,9 @@ jabba install 1.8.0-custom=tgz+http://example.com/distribution.tar.gz
 jabba install 1.8.0-custom=tgx+http://example.com/distribution.tar.xz
 jabba install 1.8.0-custom=zip+file:///opt/distribution.zip
 
+# uninstall JDK
+jabba uninstall zulu@1.6.77
+
 # link system JDK
 jabba link system@1.8.72 /Library/Java/JavaVirtualMachines/jdk1.8.0_72.jdk
 
