@@ -88,8 +88,8 @@
         "1.8.191": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/server-jre-8u191-windows-x64.tar.gz"
       },
       "jdk@openjdk": {
-        "1.12.0-16": "zip+https://download.java.net/java/early_access/jdk12/16/GPL/openjdk-12-ea+16_windows-x64_bin.zip",
-        "1.12.0": "zip+https://download.java.net/java/early_access/jdk12/16/GPL/openjdk-12-ea+16_windows-x64_bin.zip",
+        "1.12.0-17": "zip+https://download.java.net/java/early_access/jdk12/17/GPL/openjdk-12-ea+17_windows-x64_bin.zip",
+        "1.12.0": "zip+https://download.java.net/java/early_access/jdk12/17/GPL/openjdk-12-ea+17_windows-x64_bin.zip",
         "1.11.0-1": "zip+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_windows-x64_bin.zip",
         "1.11.0": "zip+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_windows-x64_bin.zip",
         "1.10.0-2": "tgz+https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_windows-x64_bin.tar.gz",
@@ -255,8 +255,8 @@
         "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b302-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz"
       },
       "jdk@openjdk": {
-        "1.12.0-16": "tgz+https://download.java.net/java/early_access/jdk12/16/GPL/openjdk-12-ea+16_linux-x64_bin.tar.gz",
-        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/16/GPL/openjdk-12-ea+16_linux-x64_bin.tar.gz",
+        "1.12.0-17": "tgz+https://download.java.net/java/early_access/jdk12/17/GPL/openjdk-12-ea+17_linux-x64_bin.tar.gz",
+        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/17/GPL/openjdk-12-ea+17_linux-x64_bin.tar.gz",
         "1.11.0-1": "tgz+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz",
         "1.11.0": "tgz+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz",
         "1.10.0-2": "tgz+https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_linux-x64_bin.tar.gz",
@@ -396,8 +396,8 @@
         "1.7.95": "zip+http://cdn.azul.com/zulu/bin/zulu7.13.0.1-jdk7.0.95-macosx_x64.zip"
       },
       "jdk@openjdk": {
-        "1.12.0-16": "tgz+https://download.java.net/java/early_access/jdk12/16/GPL/openjdk-12-ea+16_osx-x64_bin.tar.gz",
-        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/16/GPL/openjdk-12-ea+16_osx-x64_bin.tar.gz",
+        "1.12.0-17": "tgz+https://download.java.net/java/early_access/jdk12/17/GPL/openjdk-12-ea+17_osx-x64_bin.tar.gz",
+        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/17/GPL/openjdk-12-ea+17_osx-x64_bin.tar.gz",
         "1.11.0-1": "tgz+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_osx-x64_bin.tar.gz",
         "1.11.0": "tgz+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_osx-x64_bin.tar.gz",
         "1.10.0-2": "tgz+https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_osx-x64_bin.tar.gz",
