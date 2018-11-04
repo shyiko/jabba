@@ -148,8 +148,9 @@
         "1.8.144": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_144-8.23.0.70-eval-linux_aarch64.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
+        "1.11.0-59": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b59-20181103-shenandoah-jdk-11.0.1+13-linux-aarch64-release.tar.xz",
         "1.11.0-58": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b58-20181029-shenandoah-jdk-11.0.1+13-linux-aarch64-release.tar.xz",
-        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b58-20181029-shenandoah-jdk-11.0.1+13-linux-aarch64-release.tar.xz",
+        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b59-20181103-shenandoah-jdk-11.0.1+13-linux-aarch64-release.tar.xz",
         "1.8.0-347": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b347-20181103-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz",
         "1.8.0-346": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b346-20181030-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz",
         "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b347-20181103-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz"
@@ -175,8 +176,9 @@
         "1.8.121": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
+        "1.11.0-59": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b59-20181103-shenandoah-jdk-11.0.1+13-linux-arm32-hflt-release.tar.xz",
         "1.11.0-58": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b58-20181029-shenandoah-jdk-11.0.1+13-linux-arm32-hflt-release.tar.xz",
-        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b58-20181029-shenandoah-jdk-11.0.1+13-linux-arm32-hflt-release.tar.xz"
+        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b59-20181103-shenandoah-jdk-11.0.1+13-linux-arm32-hflt-release.tar.xz"
       },
       "jdk": {
         "1.8.192": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u192-b12/750e1c8617c5452694857ad95c3ee230/jdk-8u192-linux-arm32-vfp-hflt.tar.gz",
