@@ -142,6 +142,7 @@
   "linux": {
     "arm64": {
       "jdk@zulu": {
+        "1.8.192": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.33.0.135-jdk1.8.0_192-linux_aarch64.tar.gz",
         "1.8.181": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.31.1.122-jdk1.8.0_181-linux_aarch64.tar.gz",
         "1.8.172": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_172-8.30.0.105-eval-linux_aarch64.tar.gz",
         "1.8.162": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_162-8.27.0.91-eval-linux_aarch64.tar.gz",
@@ -149,12 +150,12 @@
         "1.8.144": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_144-8.23.0.70-eval-linux_aarch64.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
-        "1.11.0-60": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b60-20181105-shenandoah-jdk-11.0.1+13-linux-aarch64-release.tar.xz",
-        "1.11.0-59": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b59-20181103-shenandoah-jdk-11.0.1+13-linux-aarch64-release.tar.xz",
-        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b60-20181105-shenandoah-jdk-11.0.1+13-linux-aarch64-release.tar.xz",
+        "1.11.0-63": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b63-20181112-shenandoah-jdk-11.0.1+13-linux-aarch64-release.tar.xz",
+        "1.11.0-61": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b61-20181111-shenandoah-jdk-11.0.1+13-linux-aarch64-release.tar.xz",
+        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b63-20181112-shenandoah-jdk-11.0.1+13-linux-aarch64-release.tar.xz",
+        "1.8.0-351": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b351-20181112-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz",
         "1.8.0-349": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b349-20181110-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz",
-        "1.8.0-348": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b348-20181105-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz",
-        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b349-20181110-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz"
+        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b351-20181112-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz"
       },
       "jdk@adopt": {
         "1.11.0-1": "tgz+https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.1%2B13/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.1_13.tar.gz",
@@ -170,6 +171,7 @@
     },
     "arm": {
       "jdk@zulu": {
+        "1.8.192": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.33.0.134-jdk1.8.0_192-linux_aarch32hf.tar.gz",
         "1.8.181": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.31.1.122-jdk1.8.0_181-linux_aarch32hf.tar.gz",
         "1.8.172": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_172-8.30.0.106-eval-linux_aarch32hf.tar.gz",
         "1.8.162": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_162-8.27.0.91-eval-linux_aarch32hf.tar.gz",
@@ -178,9 +180,9 @@
         "1.8.121": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
-        "1.11.0-60": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b60-20181105-shenandoah-jdk-11.0.1+13-linux-arm32-hflt-release.tar.xz",
-        "1.11.0-59": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b59-20181103-shenandoah-jdk-11.0.1+13-linux-arm32-hflt-release.tar.xz",
-        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b60-20181105-shenandoah-jdk-11.0.1+13-linux-arm32-hflt-release.tar.xz"
+        "1.11.0-63": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b63-20181112-shenandoah-jdk-11.0.1+13-linux-arm32-hflt-release.tar.xz",
+        "1.11.0-61": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b61-20181111-shenandoah-jdk-11.0.1+13-linux-arm32-hflt-release.tar.xz",
+        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b63-20181112-shenandoah-jdk-11.0.1+13-linux-arm32-hflt-release.tar.xz"
       },
       "jdk": {
         "1.8.192": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u192-b12/750e1c8617c5452694857ad95c3ee230/jdk-8u192-linux-arm32-vfp-hflt.tar.gz",
@@ -244,12 +246,12 @@
         "1.8.191": "tgz+http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/server-jre-8u191-linux-x64.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
-        "1.11.0-60": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b60-20181105-shenandoah-jdk-11.0.1+13-linux-x86_64-release.tar.xz",
-        "1.11.0-59": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b59-20181103-shenandoah-jdk-11.0.1+13-linux-x86_64-release.tar.xz",
-        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b60-20181105-shenandoah-jdk-11.0.1+13-linux-x86_64-release.tar.xz",
+        "1.11.0-63": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b63-20181112-shenandoah-jdk-11.0.1+13-linux-x86_64-release.tar.xz",
+        "1.11.0-61": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b61-20181111-shenandoah-jdk-11.0.1+13-linux-x86_64-release.tar.xz",
+        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b63-20181112-shenandoah-jdk-11.0.1+13-linux-x86_64-release.tar.xz",
+        "1.8.0-351": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b351-20181112-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz",
         "1.8.0-349": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b349-20181110-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz",
-        "1.8.0-348": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b348-20181105-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz",
-        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b349-20181110-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz"
+        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b351-20181112-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz"
       },
       "jdk@openjdk": {
         "1.12.0-19": "tgz+https://download.java.net/java/early_access/jdk12/19/GPL/openjdk-12-ea+19_linux-x64_bin.tar.gz",
@@ -327,12 +329,12 @@
         "1.8.102": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.17.0.4-oem-jdk8.0.102-linux_i686.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
-        "1.11.0-60": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b60-20181105-shenandoah-jdk-11.0.1+13-linux-x86-release.tar.xz",
-        "1.11.0-59": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b59-20181103-shenandoah-jdk-11.0.1+13-linux-x86-release.tar.xz",
-        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b60-20181105-shenandoah-jdk-11.0.1+13-linux-x86-release.tar.xz",
+        "1.11.0-63": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b63-20181112-shenandoah-jdk-11.0.1+13-linux-x86-release.tar.xz",
+        "1.11.0-61": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b61-20181111-shenandoah-jdk-11.0.1+13-linux-x86-release.tar.xz",
+        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b63-20181112-shenandoah-jdk-11.0.1+13-linux-x86-release.tar.xz",
+        "1.8.0-351": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b351-20181112-aarch64-jdk8u181-b15-linux-x86-release.tar.xz",
         "1.8.0-349": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b349-20181110-aarch64-jdk8u181-b15-linux-x86-release.tar.xz",
-        "1.8.0-348": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b348-20181105-aarch64-jdk8u181-b15-linux-x86-release.tar.xz",
-        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b349-20181110-aarch64-jdk8u181-b15-linux-x86-release.tar.xz"
+        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b351-20181112-aarch64-jdk8u181-b15-linux-x86-release.tar.xz"
       },
       "jdk@ibm": {
         "1.8.0-5.25": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.25/linux/i386/ibm-java-sdk-8.0-5.25-i386-archive.bin",
