@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.11.1](https://github.com/shyiko/jabba/compare/0.11.0...0.11.1) - 2018-12-18
+
+### Fixed
+- Oracle JDK installation on macOS ([#350](https://github.com/shyiko/jabba/issues/350)).
+- Broken symlinks (`tar.*`) ([#356](https://github.com/shyiko/jabba/issues/356)).
+
 ## [0.11.0](https://github.com/shyiko/jabba/compare/0.10.1...0.11.0) - 2018-10-11
 
 ### Added
