@@ -351,9 +351,19 @@ func installFromDmg(src string, dst string) error {
 	err = sh(fmt.Sprintf(`pkgutil --expand "%s"/*.pkg "%s"`, mountpoint, pkgdir))
 	if err == nil {
 		pathToPayload := ""
+		// fixme: find a better way
+		var payloadSize int64
 		for it := fileiter.New(pkgdir, fileiter.BreadthFirst()); it.Next(); {
 			if !it.IsDir() && it.Name() == "Payload" {
-				pathToPayload = filepath.Join(it.Dir(), it.Name())
+				path := filepath.Join(it.Dir(), it.Name())
+				stat, err := os.Stat(path)
+				if err != nil {
+					return err
+				}
+				if payloadSize < stat.Size() { // pick largest (e.g. among javaappletplugin.pkg & jdk180191.pkg)
+					pathToPayload = path
+					payloadSize = stat.Size()
+				}
 				break
 			}
 		}
