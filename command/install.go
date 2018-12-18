@@ -538,9 +538,10 @@ func untgz(src string, dst string, strip bool) error {
 				dirCache[dir] = true
 			}
 		}
-		if header.Typeflag != tar.TypeDir {
-			name := filepath.Base(header.Name)
-			d, err := os.OpenFile(filepath.Join(dst, dir, name),
+		target := filepath.Join(dst, dir, filepath.Base(header.Name))
+		switch header.Typeflag {
+		case tar.TypeReg:
+			d, err := os.OpenFile(target,
 				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode|0600)&0777)
 			if err != nil {
 				return err
@@ -548,6 +549,10 @@ func untgz(src string, dst string, strip bool) error {
 			_, err = io.Copy(d, r)
 			d.Close()
 			if err != nil {
+				return err
+			}
+		case tar.TypeSymlink:
+			if err = os.Symlink(header.Linkname, target); err != nil {
 				return err
 			}
 		}
@@ -644,9 +649,10 @@ func untgx(src string, dst string, strip bool) error {
 				dirCache[dir] = true
 			}
 		}
-		if header.Typeflag != tar.TypeDir {
-			name := filepath.Base(header.Name)
-			d, err := os.OpenFile(filepath.Join(dst, dir, name),
+		target := filepath.Join(dst, dir, filepath.Base(header.Name))
+		switch header.Typeflag {
+		case tar.TypeReg:
+			d, err := os.OpenFile(target,
 				os.O_WRONLY|os.O_CREATE|os.O_TRUNC, os.FileMode(header.Mode|0600)&0777)
 			if err != nil {
 				return err
@@ -654,6 +660,10 @@ func untgx(src string, dst string, strip bool) error {
 			_, err = io.Copy(d, r)
 			d.Close()
 			if err != nil {
+				return err
+			}
+		case tar.TypeSymlink:
+			if err = os.Symlink(header.Linkname, target); err != nil {
 				return err
 			}
 		}
