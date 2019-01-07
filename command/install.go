@@ -364,7 +364,6 @@ func installFromDmg(src string, dst string) error {
 					pathToPayload = path
 					payloadSize = stat.Size()
 				}
-				break
 			}
 		}
 		if pathToPayload != "" {
