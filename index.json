@@ -2,8 +2,9 @@
   "windows": {
     "amd64": {
       "jdk@zulu": {
+        "1.11.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-win_x64.zip",
         "1.11.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-win_x64.zip",
-        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-win_x64.zip",
+        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-win_x64.zip",
         "1.10.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-win_x64.zip",
         "1.10.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu10.2+3-jdk10.0.1-win_x64.zip",
         "1.10.0": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-win_x64.zip",
@@ -12,6 +13,7 @@
         "1.9.0-1": "zip+http://cdn.azul.com/zulu/bin/zulu9.0.1.3-jdk9.0.1-win_x64.zip",
         "1.9.0-0": "zip+http://cdn.azul.com/zulu/bin/zulu9.0.0.15-jdk9.0.0-win_x64.zip",
         "1.9.0": "zip+https://cdn.azul.com/zulu/bin/zulu9.0.7.1-jdk9.0.7-win_x64.zip",
+        "1.8.201": "zip+https://cdn.azul.com/zulu/bin/zulu8.34.0.1-ca-jdk8.0.201-win_x64.zip",
         "1.8.192": "zip+https://cdn.azul.com/zulu/bin/zulu8.33.0.1-jdk8.0.192-win_x64.zip",
         "1.8.181": "zip+https://cdn.azul.com/zulu/bin/zulu8.31.0.1-jdk8.0.181-win_x64.zip",
         "1.8.172": "zip+https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-win_x64.zip",
@@ -91,13 +93,13 @@
         "1.8.201": "tgz+https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/server-jre-8u201-windows-x64.tar.gz"
       },
       "jdk@openjdk": {
-        "1.13.0-3": "zip+https://download.java.net/java/early_access/jdk13/3/GPL/openjdk-13-ea+3_windows-x64_bin.zip",
-        "1.13.0": "zip+https://download.java.net/java/early_access/jdk13/3/GPL/openjdk-13-ea+3_windows-x64_bin.zip",
-        "1.12.0-27": "zip+https://download.java.net/java/early_access/jdk12/27/GPL/openjdk-12-ea+27_windows-x64_bin.zip",
-        "1.12.0": "zip+https://download.java.net/java/early_access/jdk12/27/GPL/openjdk-12-ea+27_windows-x64_bin.zip",
-        "1.11.0-2": "zip+https://download.java.net/java/GA/jdk11/7/GPL/openjdk-11.0.2_windows-x64_bin.zip",
+        "1.13.0-4": "zip+https://download.java.net/java/early_access/jdk13/4/GPL/openjdk-13-ea+4_windows-x64_bin.zip",
+        "1.13.0": "zip+https://download.java.net/java/early_access/jdk13/4/GPL/openjdk-13-ea+4_windows-x64_bin.zip",
+        "1.12.0-28": "zip+https://download.java.net/java/early_access/jdk12/28/GPL/openjdk-12-ea+28_windows-x64_bin.zip",
+        "1.12.0": "zip+https://download.java.net/java/early_access/jdk12/28/GPL/openjdk-12-ea+28_windows-x64_bin.zip",
+        "1.11.0-2": "zip+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip",
         "1.11.0-1": "zip+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_windows-x64_bin.zip",
-        "1.11.0": "zip+https://download.java.net/java/GA/jdk11/7/GPL/openjdk-11.0.2_windows-x64_bin.zip",
+        "1.11.0": "zip+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip",
         "1.10.0-2": "tgz+https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_windows-x64_bin.tar.gz",
         "1.10.0-1": "tgz+https://download.java.net/java/GA/jdk10/10.0.1/fb4372174a714e6b8c52526dc134031e/10/openjdk-10.0.1_windows-x64_bin.tar.gz",
         "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_windows-x64_bin.tar.gz",
@@ -117,13 +119,14 @@
         "1.10.0-2": "zip+https://github.com/AdoptOpenJDK/openjdk10-releases/releases/download/jdk-10.0.2%2B13/OpenJDK10_x64_Win_jdk-10.0.2%2B13.zip",
         "1.9.0-4": "zip+https://github.com/AdoptOpenJDK/openjdk9-binaries/releases/download/jdk-9.0.4%2B11/OpenJDK9U-jdk_x64_windows_hotspot_9.0.4_11.zip",
         "1.9.0-0": "zip+https://github.com/AdoptOpenJDK/openjdk9-binaries/releases/download/jdk-9%2B181/OpenJDK9U-jdk_x64_windows_hotspot_9_181.zip",
+        "1.8.202-08": "zip+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u202-b08/OpenJDK8U-jdk_x64_windows_hotspot_8u202b08.zip",
         "1.8.192-12": "zip+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u192-b12/OpenJDK8U-jdk_x64_windows_hotspot_8u192b12.zip",
         "1.8.181-13": "zip+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u181-b13/OpenJDK8U-jdk_x64_windows_hotspot_8u181b13.zip",
         "1.8.172-11": "zip+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u172-b11/OpenJDK8_x64_Win_jdk8u172-b11.zip"
       },
       "jdk": {
-        "1.11.0-2": "zip+https://download.oracle.com/otn-pub/java/jdk/11.0.2+7/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_windows-x64_bin.zip",
-        "1.11.0": "zip+https://download.oracle.com/otn-pub/java/jdk/11.0.2+7/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_windows-x64_bin.zip",
+        "1.11.0-2": "zip+http://download.oracle.com/otn-pub/java/jdk/11.0.2+9/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_windows-x64_bin.zip",
+        "1.11.0": "zip+http://download.oracle.com/otn-pub/java/jdk/11.0.2+9/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_windows-x64_bin.zip",
         "1.8.202": "exe+https://download.oracle.com/otn-pub/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-windows-x64.exe",
         "1.8.201": "exe+https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-windows-x64.exe"
       }
@@ -136,6 +139,7 @@
         "1.9.0-7": "zip+https://cdn.azul.com/zulu/bin/zulu9.0.7.1-jdk9.0.7-win_i686.zip",
         "1.9.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu9.0.1.3-jdk9.0.1-win_i686.zip",
         "1.9.0": "zip+https://cdn.azul.com/zulu/bin/zulu9.0.7.1-jdk9.0.7-win_i686.zip",
+        "1.8.201": "zip+https://cdn.azul.com/zulu/bin/zulu8.34.0.1-ca-jdk8.0.201-win_i686.zip",
         "1.8.192": "zip+https://cdn.azul.com/zulu/bin/zulu8.33.0.1-jdk8.0.192-win_i686.zip",
         "1.8.181": "zip+https://cdn.azul.com/zulu/bin/zulu8.31.0.1-jdk8.0.181-win_i686.zip",
         "1.8.172": "zip+https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-win_i686.zip",
@@ -159,12 +163,12 @@
         "1.8.144": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_144-8.23.0.70-eval-linux_aarch64.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
-        "1.11.0-78": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b78-20190116-shenandoah-jdk-11.0.1+13-20181213-linux-aarch64-release.tar.xz",
-        "1.11.0-77": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b77-20190114-shenandoah-jdk-11.0.1+13-20181213-linux-aarch64-release.tar.xz",
-        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b78-20190116-shenandoah-jdk-11.0.1+13-20181213-linux-aarch64-release.tar.xz",
+        "1.11.0-80": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b80-20190120-shenandoah-jdk-11.0.2+7-linux-aarch64-release.tar.xz",
+        "1.11.0-79": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b79-20190118-shenandoah-jdk-11.0.2+7-linux-aarch64-release.tar.xz",
+        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b80-20190120-shenandoah-jdk-11.0.2+7-linux-aarch64-release.tar.xz",
+        "1.8.0-367": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b367-20190120-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz",
         "1.8.0-366": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b366-20190112-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz",
-        "1.8.0-365": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b365-20190105-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz",
-        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b366-20190112-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz"
+        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b367-20190120-aarch64-jdk8u181-b15-linux-aarch64-release.tar.xz"
       },
       "jdk@adopt": {
         "1.11.0-1": "tgz+https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.1%2B13/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.1_13.tar.gz",
@@ -190,9 +194,9 @@
         "1.8.121": "tgz+http://cdn.azul.com/zulu-embedded/bin/ezdk-1.8.0_121-8.20.0.42-eval-linux_aarch32hf.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
-        "1.11.0-78": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b78-20190116-shenandoah-jdk-11.0.1+13-20181213-linux-arm32-hflt-release.tar.xz",
-        "1.11.0-77": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b77-20190114-shenandoah-jdk-11.0.1+13-20181213-linux-arm32-hflt-release.tar.xz",
-        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b78-20190116-shenandoah-jdk-11.0.1+13-20181213-linux-arm32-hflt-release.tar.xz"
+        "1.11.0-80": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b80-20190120-shenandoah-jdk-11.0.2+7-linux-arm32-hflt-release.tar.xz",
+        "1.11.0-79": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b79-20190118-shenandoah-jdk-11.0.2+7-linux-arm32-hflt-release.tar.xz",
+        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b80-20190120-shenandoah-jdk-11.0.2+7-linux-arm32-hflt-release.tar.xz"
       },
       "jdk": {
         "1.8.202": "tgz+https://download.oracle.com/otn-pub/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-linux-arm32-vfp-hflt.tar.gz",
@@ -201,8 +205,9 @@
     },
     "amd64": {
       "jdk@zulu": {
+        "1.11.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-linux_x64.tar.gz",
         "1.11.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-linux_x64.tar.gz",
-        "1.11.0": "tgz+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-linux_x64.tar.gz",
+        "1.11.0": "tgz+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-linux_x64.tar.gz",
         "1.10.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_x64.tar.gz",
         "1.10.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu10.2+3-jdk10.0.1-linux_x64.tar.gz",
         "1.10.0": "tgz+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_x64.tar.gz",
@@ -211,6 +216,7 @@
         "1.9.0-1": "tgz+http://cdn.azul.com/zulu/bin/zulu9.0.1.3-jdk9.0.1-linux_x64.tar.gz",
         "1.9.0-0": "tgz+http://cdn.azul.com/zulu/bin/zulu9.0.0.15-jdk9.0.0-linux_x64.tar.gz",
         "1.9.0": "tgz+https://cdn.azul.com/zulu/bin/zulu9.0.7.1-jdk9.0.7-linux_x64.tar.gz",
+        "1.8.201": "tgz+https://cdn.azul.com/zulu/bin/zulu8.34.0.1-ca-jdk8.0.201-linux_x64.tar.gz",
         "1.8.192": "tgz+https://cdn.azul.com/zulu/bin/zulu8.33.0.1-jdk8.0.192-linux_x64.tar.gz",
         "1.8.181": "tgz+https://cdn.azul.com/zulu/bin/zulu8.31.0.1-jdk8.0.181-linux_x64.tar.gz",
         "1.8.172": "tgz+https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-linux_x64.tar.gz",
@@ -256,21 +262,21 @@
         "1.8.201": "tgz+https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/server-jre-8u201-linux-x64.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
-        "1.11.0-78": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b78-20190116-shenandoah-jdk-11.0.1+13-20181213-linux-x86_64-release.tar.xz",
-        "1.11.0-77": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b77-20190114-shenandoah-jdk-11.0.1+13-20181213-linux-x86_64-release.tar.xz",
-        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b78-20190116-shenandoah-jdk-11.0.1+13-20181213-linux-x86_64-release.tar.xz",
+        "1.11.0-80": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b80-20190120-shenandoah-jdk-11.0.2+7-linux-x86_64-release.tar.xz",
+        "1.11.0-79": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b79-20190118-shenandoah-jdk-11.0.2+7-linux-x86_64-release.tar.xz",
+        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b80-20190120-shenandoah-jdk-11.0.2+7-linux-x86_64-release.tar.xz",
+        "1.8.0-367": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b367-20190120-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz",
         "1.8.0-366": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b366-20190112-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz",
-        "1.8.0-365": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b365-20190105-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz",
-        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b366-20190112-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz"
+        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b367-20190120-aarch64-jdk8u181-b15-linux-x86_64-release.tar.xz"
       },
       "jdk@openjdk": {
-        "1.13.0-3": "tgz+https://download.java.net/java/early_access/jdk13/3/GPL/openjdk-13-ea+3_linux-x64_bin.tar.gz",
-        "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/3/GPL/openjdk-13-ea+3_linux-x64_bin.tar.gz",
-        "1.12.0-27": "tgz+https://download.java.net/java/early_access/jdk12/27/GPL/openjdk-12-ea+27_linux-x64_bin.tar.gz",
-        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/27/GPL/openjdk-12-ea+27_linux-x64_bin.tar.gz",
-        "1.11.0-2": "tgz+https://download.java.net/java/GA/jdk11/7/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz",
+        "1.13.0-4": "tgz+https://download.java.net/java/early_access/jdk13/4/GPL/openjdk-13-ea+4_linux-x64_bin.tar.gz",
+        "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/4/GPL/openjdk-13-ea+4_linux-x64_bin.tar.gz",
+        "1.12.0-28": "tgz+https://download.java.net/java/early_access/jdk12/28/GPL/openjdk-12-ea+28_linux-x64_bin.tar.gz",
+        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/28/GPL/openjdk-12-ea+28_linux-x64_bin.tar.gz",
+        "1.11.0-2": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz",
         "1.11.0-1": "tgz+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz",
-        "1.11.0": "tgz+https://download.java.net/java/GA/jdk11/7/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz",
+        "1.11.0": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz",
         "1.10.0-2": "tgz+https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_linux-x64_bin.tar.gz",
         "1.10.0-1": "tgz+https://download.java.net/java/GA/jdk10/10.0.1/fb4372174a714e6b8c52526dc134031e/10//openjdk-10.0.1_linux-x64_bin.tar.gz",
         "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_linux-x64_bin.tar.gz",
@@ -319,14 +325,14 @@
         "1.10.0-2": "tgz+https://github.com/AdoptOpenJDK/openjdk10-releases/releases/download/jdk-10.0.2%2B13/OpenJDK10_x64_Linux_jdk-10.0.2%2B13.tar.gz",
         "1.9.0-4": "tgz+https://github.com/AdoptOpenJDK/openjdk9-binaries/releases/download/jdk-9.0.4%2B11/OpenJDK9U-jdk_x64_linux_hotspot_9.0.4_11.tar.gz",
         "1.9.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk9-binaries/releases/download/jdk-9%2B181/OpenJDK9U-jdk_x64_linux_hotspot_9_181.tar.gz",
+        "1.8.202-08": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u202-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u202b08.tar.gz",
         "1.8.192-12": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u192-b12/OpenJDK8U-jdk_x64_linux_hotspot_8u192b12.tar.gz",
         "1.8.181-13": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u181-b13/OpenJDK8U-jdk_x64_linux_hotspot_8u181b13.tar.gz",
-        "1.8.172-11": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u172-b11/OpenJDK8_x64_Linux_jdk8u172-b11.tar.gz",
-        "1.8.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u202-ga/OpenJDK8U-jdk_x64_linux_hotspot_8u202ga.tar.gz"
+        "1.8.172-11": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u172-b11/OpenJDK8_x64_Linux_jdk8u172-b11.tar.gz"
       },
       "jdk": {
-        "1.11.0-2": "tgz+https://download.oracle.com/otn-pub/java/jdk/11.0.2+7/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_linux-x64_bin.tar.gz",
-        "1.11.0": "tgz+https://download.oracle.com/otn-pub/java/jdk/11.0.2+7/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_linux-x64_bin.tar.gz",
+        "1.11.0-2": "tgz+http://download.oracle.com/otn-pub/java/jdk/11.0.2+9/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_linux-x64_bin.tar.gz",
+        "1.11.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/11.0.2+9/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_linux-x64_bin.tar.gz",
         "1.8.202": "tgz+https://download.oracle.com/otn-pub/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-linux-x64.tar.gz",
         "1.8.201": "tgz+https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-linux-x64.tar.gz"
       }
@@ -339,6 +345,7 @@
         "1.9.0-7": "tgz+https://cdn.azul.com/zulu/bin/zulu9.0.7.1-jdk9.0.7-linux_i686.tar.gz",
         "1.9.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu9.0.1.3-jdk9.0.1-linux_i686.tar.gz",
         "1.9.0": "tgz+https://cdn.azul.com/zulu/bin/zulu9.0.7.1-jdk9.0.7-linux_i686.tar.gz",
+        "1.8.201": "tgz+https://cdn.azul.com/zulu/bin/zulu8.34.0.1-ca-jdk8.0.201-linux_i686.tar.gz",
         "1.8.192": "tgz+https://cdn.azul.com/zulu/bin/zulu8.33.0.1-jdk8.0.192-linux_i686.tar.gz",
         "1.8.181": "tgz+https://cdn.azul.com/zulu/bin/zulu8.31.0.1-jdk8.0.181-linux_i686.tar.gz",
         "1.8.172": "tgz+https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-linux_i686.tar.gz",
@@ -346,12 +353,12 @@
         "1.8.102": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.17.0.4-oem-jdk8.0.102-linux_i686.tar.gz"
       },
       "jdk@openjdk-shenandoah": {
-        "1.11.0-78": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b78-20190116-shenandoah-jdk-11.0.1+13-20181213-linux-x86-release.tar.xz",
-        "1.11.0-77": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b77-20190114-shenandoah-jdk-11.0.1+13-20181213-linux-x86-release.tar.xz",
-        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b78-20190116-shenandoah-jdk-11.0.1+13-20181213-linux-x86-release.tar.xz",
+        "1.11.0-80": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b80-20190120-shenandoah-jdk-11.0.2+7-linux-x86-release.tar.xz",
+        "1.11.0-79": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b79-20190118-shenandoah-jdk-11.0.2+7-linux-x86-release.tar.xz",
+        "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-b80-20190120-shenandoah-jdk-11.0.2+7-linux-x86-release.tar.xz",
+        "1.8.0-367": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b367-20190120-aarch64-jdk8u181-b15-linux-x86-release.tar.xz",
         "1.8.0-366": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b366-20190112-aarch64-jdk8u181-b15-linux-x86-release.tar.xz",
-        "1.8.0-365": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b365-20190105-aarch64-jdk8u181-b15-linux-x86-release.tar.xz",
-        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b366-20190112-aarch64-jdk8u181-b15-linux-x86-release.tar.xz"
+        "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-b367-20190120-aarch64-jdk8u181-b15-linux-x86-release.tar.xz"
       },
       "jdk@ibm": {
         "1.8.0-5.27": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.27/linux/i386/ibm-java-sdk-8.0-5.27-i386-archive.bin",
@@ -375,8 +382,9 @@
   "darwin": {
     "amd64": {
       "jdk@zulu": {
+        "1.11.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-macosx_x64.zip",
         "1.11.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-macosx_x64.zip",
-        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-macosx_x64.zip",
+        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-macosx_x64.zip",
         "1.10.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-macosx_x64.zip",
         "1.10.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu10.2+3-jdk10.0.1-macosx_x64.zip",
         "1.10.0": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-macosx_x64.zip",
@@ -385,6 +393,7 @@
         "1.9.0-1": "tgz+http://cdn.azul.com/zulu/bin/zulu9.0.1.3-jdk9.0.1-macosx_x64.tar.gz",
         "1.9.0-0": "zip+http://cdn.azul.com/zulu/bin/zulu9.0.0.15-jdk9.0.0-macosx_x64.zip",
         "1.9.0": "zip+https://cdn.azul.com/zulu/bin/zulu9.0.7.1-jdk9.0.7-macosx_x64.zip",
+        "1.8.201": "zip+https://cdn.azul.com/zulu/bin/zulu8.34.0.1-ca-jdk8.0.201-macosx_x64.zip",
         "1.8.192": "zip+https://cdn.azul.com/zulu/bin/zulu8.33.0.1-jdk8.0.192-macosx_x64.zip",
         "1.8.181": "zip+https://cdn.azul.com/zulu/bin/zulu8.31.0.1-jdk8.0.181-macosx_x64.zip",
         "1.8.172": "zip+https://cdn.azul.com/zulu/bin/zulu8.30.0.1-jdk8.0.172-macosx_x64.zip",
@@ -410,13 +419,13 @@
         "1.7.95": "zip+http://cdn.azul.com/zulu/bin/zulu7.13.0.1-jdk7.0.95-macosx_x64.zip"
       },
       "jdk@openjdk": {
-        "1.13.0-3": "tgz+https://download.java.net/java/early_access/jdk13/3/GPL/openjdk-13-ea+3_osx-x64_bin.tar.gz",
-        "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/3/GPL/openjdk-13-ea+3_osx-x64_bin.tar.gz",
-        "1.12.0-27": "tgz+https://download.java.net/java/early_access/jdk12/27/GPL/openjdk-12-ea+27_osx-x64_bin.tar.gz",
-        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/27/GPL/openjdk-12-ea+27_osx-x64_bin.tar.gz",
-        "1.11.0-2": "tgz+https://download.java.net/java/GA/jdk11/7/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz",
+        "1.13.0-4": "tgz+https://download.java.net/java/early_access/jdk13/4/GPL/openjdk-13-ea+4_osx-x64_bin.tar.gz",
+        "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/4/GPL/openjdk-13-ea+4_osx-x64_bin.tar.gz",
+        "1.12.0-28": "tgz+https://download.java.net/java/early_access/jdk12/28/GPL/openjdk-12-ea+28_osx-x64_bin.tar.gz",
+        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/28/GPL/openjdk-12-ea+28_osx-x64_bin.tar.gz",
+        "1.11.0-2": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz",
         "1.11.0-1": "tgz+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_osx-x64_bin.tar.gz",
-        "1.11.0": "tgz+https://download.java.net/java/GA/jdk11/7/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz",
+        "1.11.0": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz",
         "1.10.0-2": "tgz+https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_osx-x64_bin.tar.gz",
         "1.10.0-1": "tgz+https://download.java.net/java/GA/jdk10/10.0.1/fb4372174a714e6b8c52526dc134031e/10/openjdk-10.0.1_osx-x64_bin.tar.gz",
         "1.10.0": "tgz+https://download.java.net/java/GA/jdk10/10.0.2/19aef61b38124481863b1413dce1855f/13/openjdk-10.0.2_osx-x64_bin.tar.gz",
@@ -439,13 +448,14 @@
         "1.11.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11%2B28/OpenJDK11-jdk_x64_mac_hotspot_11_28.tar.gz",
         "1.10.0-2": "tgz+https://github.com/AdoptOpenJDK/openjdk10-releases/releases/download/jdk-10.0.2%2B13/OpenJDK10_x64_Mac_jdk-10.0.2%2B13.tar.gz",
         "1.9.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk9-binaries/releases/download/jdk-9%2B181/OpenJDK9U-jdk_x64_mac_hotspot_9_181.tar.gz",
+        "1.8.202-08": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u202-b08/OpenJDK8U-jdk_x64_mac_hotspot_8u202b08.tar.gz",
         "1.8.192-12": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u192-b12/OpenJDK8U-jdk_x64_mac_hotspot_8u192b12.tar.gz",
         "1.8.181-13": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u181-b13/OpenJDK8U-jdk_x64_mac_hotspot_8u181b13.tar.gz",
         "1.8.172-11": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u172-b11/OpenJDK8_x64_Mac_jdk8u172-b11.tar.gz"
       },
       "jdk": {
-        "1.11.0-2": "tgz+https://download.oracle.com/otn-pub/java/jdk/11.0.2+7/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_osx-x64_bin.tar.gz",
-        "1.11.0": "tgz+https://download.oracle.com/otn-pub/java/jdk/11.0.2+7/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_osx-x64_bin.tar.gz",
+        "1.11.0-2": "tgz+http://download.oracle.com/otn-pub/java/jdk/11.0.2+9/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_osx-x64_bin.tar.gz",
+        "1.11.0": "tgz+http://download.oracle.com/otn-pub/java/jdk/11.0.2+9/f51449fcd52f4d52b93a989c5c56ed3c/jdk-11.0.2_osx-x64_bin.tar.gz",
         "1.8.202": "dmg+https://download.oracle.com/otn-pub/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-macosx-x64.dmg",
         "1.8.201": "dmg+https://download.oracle.com/otn-pub/java/jdk/8u201-b09/42970487e3af4f5aa5bca3f542482c60/jdk-8u201-macosx-x64.dmg",
         "1.6.65": "dmg+https://support.apple.com/downloads/DL1572/en_US/javaforosx.dmg"
