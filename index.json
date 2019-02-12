@@ -102,8 +102,8 @@
       "jdk@openjdk": {
         "1.13.0-7": "zip+https://download.java.net/java/early_access/jdk13/7/GPL/openjdk-13-ea+7_windows-x64_bin.zip",
         "1.13.0": "zip+https://download.java.net/java/early_access/jdk13/7/GPL/openjdk-13-ea+7_windows-x64_bin.zip",
-        "1.12.0-30": "zip+https://download.java.net/java/early_access/jdk12/30/GPL/openjdk-12-ea+30_windows-x64_bin.zip",
-        "1.12.0": "zip+https://download.java.net/java/early_access/jdk12/30/GPL/openjdk-12-ea+30_windows-x64_bin.zip",
+        "1.12.0-31": "zip+https://download.java.net/java/early_access/jdk12/31/GPL/openjdk-12+31_windows-x64_bin.zip",
+        "1.12.0": "zip+https://download.java.net/java/early_access/jdk12/31/GPL/openjdk-12+31_windows-x64_bin.zip",
         "1.11.0-2": "zip+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip",
         "1.11.0-1": "zip+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_windows-x64_bin.zip",
         "1.11.0": "zip+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip",
@@ -279,8 +279,8 @@
       "jdk@openjdk": {
         "1.13.0-7": "tgz+https://download.java.net/java/early_access/jdk13/7/GPL/openjdk-13-ea+7_linux-x64_bin.tar.gz",
         "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/7/GPL/openjdk-13-ea+7_linux-x64_bin.tar.gz",
-        "1.12.0-30": "tgz+https://download.java.net/java/early_access/jdk12/30/GPL/openjdk-12-ea+30_linux-x64_bin.tar.gz",
-        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/30/GPL/openjdk-12-ea+30_linux-x64_bin.tar.gz",
+        "1.12.0-31": "tgz+https://download.java.net/java/early_access/jdk12/31/GPL/openjdk-12+31_linux-x64_bin.tar.gz",
+        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/31/GPL/openjdk-12+31_linux-x64_bin.tar.gz",
         "1.11.0-2": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz",
         "1.11.0-1": "tgz+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_linux-x64_bin.tar.gz",
         "1.11.0": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz",
@@ -432,8 +432,8 @@
       "jdk@openjdk": {
         "1.13.0-7": "tgz+https://download.java.net/java/early_access/jdk13/7/GPL/openjdk-13-ea+7_osx-x64_bin.tar.gz",
         "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/7/GPL/openjdk-13-ea+7_osx-x64_bin.tar.gz",
-        "1.12.0-30": "tgz+https://download.java.net/java/early_access/jdk12/30/GPL/openjdk-12-ea+30_osx-x64_bin.tar.gz",
-        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/30/GPL/openjdk-12-ea+30_osx-x64_bin.tar.gz",
+        "1.12.0-31": "tgz+https://download.java.net/java/early_access/jdk12/31/GPL/openjdk-12+31_osx-x64_bin.tar.gz",
+        "1.12.0": "tgz+https://download.java.net/java/early_access/jdk12/31/GPL/openjdk-12+31_osx-x64_bin.tar.gz",
         "1.11.0-2": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz",
         "1.11.0-1": "tgz+https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_osx-x64_bin.tar.gz",
         "1.11.0": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz",
