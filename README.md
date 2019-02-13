@@ -85,7 +85,7 @@ Invoke-Expression (
 ```sh
 # list available JDK's
 jabba ls-remote
-# you can use any valid semver range to narrow down the list
+# you can use any valid server range to narrow down the list
 jabba ls-remote zulu@~1.8.60
 jabba ls-remote "*@>=1.6.45 <1.9" --latest=minor
 
