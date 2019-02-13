@@ -42,7 +42,7 @@ If the problem persists - please create a ticket at https://github.com/shyiko/ja
     exit 1
 }
 
-echo @"
+@"
 `$env:JABBA_HOME="$jabbaHome"
 
 function jabba
@@ -69,7 +69,7 @@ if (-not $(Test-Path $profile))
 if ("$(cat $profile | Select-String "\\jabba.ps1")" -eq "")
 {
     echo "Adding source string to $profile"
-    echo "`n$sourceJabba`n" >> "$profile"
+    "`n$sourceJabba`n" >> "$profile"
 }
 else
 {
