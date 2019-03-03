@@ -3,9 +3,9 @@
     "amd64": {
       "jdk@zulu": {
         "1.12.0": "zip+https://cdn.azul.com/zulu/bin/zulu12-ea-jdk12-win_x64.zip",
-        "1.11.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-win_x64.zip",
+        "1.11.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-win_x64.zip",
         "1.11.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-win_x64.zip",
-        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-win_x64.zip",
+        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-win_x64.zip",
         "1.10.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-win_x64.zip",
         "1.10.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu10.2+3-jdk10.0.1-win_x64.zip",
         "1.10.0": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-win_x64.zip",
@@ -216,9 +216,9 @@
     "amd64": {
       "jdk@zulu": {
         "1.12.0": "tgz+https://cdn.azul.com/zulu/bin/zulu12-ea-jdk12-linux_x64.tar.gz",
-        "1.11.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-linux_x64.tar.gz",
+        "1.11.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-linux_x64.tar.gz",
         "1.11.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-linux_x64.tar.gz",
-        "1.11.0": "tgz+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-linux_x64.tar.gz",
+        "1.11.0": "tgz+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-linux_x64.tar.gz",
         "1.10.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_x64.tar.gz",
         "1.10.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu10.2+3-jdk10.0.1-linux_x64.tar.gz",
         "1.10.0": "tgz+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_x64.tar.gz",
@@ -392,9 +392,9 @@
     "amd64": {
       "jdk@zulu": {
         "1.12.0": "zip+https://cdn.azul.com/zulu/bin/zulu12-ea-jdk12-macosx_x64.zip",
-        "1.11.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-macosx_x64.zip",
+        "1.11.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-macosx_x64.zip",
         "1.11.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-macosx_x64.zip",
-        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-macosx_x64.zip",
+        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-macosx_x64.zip",
         "1.10.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-macosx_x64.zip",
         "1.10.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu10.2+3-jdk10.0.1-macosx_x64.zip",
         "1.10.0": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-macosx_x64.zip",
