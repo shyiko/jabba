@@ -3,9 +3,9 @@
     "amd64": {
       "jdk@zulu": {
         "1.12.0": "zip+https://cdn.azul.com/zulu/bin/zulu12-ea-jdk12-win_x64.zip",
-        "1.11.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-win_x64.zip",
+        "1.11.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-win_x64.zip",
         "1.11.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-win_x64.zip",
-        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-win_x64.zip",
+        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-win_x64.zip",
         "1.10.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-win_x64.zip",
         "1.10.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu10.2+3-jdk10.0.1-win_x64.zip",
         "1.10.0": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-win_x64.zip",
@@ -216,9 +216,9 @@
     "amd64": {
       "jdk@zulu": {
         "1.12.0": "tgz+https://cdn.azul.com/zulu/bin/zulu12-ea-jdk12-linux_x64.tar.gz",
-        "1.11.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-linux_x64.tar.gz",
+        "1.11.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-linux_x64.tar.gz",
         "1.11.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-linux_x64.tar.gz",
-        "1.11.0": "tgz+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-linux_x64.tar.gz",
+        "1.11.0": "tgz+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-linux_x64.tar.gz",
         "1.10.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_x64.tar.gz",
         "1.10.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu10.2+3-jdk10.0.1-linux_x64.tar.gz",
         "1.10.0": "tgz+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-linux_x64.tar.gz",
@@ -306,6 +306,7 @@
         "1.7.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.40/linux/x86_64/ibm-java-sdk-7.0-10.40-x86_64-archive.bin"
       },
       "jdk@graalvm": {
+        "1.0.0-13": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc13/graalvm-ce-1.0.0-rc13-linux-amd64.tar.gz",
         "1.0.0-12": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc12/graalvm-ce-1.0.0-rc12-linux-amd64.tar.gz",
         "1.0.0-11": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc11/graalvm-ce-1.0.0-rc11-linux-amd64.tar.gz",
         "1.0.0-10": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc10/graalvm-ce-1.0.0-rc10-linux-amd64.tar.gz",
@@ -392,9 +393,9 @@
     "amd64": {
       "jdk@zulu": {
         "1.12.0": "zip+https://cdn.azul.com/zulu/bin/zulu12-ea-jdk12-macosx_x64.zip",
-        "1.11.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-macosx_x64.zip",
+        "1.11.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-macosx_x64.zip",
         "1.11.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu11.2.3-jdk11.0.1-macosx_x64.zip",
-        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.3-ca-jdk11.0.2-macosx_x64.zip",
+        "1.11.0": "zip+https://cdn.azul.com/zulu/bin/zulu11.29.11-ca-jdk11.0.2-macosx_x64.zip",
         "1.10.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-macosx_x64.zip",
         "1.10.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu10.2+3-jdk10.0.1-macosx_x64.zip",
         "1.10.0": "zip+https://cdn.azul.com/zulu/bin/zulu10.3+5-jdk10.0.2-macosx_x64.zip",
@@ -443,6 +444,7 @@
         "1.9.0-4": "tgz+https://download.java.net/java/GA/jdk9/9.0.4/binaries/openjdk-9.0.4_osx-x64_bin.tar.gz"
       },
       "jdk@graalvm": {
+        "1.0.0-13": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc13/graalvm-ce-1.0.0-rc13-macos-amd64.tar.gz",
         "1.0.0-12": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc12/graalvm-ce-1.0.0-rc12-macos-amd64.tar.gz",
         "1.0.0-11": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc11/graalvm-ce-1.0.0-rc11-macos-amd64.tar.gz",
         "1.0.0-10": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc10/graalvm-ce-1.0.0-rc10-macos-amd64.tar.gz",
