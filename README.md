@@ -28,13 +28,13 @@ the OS (macOS, Linux x86/x86_64/ARMv7+, Windows x86_64).
 > (in bash/zsh/...)
 
 ```sh
-curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+curl -sL https://git.io/jabba | bash && . ~/.jabba/jabba.sh
 ```
 
 > (use the same command to upgrade)
 
 > In [fish](https://fishshell.com/) command looks a little bit different - 
-`curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash; and . ~/.jabba/jabba.fish` 
+`curl -sL https://git.io/jabba | bash; and . ~/.jabba/jabba.fish`
 
 > If you don't have `curl` installed - replace `curl -sL` with `wget -qO-`.
 
@@ -51,7 +51,7 @@ integration script(s) to be included in the final Docker image, all you want is 
 ```dockerfile
 FROM buildpack-deps:jessie-curl
 
-RUN curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | \
+RUN curl -sL https://git.io/jabba | \
     JABBA_COMMAND="install 1.8 -o /jdk" bash
 
 ENV JAVA_HOME /jdk
