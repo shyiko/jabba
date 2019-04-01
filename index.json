@@ -290,11 +290,12 @@
         "1.9.0": "tgz+https://download.java.net/java/GA/jdk9/9/binaries/openjdk-9_linux-x64_bin.tar.gz"
       },
       "jdk@ibm": {
+        "1.8.0-5.31": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.31/linux/x86_64/ibm-java-sdk-8.0-5.31-x86_64-archive.bin",
         "1.8.0-5.30": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.30/linux/x86_64/ibm-java-sdk-8.0-5.30-x86_64-archive.bin",
         "1.8.0-5.27": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.27/linux/x86_64/ibm-java-sdk-8.0-5.27-x86_64-archive.bin",
         "1.8.0-5.7": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.7/linux/x86_64/ibm-java-sdk-8.0-5.7-x86_64-archive.bin",
         "1.8.0-5.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.6/linux/x86_64/ibm-java-sdk-8.0-5.6-x86_64-archive.bin",
-        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.30/linux/x86_64/ibm-java-sdk-8.0-5.30-x86_64-archive.bin",
+        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.31/linux/x86_64/ibm-java-sdk-8.0-5.31-x86_64-archive.bin",
         "1.7.1-4.40": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.40/linux/x86_64/ibm-java-sdk-7.1-4.40-x86_64-archive.bin",
         "1.7.1-4.35": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.35/linux/x86_64/ibm-java-sdk-7.1-4.35-x86_64-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.40/linux/x86_64/ibm-java-sdk-7.1-4.40-x86_64-archive.bin",
@@ -370,10 +371,11 @@
         "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-latest-linux-x86-release.tar.xz"
       },
       "jdk@ibm": {
+        "1.8.0-5.31": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.31/linux/i386/ibm-java-sdk-8.0-5.31-i386-archive.bin",
         "1.8.0-5.30": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.30/linux/i386/ibm-java-sdk-8.0-5.30-i386-archive.bin",
         "1.8.0-5.27": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.27/linux/i386/ibm-java-sdk-8.0-5.27-i386-archive.bin",
         "1.8.0-5.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.6/linux/i386/ibm-java-sdk-8.0-5.6-i386-archive.bin",
-        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.30/linux/i386/ibm-java-sdk-8.0-5.30-i386-archive.bin",
+        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.31/linux/i386/ibm-java-sdk-8.0-5.31-i386-archive.bin",
         "1.7.1-4.40": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.40/linux/i386/ibm-java-sdk-7.1-4.40-i386-archive.bin",
         "1.7.1-4.35": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.35/linux/i386/ibm-java-sdk-7.1-4.35-i386-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.40/linux/i386/ibm-java-sdk-7.1-4.40-i386-archive.bin",
