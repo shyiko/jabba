@@ -121,6 +121,10 @@ jabba uninstall zulu@1.6.77
 # link system JDK
 jabba link system@1.8.72 /Library/Java/JavaVirtualMachines/jdk1.8.0_72.jdk
 
+#To install Graal VM. Download the GraalVM 
+jabba link system@1.0.0-rc14 /tools/graalvm-ce-1.0.0-rc14/
+#Please note that system is constant. 
+
 # list all installed JDK's
 jabba ls
 
