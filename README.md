@@ -1,7 +1,5 @@
 # jabba ![Latest Version](https://img.shields.io/badge/latest-0.11.2-blue.svg) [![Build Status](https://travis-ci.org/shyiko/jabba.svg?branch=master)](https://travis-ci.org/shyiko/jabba)
 
-![jabba-the-hutt](https://cloud.githubusercontent.com/assets/370176/13943697/e6098ed0-efbb-11e5-9630-3ff0d0d0403d.jpg)
-
 Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js). Written in Go.
 
 The goal is to provide unified pain-free experience of **installing** (and **switching** between different versions of) JDK regardless of
