@@ -15,7 +15,11 @@ the OS (macOS, Linux x86/x86_64/ARMv7+, Windows x86_64).
 - [IBM SDK, Java Technology Edition](https://developer.ibm.com/javasdk/) <sup>(jabba >=0.6.0 is required)</sup> 
 - [GraalVM CE](https://www.graalvm.org/)
 - [OpenJDK](http://openjdk.java.net/)
-- [OpenJDK with Shenandoah GC](https://wiki.openjdk.java.net/display/shenandoah/Main) <sup>(jabba >=0.10.0 is required)</sup>
+- [OpenJDK Reference Implementation](http://openjdk.java.net/)
+- [OpenJDK with Shenandoah GC](https://wiki.openjdk.java.net/display/shenandoah/Main) <sup>(jabba >=0.10.0 is required)
+- [Liberica JDK](https://bell-sw.com/)
+- [Amazon Corretto](https://aws.amazon.com/corretto/)
+</sup>
 
 ... and from custom URLs.
 
