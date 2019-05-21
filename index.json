@@ -212,7 +212,9 @@
   "linux": {
     "arm64": {
       "jdk@zulu": {
-        "1.11.0": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu11.1.8-ca-jdk11-linux_aarch64.tar.gz",
+        "1.11.0-3": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu11.31.15-ca-jdk11.0.3-linux_aarch64.tar.gz",
+        "1.11.0": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu11.31.15-ca-jdk11.0.3-linux_aarch64.tar.gz",
+        "1.8.212": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.38.0.162-ca-jdk1.8.0_212-linux_aarch64.tar.gz",
         "1.8.202": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.36.0.150-ca-jdk1.8.0_202-linux_aarch64.tar.gz",
         "1.8.192": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.33.0.135-jdk1.8.0_192-linux_aarch64.tar.gz",
         "1.8.181": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.31.1.122-jdk1.8.0_181-linux_aarch64.tar.gz",
@@ -254,7 +256,9 @@
     },
     "arm": {
       "jdk@zulu": {
-        "1.11.0": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu11.1.8-ca-jdk11-c2-linux_aarch32hf.tar.gz",
+        "1.11.0-3": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu11.31.16-ca-jdk11.0.3-linux_aarch32hf.tar.gz",
+        "1.11.0": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu11.31.16-ca-jdk11.0.3-linux_aarch32hf.tar.gz",
+        "1.8.212": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.38.0.163-ca-jdk1.8.0_212-linux_aarch32hf.tar.gz",
         "1.8.202": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.36.0.152-ca-jdk1.8.0_202-linux_aarch32hf.tar.gz",
         "1.8.192": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.33.0.134-jdk1.8.0_192-linux_aarch32hf.tar.gz",
         "1.8.181": "tgz+http://cdn.azul.com/zulu-embedded/bin/zulu8.31.1.122-jdk1.8.0_181-linux_aarch32hf.tar.gz",
