@@ -106,8 +106,8 @@
         "1.11.0": "zip+https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip"
       },
       "jdk@openjdk": {
-        "1.13.0-24": "zip+https://download.java.net/java/early_access/jdk13/24/GPL/openjdk-13-ea+24_windows-x64_bin.zip",
-        "1.13.0": "zip+https://download.java.net/java/early_access/jdk13/24/GPL/openjdk-13-ea+24_windows-x64_bin.zip",
+        "1.13.0-25": "zip+https://download.java.net/java/early_access/jdk13/25/GPL/openjdk-13-ea+25_windows-x64_bin.zip",
+        "1.13.0": "zip+https://download.java.net/java/early_access/jdk13/25/GPL/openjdk-13-ea+25_windows-x64_bin.zip",
         "1.12.0-1": "zip+https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_windows-x64_bin.zip",
         "1.12.0": "zip+https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_windows-x64_bin.zip",
         "1.11.0-2": "zip+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip",
@@ -133,6 +133,7 @@
         "1.8.192": "zip+https://github.com/bell-sw/Liberica/releases/download/8u192.all/bellsoft-jdk1.8.0-windows-amd64.zip"
       },
       "jdk@graalvm": {
+        "19.0.2": "zip+https://github.com/oracle/graal/releases/download/vm-19.0.2/graalvm-ce-windows-amd64-19.0.2.zip",
         "19.0.0": "zip+https://github.com/oracle/graal/releases/download/vm-19.0.0/graalvm-ce-windows-amd64-19.0.0.zip"
       },
       "jdk@amazon-corretto": {
@@ -367,8 +368,8 @@
         "1.7.75": "tgz+https://download.java.net/openjdk/jdk7u75/ri/openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz"
       },
       "jdk@openjdk": {
-        "1.13.0-24": "tgz+https://download.java.net/java/early_access/jdk13/24/GPL/openjdk-13-ea+24_linux-x64_bin.tar.gz",
-        "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/24/GPL/openjdk-13-ea+24_linux-x64_bin.tar.gz",
+        "1.13.0-25": "tgz+https://download.java.net/java/early_access/jdk13/25/GPL/openjdk-13-ea+25_linux-x64_bin.tar.gz",
+        "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/25/GPL/openjdk-13-ea+25_linux-x64_bin.tar.gz",
         "1.12.0-1": "tgz+https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_linux-x64_bin.tar.gz",
         "1.12.0": "tgz+https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_linux-x64_bin.tar.gz",
         "1.11.0-2": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz",
@@ -412,6 +413,7 @@
         "1.7.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.45/linux/x86_64/ibm-java-sdk-7.0-10.45-x86_64-archive.bin"
       },
       "jdk@graalvm": {
+        "19.0.2": "tgz+https://github.com/oracle/graal/releases/download/vm-19.0.2/graalvm-ce-linux-amd64-19.0.2.tar.gz",
         "19.0.0": "tgz+https://github.com/oracle/graal/releases/download/vm-19.0.0/graalvm-ce-linux-amd64-19.0.0.tar.gz",
         "1.0.0-16": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc16/graalvm-ce-1.0.0-rc16-linux-amd64.tar.gz",
         "1.0.0-15": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc15/graalvm-ce-1.0.0-rc15-linux-amd64.tar.gz",
@@ -567,8 +569,8 @@
         "1.7.95": "zip+http://cdn.azul.com/zulu/bin/zulu7.13.0.1-jdk7.0.95-macosx_x64.zip"
       },
       "jdk@openjdk": {
-        "1.13.0-24": "tgz+https://download.java.net/java/early_access/jdk13/24/GPL/openjdk-13-ea+24_osx-x64_bin.tar.gz",
-        "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/24/GPL/openjdk-13-ea+24_osx-x64_bin.tar.gz",
+        "1.13.0-25": "tgz+https://download.java.net/java/early_access/jdk13/25/GPL/openjdk-13-ea+25_osx-x64_bin.tar.gz",
+        "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/25/GPL/openjdk-13-ea+25_osx-x64_bin.tar.gz",
         "1.12.0-1": "tgz+https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_osx-x64_bin.tar.gz",
         "1.12.0": "tgz+https://download.java.net/java/GA/jdk12.0.1/69cfe15208a647278a19ef0990eea691/12/GPL/openjdk-12.0.1_osx-x64_bin.tar.gz",
         "1.11.0-2": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz",
@@ -593,6 +595,7 @@
         "1.8.192": "tgz+https://github.com/bell-sw/Liberica/releases/download/8u192.all/bellsoft-jdk1.8.0-macos-amd64.tar.gz"
       },
       "jdk@graalvm": {
+        "19.0.2": "tgz+https://github.com/oracle/graal/releases/download/vm-19.0.2/graalvm-ce-darwin-amd64-19.0.2.tar.gz",
         "19.0.0": "tgz+https://github.com/oracle/graal/releases/download/vm-19.0.0/graalvm-ce-darwin-amd64-19.0.0.tar.gz",
         "1.0.0-16": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc16/graalvm-ce-1.0.0-rc16-macos-amd64.tar.gz",
         "1.0.0-15": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc15/graalvm-ce-1.0.0-rc15-macos-amd64.tar.gz",
