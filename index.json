@@ -107,8 +107,7 @@
       },
       "jdk@openjdk": {
         "1.14.0": "zip+https://download.java.net/java/early_access/valhalla/2/openjdk-14-valhalla+2-18_windows-x64_bin.zip",
-        "1.13.0-32": "zip+https://download.java.net/java/early_access/jdk13/32/GPL/openjdk-13-ea+32_windows-x64_bin.zip",
-        "1.13.0": "zip+https://download.java.net/java/early_access/jdk13/32/GPL/openjdk-13-ea+32_windows-x64_bin.zip",
+        "1.13.0": "zip+https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_windows-x64_bin.zip",
         "1.12.0-2": "zip+https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_windows-x64_bin.zip",
         "1.12.0": "zip+https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_windows-x64_bin.zip",
         "1.11.0-2": "zip+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_windows-x64_bin.zip",
@@ -397,8 +396,7 @@
       },
       "jdk@openjdk": {
         "1.14.0": "tgz+https://download.java.net/java/early_access/valhalla/2/openjdk-14-valhalla+2-18_linux-x64_bin.tar.gz",
-        "1.13.0-32": "tgz+https://download.java.net/java/early_access/jdk13/32/GPL/openjdk-13-ea+32_linux-x64_bin.tar.gz",
-        "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/32/GPL/openjdk-13-ea+32_linux-x64_bin.tar.gz",
+        "1.13.0": "tgz+https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_linux-x64_bin.tar.gz",
         "1.12.0-2": "tgz+https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_linux-x64_bin.tar.gz",
         "1.12.0": "tgz+https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_linux-x64_bin.tar.gz",
         "1.11.0-2": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz",
@@ -619,8 +617,7 @@
       },
       "jdk@openjdk": {
         "1.14.0": "tgz+https://download.java.net/java/early_access/valhalla/2/openjdk-14-valhalla+2-18_osx-x64_bin.tar.gz",
-        "1.13.0-32": "tgz+https://download.java.net/java/early_access/jdk13/32/GPL/openjdk-13-ea+32_osx-x64_bin.tar.gz",
-        "1.13.0": "tgz+https://download.java.net/java/early_access/jdk13/32/GPL/openjdk-13-ea+32_osx-x64_bin.tar.gz",
+        "1.13.0": "tgz+https://download.java.net/java/GA/jdk13/5b8a42f3905b406298b72d750b6919f6/33/GPL/openjdk-13_osx-x64_bin.tar.gz",
         "1.12.0-2": "tgz+https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_osx-x64_bin.tar.gz",
         "1.12.0": "tgz+https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_osx-x64_bin.tar.gz",
         "1.11.0-2": "tgz+https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_osx-x64_bin.tar.gz",
