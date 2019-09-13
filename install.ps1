@@ -6,7 +6,7 @@ $jabbaVersion = If ($env:JABBA_VERSION) { $env:JABBA_VERSION } else { "latest" }
 If ($jabbaVersion -eq "latest")
 {
     # resolving "latest" to an actual tag
-    $jabbaVersion = [System.Text.Encoding]::UTF8.GetString((wget https://shyiko.github.com/jabba/latest -UseBasicParsing).Content).Trim()
+    $jabbaVersion = [System.Text.Encoding]::UTF8.GetString((Invoke-WebRequest https://shyiko.github.com/jabba/latest -UseBasicParsing).Content).Trim()
 }
 
 If ($jabbaVersion -notmatch '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.+-]+)?$')
@@ -26,7 +26,7 @@ If ($env:JABBA_MAKE_INSTALL -eq "true")
 }
 else
 {
-    wget https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaHome/bin/jabba.exe
+    Invoke-WebRequest https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaHome/bin/jabba.exe
 }
 
 $ErrorActionPreference="SilentlyContinue"
