@@ -144,6 +144,7 @@
         "1.8.192": "zip+https://github.com/bell-sw/Liberica/releases/download/8u192.all/bellsoft-jdk1.8.0-windows-amd64.zip"
       },
       "jdk@graalvm": {
+        "19.2.0.1": "zip+https://github.com/oracle/graal/releases/download/vm-19.2.0.1/graalvm-ce-windows-amd64-19.2.0.1.zip",
         "19.2.0-1": "zip+https://github.com/oracle/graal/releases/download/vm-19.2.0-dev-b01/graalvm-ce-windows-amd64-19.2.0-dev-b01.zip",
         "19.2.0": "zip+https://github.com/oracle/graal/releases/download/vm-19.2.0/graalvm-ce-windows-amd64-19.2.0.zip",
         "19.1.1": "zip+https://github.com/oracle/graal/releases/download/vm-19.1.1/graalvm-ce-windows-amd64-19.1.1.zip",
@@ -473,6 +474,7 @@
         "1.7.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.50/linux/x86_64/ibm-java-sdk-7.0-10.50-x86_64-archive.bin"
       },
       "jdk@graalvm": {
+        "19.2.0.1": "tgz+https://github.com/oracle/graal/releases/download/vm-19.2.0.1/graalvm-ce-linux-amd64-19.2.0.1.tar.gz",
         "19.2.0-1": "tgz+https://github.com/oracle/graal/releases/download/vm-19.2.0-dev-b01/graalvm-ce-linux-amd64-19.2.0-dev-b01.tar.gz",
         "19.2.0": "tgz+https://github.com/oracle/graal/releases/download/vm-19.2.0/graalvm-ce-linux-amd64-19.2.0.tar.gz",
         "19.1.1": "tgz+https://github.com/oracle/graal/releases/download/vm-19.1.1/graalvm-ce-linux-amd64-19.1.1.tar.gz",
@@ -709,6 +711,7 @@
         "1.8.192": "tgz+https://github.com/bell-sw/Liberica/releases/download/8u192.all/bellsoft-jdk1.8.0-macos-amd64.tar.gz"
       },
       "jdk@graalvm": {
+        "19.2.0.1": "tgz+https://github.com/oracle/graal/releases/download/vm-19.2.0.1/graalvm-ce-darwin-amd64-19.2.0.1.tar.gz",
         "19.2.0-1": "tgz+https://github.com/oracle/graal/releases/download/vm-19.2.0-dev-b01/graalvm-ce-darwin-amd64-19.2.0-dev-b01.tar.gz",
         "19.2.0": "tgz+https://github.com/oracle/graal/releases/download/vm-19.2.0/graalvm-ce-darwin-amd64-19.2.0.tar.gz",
         "19.1.1": "tgz+https://github.com/oracle/graal/releases/download/vm-19.1.1/graalvm-ce-darwin-amd64-19.1.1.tar.gz",
