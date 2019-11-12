@@ -278,6 +278,7 @@
         "1.11.0-4": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.33.21-ca-jdk11.0.4-linux_aarch64.tar.gz",
         "1.11.0-3": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.31.15-ca-jdk11.0.3-linux_aarch64.tar.gz",
         "1.11.0": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.33.21-ca-jdk11.0.4-linux_aarch64.tar.gz",
+        "1.8.232": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.42.0.195-ca-jdk1.8.0_232-linux_aarch64.tar.gz",
         "1.8.222": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.40.0.178-ca-jdk1.8.0_222-linux_aarch64.tar.gz",
         "1.8.212": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.38.0.162-ca-jdk1.8.0_212-linux_aarch64.tar.gz",
         "1.8.202": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.36.0.150-ca-jdk1.8.0_202-linux_aarch64.tar.gz",
@@ -329,6 +330,7 @@
         "1.11.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11%2B28/OpenJDK11-jdk_aarch64_linux_hotspot_11_28.tar.gz",
         "1.10.0-2": "tgz+https://github.com/AdoptOpenJDK/openjdk10-binaries/releases/download/jdk-10.0.2%2B13.1/OpenJDK10U-jdk_aarch64_linux_hotspot_10.0.2_13.tar.gz",
         "1.9.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk9-binaries/releases/download/jdk-9%2B181/OpenJDK9U-jdk_aarch64_linux_hotspot_9_181.tar.gz",
+        "1.8.0-232": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_aarch64_linux_hotspot_aarch64-shenandoah-8u232b09.tar.gz",
         "1.8.0-222": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz",
         "1.8.0-191": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u191-b12/OpenJDK8U-jdk_aarch64_linux_hotspot_8u191b12.tar.gz",
         "1.8.0-172": "tgz+https://github.com/AdoptOpenJDK/openjdk8-releases/releases/download/jdk8u172-b11/OpenJDK8_aarch64_Linux_jdk8u172-b11.tar.gz"
@@ -339,6 +341,7 @@
         "1.11.0-4": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.33.21-ca-jdk11.0.4-linux_aarch32hf.tar.gz",
         "1.11.0-3": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.31.16-ca-jdk11.0.3-linux_aarch32hf.tar.gz",
         "1.11.0": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.33.21-ca-jdk11.0.4-linux_aarch32hf.tar.gz",
+        "1.8.232": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.42.0.195-ca-jdk1.8.0_232-linux_aarch32hf.tar.gz",
         "1.8.222": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.40.0.178-ca-jdk1.8.0_222-linux_aarch32hf.tar.gz",
         "1.8.212": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.38.0.163-ca-jdk1.8.0_212-linux_aarch32hf.tar.gz",
         "1.8.202": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.36.0.152-ca-jdk1.8.0_202-linux_aarch32hf.tar.gz",
