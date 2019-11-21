@@ -544,8 +544,7 @@
         "1.0.0-5": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc5/graalvm-ce-1.0.0-rc5-linux-amd64.tar.gz",
         "1.0.0-4": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc4/graalvm-ce-1.0.0-rc4-linux-amd64.tar.gz",
         "1.0.0-3": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc3/graalvm-ce-1.0.0-rc3-linux-amd64.tar.gz",
-        "1.0.0-2": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc2/graalvm-ce-1.0.0-rc2-linux-amd64.tar.gz",
-        "1.0.0-1": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc1/graalvm-ce-1.0.0-rc1-linux-amd64.tar.gz"
+        "1.0.0-2": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc2/graalvm-ce-1.0.0-rc2-linux-amd64.tar.gz"
       },
       "jdk@amazon-corretto": {
         "1.11.0-5.10.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1/amazon-corretto-11.0.5.10.1-linux-x64.tar.gz",
@@ -804,8 +803,8 @@
         "1.0.0-5": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc5/graalvm-ce-1.0.0-rc5-macos-amd64.tar.gz"
       },
       "jdk@amazon-corretto": {
-        "1.11.0-5.10.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1/amazon-corretto-11.0.5.10.1-macosx-x64.tar.gz",
-        "1.8.232-09.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/8.232.09.1/amazon-corretto-8.232.09.1-macosx-x64.tar.gz"
+        "1.11.0-5.10.2": "tgz+https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.2/amazon-corretto-11.0.5.10.2-macosx-x64.tar.gz",
+        "1.8.232-09.2": "tgz+https://d3pxv6yz143wms.cloudfront.net/8.232.09.2/amazon-corretto-8.232.09.2-macosx-x64.tar.gz"
       },
       "jdk@adopt-openj9": {
         "1.13.0-1": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9.1_openj9-0.17.0/OpenJDK13U-jdk_x64_mac_openj9_13.0.1_9_openj9-0.17.0.tar.gz",
