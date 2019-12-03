@@ -100,7 +100,7 @@ fi
 
 {
 echo "# https://github.com/shyiko/jabba"
-echo "# This file is indented to be \"sourced\" (i.e. \". ~/.jabba/jabba.sh\")"
+echo "# This file is intended to be \"sourced\" (i.e. \". ~/.jabba/jabba.sh\")"
 echo ""
 echo "export JABBA_HOME=\"$JABBA_HOME_TO_EXPORT\""
 echo ""
@@ -156,7 +156,7 @@ fi
 
 {
 echo "# https://github.com/shyiko/jabba"
-echo "# This file is indented to be \"sourced\" (i.e. \". ~/.jabba/jabba.fish\")"
+echo "# This file is intended to be \"sourced\" (i.e. \". ~/.jabba/jabba.fish\")"
 echo ""
 echo "set -xg JABBA_HOME \"$JABBA_HOME_TO_EXPORT\""
 echo ""
