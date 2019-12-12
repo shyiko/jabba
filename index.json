@@ -119,7 +119,7 @@
         "1.11.0": "zip+https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip"
       },
       "jdk@openjdk": {
-        "1.14.0-25": "zip+https://download.java.net/java/early_access/jdk14/25/GPL/openjdk-14-ea+25_windows-x64_bin.zip",
+        "1.14.0-26": "zip+https://download.java.net/java/early_access/jdk14/26/GPL/openjdk-14-ea+26_windows-x64_bin.zip",
         "1.13.0-1": "zip+https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_windows-x64_bin.zip",
         "1.13.0": "zip+https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_windows-x64_bin.zip",
         "1.12.0-2": "zip+https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_windows-x64_bin.zip",
@@ -278,9 +278,10 @@
   "linux": {
     "arm64": {
       "jdk@zulu": {
+        "1.11.0-5": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.35.36-ca-jdk11.0.5-linux_aarch64.tar.gz",
         "1.11.0-4": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.33.21-ca-jdk11.0.4-linux_aarch64.tar.gz",
         "1.11.0-3": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.31.15-ca-jdk11.0.3-linux_aarch64.tar.gz",
-        "1.11.0": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.33.21-ca-jdk11.0.4-linux_aarch64.tar.gz",
+        "1.11.0": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.35.36-ca-jdk11.0.5-linux_aarch64.tar.gz",
         "1.8.232": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.42.0.195-ca-jdk1.8.0_232-linux_aarch64.tar.gz",
         "1.8.222": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.40.0.178-ca-jdk1.8.0_222-linux_aarch64.tar.gz",
         "1.8.212": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.38.0.162-ca-jdk1.8.0_212-linux_aarch64.tar.gz",
@@ -341,9 +342,10 @@
     },
     "arm": {
       "jdk@zulu": {
+        "1.11.0-5": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.35.36-ca-jdk11.0.5-linux_aarch32hf.tar.gz",
         "1.11.0-4": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.33.21-ca-jdk11.0.4-linux_aarch32hf.tar.gz",
         "1.11.0-3": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.31.16-ca-jdk11.0.3-linux_aarch32hf.tar.gz",
-        "1.11.0": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.33.21-ca-jdk11.0.4-linux_aarch32hf.tar.gz",
+        "1.11.0": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.35.36-ca-jdk11.0.5-linux_aarch32hf.tar.gz",
         "1.8.232": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.42.0.195-ca-jdk1.8.0_232-linux_aarch32hf.tar.gz",
         "1.8.222": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.40.0.178-ca-jdk1.8.0_222-linux_aarch32hf.tar.gz",
         "1.8.212": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu8.38.0.163-ca-jdk1.8.0_212-linux_aarch32hf.tar.gz",
@@ -472,7 +474,7 @@
         "1.7.75": "tgz+https://download.java.net/openjdk/jdk7u75/ri/openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz"
       },
       "jdk@openjdk": {
-        "1.14.0-25": "tgz+https://download.java.net/java/early_access/jdk14/25/GPL/openjdk-14-ea+25_linux-x64_bin.tar.gz",
+        "1.14.0-26": "tgz+https://download.java.net/java/early_access/jdk14/26/GPL/openjdk-14-ea+26_linux-x64_bin.tar.gz",
         "1.13.0-1": "tgz+https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz",
         "1.13.0": "tgz+https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz",
         "1.12.0-2": "tgz+https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_linux-x64_bin.tar.gz",
@@ -755,7 +757,7 @@
         "1.7.55": "zip+https://cdn.azul.com/zulu/bin/zulu1.7.0_55-7.4.0.7-macosx.zip"
       },
       "jdk@openjdk": {
-        "1.14.0-25": "tgz+https://download.java.net/java/early_access/jdk14/25/GPL/openjdk-14-ea+25_osx-x64_bin.tar.gz",
+        "1.14.0-26": "tgz+https://download.java.net/java/early_access/jdk14/26/GPL/openjdk-14-ea+26_osx-x64_bin.tar.gz",
         "1.13.0-1": "tgz+https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_osx-x64_bin.tar.gz",
         "1.13.0": "tgz+https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_osx-x64_bin.tar.gz",
         "1.12.0-2": "tgz+https://download.java.net/java/GA/jdk12.0.2/e482c34c86bd4bf8b56c0b35558996b9/10/GPL/openjdk-12.0.2_osx-x64_bin.tar.gz",
