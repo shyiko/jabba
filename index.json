@@ -2,7 +2,7 @@
   "windows": {
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu15.0.9-ea-jdk15.0.0-ea.3-win_x64.zip",
+        "1.15.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu15.0.11-ea-jdk15.0.0-ea.4-win_x64.zip",
         "1.14.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu14.0.25-ea-jdk14.0.0-ea.29-win_x64.zip",
         "1.13.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-win_x64.zip",
         "1.13.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-win_x64.zip",
@@ -387,7 +387,7 @@
     },
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.9-ea-jdk15.0.0-ea.3-linux_x64.tar.gz",
+        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.11-ea-jdk15.0.0-ea.4-linux_x64.tar.gz",
         "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.0.25-ea-jdk14.0.0-ea.29-linux_x64.tar.gz",
         "1.13.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-linux_x64.tar.gz",
         "1.13.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-linux_x64.tar.gz",
@@ -680,7 +680,7 @@
   "darwin": {
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.9-ea-jdk15.0.0-ea.3-macosx_x64.tar.gz",
+        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.11-ea-jdk15.0.0-ea.4-macosx_x64.tar.gz",
         "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.0.25-ea-jdk14.0.0-ea.29-macosx_x64.tar.gz",
         "1.13.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-macosx_x64.tar.gz",
         "1.13.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-macosx_x64.tar.gz",
