@@ -2,8 +2,8 @@
   "windows": {
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu15.0.19-ea-jdk15.0.0-ea.8-win_x64.zip",
-        "1.14.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu14.0.37-ea-jdk14.0.0-ea.34-win_x64.zip",
+        "1.15.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu15.0.25-ea-jdk15.0.0-ea.11-win_x64.zip",
+        "1.14.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu14.0.41-ea-jdk14.0.0-ea.36-win_x64.zip",
         "1.13.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu13.29.9-ca-jdk13.0.2-win_x64.zip",
         "1.13.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-win_x64.zip",
         "1.13.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-win_x64.zip",
@@ -124,7 +124,7 @@
         "1.11.0": "zip+https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip"
       },
       "jdk@openjdk": {
-        "1.14.0": "zip+https://download.java.net/java/GA/jdk14/076bab302c7b4508975440c56f6cc26a/35/GPL/openjdk-14_windows-x64_bin.zip",
+        "1.14.0": "zip+https://download.java.net/java/GA/jdk14/076bab302c7b4508975440c56f6cc26a/36/GPL/openjdk-14_windows-x64_bin.zip",
         "1.13.0-2": "zip+https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_windows-x64_bin.zip",
         "1.13.0-1": "zip+https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_windows-x64_bin.zip",
         "1.13.0": "zip+https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_windows-x64_bin.zip",
@@ -166,6 +166,7 @@
         "1.8.192": "zip+https://github.com/bell-sw/Liberica/releases/download/8u192.all/bellsoft-jdk1.8.0-windows-amd64.zip"
       },
       "jdk@graalvm": {
+        "20.0.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-windows-amd64-20.0.0.zip",
         "19.3.1": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.1/graalvm-ce-java11-windows-amd64-19.3.1.zip",
         "19.3.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.0.2/graalvm-ce-java11-windows-amd64-19.3.0.2.zip",
         "19.2.1": "zip+https://github.com/oracle/graal/releases/download/vm-19.2.1/graalvm-ce-windows-amd64-19.2.1.zip",
@@ -382,6 +383,7 @@
         "1.11.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11%2B28/OpenJDK11-jdk_aarch64_linux_hotspot_11_28.tar.gz",
         "1.10.0-2": "tgz+https://github.com/AdoptOpenJDK/openjdk10-binaries/releases/download/jdk-10.0.2%2B13.1/OpenJDK10U-jdk_aarch64_linux_hotspot_10.0.2_13.tar.gz",
         "1.9.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk9-binaries/releases/download/jdk-9%2B181/OpenJDK9U-jdk_aarch64_linux_hotspot_9_181.tar.gz",
+        "1.8.0-242": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u242-b08/OpenJDK8U-jdk_aarch64_linux_hotspot_jdk8u242-b08.tar.gz",
         "1.8.0-232": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u232-b09/OpenJDK8U-jdk_aarch64_linux_hotspot_8u232b09.tar.gz",
         "1.8.0-222": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u222b10.tar.gz",
         "1.8.0-191": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u191-b12/OpenJDK8U-jdk_aarch64_linux_hotspot_8u191b12.tar.gz",
@@ -435,8 +437,8 @@
     },
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.19-ea-jdk15.0.0-ea.8-linux_x64.tar.gz",
-        "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.0.37-ea-jdk14.0.0-ea.34-linux_x64.tar.gz",
+        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.7-ea-jdk15.0.0-ea.2-linux_x64.tar.gz",
+        "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.0.41-ea-jdk14.0.0-ea.36-linux_x64.tar.gz",
         "1.13.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu13.29.9-ca-jdk13.0.2-linux_x64.tar.gz",
         "1.13.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-linux_x64.tar.gz",
         "1.13.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-linux_x64.tar.gz",
@@ -527,7 +529,7 @@
         "1.7.75": "tgz+https://download.java.net/openjdk/jdk7u75/ri/openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz"
       },
       "jdk@openjdk": {
-        "1.14.0": "tgz+https://download.java.net/java/GA/jdk14/076bab302c7b4508975440c56f6cc26a/35/GPL/openjdk-14_linux-x64_bin.tar.gz",
+        "1.14.0": "tgz+https://download.java.net/java/GA/jdk14/076bab302c7b4508975440c56f6cc26a/36/GPL/openjdk-14_linux-x64_bin.tar.gz",
         "1.13.0-2": "tgz+https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_linux-x64_bin.tar.gz",
         "1.13.0-1": "tgz+https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz",
         "1.13.0": "tgz+https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_linux-x64_bin.tar.gz",
@@ -572,11 +574,12 @@
         "1.8.192": "tgz+https://github.com/bell-sw/Liberica/releases/download/8u192.amd64/bellsoft-jdk8u192-linux-amd64.tar.gz"
       },
       "jdk@ibm": {
+        "1.8.0-6.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.6/linux/x86_64/ibm-java-sdk-8.0-6.6-x86_64-archive.bin",
         "1.8.0-6.5": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.5/linux/x86_64/ibm-java-sdk-8.0-6.5-x86_64-archive.bin",
         "1.8.0-6.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.0/linux/x86_64/ibm-java-sdk-8.0-6.0-x86_64-archive.bin",
         "1.8.0-5.41": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.41/linux/x86_64/ibm-java-sdk-8.0-5.41-x86_64-archive.bin",
         "1.8.0-5.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.6/linux/x86_64/ibm-java-sdk-8.0-5.6-x86_64-archive.bin",
-        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.5/linux/x86_64/ibm-java-sdk-8.0-6.5-x86_64-archive.bin",
+        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.6/linux/x86_64/ibm-java-sdk-8.0-6.6-x86_64-archive.bin",
         "1.7.1-4.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/x86_64/ibm-java-sdk-7.1-4.60-x86_64-archive.bin",
         "1.7.1-4.55": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.55/linux/x86_64/ibm-java-sdk-7.1-4.55-x86_64-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/x86_64/ibm-java-sdk-7.1-4.60-x86_64-archive.bin",
@@ -585,6 +588,7 @@
         "1.7.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.60/linux/x86_64/ibm-java-sdk-7.0-10.60-x86_64-archive.bin"
       },
       "jdk@graalvm": {
+        "20.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-amd64-20.0.0.tar.gz",
         "19.3.1": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.1/graalvm-ce-java11-linux-amd64-19.3.1.tar.gz",
         "19.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.0.2/graalvm-ce-java11-linux-amd64-19.3.0.2.tar.gz",
         "19.2.1": "tgz+https://github.com/oracle/graal/releases/download/vm-19.2.1/graalvm-ce-linux-amd64-19.2.1.tar.gz",
@@ -734,11 +738,12 @@
         "1.8.202": "tgz+https://github.com/bell-sw/Liberica/releases/download/8u202/bellsoft-jdk8u202-linux-i586.tar.gz"
       },
       "jdk@ibm": {
+        "1.8.0-6.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.6/linux/i386/ibm-java-sdk-8.0-6.6-i386-archive.bin",
         "1.8.0-6.5": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.5/linux/i386/ibm-java-sdk-8.0-6.5-i386-archive.bin",
         "1.8.0-6.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.0/linux/i386/ibm-java-sdk-8.0-6.0-i386-archive.bin",
         "1.8.0-5.41": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.41/linux/i386/ibm-java-sdk-8.0-5.41-i386-archive.bin",
         "1.8.0-5.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.6/linux/i386/ibm-java-sdk-8.0-5.6-i386-archive.bin",
-        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.5/linux/i386/ibm-java-sdk-8.0-6.5-i386-archive.bin",
+        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.6/linux/i386/ibm-java-sdk-8.0-6.6-i386-archive.bin",
         "1.7.1-4.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/i386/ibm-java-sdk-7.1-4.60-i386-archive.bin",
         "1.7.1-4.55": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.55/linux/i386/ibm-java-sdk-7.1-4.55-i386-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/i386/ibm-java-sdk-7.1-4.60-i386-archive.bin",
@@ -751,8 +756,8 @@
   "darwin": {
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.19-ea-jdk15.0.0-ea.8-macosx_x64.tar.gz",
-        "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.0.37-ea-jdk14.0.0-ea.34-macosx_x64.tar.gz",
+        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.25-ea-jdk15.0.0-ea.11-macosx_x64.tar.gz",
+        "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.0.41-ea-jdk14.0.0-ea.36-macosx_x64.tar.gz",
         "1.13.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu13.29.9-ca-jdk13.0.2-macosx_x64.tar.gz",
         "1.13.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-macosx_x64.tar.gz",
         "1.13.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-macosx_x64.tar.gz",
@@ -833,7 +838,7 @@
         "1.7.55": "zip+https://cdn.azul.com/zulu/bin/zulu1.7.0_55-7.4.0.7-macosx.zip"
       },
       "jdk@openjdk": {
-        "1.14.0": "tgz+https://download.java.net/java/GA/jdk14/076bab302c7b4508975440c56f6cc26a/35/GPL/openjdk-14_osx-x64_bin.tar.gz",
+        "1.14.0": "tgz+https://download.java.net/java/GA/jdk14/076bab302c7b4508975440c56f6cc26a/36/GPL/openjdk-14_osx-x64_bin.tar.gz",
         "1.13.0-2": "tgz+https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_osx-x64_bin.tar.gz",
         "1.13.0-1": "tgz+https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_osx-x64_bin.tar.gz",
         "1.13.0": "tgz+https://download.java.net/java/GA/jdk13.0.2/d4173c853231432d94f001e99d882ca7/8/GPL/openjdk-13.0.2_osx-x64_bin.tar.gz",
@@ -874,6 +879,7 @@
         "1.8.192": "tgz+https://github.com/bell-sw/Liberica/releases/download/8u192.all/bellsoft-jdk1.8.0-macos-amd64.tar.gz"
       },
       "jdk@graalvm": {
+        "20.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-darwin-amd64-20.0.0.tar.gz",
         "19.3.1": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.1/graalvm-ce-java11-darwin-amd64-19.3.1.tar.gz",
         "19.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.0.2/graalvm-ce-java11-darwin-amd64-19.3.0.2.tar.gz",
         "19.2.1": "tgz+https://github.com/oracle/graal/releases/download/vm-19.2.1/graalvm-ce-darwin-amd64-19.2.1.tar.gz",
