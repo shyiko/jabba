@@ -2,8 +2,8 @@
   "windows": {
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu15.0.25-ea-jdk15.0.0-ea.11-win_x64.zip",
-        "1.14.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu14.0.41-ea-jdk14.0.0-ea.36-win_x64.zip",
+        "1.15.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu15.0.31-ea-jdk15.0.0-ea.14-win_x64.zip",
+        "1.14.0": "zip+https://cdn.azul.com/zulu/bin/zulu14.27.1-ca-jdk14-win_x64.zip",
         "1.13.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu13.29.9-ca-jdk13.0.2-win_x64.zip",
         "1.13.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-win_x64.zip",
         "1.13.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-win_x64.zip",
@@ -141,6 +141,7 @@
         "1.9.0": "tgz+https://download.java.net/java/GA/jdk9/9.0.4/binaries/openjdk-9.0.4_windows-x64_bin.tar.gz"
       },
       "jdk@liberica": {
+        "1.14.0-0": "zip+https://github.com/bell-sw/Liberica/releases/download/14%2B36/bellsoft-jdk14%2B36-windows-amd64.zip",
         "1.13.0-2": "zip+https://github.com/bell-sw/Liberica/releases/download/13.0.2%2B9/bellsoft-jdk13.0.2%2B9-windows-amd64.zip",
         "1.13.0-1": "zip+https://github.com/bell-sw/Liberica/releases/download/13.0.1/bellsoft-jdk13.0.1-windows-amd64.zip",
         "1.13.0-0": "zip+https://github.com/bell-sw/Liberica/releases/download/13/bellsoft-jdk13-windows-amd64.zip",
@@ -187,6 +188,7 @@
         "1.8.222-10.3": "zip+https://d3pxv6yz143wms.cloudfront.net/8.222.10.1/amazon-corretto-8.222.10.3-windows-x64-jdk.zip"
       },
       "jdk@adopt-openj9": {
+        "1.14.0-0": "zip+https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36.1_openj9-0.19.0/OpenJDK14U-jdk_x64_windows_openj9_14_36_openj9-0.19.0.zip",
         "1.13.0-2": "zip+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8_openj9-0.18.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.2_8_openj9-0.18.0.zip",
         "1.13.0-1": "zip+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9.1_openj9-0.17.0/OpenJDK13U-jdk_x64_windows_openj9_13.0.1_9_openj9-0.17.0.zip",
         "1.13.0-0": "zip+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13%2B33_openj9-0.16.0/OpenJDK13U-jdk_x64_windows_openj9_13_33_openj9-0.16.0.zip",
@@ -211,6 +213,7 @@
         "1.8.0-181": "zip+https://github.com/AdoptOpenJDK/openjdk8-openj9-releases/releases/download/jdk8u181-b13_openj9-0.9.0/OpenJDK8-OPENJ9_x64_Windows_jdk8u181-b13_openj9-0.9.0.zip"
       },
       "jdk@adopt": {
+        "1.14.0-0": "zip+https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_x64_windows_hotspot_14_36.zip",
         "1.13.0-2": "zip+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_x64_windows_hotspot_13.0.2_8.zip",
         "1.13.0-1": "zip+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9/OpenJDK13U-jdk_x64_windows_hotspot_13.0.1_9.zip",
         "1.13.0-0": "zip+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13%2B33/OpenJDK13U-jdk_x64_windows_hotspot_13_33.zip",
@@ -243,6 +246,7 @@
     },
     "386": {
       "jdk@zulu": {
+        "1.14.0": "zip+https://cdn.azul.com/zulu/bin/zulu14.27.1-ca-jdk14-win_i686.zip",
         "1.13.0-2": "zip+https://cdn.azul.com/zulu/bin/zulu13.29.9-ca-jdk13.0.2-win_i686.zip",
         "1.13.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-win_i686.zip",
         "1.13.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-win_i686.zip",
@@ -277,6 +281,7 @@
         "1.7.252": "zip+https://cdn.azul.com/zulu/bin/zulu7.36.0.5-ca-jdk7.0.252-win_i686.zip"
       },
       "jdk@liberica": {
+        "1.14.0-0": "zip+https://github.com/bell-sw/Liberica/releases/download/14%2B36/bellsoft-jdk14%2B36-windows-i586.zip",
         "1.13.0-2": "zip+https://github.com/bell-sw/Liberica/releases/download/13.0.2%2B9/bellsoft-jdk13.0.2%2B9-windows-i586.zip",
         "1.13.0-1": "zip+https://github.com/bell-sw/Liberica/releases/download/13.0.1/bellsoft-jdk13.0.1-windows-i586.zip",
         "1.13.0-0": "zip+https://github.com/bell-sw/Liberica/releases/download/13/bellsoft-jdk13-windows-i586.zip",
@@ -333,6 +338,7 @@
         "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-latest-linux-aarch64-release.tar.xz"
       },
       "jdk@liberica": {
+        "1.14.0-0": "tgz+https://github.com/bell-sw/Liberica/releases/download/14%2B36/bellsoft-jdk14%2B36-linux-aarch64.tar.gz",
         "1.13.0-2": "tgz+https://github.com/bell-sw/Liberica/releases/download/13.0.2%2B9/bellsoft-jdk13.0.2%2B9-linux-aarch64.tar.gz",
         "1.13.0-1": "tgz+https://github.com/bell-sw/Liberica/releases/download/13.0.1/bellsoft-jdk13.0.1-linux-aarch64.tar.gz",
         "1.13.0-0": "tgz+https://github.com/bell-sw/Liberica/releases/download/13/bellsoft-jdk13-linux-aarch64.tar.gz",
@@ -369,6 +375,7 @@
         "1.8.222-10.4": "tgz+https://d3pxv6yz143wms.cloudfront.net/8.222.10.4/amazon-corretto-8.222.10.4-linux-aarch64.tar.gz"
       },
       "jdk@adopt": {
+        "1.14.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_aarch64_linux_hotspot_14_36.tar.gz",
         "1.13.0-2": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_aarch64_linux_hotspot_13.0.2_8.tar.gz",
         "1.13.0-1": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9/OpenJDK13U-jdk_aarch64_linux_hotspot_13.0.1_9.tar.gz",
         "1.13.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13%2B33/OpenJDK13U-jdk_aarch64_linux_hotspot_13_33.tar.gz",
@@ -414,6 +421,7 @@
         "1.11.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk11/openjdk-shenandoah-jdk11-latest-linux-arm32-hflt-release.tar.xz"
       },
       "jdk@liberica": {
+        "1.14.0-0": "tgz+https://github.com/bell-sw/Liberica/releases/download/14%2B36/bellsoft-jdk14%2B36-linux-arm32-vfp-hflt.tar.gz",
         "1.13.0-2": "tgz+https://github.com/bell-sw/Liberica/releases/download/13.0.2%2B9/bellsoft-jdk13.0.2%2B9-linux-arm32-vfp-hflt.tar.gz",
         "1.13.0-1": "tgz+https://github.com/bell-sw/Liberica/releases/download/13.0.1/bellsoft-jdk13.0.1-linux-arm32-vfp-hflt.tar.gz",
         "1.13.0-0": "tgz+https://github.com/bell-sw/Liberica/releases/download/13/bellsoft-jdk13-linux-arm32-vfp-hflt.tar.gz",
@@ -431,14 +439,13 @@
         "1.11.0-0": "tgz+https://github.com/bell-sw/Liberica/releases/download/jdk11%2B28/bellsoft-jdk11%2B28-linux-arm32-vfp-hflt.tar.gz",
         "1.11.0": "tgz+https://github.com/bell-sw/Liberica/releases/download/11.0.6%2B10/bellsoft-jdk11.0.6%2B10-linux-arm32-vfp-hflt.tar.gz",
         "1.10.0-2": "tgz+https://github.com/bell-sw/Liberica/releases/download/10.0.2/bellsoft-jdk10.0.2-linux-arm32-vfp-hflt.tar.gz",
-        "1.10.0-1": "tgz+https://github.com/bell-sw/Liberica/releases/download/10.0.1/bellsoft-jdk10.0.1-linux-arm32-vfp-hflt.tar.gz",
         "1.10.0": "tgz+https://github.com/bell-sw/Liberica/releases/download/10.0.2/bellsoft-jdk10.0.2-linux-arm32-vfp-hflt.tar.gz"
       }
     },
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.7-ea-jdk15.0.0-ea.2-linux_x64.tar.gz",
-        "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.0.41-ea-jdk14.0.0-ea.36-linux_x64.tar.gz",
+        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.31-ea-jdk15.0.0-ea.14-linux_x64.tar.gz",
+        "1.14.0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.27.1-ca-jdk14-linux_x64.tar.gz",
         "1.13.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu13.29.9-ca-jdk13.0.2-linux_x64.tar.gz",
         "1.13.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-linux_x64.tar.gz",
         "1.13.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-linux_x64.tar.gz",
@@ -547,6 +554,7 @@
         "1.9.0": "tgz+https://download.java.net/java/GA/jdk9/9.0.4/binaries/openjdk-9.0.4_linux-x64_bin.tar.gz"
       },
       "jdk@liberica": {
+        "1.14.0-0": "tgz+https://github.com/bell-sw/Liberica/releases/download/14%2B36/bellsoft-jdk14%2B36-linux-amd64.tar.gz",
         "1.13.0-2": "tgz+https://github.com/bell-sw/Liberica/releases/download/13.0.2%2B9/bellsoft-jdk13.0.2%2B9-linux-amd64.tar.gz",
         "1.13.0-1": "tgz+https://github.com/bell-sw/Liberica/releases/download/13.0.1/bellsoft-jdk13.0.1-linux-amd64.tar.gz",
         "1.13.0-0": "tgz+https://github.com/bell-sw/Liberica/releases/download/13/bellsoft-jdk13-linux-amd64.tar.gz",
@@ -574,11 +582,12 @@
         "1.8.192": "tgz+https://github.com/bell-sw/Liberica/releases/download/8u192.amd64/bellsoft-jdk8u192-linux-amd64.tar.gz"
       },
       "jdk@ibm": {
+        "1.8.0-6.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.6/linux/x86_64/ibm-java-sdk-8.0-6.6-x86_64-archive.bin",
         "1.8.0-6.5": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.5/linux/x86_64/ibm-java-sdk-8.0-6.5-x86_64-archive.bin",
         "1.8.0-6.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.0/linux/x86_64/ibm-java-sdk-8.0-6.0-x86_64-archive.bin",
         "1.8.0-5.41": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.41/linux/x86_64/ibm-java-sdk-8.0-5.41-x86_64-archive.bin",
         "1.8.0-5.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.6/linux/x86_64/ibm-java-sdk-8.0-5.6-x86_64-archive.bin",
-        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.5/linux/x86_64/ibm-java-sdk-8.0-6.5-x86_64-archive.bin",
+        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.6/linux/x86_64/ibm-java-sdk-8.0-6.6-x86_64-archive.bin",
         "1.7.1-4.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/x86_64/ibm-java-sdk-7.1-4.60-x86_64-archive.bin",
         "1.7.1-4.55": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.55/linux/x86_64/ibm-java-sdk-7.1-4.55-x86_64-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/x86_64/ibm-java-sdk-7.1-4.60-x86_64-archive.bin",
@@ -624,6 +633,7 @@
         "1.8.222-10.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/8.222.10.1/amazon-corretto-8.222.10.1-linux-x64.tar.gz"
       },
       "jdk@adopt-openj9": {
+        "1.14.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36.1_openj9-0.19.0/OpenJDK14U-jdk_x64_linux_openj9_14_36_openj9-0.19.0.tar.gz",
         "1.13.0-2": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8_openj9-0.18.0/OpenJDK13U-jdk_x64_linux_openj9_13.0.2_8_openj9-0.18.0.tar.gz",
         "1.13.0-1": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9_openj9-0.17.0/OpenJDK13U-jdk_x64_linux_openj9_13.0.1_9_openj9-0.17.0.tar.gz",
         "1.13.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13%2B33_openj9-0.16.0/OpenJDK13U-jdk_x64_linux_openj9_13_33_openj9-0.16.0.tar.gz",
@@ -649,6 +659,7 @@
         "1.8.0-162": "tgz+https://github.com/AdoptOpenJDK/openjdk8-openj9-releases/releases/download/jdk8u162-b12_openj9-0.8.0/OpenJDK8-OPENJ9_x64_Linux_jdk8u162-b12_openj9-0.8.0.tar.gz"
       },
       "jdk@adopt": {
+        "1.14.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_x64_linux_hotspot_14_36.tar.gz",
         "1.13.0-2": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_x64_linux_hotspot_13.0.2_8.tar.gz",
         "1.13.0-1": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9/OpenJDK13U-jdk_x64_linux_hotspot_13.0.1_9.tar.gz",
         "1.13.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13%2B33/OpenJDK13U-jdk_x64_linux_hotspot_13_33.tar.gz",
@@ -681,6 +692,7 @@
     },
     "386": {
       "jdk@zulu": {
+        "1.14.0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.27.1-ca-jdk14-linux_i686.tar.gz",
         "1.13.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu13.29.9-ca-jdk13.0.2-linux_i686.tar.gz",
         "1.13.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-linux_i686.tar.gz",
         "1.13.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-linux_i686.tar.gz",
@@ -716,6 +728,7 @@
         "1.8.0": "tgx+https://builds.shipilev.net/openjdk-shenandoah-jdk8/openjdk-shenandoah-jdk8-latest-linux-x86-release.tar.xz"
       },
       "jdk@liberica": {
+        "1.14.0-0": "tgz+https://github.com/bell-sw/Liberica/releases/download/14%2B36/bellsoft-jdk14%2B36-linux-i586.tar.gz",
         "1.13.0-2": "tgz+https://github.com/bell-sw/Liberica/releases/download/13.0.2%2B9/bellsoft-jdk13.0.2%2B9-linux-i586.tar.gz",
         "1.13.0-1": "tgz+https://github.com/bell-sw/Liberica/releases/download/13.0.1/bellsoft-jdk13.0.1-linux-i586.tar.gz",
         "1.13.0-0": "tgz+https://github.com/bell-sw/Liberica/releases/download/13/bellsoft-jdk13-linux-i586.tar.gz",
@@ -737,11 +750,12 @@
         "1.8.202": "tgz+https://github.com/bell-sw/Liberica/releases/download/8u202/bellsoft-jdk8u202-linux-i586.tar.gz"
       },
       "jdk@ibm": {
+        "1.8.0-6.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.6/linux/i386/ibm-java-sdk-8.0-6.6-i386-archive.bin",
         "1.8.0-6.5": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.5/linux/i386/ibm-java-sdk-8.0-6.5-i386-archive.bin",
         "1.8.0-6.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.0/linux/i386/ibm-java-sdk-8.0-6.0-i386-archive.bin",
         "1.8.0-5.41": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.41/linux/i386/ibm-java-sdk-8.0-5.41-i386-archive.bin",
         "1.8.0-5.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.6/linux/i386/ibm-java-sdk-8.0-5.6-i386-archive.bin",
-        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.5/linux/i386/ibm-java-sdk-8.0-6.5-i386-archive.bin",
+        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.6/linux/i386/ibm-java-sdk-8.0-6.6-i386-archive.bin",
         "1.7.1-4.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/i386/ibm-java-sdk-7.1-4.60-i386-archive.bin",
         "1.7.1-4.55": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.55/linux/i386/ibm-java-sdk-7.1-4.55-i386-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/i386/ibm-java-sdk-7.1-4.60-i386-archive.bin",
@@ -754,8 +768,8 @@
   "darwin": {
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.25-ea-jdk15.0.0-ea.11-macosx_x64.tar.gz",
-        "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.0.41-ea-jdk14.0.0-ea.36-macosx_x64.tar.gz",
+        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.31-ea-jdk15.0.0-ea.14-macosx_x64.tar.gz",
+        "1.14.0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.27.1-ca-jdk14-macosx_x64.tar.gz",
         "1.13.0-2": "tgz+https://cdn.azul.com/zulu/bin/zulu13.29.9-ca-jdk13.0.2-macosx_x64.tar.gz",
         "1.13.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu13.28.11-ca-jdk13.0.1-macosx_x64.tar.gz",
         "1.13.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu13.27.9-ca-jdk13-macosx_x64.tar.gz",
@@ -853,6 +867,7 @@
         "1.9.0": "tgz+https://download.java.net/java/GA/jdk9/9.0.4/binaries/openjdk-9.0.4_osx-x64_bin.tar.gz"
       },
       "jdk@liberica": {
+        "1.14.0-0": "zip+https://github.com/bell-sw/Liberica/releases/download/14%2B36/bellsoft-jdk14%2B36-macos-amd64.zip",
         "1.13.0-2": "zip+https://github.com/bell-sw/Liberica/releases/download/13.0.2%2B9/bellsoft-jdk13.0.2%2B9-macos-amd64.zip",
         "1.13.0-1": "zip+https://github.com/bell-sw/Liberica/releases/download/13.0.1/bellsoft-jdk13.0.1-macos-amd64.zip",
         "1.13.0-0": "zip+https://github.com/bell-sw/Liberica/releases/download/13/bellsoft-jdk13-macos-amd64.zip",
@@ -905,6 +920,7 @@
         "1.11.0-5.10.2": "tgz+https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.2/amazon-corretto-11.0.5.10.2-macosx-x64.tar.gz",
         "1.11.0-5.10.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1/amazon-corretto-11.0.5.10.1-macosx-x64.tar.gz",
         "1.11.0-4.11.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1/amazon-corretto-11.0.4.11.1-macosx-x64.tar.gz",
+        "1.8.242-08.2": "tgz+https://corretto.aws/downloads/resources/8.242.08.2/amazon-corretto-8.242.08.2-macosx-x64.tar.gz",
         "1.8.242-08.1": "tgz+https://corretto.aws/downloads/resources/8.242.08.1/amazon-corretto-8.242.08.1-macosx-x64.tar.gz",
         "1.8.242-07.1": "tgz+https://corretto.aws/downloads/resources/8.242.07.1/amazon-corretto-8.242.07.1-macosx-x64.tar.gz",
         "1.8.232-09.2": "tgz+https://d3pxv6yz143wms.cloudfront.net/8.232.09.2/amazon-corretto-8.232.09.2-macosx-x64.tar.gz",
@@ -912,6 +928,7 @@
         "1.8.222-10.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/8.222.10.1/amazon-corretto-8.222.10.1-macosx-x64.tar.gz"
       },
       "jdk@adopt-openj9": {
+        "1.14.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36.1_openj9-0.19.0/OpenJDK14U-jdk_x64_mac_openj9_14_36_openj9-0.19.0.tar.gz",
         "1.13.0-2": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8_openj9-0.18.0/OpenJDK13U-jdk_x64_mac_openj9_13.0.2_8_openj9-0.18.0.tar.gz",
         "1.13.0-1": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9.1_openj9-0.17.0/OpenJDK13U-jdk_x64_mac_openj9_13.0.1_9_openj9-0.17.0.tar.gz",
         "1.13.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13%2B33_openj9-0.16.0/OpenJDK13U-jdk_x64_mac_openj9_13_33_openj9-0.16.0.tar.gz",
@@ -931,6 +948,7 @@
         "1.8.0-202": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u202-b08_openj9-0.12.1/OpenJDK8U-jdk_x64_mac_openj9_8u202b08_openj9-0.12.1.tar.gz"
       },
       "jdk@adopt": {
+        "1.14.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14%2B36/OpenJDK14U-jdk_x64_mac_hotspot_14_36.tar.gz",
         "1.13.0-2": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.2%2B8/OpenJDK13U-jdk_x64_mac_hotspot_13.0.2_8.tar.gz",
         "1.13.0-1": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13.0.1%2B9/OpenJDK13U-jdk_x64_mac_hotspot_13.0.1_9.tar.gz",
         "1.13.0-0": "tgz+https://github.com/AdoptOpenJDK/openjdk13-binaries/releases/download/jdk-13%2B33/OpenJDK13U-jdk_x64_mac_hotspot_13_33.tar.gz",
