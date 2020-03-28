@@ -35,6 +35,18 @@ curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.ja
 
 > (use the same command to upgrade)
 
+The script modifies common shell rc files by default. To skip these provide the `--skip-rc` or `-sr` flags to `install.sh` like so:
+
+```sh
+curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash -s -- --skip-rc && . ~/.jabba/jabba.sh
+```
+
+Make sure to source `jabba.sh` in your environment if you skip it:
+
+```sh
+[ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
+```
+
 > In [fish](https://fishshell.com/) command looks a little bit different - 
 `curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash; and . ~/.jabba/jabba.fish` 
 
