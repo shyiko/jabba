@@ -18,12 +18,10 @@ has_command() {
     fi
 }
 
-# Parameter handling
 SKIP_RC=
-
 while :; do
     case "$1" in
-    -sr | --skip-rc) # Skip rc file scripts
+    --skip-rc) # skip rc file scripts
         SKIP_RC="1"
         ;;
     *)
