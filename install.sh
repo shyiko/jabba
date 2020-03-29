@@ -18,6 +18,21 @@ has_command() {
     fi
 }
 
+# Parameter handling
+SKIP_RC=
+
+while :; do
+    case "$1" in
+    -sr | --skip-rc) # Skip rc file scripts
+        SKIP_RC="1"
+        ;;
+    *)
+        break
+        ;;
+    esac
+    shift
+done
+
 # curl looks for HTTPS_PROXY while wget for https_proxy
 https_proxy=${https_proxy:-$HTTPS_PROXY}
 HTTPS_PROXY=${HTTPS_PROXY:-$https_proxy}
@@ -120,37 +135,39 @@ echo "fi"
 
 SOURCE_JABBA="\n[ -s \"$JABBA_HOME/jabba.sh\" ] && source \"$JABBA_HOME/jabba.sh\""
 
-files=("$HOME/.bashrc")
+if [ ! "$SKIP_RC" ]; then
+    files=("$HOME/.bashrc")
 
-if [ -f "$HOME/.bash_profile" ]; then
-    files+=("$HOME/.bash_profile")
-elif [ -f "$HOME/.bash_login" ]; then
-    files+=("$HOME/.bash_login")
-elif [ -f "$HOME/.profile" ]; then
-    files+=("$HOME/.profile")
-else
-    files+=("$HOME/.bash_profile")
-fi
-
-for file in "${files[@]}"
-do
-    touch ${file}
-    if ! grep -qc '/jabba.sh' "${file}"; then
-        echo "Adding source string to ${file}"
-        printf "$SOURCE_JABBA\n" >> "${file}"
+    if [ -f "$HOME/.bash_profile" ]; then
+        files+=("$HOME/.bash_profile")
+    elif [ -f "$HOME/.bash_login" ]; then
+        files+=("$HOME/.bash_login")
+    elif [ -f "$HOME/.profile" ]; then
+        files+=("$HOME/.profile")
     else
-        echo "Skipped update of ${file} (source string already present)"
+        files+=("$HOME/.bash_profile")
     fi
-done
 
-if [ -f "$(which zsh 2>/dev/null)" ]; then
-    file="$HOME/.zshrc"
-    touch ${file}
-    if ! grep -qc '/jabba.sh' "${file}"; then
-        echo "Adding source string to ${file}"
-        printf "$SOURCE_JABBA\n" >> "${file}"
-    else
-        echo "Skipped update of ${file} (source string already present)"
+    for file in "${files[@]}"
+    do
+        touch ${file}
+        if ! grep -qc '/jabba.sh' "${file}"; then
+            echo "Adding source string to ${file}"
+            printf "$SOURCE_JABBA\n" >> "${file}"
+        else
+            echo "Skipped update of ${file} (source string already present)"
+        fi
+    done
+
+    if [ -f "$(which zsh 2>/dev/null)" ]; then
+        file="$HOME/.zshrc"
+        touch ${file}
+        if ! grep -qc '/jabba.sh' "${file}"; then
+            echo "Adding source string to ${file}"
+            printf "$SOURCE_JABBA\n" >> "${file}"
+        else
+            echo "Skipped update of ${file} (source string already present)"
+        fi
     fi
 fi
 
