@@ -661,11 +661,9 @@
         "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.10/linux/x86_64/ibm-java-sdk-8.0-6.10-x86_64-archive.bin",
         "1.7.1-4.65": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.65/linux/x86_64/ibm-java-sdk-7.1-4.65-x86_64-archive.bin",
         "1.7.1-4.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/x86_64/ibm-java-sdk-7.1-4.60-x86_64-archive.bin",
-        "1.7.1-4.55": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.55/linux/x86_64/ibm-java-sdk-7.1-4.55-x86_64-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.65/linux/x86_64/ibm-java-sdk-7.1-4.65-x86_64-archive.bin",
         "1.7.0-10.65": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.65/linux/x86_64/ibm-java-sdk-7.0-10.65-x86_64-archive.bin",
         "1.7.0-10.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.60/linux/x86_64/ibm-java-sdk-7.0-10.60-x86_64-archive.bin",
-        "1.7.0-10.55": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.55/linux/x86_64/ibm-java-sdk-7.0-10.55-x86_64-archive.bin",
         "1.7.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.65/linux/x86_64/ibm-java-sdk-7.0-10.65-x86_64-archive.bin"
       },
       "jdk@graalvm-ce-java11": {
@@ -888,11 +886,9 @@
         "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.10/linux/i386/ibm-java-sdk-8.0-6.10-i386-archive.bin",
         "1.7.1-4.65": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.65/linux/i386/ibm-java-sdk-7.1-4.65-i386-archive.bin",
         "1.7.1-4.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/i386/ibm-java-sdk-7.1-4.60-i386-archive.bin",
-        "1.7.1-4.55": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.55/linux/i386/ibm-java-sdk-7.1-4.55-i386-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.65/linux/i386/ibm-java-sdk-7.1-4.65-i386-archive.bin",
         "1.7.0-10.65": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.65/linux/i386/ibm-java-sdk-7.0-10.65-i386-archive.bin",
         "1.7.0-10.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.60/linux/i386/ibm-java-sdk-7.0-10.60-i386-archive.bin",
-        "1.7.0-10.55": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.55/linux/i386/ibm-java-sdk-7.0-10.55-i386-archive.bin",
         "1.7.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.65/linux/i386/ibm-java-sdk-7.0-10.65-i386-archive.bin"
       }
     }
