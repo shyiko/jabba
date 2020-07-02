@@ -658,12 +658,11 @@
         "1.8.192": "tgz+https://github.com/bell-sw/Liberica/releases/download/8u192.amd64/bellsoft-jdk8u192-linux-amd64.tar.gz"
       },
       "jdk@ibm": {
+        "1.8.0-6.11": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.11/linux/x86_64/ibm-java-sdk-8.0-6.11-x86_64-archive.bin",
         "1.8.0-6.10": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.10/linux/x86_64/ibm-java-sdk-8.0-6.10-x86_64-archive.bin",
-        "1.8.0-6.7": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.7/linux/x86_64/ibm-java-sdk-8.0-6.7-x86_64-archive.bin",
-        "1.8.0-6.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.6/linux/x86_64/ibm-java-sdk-8.0-6.6-x86_64-archive.bin",
         "1.8.0-5.41": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.41/linux/x86_64/ibm-java-sdk-8.0-5.41-x86_64-archive.bin",
         "1.8.0-5.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.6/linux/x86_64/ibm-java-sdk-8.0-5.6-x86_64-archive.bin",
-        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.10/linux/x86_64/ibm-java-sdk-8.0-6.10-x86_64-archive.bin",
+        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.11/linux/x86_64/ibm-java-sdk-8.0-6.11-x86_64-archive.bin",
         "1.7.1-4.65": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.65/linux/x86_64/ibm-java-sdk-7.1-4.65-x86_64-archive.bin",
         "1.7.1-4.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/x86_64/ibm-java-sdk-7.1-4.60-x86_64-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.65/linux/x86_64/ibm-java-sdk-7.1-4.65-x86_64-archive.bin",
@@ -884,12 +883,11 @@
         "1.8.202": "tgz+https://github.com/bell-sw/Liberica/releases/download/8u202/bellsoft-jdk8u202-linux-i586.tar.gz"
       },
       "jdk@ibm": {
+        "1.8.0-6.11": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.11/linux/i386/ibm-java-sdk-8.0-6.11-i386-archive.bin",
         "1.8.0-6.10": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.10/linux/i386/ibm-java-sdk-8.0-6.10-i386-archive.bin",
-        "1.8.0-6.7": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.7/linux/i386/ibm-java-sdk-8.0-6.7-i386-archive.bin",
-        "1.8.0-6.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.6/linux/i386/ibm-java-sdk-8.0-6.6-i386-archive.bin",
         "1.8.0-5.41": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.41/linux/i386/ibm-java-sdk-8.0-5.41-i386-archive.bin",
         "1.8.0-5.6": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.5.6/linux/i386/ibm-java-sdk-8.0-5.6-i386-archive.bin",
-        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.10/linux/i386/ibm-java-sdk-8.0-6.10-i386-archive.bin",
+        "1.8.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/8.0.6.11/linux/i386/ibm-java-sdk-8.0-6.11-i386-archive.bin",
         "1.7.1-4.65": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.65/linux/i386/ibm-java-sdk-7.1-4.65-i386-archive.bin",
         "1.7.1-4.60": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.60/linux/i386/ibm-java-sdk-7.1-4.60-i386-archive.bin",
         "1.7.1": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.1.4.65/linux/i386/ibm-java-sdk-7.1-4.65-i386-archive.bin",
