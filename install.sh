@@ -64,13 +64,33 @@ case "$OSTYPE" in
     linux*)
     case "$(uname -m)" in
         arm*|aarch*)
-        if [ `getconf LONG_BIT` = "64" ]; then OSARCH=arm64; else OSARCH=arm; fi
+        if [ "$(getconf LONG_BIT)" = "64" ]; then OSARCH=arm64; else OSARCH=arm; fi
+        ;;
+        s390x)
+        OS_ARCH=s390x
+        echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
+        exit 1
+        ;;
+        s390*)
+        if [ "$(getconf LONG_BIT)" = "64" ]; then OSARCH=s390x; else OSARCH=s390; fi
+        echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
+        exit 1
+        ;;
+        powerpc*)
+        OS_ARCH=powerpc
+        echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
+        exit 1
+        ;;
+        ppc64*)
+        OS_ARCH=ppc64le
+        echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
+        exit 1
         ;;
         *)
-        if [ `getconf LONG_BIT` = "64" ]; then OSARCH=amd64; else OSARCH=386; fi
+        if [ "$(getconf LONG_BIT)" = "64" ]; then OSARCH=amd64; else OSARCH=386; fi
         ;;
     esac
-    BINARY_URL=https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-linux-${OSARCH}
+    BINARY_URL="https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-linux-${OSARCH}"
     ;;
     *)
     echo "Unsupported OS $OSTYPE. If you believe this is an error -
