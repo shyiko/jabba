@@ -176,6 +176,24 @@ make test # or "test-coverage" if you want to get a coverage breakdown
 make build # or "build-release" (latter is cross-compiling jabba to different OSs/ARCHs)   
 ```
 
+## Uninstall
+
+#### macOS / Linux
+
+Removing ~/.jabba (on Linux/Mac OS X)
+
+remove corresponding contents in `.bashrc`
+
+#### Windows 10
+
+Removing %USERPROFILE%/.jabba (on Windows)
+
+`notepad $profile` in powershell and edit file to remove 
+
+```
+if (Test-Path .....
+```
+
 ## FAQ
 
 **Q**: What if I already have `java` installed?
