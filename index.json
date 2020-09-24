@@ -2,7 +2,8 @@
   "windows": {
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu15.0.55-ea-jdk15.0.0-ea.25-win_x64.zip",
+        "1.15.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-jdk15.0.0-win_x64.zip",
+        "1.15.0": "zip+https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-jdk15.0.0-win_x64.zip",
         "1.14.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu14.28.21-ca-jdk14.0.1-win_x64.zip",
         "1.14.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu14.27.1-ca-jdk14-win_x64.zip",
         "1.14.0": "zip+https://cdn.azul.com/zulu/bin/zulu14.28.21-ca-jdk14.0.1-win_x64.zip",
@@ -285,7 +286,8 @@
     },
     "386": {
       "jdk@zulu": {
-        "1.15.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu15.0.55-ea-jdk15.0.0-ea.25-win_i686.zip",
+        "1.15.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-jdk15.0.0-win_i686.zip",
+        "1.15.0": "zip+https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-jdk15.0.0-win_i686.zip",
         "1.14.0-1": "zip+https://cdn.azul.com/zulu/bin/zulu14.28.21-ca-jdk14.0.1-win_i686.zip",
         "1.14.0-0": "zip+https://cdn.azul.com/zulu/bin/zulu14.27.1-ca-jdk14-win_i686.zip",
         "1.14.0": "zip+https://cdn.azul.com/zulu/bin/zulu14.28.21-ca-jdk14.0.1-win_i686.zip",
@@ -365,6 +367,8 @@
   "linux": {
     "arm64": {
       "jdk@zulu": {
+        "1.15.0-0": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu15.27.17-ca-jdk15.0.0-linux_aarch64.tar.gz",
+        "1.15.0": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu15.27.17-ca-jdk15.0.0-linux_aarch64.tar.gz",
         "1.13.0-3": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu13.31.25-ca-jdk13.0.3-linux_aarch64.tar.gz",
         "1.13.0-2": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu13.29.10-ca-jdk13.0.2-linux_aarch64.tar.gz",
         "1.13.0": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu13.31.25-ca-jdk13.0.3-linux_aarch64.tar.gz",
@@ -511,7 +515,8 @@
     },
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.55-ea-jdk15.0.0-ea.25-linux_x64.tar.gz",
+        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-jdk15.0.0-linux_x64.tar.gz",
+        "1.15.0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-jdk15.0.0-linux_x64.tar.gz",
         "1.14.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu14.28.21-ca-jdk14.0.1-linux_x64.tar.gz",
         "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.27.1-ca-jdk14-linux_x64.tar.gz",
         "1.14.0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.28.21-ca-jdk14.0.1-linux_x64.tar.gz",
@@ -815,7 +820,8 @@
     },
     "386": {
       "jdk@zulu": {
-        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.55-ea-jdk15.0.0-ea.25-linux_i686.tar.gz",
+        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-jdk15.0.0-linux_i686.tar.gz",
+        "1.15.0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-jdk15.0.0-linux_i686.tar.gz",
         "1.14.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu14.28.21-ca-jdk14.0.1-linux_i686.tar.gz",
         "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.27.1-ca-jdk14-linux_i686.tar.gz",
         "1.14.0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.28.21-ca-jdk14.0.1-linux_i686.tar.gz",
@@ -902,7 +908,8 @@
   "darwin": {
     "amd64": {
       "jdk@zulu": {
-        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.0.55-ea-jdk15.0.0-ea.25-macosx_x64.tar.gz",
+        "1.15.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-jdk15.0.0-macosx_x64.tar.gz",
+        "1.15.0": "tgz+https://cdn.azul.com/zulu/bin/zulu15.27.17-ca-jdk15.0.0-macosx_x64.tar.gz",
         "1.14.0-1": "tgz+https://cdn.azul.com/zulu/bin/zulu14.28.21-ca-jdk14.0.1-macosx_x64.tar.gz",
         "1.14.0-0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.27.1-ca-jdk14-macosx_x64.tar.gz",
         "1.14.0": "tgz+https://cdn.azul.com/zulu/bin/zulu14.28.21-ca-jdk14.0.1-macosx_x64.tar.gz",
