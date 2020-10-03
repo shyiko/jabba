@@ -174,6 +174,7 @@
         "1.8.192": "zip+https://github.com/bell-sw/Liberica/releases/download/8u192.all/bellsoft-jdk1.8.0-windows-amd64.zip"
       },
       "jdk@graalvm-ce-java11": {
+        "20.2.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java11-windows-amd64-20.2.0.zip",
         "20.1.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java11-windows-amd64-20.1.0.zip",
         "20.0.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-windows-amd64-20.0.0.zip",
         "19.3.2": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java11-windows-amd64-19.3.2.zip",
@@ -181,6 +182,7 @@
         "19.3.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.0.2/graalvm-ce-java11-windows-amd64-19.3.0.2.zip"
       },
       "jdk@graalvm-ce-java8": {
+        "20.2.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java8-windows-amd64-20.2.0.zip",
         "20.1.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java8-windows-amd64-20.1.0.zip",
         "20.0.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java8-windows-amd64-20.0.0.zip",
         "19.3.2": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java8-windows-amd64-19.3.2.zip",
@@ -195,6 +197,7 @@
         "19.0.0": "zip+https://github.com/oracle/graal/releases/download/vm-19.0.0/graalvm-ce-windows-amd64-19.0.0.zip"
       },
       "jdk@graalvm": {
+        "20.2.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java8-windows-amd64-20.2.0.zip",
         "20.1.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java8-windows-amd64-20.1.0.zip",
         "20.0.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java8-windows-amd64-20.0.0.zip",
         "19.3.2": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java8-windows-amd64-19.3.2.zip",
@@ -672,6 +675,7 @@
         "1.7.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.65/linux/x86_64/ibm-java-sdk-7.0-10.65-x86_64-archive.bin"
       },
       "jdk@graalvm-ce-java11": {
+        "20.2.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java11-linux-amd64-20.2.0.tar.gz",
         "20.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java11-linux-amd64-20.1.0.tar.gz",
         "20.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-amd64-20.0.0.tar.gz",
         "19.3.2": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java11-linux-amd64-19.3.2.tar.gz",
@@ -679,6 +683,7 @@
         "19.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.0.2/graalvm-ce-java11-linux-amd64-19.3.0.2.tar.gz"
       },
       "jdk@graalvm-ce-java8": {
+        "20.2.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java8-linux-amd64-20.2.0.tar.gz",
         "20.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java8-linux-amd64-20.1.0.tar.gz",
         "20.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java8-linux-amd64-20.0.0.tar.gz",
         "19.3.2": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java8-linux-amd64-19.3.2.tar.gz",
@@ -709,6 +714,7 @@
         "1.0.0-1": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc1/graalvm-ce-1.0.0-rc1-linux-amd64.tar.gz"
       },
       "jdk@graalvm": {
+        "20.2.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java8-linux-amd64-20.2.0.tar.gz",
         "20.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java8-linux-amd64-20.1.0.tar.gz",
         "20.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java8-linux-amd64-20.0.0.tar.gz",
         "19.3.2": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java8-linux-amd64-19.3.2.tar.gz",
@@ -1037,6 +1043,7 @@
         "1.8.192": "tgz+https://github.com/bell-sw/Liberica/releases/download/8u192.all/bellsoft-jdk1.8.0-macos-amd64.tar.gz"
       },
       "jdk@graalvm-ce-java11": {
+        "20.2.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java11-darwin-amd64-20.2.0.tar.gz",
         "20.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java11-darwin-amd64-20.1.0.tar.gz",
         "20.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-darwin-amd64-20.0.0.tar.gz",
         "19.3.2": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java11-darwin-amd64-19.3.2.tar.gz",
@@ -1044,6 +1051,7 @@
         "19.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.0.2/graalvm-ce-java11-darwin-amd64-19.3.0.2.tar.gz"
       },
       "jdk@graalvm-ce-java8": {
+        "20.2.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java8-darwin-amd64-20.2.0.tar.gz",
         "20.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java8-darwin-amd64-20.1.0.tar.gz",
         "20.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java8-darwin-amd64-20.0.0.tar.gz",
         "19.3.2": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java8-darwin-amd64-19.3.2.tar.gz",
@@ -1070,6 +1078,7 @@
         "1.0.0-5": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc5/graalvm-ce-1.0.0-rc5-macos-amd64.tar.gz"
       },
       "jdk@graalvm": {
+        "20.2.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java8-darwin-amd64-20.2.0.tar.gz",
         "20.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java8-darwin-amd64-20.1.0.tar.gz",
         "20.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java8-darwin-amd64-20.0.0.tar.gz",
         "19.3.2": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java8-darwin-amd64-19.3.2.tar.gz",
