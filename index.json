@@ -535,6 +535,7 @@
     "arm": {
       "jdk@zulu": {
         "1.13.0-38": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu13.33.38-ca-jdk13.0.4-c2-linux_aarch32hf.tar.gz",
+        "1.13.0-4": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu13.33.38-ca-jdk13.0.4-c2-linux_aarch32hf.tar.gz",
         "1.13.0": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu13.33.38-ca-jdk13.0.4-c2-linux_aarch32hf.tar.gz",
         "1.11.0-8": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.41.75-ca-jdk11.0.8-linux_aarch32hf.tar.gz",
         "1.11.0-7": "tgz+https://cdn.azul.com/zulu-embedded/bin/zulu11.39.61-ca-jdk11.0.7-linux_aarch32hf.tar.gz",
@@ -922,6 +923,26 @@
       },
       "jdk": {
         "1.15.0": "tgz+https://download.oracle.com/otn-pub/java/jdk/15+36/779bf45e88a44cbd9ea6621d33e33db1/jdk-15_linux-x64_bin.tar.gz"
+      }
+    },
+    "aarch64": {
+      "jdk@graalvm-ce-java11": {
+        "20.2.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java11-linux-aarch64-20.2.0.tar.gz",
+        "20.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java11-linux-aarch64-20.1.0.tar.gz",
+        "20.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-aarch64-20.0.0.tar.gz",
+        "19.3.3": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.3/graalvm-ce-java11-linux-aarch64-19.3.3.tar.gz",
+        "19.3.2": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java11-linux-aarch64-19.3.2.tar.gz",
+        "19.3.1": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.1/graalvm-ce-java11-linux-aarch64-19.3.1.tar.gz",
+        "19.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.0.2/graalvm-ce-java11-linux-aarch64-19.3.0.2.tar.gz"
+      },
+      "jdk@graalvm": {
+        "20.2.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.2.0/graalvm-ce-java11-linux-aarch64-20.2.0.tar.gz",
+        "20.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.1.0/graalvm-ce-java11-linux-aarch64-20.1.0.tar.gz",
+        "20.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.0.0/graalvm-ce-java11-linux-aarch64-20.0.0.tar.gz",
+        "19.3.3": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.3/graalvm-ce-java11-linux-aarch64-19.3.3.tar.gz",
+        "19.3.2": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.2/graalvm-ce-java11-linux-aarch64-19.3.2.tar.gz",
+        "19.3.1": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.1/graalvm-ce-java11-linux-aarch64-19.3.1.tar.gz",
+        "19.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-19.3.0.2/graalvm-ce-java11-linux-aarch64-19.3.0.2.tar.gz"
       }
     },
     "386": {
