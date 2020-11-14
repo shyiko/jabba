@@ -69,7 +69,7 @@ if (-not $(Test-Path $profile))
 if ("$(cat $profile | Select-String "\\jabba.ps1")" -eq "")
 {
     echo "Adding source string to $profile"
-    echo "`n$sourceJabba`n" >> "$profile"
+    echo "`n$sourceJabba`n" | Out-File -Append -Encoding ASCII "$profile"
 }
 else
 {
