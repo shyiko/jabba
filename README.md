@@ -88,7 +88,7 @@ java version "1.8....
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-Expression (
-  Invoke-WebRequest https://github.com/shyiko/jabba/raw/master/install.ps1 -UseBasicParsing
+  Invoke-WebRequest https://raw.githubusercontent.com/Durindo/jabba/master/install.ps1 -UseBasicParsing
 ).Content
 ```
 
