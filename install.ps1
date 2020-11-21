@@ -44,7 +44,7 @@ if the problem persists - please create a ticket at https://github.com/shyiko/ja
     exit 1
 }
 
-Write-Host @"
+@"
 `$env:JABBA_HOME="$jabbaHome"
 
 function jabba
@@ -59,7 +59,7 @@ function jabba
     }
     Remove-Item -Force `$fd3
 }
-"@ > $jabbaHome/jabba.ps1
+"@ | Out-File $jabbaHome/jabba.ps1
 
 $sourceJabba="if (Test-Path `"$jabbaHome\jabba.ps1`") { . `"$jabbaHome\jabba.ps1`" }"
 
@@ -71,14 +71,14 @@ if (-not $(Test-Path $profile))
 if ("$(Get-Content $profile | Select-String "\\jabba.ps1")" -eq "")
 {
     Write-Host "Adding source string to $profile"
-    Write-Host "`n$sourceJabba`n" >> "$profile"
+    "`n$sourceJabba`n" | Out-File -Append $profile
 }
 else
 {
     Write-Host "Skipped update of $profile (source string already present)"
 }
 
-. "$jabbaHome\jabba.ps1"
+. $jabbaHome\jabba.ps1
 
 Write-Host @"
 
