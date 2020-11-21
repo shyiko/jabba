@@ -6,7 +6,7 @@ $jabbaVersion = if ($env:JABBA_VERSION) { $env:JABBA_VERSION } else { "latest" }
 if ($jabbaVersion -eq "latest")
 {
     # resolving "latest" to an actual tag
-    $jabbaVersion = [System.Text.Encoding]::UTF8.GetString((Invoke-WebRequest https://shyiko.github.com/jabba/latest -UseBasicParsing).Content).Trim()
+    $jabbaVersion = (Invoke-RestMethod https://api.github.com/repos/shyiko/jabba/releases/latest).body
 }
 
 if ($jabbaVersion -notmatch '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.+-]+)?$')
