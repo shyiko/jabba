@@ -15,8 +15,7 @@ if ($jabbaVersion -notmatch '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.+-]+)?$')
     exit 1
 }
 
-Write-Host "Installing v$jabbaVersion..."
-Write-Host ""
+Write-Host "Installing v$jabbaVersion...`n"
 
 New-Item -Type Directory -Force $jabbaHome/bin | Out-Null
 
