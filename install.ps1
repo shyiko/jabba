@@ -1,15 +1,15 @@
 $ErrorActionPreference = "Stop"
 
-$jabbaHome = If ($env:JABBA_HOME) { $env:JABBA_HOME } else { If ($env:JABBA_DIR) { $env:JABBA_DIR } else { "$env:USERPROFILE\.jabba" } }
-$jabbaVersion = If ($env:JABBA_VERSION) { $env:JABBA_VERSION } else { "latest" }
+$jabbaHome = if ($env:JABBA_HOME) { $env:JABBA_HOME } else { if ($env:JABBA_DIR) { $env:JABBA_DIR } else { "$env:USERPROFILE\.jabba" } }
+$jabbaVersion = if ($env:JABBA_VERSION) { $env:JABBA_VERSION } else { "latest" }
 
-If ($jabbaVersion -eq "latest")
+if ($jabbaVersion -eq "latest")
 {
     # resolving "latest" to an actual tag
     $jabbaVersion = [System.Text.Encoding]::UTF8.GetString((wget https://shyiko.github.com/jabba/latest -UseBasicParsing).Content).Trim()
 }
 
-If ($jabbaVersion -notmatch '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.+-]+)?$')
+if ($jabbaVersion -notmatch '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.+-]+)?$')
 {
     echo "'$jabbaVersion' is not a valid version."
     exit 1
@@ -20,7 +20,7 @@ echo ""
 
 mkdir -Force $jabbaHome/bin | Out-Null
 
-If ($env:JABBA_MAKE_INSTALL -eq "true")
+if ($env:JABBA_MAKE_INSTALL -eq "true")
 {
     cp jabba.exe $jabbaHome/bin
 }
@@ -38,7 +38,7 @@ if (-not $binaryValid)
     echo "$jabbaHome\bin\jabba does not appear to be a valid binary.
 
 Check your Internet connection / proxy settings and try again.
-If the problem persists - please create a ticket at https://github.com/shyiko/jabba/issues."
+if the problem persists - please create a ticket at https://github.com/shyiko/jabba/issues."
     exit 1
 }
 
