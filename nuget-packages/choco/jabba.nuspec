@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8">
+<package xmlns="http://schemas.microsoft.com/packages/2015/07/nuspec.xsd">
+  <metadata>
+    <id>jabba</id>
+    <title>jabba</title>
+    <version>$version$</version>
+    <authors>shyiko</authors>
+    <owners>shyiko</owners>
+    <summary>Jabba is inspired by nvm (Node.js). Written in Go.</summary>
+    <description>
+The goal is to provide unified pain-free experience of installing (and switching between different
+versions of) JDK regardless of the OS (macOS, Linux, Windows).
+
+## Usage
+- `jabba ls-remote`
+- `jabba install 1.15.0`
+- `jabba install 1.8.0-custom=tgz+http://example.com/dsitribution.tar.gz
+- `jabba uninstall 1.15.0`
+- `jabba link [name] [path]`
+- `jabba ls`
+- `jabba use 1.15.0`
+- `echo "1.8" > .jabbarc`
+- `jabba alias default 1.15.0`
+    </description>
+    <projectUrl>https://github.com/shyiko/jabba</projectUrl>
+    <packageSourceUrl>https://github.com/shyiko/jabba/tree/master/nuget-packages</packageSourceUrl>
+    <docsUrl>https://github.com/shyiko/jabba</docsUrl>
+    <bugTrackerUrl>https://github.com/shyiko/jabba/issues</bugTrackerUrl>
+    <tags>jabba java shell version manager</tags>
+    <releaseNotes>https://github.com/shyiko/jabba/releases</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

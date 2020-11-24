@@ -1,6 +1,12 @@
 # Changelog
-All notable changes to this project will be documented in this file.  
+
+ All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
+
+## [UNRELEASED] - 2020-11-24
+
+### Added
+- Chocolatey installer and package metadata.
 
 ## [0.11.2](https://github.com/shyiko/jabba/compare/0.11.1...0.11.2) - 2019-01-06
 
