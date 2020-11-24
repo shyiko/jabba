@@ -70,7 +70,7 @@ if (-not $(Test-Path $profile))
 if ("$(Get-Content $profile | Select-String "\\jabba.ps1")" -eq "")
 {
     Write-Host "Adding source string to $profile"
-    "`n$sourceJabba`n" | Out-File -Append $profile
+    "`n$sourceJabba`n" | Out-File -Append -Encoding ASCII $profile
 }
 else
 {
