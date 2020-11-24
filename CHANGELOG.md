@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Added
 - Homebrew package is broken note in README.md
+- Alias "i" for `jabba install`. Can be used like `jabba i`
 
 ## [0.11.2](https://github.com/shyiko/jabba/compare/0.11.1...0.11.2) - 2019-01-06
 

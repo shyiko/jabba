@@ -90,8 +90,9 @@ func main() {
 		"Account for platform differences so that value could be used as JAVA_HOME (e.g. append \"/Contents/Home\" on macOS)")
 	var customInstallDestination string
 	installCmd := &cobra.Command{
-		Use:   "install [version to install]",
-		Short: "Download and install JDK",
+		Use:     "install [version to install]",
+		Short:   "Download and install JDK",
+		Aliases: []string{"i"},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			var ver string
 			if len(args) == 0 {
