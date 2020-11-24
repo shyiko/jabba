@@ -158,7 +158,12 @@ jabba alias default 1.8
 
 > jsyk: **jabba** keeps everything under `~/.jabba` (on Linux/Mac OS X) / `%USERPROFILE%/.jabba` (on Windows). If at any point of time you decide to uninstall **jabba** - just remove this directory. 
 
-For more information see `jabba --help`.  
+For more information see `jabba --help`.
+
+### Command aliases
+
+- `jabba install`:
+  - `jabba i`
 
 ## Development
 
