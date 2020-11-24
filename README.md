@@ -57,6 +57,8 @@ Make sure to source `jabba.sh` in your environment if you skip it:
 [wget](https://www.gnu.org/software/wget/manual/wget.html#Proxies) manpage. 
 Usually simple `http_proxy=http://proxy-server:port https_proxy=http://proxy-server:port curl -sL ...` is enough. 
 
+**NOTE**: The brew package is currently broken. We are working on a fix.
+
 #### Docker
 
 While you can use the same snippet as above, chances are you don't want jabba binary & shell 
@@ -66,7 +68,7 @@ integration script(s) to be included in the final Docker image, all you want is 
 FROM buildpack-deps:jessie-curl
 
 RUN curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | \
-    JABBA_COMMAND="install 1.8 -o /jdk" bash
+    JABBA_COMMAND="install 1.15.0 -o /jdk" bash
 
 ENV JAVA_HOME /jdk
 ENV PATH $JAVA_HOME/bin:$PATH
@@ -78,7 +80,7 @@ ENV PATH $JAVA_HOME/bin:$PATH
 $ docker build -t <image_name>:<image_tag> .
 $ docker run -it --rm <image_name>:<image_tag> java -version
 
-java version "1.8....
+java version "1.15.0....
 ```
 
 #### Windows 10
@@ -104,7 +106,7 @@ jabba ls-remote zulu@~1.8.60
 jabba ls-remote "*@>=1.6.45 <1.9" --latest=minor
 
 # install Oracle JDK
-jabba install 1.8
+jabba install 1.15.0
 # install Oracle Server JRE
 jabba install sjre@1.8  
 # install Adopt OpenJDK (Hotspot)
