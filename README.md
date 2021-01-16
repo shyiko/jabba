@@ -59,6 +59,15 @@ Usually simple `http_proxy=http://proxy-server:port https_proxy=http://proxy-ser
 
 **NOTE**: The brew package is currently broken. We are working on a fix.
 
+##### Arch Linux
+
+Install [jabba](https://aur.archlinux.org/packages/jabba/) package from AUR.
+
+This will only install the jabba binary. To enable shell integration you will have to install the integration shell script for your shell:
+
+* [zsh plugin for jabba](https://github.com/2m/zsh-jabba)
+* [fish plugin for jabba](https://github.com/2m/fish-jabba)
+
 #### Docker
 
 While you can use the same snippet as above, chances are you don't want jabba binary & shell
