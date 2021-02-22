@@ -60,7 +60,7 @@ function jabba
 }
 "@ | Out-File $jabbaHome/jabba.ps1
 
-echo "@powershell -command jabba %* > $jabbaHome/jabba.cmd
+echo "@powershell -command jabba %* > $jabbaHome/jabba.cmd"
 
 [Environment]::SetEnvironmentVariable("Path",[Environment]::GetEnvironmentVariable("Path", [System.EnvironmentVariableTarget]::User) + ";" + $jabbaHome,[System.EnvironmentVariableTarget]::User)
 
