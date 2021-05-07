@@ -45,6 +45,10 @@ if the problem persists - please create a ticket at https://github.com/shyiko/ja
 
 @"
 `$env:JABBA_HOME="$jabbaHome"
+if (Test-Path "`$env:JABBA_HOME/jdk/default") {
+    `$env:JAVA_HOME = "`$env:JABBA_HOME\jdk\default"
+    `$env:Path = "`$env:JAVA_HOME\bin;`$env:Path"
+}
 
 function jabba
 {
