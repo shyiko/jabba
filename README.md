@@ -30,7 +30,7 @@ the OS (macOS, Linux x86/x86_64/ARMv7+, Windows x86_64).
 > (in bash/zsh/...)
 
 ```sh
-curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && chmod u+x ~/.jabba/jabba.sh && . ~/.jabba/jabba.sh
 ```
 
 > (use the same command to upgrade)
