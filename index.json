@@ -634,6 +634,12 @@
         "1.8.0-272": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u272-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u272b10.tar.gz",
         "1.8.0-265": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_aarch64_linux_hotspot_8u265b01.tar.gz",
         "1.8.0-262": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u262b10.tar.gz"
+      },
+      "jdk@graalvm-ce-java16": {
+        "21.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java16-linux-aarch64-21.1.0.tar.gz"
+      },
+      "jdk@graalvm-ce-java11": {
+        "21.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java11-linux-aarch64-21.1.0.tar.gz"
       }
     },
     "arm": {
