@@ -1537,6 +1537,7 @@
         "1.0.0-5": "tgz+https://github.com/oracle/graal/releases/download/vm-1.0.0-rc5/graalvm-ce-1.0.0-rc5-macos-amd64.tar.gz"
       },
       "jdk@amazon-corretto": {
+        "1.17.0-0.35.1": "tgz+https://corretto.aws/downloads/resources/17.0.0.35.1/amazon-corretto-17.0.0.35.1-macosx-x64.tar.gz",
         "1.11.0-11.9.1": "tgz+https://corretto.aws/downloads/resources/11.0.11.9.1/amazon-corretto-11.0.11.9.1-macosx-x64.tar.gz",
         "1.11.0-10.9.1": "tgz+https://corretto.aws/downloads/resources/11.0.10.9.1/amazon-corretto-11.0.10.9.1-macosx-x64.tar.gz",
         "1.11.0-9.12.1": "tgz+https://corretto.aws/downloads/resources/11.0.9.12.1/amazon-corretto-11.0.9.12.1-macosx-x64.tar.gz",
