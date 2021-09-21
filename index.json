@@ -144,6 +144,7 @@
         "1.6.47": "zip+https://cdn.azul.com/zulu/bin/zulu1.6.0_47-6.3.0.3-win64.zip"
       },
       "jdk@openjdk-ri": {
+        "1.17.0":"zip+https://download.java.net/openjdk/jdk17/ri/openjdk-17+35_windows-x64_bin.zip",
         "1.16.0-0": "zip+https://download.java.net/openjdk/jdk16/ri/openjdk-16+36_windows-x64_bin.zip",
         "1.16.0": "zip+https://download.java.net/openjdk/jdk16/ri/openjdk-16+36_windows-x64_bin.zip",
         "1.15.0-0": "zip+https://download.java.net/openjdk/jdk15/ri/openjdk-15+36_windows-x64_bin.zip",
@@ -158,6 +159,7 @@
         "1.11.0": "zip+https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_windows-x64_bin.zip"
       },
       "jdk@openjdk": {
+        "1.17.0":"zip+https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_windows-x64_bin.zip",
         "1.16.0-1": "zip+https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_windows-x64_bin.zip",
         "1.16.0": "zip+https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_windows-x64_bin.zip",
         "1.15.0-2": "zip+https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c6931946de8db48ee2/7/GPL/openjdk-15.0.2_windows-x64_bin.zip",
@@ -810,6 +812,7 @@
         "1.6.77": "tgz+https://cdn.azul.com/zulu/bin/zulu6.11.0.2-jdk6.0.77-linux_x64.tar.gz"
       },
       "jdk@openjdk-ri": {
+        "1.17.0": "tgz+https://download.java.net/openjdk/jdk17/ri/openjdk-17+35_linux-x64_bin.tar.gz",
         "1.16.0-0": "tgz+https://download.java.net/openjdk/jdk16/ri/openjdk-16+36_linux-x64_bin.tar.gz",
         "1.16.0": "tgz+https://download.java.net/openjdk/jdk16/ri/openjdk-16+36_linux-x64_bin.tar.gz",
         "1.15.0-0": "tgz+https://download.java.net/openjdk/jdk15/ri/openjdk-15+36_linux-x64_bin.tar.gz",
@@ -830,6 +833,7 @@
         "1.7.75": "tgz+https://download.java.net/openjdk/jdk7u75/ri/openjdk-7u75-b13-linux-x64-18_dec_2014.tar.gz"
       },
       "jdk@openjdk": {
+        "1.17.0": "tgz+https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_linux-x64_bin.tar.gz",
         "1.16.0-1": "tgz+https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_linux-x64_bin.tar.gz",
         "1.16.0": "tgz+https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_linux-x64_bin.tar.gz",
         "1.15.0-2": "tgz+https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c6931946de8db48ee2/7/GPL/openjdk-15.0.2_linux-x64_bin.tar.gz",
@@ -1387,6 +1391,7 @@
         "1.7.55": "zip+https://cdn.azul.com/zulu/bin/zulu1.7.0_55-7.4.0.7-macosx.zip"
       },
       "jdk@openjdk": {
+        "1.17.0": "tgz+https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_macos-x64_bin.tar.gz",
         "1.16.0-1": "tgz+https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_osx-x64_bin.tar.gz",
         "1.16.0": "tgz+https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_osx-x64_bin.tar.gz",
         "1.15.0-2": "tgz+https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c6931946de8db48ee2/7/GPL/openjdk-15.0.2_osx-x64_bin.tar.gz",
