@@ -1,7 +1,6 @@
 package command
 
 import (
-	"errors"
 	"github.com/shyiko/jabba/cfg"
 	"io/ioutil"
 	"os"
@@ -9,9 +8,6 @@ import (
 )
 
 func SetAlias(name string, ver string) (err error) {
-	if name != "default" {
-		return errors.New("At this point only 'default' alias is allowed")
-	}
 	if ver == "" {
 		err = os.Remove(filepath.Join(cfg.Dir(), name+".alias"))
 	} else {

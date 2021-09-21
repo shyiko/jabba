@@ -18,6 +18,19 @@ has_command() {
     fi
 }
 
+SKIP_RC=
+while :; do
+    case "$1" in
+    --skip-rc) # skip rc file scripts
+        SKIP_RC="1"
+        ;;
+    *)
+        break
+        ;;
+    esac
+    shift
+done
+
 # curl looks for HTTPS_PROXY while wget for https_proxy
 https_proxy=${https_proxy:-$HTTPS_PROXY}
 HTTPS_PROXY=${HTTPS_PROXY:-$https_proxy}
@@ -35,7 +48,7 @@ fi
 
 if [ "$JABBA_VERSION" == "latest" ]; then
     # resolving "latest" to an actual tag
-    JABBA_VERSION=$($JABBA_GET https://shyiko.github.com/jabba/latest)
+    JABBA_VERSION=$($JABBA_GET https://shyiko.github.io/jabba/latest)
 fi
 
 # http://semver.org/spec/v2.0.0.html
@@ -51,13 +64,33 @@ case "$OSTYPE" in
     linux*)
     case "$(uname -m)" in
         arm*|aarch*)
-        if [ `getconf LONG_BIT` = "64" ]; then OSARCH=arm64; else OSARCH=arm; fi
+        if [ "$(getconf LONG_BIT)" = "64" ]; then OSARCH=arm64; else OSARCH=arm; fi
+        ;;
+        s390x)
+        OS_ARCH=s390x
+        echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
+        exit 1
+        ;;
+        s390*)
+        if [ "$(getconf LONG_BIT)" = "64" ]; then OSARCH=s390x; else OSARCH=s390; fi
+        echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
+        exit 1
+        ;;
+        powerpc*)
+        OS_ARCH=powerpc
+        echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
+        exit 1
+        ;;
+        ppc64*)
+        OS_ARCH=ppc64le
+        echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
+        exit 1
         ;;
         *)
-        if [ `getconf LONG_BIT` = "64" ]; then OSARCH=amd64; else OSARCH=386; fi
+        if [ "$(getconf LONG_BIT)" = "64" ]; then OSARCH=amd64; else OSARCH=386; fi
         ;;
     esac
-    BINARY_URL=https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-linux-${OSARCH}
+    BINARY_URL="https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-linux-${OSARCH}"
     ;;
     *)
     echo "Unsupported OS $OSTYPE. If you believe this is an error -
@@ -120,37 +153,39 @@ echo "fi"
 
 SOURCE_JABBA="\n[ -s \"$JABBA_HOME/jabba.sh\" ] && source \"$JABBA_HOME/jabba.sh\""
 
-files=("$HOME/.bashrc")
+if [ ! "$SKIP_RC" ]; then
+    files=("$HOME/.bashrc")
 
-if [ -f "$HOME/.bash_profile" ]; then
-    files+=("$HOME/.bash_profile")
-elif [ -f "$HOME/.bash_login" ]; then
-    files+=("$HOME/.bash_login")
-elif [ -f "$HOME/.profile" ]; then
-    files+=("$HOME/.profile")
-else
-    files+=("$HOME/.bash_profile")
-fi
-
-for file in "${files[@]}"
-do
-    touch ${file}
-    if ! grep -qc '/jabba.sh' "${file}"; then
-        echo "Adding source string to ${file}"
-        printf "$SOURCE_JABBA\n" >> "${file}"
+    if [ -f "$HOME/.bash_profile" ]; then
+        files+=("$HOME/.bash_profile")
+    elif [ -f "$HOME/.bash_login" ]; then
+        files+=("$HOME/.bash_login")
+    elif [ -f "$HOME/.profile" ]; then
+        files+=("$HOME/.profile")
     else
-        echo "Skipped update of ${file} (source string already present)"
+        files+=("$HOME/.bash_profile")
     fi
-done
 
-if [ -f "$(which zsh 2>/dev/null)" ]; then
-    file="$HOME/.zshrc"
-    touch ${file}
-    if ! grep -qc '/jabba.sh' "${file}"; then
-        echo "Adding source string to ${file}"
-        printf "$SOURCE_JABBA\n" >> "${file}"
-    else
-        echo "Skipped update of ${file} (source string already present)"
+    for file in "${files[@]}"
+    do
+        touch ${file}
+        if ! grep -qc '/jabba.sh' "${file}"; then
+            echo "Adding source string to ${file}"
+            printf "$SOURCE_JABBA\n" >> "${file}"
+        else
+            echo "Skipped update of ${file} (source string already present)"
+        fi
+    done
+
+    if [ -f "$(which zsh 2>/dev/null)" ]; then
+        file="$HOME/.zshrc"
+        touch ${file}
+        if ! grep -qc '/jabba.sh' "${file}"; then
+            echo "Adding source string to ${file}"
+            printf "$SOURCE_JABBA\n" >> "${file}"
+        else
+            echo "Skipped update of ${file} (source string already present)"
+        fi
     fi
 fi
 
