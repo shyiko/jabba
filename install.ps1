@@ -1,7 +1,24 @@
 $ErrorActionPreference = "Stop"
 
-$jabbaHome = if ($env:JABBA_HOME) { $env:JABBA_HOME } else { if ($env:JABBA_DIR) { $env:JABBA_DIR } else { "$env:USERPROFILE\.jabba" } }
+$jabbaHome = if ($env:JABBA_HOME) { 
+    $env:JABBA_HOME 
+} else { 
+    if ($env:JABBA_DIR) { 
+        $env:JABBA_DIR 
+    } else {
+        if($env:USERPROFILE){
+            "$env:USERPROFILE\.jabba" 
+        }else{
+            "$env:HOME\.jabba"
+        }
+    } 
+}
 $jabbaVersion = if ($env:JABBA_VERSION) { $env:JABBA_VERSION } else { "latest" }
+# The Windows values of the Platform enum are:
+# 0 (Win32NT), 1 (Win32S), 2 (Win32Windows) and 3 (WinCE).
+# Other values are larger and indicate non Windows operating systems
+$isOnWindows = [System.Environment]::OSVersion.Platform.value__ > 3
+$jabbaExecutableName = $isOnWindows ? "jabba.exe" : "jabba"
 
 if ($jabbaVersion -eq "latest")
 {
@@ -25,11 +42,27 @@ if ($env:JABBA_MAKE_INSTALL -eq "true")
 }
 else
 {
-    Invoke-WebRequest https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaHome/bin/jabba.exe
+    # $isOnWindows, see top of the file
+    # MacOSX enum value: 6
+    if($isOnWindows){
+        Invoke-WebRequest https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaHome/bin/$jabbaExecutableName
+    }
+    elseif([System.Environment]::OSVersion.Platform.value__ -eq 6){
+        Invoke-WebRequest https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-darwin-amd64 -UseBasicParsing -OutFile $jabbaHome/bin/$jabbaExecutableName
+    }else{
+        $osArch = [System.Environment]::Is64BitOperatingSystem ? "amd64" : "386"
+        Invoke-WebRequest https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-linux-${OSARCH} -UseBasicParsing -OutFile $jabbaHome/bin/$jabbaExecutableName
+    }
 }
 
 $ErrorActionPreference="SilentlyContinue"
-& $jabbaHome\bin\jabba.exe --version | Out-Null
+
+if($isOnWindows){
+    & $jabbaHome\bin\jabba --version | Out-Null
+}
+else{
+    & $jabbaHome\bin\jabba.exe --version | Out-Null
+}
 $binaryValid = $?
 $ErrorActionPreference="Continue"
 if (-not $binaryValid)
@@ -49,7 +82,7 @@ if the problem persists - please create a ticket at https://github.com/shyiko/ja
 function jabba
 {
     `$fd3=`$([System.IO.Path]::GetTempFileName())
-    `$command="& '$jabbaHome\bin\jabba.exe' `$args --fd3 ```"`$fd3```""
+    `$command="& '$jabbaHome\bin\$jabbaExecutableName' `$args --fd3 ```"`$fd3```""
     & { `$env:JABBA_SHELL_INTEGRATION="ON"; Invoke-Expression `$command }
     `$fd3content=`$(Get-Content `$fd3)
     if (`$fd3content) {
@@ -81,6 +114,6 @@ else
 
 Write-Host @"
 
-Installation completed
+Installation completed (you might need to restart your terminal for the jabba command to be available)
 (if you have any problems please report them at https://github.com/shyiko/jabba/issues)
 "@
