@@ -44,11 +44,12 @@ if ($env:JABBA_MAKE_INSTALL -eq "true")
 else
 {
     # $isOnWindows, see top of the file
-    # MacOSX enum value: 4
+    # macOS enum value: 6
+    # Unix enum value: 4
     if($isOnWindows){
         Invoke-WebRequest https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaHome/bin/$jabbaExecutableName
     }
-    elseif([System.Environment]::OSVersion.Platform.value__ -eq 4){
+    elseif([System.Environment]::OSVersion.Platform.value__ -eq 4 || [System.Environment]::OSVersion.Platform.value__ -eq 6){
         Invoke-WebRequest https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-darwin-amd64 -UseBasicParsing -OutFile $jabbaHome/bin/$jabbaExecutableName
     }else{
         $osArch = [System.Environment]::Is64BitOperatingSystem ? "amd64" : "386"
