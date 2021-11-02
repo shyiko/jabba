@@ -1,5 +1,6 @@
 $ErrorActionPreference = "Stop"
 
+$sep = [IO.Path]::DirectorySeparatorChar
 $jabbaHome = if ($env:JABBA_HOME) { 
     $env:JABBA_HOME 
 } else { 
@@ -7,9 +8,9 @@ $jabbaHome = if ($env:JABBA_HOME) {
         $env:JABBA_DIR 
     } else {
         if($env:USERPROFILE){
-            "$env:USERPROFILE\.jabba" 
+            "$env:USERPROFILE" + $sep + ".jabba" 
         }else{
-            "$env:HOME\.jabba"
+            "$env:HOME" + $sep + ".jabba"
         }
     } 
 }
@@ -43,11 +44,11 @@ if ($env:JABBA_MAKE_INSTALL -eq "true")
 else
 {
     # $isOnWindows, see top of the file
-    # MacOSX enum value: 6
+    # MacOSX enum value: 4
     if($isOnWindows){
         Invoke-WebRequest https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaHome/bin/$jabbaExecutableName
     }
-    elseif([System.Environment]::OSVersion.Platform.value__ -eq 6){
+    elseif([System.Environment]::OSVersion.Platform.value__ -eq 4){
         Invoke-WebRequest https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-darwin-amd64 -UseBasicParsing -OutFile $jabbaHome/bin/$jabbaExecutableName
     }else{
         $osArch = [System.Environment]::Is64BitOperatingSystem ? "amd64" : "386"
@@ -58,17 +59,18 @@ else
 $ErrorActionPreference="SilentlyContinue"
 
 if($isOnWindows){
-    & $jabbaHome\bin\jabba --version | Out-Null
+    & "$jabbaHome\bin\$jabbaExecutableName" --version | Out-Null
+}else{
+	chmod a+x "$jabbaHome/bin/$jabbaExecutableName"
+    & "$jabbaHome/bin/$jabbaExecutableName" --version | Out-Null
 }
-else{
-    & $jabbaHome\bin\jabba.exe --version | Out-Null
-}
+
 $binaryValid = $?
 $ErrorActionPreference="Continue"
 if (-not $binaryValid)
 {
-    Write-Host @"
-$jabbaHome\bin\jabba does not appear to be a valid binary.
+    Write-Host -ForegroundColor Yellow @"
+$jabbaHome\bin\$jabbaExecutableName does not appear to be a valid binary.
 
 Check your Internet connection / proxy settings and try again.
 if the problem persists - please create a ticket at https://github.com/shyiko/jabba/issues.
