@@ -2,10 +2,11 @@
 All notable changes to this project will be documented in this file.  
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [UNRELEASED] - 2020-11-23
+## [UNRELEASED] - 2021-11-20
 
 ### Changed
 - Old default Java version in README.md
+- Update dependencies in go.mod and go.sum
 
 ### Added
 - Homebrew package is broken note in README.md
