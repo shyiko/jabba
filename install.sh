@@ -92,6 +92,15 @@ case "$OSTYPE" in
     esac
     BINARY_URL="https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-linux-${OSARCH}"
     ;;
+    cygwin*|msys*)
+    OS_ARCH=$(echo 'echo %PROCESSOR_ARCHITECTURE% & exit' | cmd | tail -n 1 | xargs) # xargs used to trim whitespace
+    if [ "$OS_ARCH" == "AMD64" ]; then
+        BINARY_URL="https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-windows-amd64.exe"
+    else
+        echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
+        exit 1
+    fi
+    ;;
     *)
     echo "Unsupported OS $OSTYPE. If you believe this is an error -
 please create a ticket at https://github.com/shyiko/jabba/issues."
