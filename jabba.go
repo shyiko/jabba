@@ -150,6 +150,15 @@ func main() {
 			return nil
 		},
 	}
+	showCmd := &cobra.Command{
+		Use:   "show [name]",
+		Short: "Show information about given version",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return command.Show(args)
+		},
+		Example: "  jabba show openjdk@1.12.0\n" +
+			"  jabba show 1.12.0 openjdk@1.9.0",
+	}
 	lsRemoteCmd := &cobra.Command{
 		Use:   "ls-remote",
 		Short: "List remote versions available for install",
@@ -282,6 +291,7 @@ func main() {
 			},
 		},
 		lsCmd,
+		showCmd,
 		lsRemoteCmd,
 		&cobra.Command{
 			Use:   "deactivate",
