@@ -30,6 +30,7 @@ the OS (macOS, Linux x86/x86_64/ARMv7+, Windows x86_64).
 > (in bash/zsh/...)
 
 ```sh
+export JABBA_VERSION=...
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
 ```
 
@@ -38,24 +39,19 @@ curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.ja
 The script modifies common shell rc files by default. To skip these provide the `--skip-rc` flag to `install.sh` like so:
 
 ```sh
+export JABBA_VERSION=...
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash -s -- --skip-rc && . ~/.jabba/jabba.sh
 ```
 
 Make sure to source `jabba.sh` in your environment if you skip it:
 
 ```sh
+export JABBA_VERSION=...
 [ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
 ```
-> (in powershell)
 
-```powershell
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-Expression (
-  Invoke-WebRequest https://github.com/shyiko/jabba/raw/master/install.ps1 -UseBasicParsing
-).Content
-```
-
-> In [fish](https://fishshell.com/) command looks a little bit different - 
+> In [fish](https://fishshell.com/) command looks a little bit different -
+> export JABBA_VERSION=...
 `curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash; and . ~/.jabba/jabba.fish` 
 
 > If you don't have `curl` installed - replace `curl -sL` with `wget -qO-`.
