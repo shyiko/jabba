@@ -1,9 +1,10 @@
 package command
 
 import (
-	"github.com/shyiko/jabba/cfg"
 	"os"
 	"path/filepath"
+
+	"github.com/Jabba-Team/jabba/cfg"
 )
 
 func Uninstall(selector string) error {

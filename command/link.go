@@ -2,13 +2,14 @@ package command
 
 import (
 	"errors"
-	log "github.com/Sirupsen/logrus"
-	"github.com/shyiko/jabba/cfg"
-	"github.com/shyiko/jabba/semver"
 	"os"
 	"path/filepath"
 	"runtime"
 	"strings"
+
+	"github.com/Jabba-Team/jabba/cfg"
+	"github.com/Jabba-Team/jabba/semver"
+	log "github.com/Sirupsen/logrus"
 )
 
 func Link(selector string, dir string) error {

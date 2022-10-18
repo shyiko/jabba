@@ -1,4 +1,4 @@
-# jabba ![Latest Version](https://img.shields.io/badge/latest-0.11.2-blue.svg) [![Build Status](https://travis-ci.org/shyiko/jabba.svg?branch=master)](https://travis-ci.org/shyiko/jabba)
+# jabba ![Latest Version](https://img.shields.io/badge/latest-0.11.2-blue.svg) [![Build Status](https://travis-ci.org/Jabba-Team/jabba.svg?branch=master)](https://travis-ci.org/Jabba-Team/jabba)
 
 Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js). Written in Go.
 
@@ -31,7 +31,7 @@ the OS (macOS, Linux x86/x86_64/ARMv7+, Windows x86_64).
 
 ```sh
 export JABBA_VERSION=...
-curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash && . ~/.jabba/jabba.sh
 ```
 
 > (use the same command to upgrade)
@@ -40,7 +40,7 @@ The script modifies common shell rc files by default. To skip these provide the 
 
 ```sh
 export JABBA_VERSION=...
-curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash -s -- --skip-rc && . ~/.jabba/jabba.sh
+curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash -s -- --skip-rc && . ~/.jabba/jabba.sh
 ```
 
 Make sure to source `jabba.sh` in your environment if you skip it:
@@ -52,7 +52,7 @@ export JABBA_VERSION=...
 
 > In [fish](https://fishshell.com/) command looks a little bit different -
 > export JABBA_VERSION=...
-`curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash; and . ~/.jabba/jabba.fish` 
+`curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash; and . ~/.jabba/jabba.fish` 
 
 > If you don't have `curl` installed - replace `curl -sL` with `wget -qO-`.
 
@@ -71,7 +71,7 @@ integration script(s) to be included in the final Docker image, all you want is 
 ```dockerfile
 FROM buildpack-deps:jessie-curl
 
-RUN curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | \
+RUN curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | \
     JABBA_COMMAND="install 1.15.0 -o /jdk" bash
 
 ENV JAVA_HOME /jdk
@@ -94,7 +94,7 @@ java version "1.15.0....
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-Expression (
-  Invoke-WebRequest https://github.com/shyiko/jabba/raw/master/install.ps1 -UseBasicParsing
+  Invoke-WebRequest https://github.com/Jabba-Team/jabba/raw/main/install.ps1 -UseBasicParsing
 ).Content
 ```
 
@@ -169,8 +169,8 @@ For more information see `jabba --help`.
 > PREREQUISITE: [go1.8](https://github.com/moovweb/gvm)
 
 ```sh
-git clone https://github.com/shyiko/jabba $GOPATH/src/github.com/shyiko/jabba 
-cd $GOPATH/src/github.com/shyiko/jabba 
+git clone https://github.com/Jabba-Team/jabba $GOPATH/src/github.com/Jabba-Team/jabba 
+cd $GOPATH/src/github.com/Jabba-Team/jabba 
 make fetch
 
 go run jabba.go

@@ -1,4 +1,4 @@
-module github.com/shyiko/jabba
+module github.com/Jabba-Team/jabba
 
 go 1.15
 

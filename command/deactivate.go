@@ -1,10 +1,11 @@
 package command
 
 import (
-	"github.com/shyiko/jabba/cfg"
 	"os"
 	"path/filepath"
 	"regexp"
+
+	"github.com/Jabba-Team/jabba/cfg"
 )
 
 func Deactivate() ([]string, error) {

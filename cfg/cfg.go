@@ -1,10 +1,11 @@
 package cfg
 
 import (
-	log "github.com/Sirupsen/logrus"
-	"github.com/mitchellh/go-homedir"
 	"os"
 	"path/filepath"
+
+	log "github.com/Sirupsen/logrus"
+	"github.com/mitchellh/go-homedir"
 )
 
 func Dir() string {
@@ -22,7 +23,7 @@ func Dir() string {
 func Index() string {
 	registry := os.Getenv("JABBA_INDEX")
 	if registry == "" {
-		registry = "https://github.com/shyiko/jabba/raw/master/index.json"
+		registry = "https://github.com/Jabba-Team/jabba/raw/fix/build/index.json"
 	}
 	return registry
 }

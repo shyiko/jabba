@@ -1,9 +1,10 @@
 package command
 
 import (
-	"github.com/shyiko/jabba/cfg"
 	"path/filepath"
 	"runtime"
+
+	"github.com/Jabba-Team/jabba/cfg"
 )
 
 func Which(selector string, home bool) (string, error) {

@@ -48,7 +48,7 @@ fi
 
 if [ "$JABBA_VERSION" == "latest" ]; then
     # resolving "latest" to an actual tag
-    JABBA_VERSION=$($JABBA_GET https://shyiko.github.io/jabba/latest)
+    JABBA_VERSION=$($JABBA_GET https://Jabba-Team.github.io/jabba/latest)
 fi
 
 # http://semver.org/spec/v2.0.0.html
@@ -59,7 +59,7 @@ fi
 
 case "$OSTYPE" in
     darwin*)
-    BINARY_URL=https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-darwin-amd64
+    BINARY_URL=https://github.com/Jabba-TEam/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-darwin-amd64
     ;;
     linux*)
     case "$(uname -m)" in
@@ -90,12 +90,12 @@ case "$OSTYPE" in
         if [ "$(getconf LONG_BIT)" = "64" ]; then OSARCH=amd64; else OSARCH=386; fi
         ;;
     esac
-    BINARY_URL="https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-linux-${OSARCH}"
+    BINARY_URL="https://github.com/Jabba-Team/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-linux-${OSARCH}"
     ;;
     cygwin*|msys*)
     OS_ARCH=$(echo 'echo %PROCESSOR_ARCHITECTURE% & exit' | cmd | tail -n 1 | xargs) # xargs used to trim whitespace
     if [ "$OS_ARCH" == "AMD64" ]; then
-        BINARY_URL="https://github.com/shyiko/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-windows-amd64.exe"
+        BINARY_URL="https://github.com/Jabba-Team/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-windows-amd64.exe"
     else
         echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
         exit 1
@@ -103,7 +103,7 @@ case "$OSTYPE" in
     ;;
     *)
     echo "Unsupported OS $OSTYPE. If you believe this is an error -
-please create a ticket at https://github.com/shyiko/jabba/issues."
+please create a ticket at https://github.com/Jabba-Team/jabba/issues."
     exit 1
     ;;
 esac
@@ -127,7 +127,7 @@ if ! ${JABBA_HOME}/bin/jabba --version &>/dev/null; then
     echo "${JABBA_HOME}/bin/jabba does not appear to be a valid binary.
 
 Check your Internet connection / proxy settings and try again.
-If the problem persists - please create a ticket at https://github.com/shyiko/jabba/issues."
+If the problem persists - please create a ticket at https://github.com/Jabba-Team/jabba/issues."
     exit 1
 fi
 
@@ -141,7 +141,7 @@ if [ "$JABBA_COMMAND" != "" ]; then
 fi
 
 {
-echo "# https://github.com/shyiko/jabba"
+echo "# https://github.com/Jabba-Team/jabba"
 echo "# This file is intended to be \"sourced\" (i.e. \". ~/.jabba/jabba.sh\")"
 echo ""
 echo "export JABBA_HOME=\"$JABBA_HOME_TO_EXPORT\""
@@ -199,7 +199,7 @@ if [ ! "$SKIP_RC" ]; then
 fi
 
 {
-echo "# https://github.com/shyiko/jabba"
+echo "# https://github.com/Jabba-Team/jabba"
 echo "# This file is intended to be \"sourced\" (i.e. \". ~/.jabba/jabba.fish\")"
 echo ""
 echo "set -xg JABBA_HOME \"$JABBA_HOME_TO_EXPORT\""
@@ -232,6 +232,6 @@ fi
 
 echo ""
 echo "Installation completed
-(if you have any problems please report them at https://github.com/shyiko/jabba/issues)"
+(if you have any problems please report them at https://github.com/Jabba-Team/jabba/issues)"
 
 } # this ensures the entire script is downloaded

@@ -2,13 +2,14 @@ package command
 
 import (
 	"fmt"
-	"github.com/shyiko/jabba/cfg"
-	"github.com/shyiko/jabba/semver"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"sort"
 	"strings"
+
+	"github.com/Jabba-Team/jabba/cfg"
+	"github.com/Jabba-Team/jabba/semver"
 )
 
 var readDir = ioutil.ReadDir

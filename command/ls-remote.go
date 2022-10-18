@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/shyiko/jabba/cfg"
-	"github.com/shyiko/jabba/semver"
+	"github.com/Jabba-Team/jabba/cfg"
+	"github.com/Jabba-Team/jabba/semver"
 )
 
 type byOS map[string]byArch

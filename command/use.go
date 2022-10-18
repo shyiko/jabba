@@ -1,11 +1,12 @@
 package command
 
 import (
-	"github.com/shyiko/jabba/cfg"
 	"os"
 	"path/filepath"
 	"regexp"
 	"runtime"
+
+	"github.com/Jabba-Team/jabba/cfg"
 )
 
 func Use(selector string) ([]string, error) {

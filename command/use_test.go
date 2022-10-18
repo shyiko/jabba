@@ -1,12 +1,13 @@
 package command
 
 import (
-	"github.com/shyiko/jabba/cfg"
 	"os"
 	"reflect"
 	"runtime"
 	"testing"
 	"time"
+
+	"github.com/Jabba-Team/jabba/cfg"
 )
 
 type FileInfoMock string

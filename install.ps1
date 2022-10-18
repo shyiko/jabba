@@ -6,7 +6,7 @@ $jabbaVersion = if ($env:JABBA_VERSION) { $env:JABBA_VERSION } else { "latest" }
 if ($jabbaVersion -eq "latest")
 {
     # resolving "latest" to an actual tag
-    $jabbaVersion = (Invoke-RestMethod https://api.github.com/repos/shyiko/jabba/releases/latest).body
+    $jabbaVersion = (Invoke-RestMethod https://api.github.com/repos/Jabba-Team/jabba/releases/latest).body
 }
 
 if ($jabbaVersion -notmatch '^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.+-]+)?$')
@@ -25,7 +25,7 @@ if ($env:JABBA_MAKE_INSTALL -eq "true")
 }
 else
 {
-    Invoke-WebRequest https://github.com/shyiko/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaHome/bin/jabba.exe
+    Invoke-WebRequest https://github.com/Jabba-Team/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaHome/bin/jabba.exe
 }
 
 $ErrorActionPreference="SilentlyContinue"
@@ -38,7 +38,7 @@ if (-not $binaryValid)
 $jabbaHome\bin\jabba does not appear to be a valid binary.
 
 Check your Internet connection / proxy settings and try again.
-if the problem persists - please create a ticket at https://github.com/shyiko/jabba/issues.
+if the problem persists - please create a ticket at https://github.com/Jabba-Team/jabba/issues.
 "@
     exit 1
 }
@@ -82,5 +82,5 @@ else
 Write-Host @"
 
 Installation completed
-(if you have any problems please report them at https://github.com/shyiko/jabba/issues)
+(if you have any problems please report them at https://github.com/Jabba-Team/jabba/issues)
 "@

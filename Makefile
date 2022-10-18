@@ -39,11 +39,11 @@ install: build
 
 publish: clean build-release
 	test -n "$(GITHUB_TOKEN)" # $$GITHUB_TOKEN must be set
-	github-release release --user shyiko --repo jabba --tag ${VERSION} \
+	github-release release --user patrick-mccourt --repo Jabba-Team/jabba --tag ${VERSION} \
 	--name "${VERSION}" --description "${VERSION}" && \
-	github-release upload --user shyiko --repo jabba --tag ${VERSION} \
+	github-release upload --user patrick-mccourt --repo Jabba-Team/jabba --tag ${VERSION} \
 	--name "jabba-${VERSION}-windows-amd64.exe" --file release/jabba-${VERSION}-windows-amd64.exe; \
 	for qualifier in darwin-amd64 linux-386 linux-amd64 linux-arm linux-arm64; do \
-		github-release upload --user shyiko --repo jabba --tag ${VERSION} \
+		github-release upload --user patrick-mccourt --repo Jabba-Team/jabba --tag ${VERSION} \
 		--name "jabba-${VERSION}-$$qualifier" --file release/jabba-${VERSION}-$$qualifier; \
 	done

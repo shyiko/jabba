@@ -6,13 +6,6 @@ import (
 	"compress/gzip"
 	"errors"
 	"fmt"
-	log "github.com/Sirupsen/logrus"
-	"github.com/mitchellh/ioprogress"
-	"github.com/shyiko/jabba/cfg"
-	"github.com/shyiko/jabba/command/fileiter"
-	"github.com/shyiko/jabba/semver"
-	"github.com/shyiko/jabba/w32"
-	"github.com/xi2/xz"
 	"io"
 	"io/ioutil"
 	"net/http"
@@ -23,6 +16,14 @@ import (
 	"runtime"
 	"sort"
 	"strings"
+
+	"github.com/Jabba-Team/jabba/cfg"
+	"github.com/Jabba-Team/jabba/command/fileiter"
+	"github.com/Jabba-Team/jabba/semver"
+	"github.com/Jabba-Team/jabba/w32"
+	log "github.com/Sirupsen/logrus"
+	"github.com/mitchellh/ioprogress"
+	"github.com/xi2/xz"
 )
 
 func Install(selector string, dst string) (string, error) {
@@ -323,7 +324,7 @@ func assertJavaDistribution(dir string, goos string) error {
 	var err error
 	if _, err = os.Stat(path); os.IsNotExist(err) {
 		err = errors.New(path + " wasn't found. " +
-			"If you believe this is an error - please create a ticket at https://github.com/shyiko/jabba/issues " +
+			"If you believe this is an error - please create a ticket at https://github.com/Jabba-Team/jabba/issues " +
 			"(specify OS and command that was used)")
 	}
 	return err

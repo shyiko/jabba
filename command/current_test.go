@@ -1,9 +1,10 @@
 package command
 
 import (
-	"github.com/shyiko/jabba/cfg"
 	"path/filepath"
 	"testing"
+
+	"github.com/Jabba-Team/jabba/cfg"
 )
 
 func TestCurrent(t *testing.T) {

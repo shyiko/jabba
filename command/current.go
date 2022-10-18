@@ -1,11 +1,12 @@
 package command
 
 import (
-	"github.com/shyiko/jabba/cfg"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
+
+	"github.com/Jabba-Team/jabba/cfg"
 )
 
 var lookPath = exec.LookPath

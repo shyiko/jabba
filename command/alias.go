@@ -1,10 +1,11 @@
 package command
 
 import (
-	"github.com/shyiko/jabba/cfg"
 	"io/ioutil"
 	"os"
 	"path/filepath"
+
+	"github.com/Jabba-Team/jabba/cfg"
 )
 
 func SetAlias(name string, ver string) (err error) {
