@@ -1,11 +1,17 @@
-# jabba ![Latest Version](https://img.shields.io/badge/latest-0.11.2-blue.svg) [![Build Status](https://travis-ci.org/Jabba-Team/jabba.svg?branch=master)](https://travis-ci.org/Jabba-Team/jabba)
+# jabba ![Latest Version](https://img.shields.io/badge/latest-0.12.0alpha1-orange.svg) [![Actions Status](https://github.com/Jabba-Team/jabba/workflows/make%20Jabba/badge.svg)](https://github.com/Jabba-Team/jabba/actions)
 
 Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js). Written in Go.
 
 The goal is to provide unified pain-free experience of **installing** (and **switching** between different versions of) JDK regardless of
 the OS (macOS, Linux x86/x86_64/ARMv7+, Windows x86_64). 
 
+This is a community fork of the [original project](https://github.com/shyiko/jabba) and is currently a work in progress. There may be some out of date instructions in the README, please bear with us while we get things going.
+
 `jabba install`
+
+The JDK index is powered by [DiscoAPI](https://github.com/foojayio/discoapi) as such some of the JDK's may be named slightly differently from the old index
+The index will give you the list of jdks for your OS and architecture 
+
 - [Oracle JDK](http://www.oracle.com/technetwork/java/javase/archive-139210.html) (latest-version only)
 - [Oracle Server JRE](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) (latest-version only), 
 - [Adopt OpenJDK](https://adoptopenjdk.net/) <sup>(jabba >=0.8.0 is required)</sup> 
@@ -34,7 +40,7 @@ export JABBA_VERSION=...
 curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash && . ~/.jabba/jabba.sh
 ```
 
-> (use the same command to upgrade)
+> Use the same command to upgrade, you can also upgrade from shyiko's 0.11.2 by running this command
 
 The script modifies common shell rc files by default. To skip these provide the `--skip-rc` flag to `install.sh` like so:
 
@@ -61,7 +67,7 @@ export JABBA_VERSION=...
 [wget](https://www.gnu.org/software/wget/manual/wget.html#Proxies) manpage. 
 Usually simple `http_proxy=http://proxy-server:port https_proxy=http://proxy-server:port curl -sL ...` is enough. 
 
-**NOTE**: The brew package is currently broken. We are working on a fix.
+**NOTE**: The brew package currently points to 0.11.2 of shyiko's jabba.
 
 #### Docker
 
@@ -98,7 +104,7 @@ Invoke-Expression (
 ).Content
 ```
 
-> (use the same command to upgrade)
+> Use the same command to upgrade, you can also upgrade from shyiko's 0.11.2 by running this command
 
 ## Usage
 
@@ -113,19 +119,23 @@ jabba ls-remote "*@>=1.6.45 <1.9" --latest=minor
 jabba install 1.15.0
 # install Oracle Server JRE
 jabba install sjre@1.8  
+# install Eclipse Temurin / Adoptium (Hotspot)
+jabba install temurin@1.8-0
 # install Adopt OpenJDK (Hotspot)
-jabba install adopt@1.8-0
+jabba install aoj@1.8-0
 # install Adopt OpenJDK (Eclipse OpenJ9)
-jabba install adopt-openj9@1.9-0
+jabba install aoj_openj9@1.9-0
 # install Zulu OpenJDK
 jabba install zulu@1.8
 jabba install zulu@~1.8.144 # same as "zulu@>=1.8.144 <1.9" 
 # install IBM SDK, Java Technology Edition
-jabba install ibm@1.8
+jabba install semeru@1.8
 # install GraalVM CE
 jabba install graalvm@1.0-0
-# install OpenJDK
-jabba install openjdk@1.10-0
+# install Oracle OpenJDK
+jabba install oracle_open_jdk@1.10-0
+# install Microsoft OpenJDK
+jabba install microsoft@11.0.16
 # install OpenJDK with Shenandoah GC
 jabba install openjdk-shenandoah@1.10-0
 
@@ -145,7 +155,7 @@ jabba link system@1.8.72 /Library/Java/JavaVirtualMachines/jdk1.8.0_72.jdk
 jabba ls
 
 # switch to a different version of JDK (it must be already `install`ed)
-jabba use adopt@1.8
+jabba use aoj@1.8
 jabba use zulu@~1.6.97
 
 echo "1.8" > .jabbarc
