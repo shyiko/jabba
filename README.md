@@ -1,4 +1,4 @@
-# jabba ![Latest Version](https://img.shields.io/badge/latest-0.12.0alpha1-orange.svg) [![Actions Status](https://github.com/Jabba-Team/jabba/workflows/make%20Jabba/badge.svg)](https://github.com/Jabba-Team/jabba/actions)
+# jabba ![Latest Version](https://img.shields.io/badge/latest-0.12.0-blue.svg) [![Actions Status](https://github.com/Jabba-Team/jabba/workflows/make%20Jabba/badge.svg)](https://github.com/Jabba-Team/jabba/actions)
 
 Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js). Written in Go.
 
