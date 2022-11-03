@@ -800,6 +800,7 @@
             },
             "jdk@mandrel": {
                 "21": "zip+https://api.foojay.io/disco/v3.0/ids/019d4c0b72873cef51babfffe20c9c4d/redirect",
+                "22.3.0-1": "zip+https://api.foojay.io/disco/v3.0/ids/51dad1f0ca0cb3ba2497a64e06ca44d6/redirect",
                 "22.2": "zip+https://api.foojay.io/disco/v3.0/ids/bf28c88db7afd3a28cbc6e263f8066a6/redirect",
                 "22.1": "zip+https://api.foojay.io/disco/v3.0/ids/d20d3ad971a2dfadef9dafd153679392/redirect",
                 "22.0.0-2": "zip+https://api.foojay.io/disco/v3.0/ids/1659720cccd9c2f706885c9b1110810a/redirect",
@@ -1863,6 +1864,7 @@
             },
             "jdk@mandrel": {
                 "21": "tgz+https://api.foojay.io/disco/v3.0/ids/7f052e3ab86d7678cb2532f61f7566ca/redirect",
+                "22.3.0-1": "tgz+https://api.foojay.io/disco/v3.0/ids/79193512761576820973fee3fedcb91b/redirect",
                 "22.2": "tgz+https://api.foojay.io/disco/v3.0/ids/52d1f09dc2f9e55fc5f6ccec60f2925e/redirect",
                 "22.1": "tgz+https://api.foojay.io/disco/v3.0/ids/02d29abee700a85bfc6eb6a33c1f0e79/redirect",
                 "22.0.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/e59e43ea8d7df426756692aa2c520a13/redirect",
@@ -2518,6 +2520,7 @@
                 "11.0.12": "tgz+https://api.foojay.io/disco/v3.0/ids/1a7df5b968cab4f0dd28da4aa9c26ab0/redirect"
             },
             "jdk@mandrel": {
+                "22.3.0-1": "tgz+https://api.foojay.io/disco/v3.0/ids/6aa04c22ab032372db6087bbbdefe30f/redirect",
                 "22.2": "tgz+https://api.foojay.io/disco/v3.0/ids/1f3ea76eeb6bf6e1c9b0997aff735ce7/redirect",
                 "22.1": "tgz+https://api.foojay.io/disco/v3.0/ids/c4767ff4cd479942487fe9a3f183fb25/redirect",
                 "22.0.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/b768da6d0a78f7bd049cdc650958150c/redirect",
