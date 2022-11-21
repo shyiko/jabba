@@ -1015,6 +1015,7 @@
             },
             "jdk@dragonwell": {
                 "8": "zip+https://api.foojay.io/disco/v3.0/ids/4ce130fdfd8ee9d3ca33ceb38437c0d5/redirect",
+                "11": "zip+https://api.foojay.io/disco/v3.0/ids/6c1f42b7f2a50ec8f71582a69c993359/redirect",
                 "17.0.5": "zip+https://api.foojay.io/disco/v3.0/ids/d45a79c4051e4a2c7a95d53c481b09d2/redirect",
                 "17.0.4": "zip+https://api.foojay.io/disco/v3.0/ids/59eb33edbeedb23bee4cefabc3b36fca/redirect",
                 "17.0.3": "zip+https://api.foojay.io/disco/v3.0/ids/2b8b1fe32acb2fc28f68933d7d3f4839/redirect",
