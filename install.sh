@@ -96,6 +96,8 @@ case "$OSTYPE" in
     OS_ARCH=$(echo 'echo %PROCESSOR_ARCHITECTURE% & exit' | cmd | tail -n 1 | xargs) # xargs used to trim whitespace
     if [ "$OS_ARCH" == "AMD64" ]; then
         BINARY_URL="https://github.com/Jabba-Team/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-windows-amd64.exe"
+    elif [ "$OS_ARCH" == "x86" ]; then
+        BINARY_URL="https://github.com/Jabba-Team/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-windows-386.exe"
     else
         echo "OS_ARCH='$OS_ARCH' is not a valid architecture at this point."
         exit 1

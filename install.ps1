@@ -2,6 +2,7 @@ $ErrorActionPreference = "Stop"
 
 $jabbaHome = if ($env:JABBA_HOME) { $env:JABBA_HOME } else { if ($env:JABBA_DIR) { $env:JABBA_DIR } else { "$env:USERPROFILE\.jabba" } }
 $jabbaVersion = if ($env:JABBA_VERSION) { $env:JABBA_VERSION } else { "latest" }
+$jabbaArch = if ($env:PROCESSOR_ARCHITECTURE -eq "AMD64") { "amd64" } else { "386" }
 
 if ($jabbaVersion -eq "latest")
 {
@@ -25,7 +26,7 @@ if ($env:JABBA_MAKE_INSTALL -eq "true")
 }
 else
 {
-    Invoke-WebRequest https://github.com/Jabba-Team/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-amd64.exe -UseBasicParsing -OutFile $jabbaHome/bin/jabba.exe
+    Invoke-WebRequest https://github.com/Jabba-Team/jabba/releases/download/$jabbaVersion/jabba-$jabbaVersion-windows-$jabbaArch.exe -UseBasicParsing -OutFile $jabbaHome/bin/jabba.exe
 }
 
 $ErrorActionPreference="SilentlyContinue"
