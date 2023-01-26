@@ -227,6 +227,7 @@
                 "17": "zip+https://api.foojay.io/disco/v3.0/ids/a661fade6248009584332a3d128586c4/redirect",
                 "18": "zip+https://api.foojay.io/disco/v3.0/ids/414019c455928f9ca02d569fc969279c/redirect",
                 "19": "zip+https://api.foojay.io/disco/v3.0/ids/39bc43025c2569bea9f234260e0428da/redirect",
+                "19.0.2": "zip+https://api.foojay.io/disco/v3.0/ids/953c46a4d0125af225aafa7b0348ee1b/redirect",
                 "19.0.1": "zip+https://api.foojay.io/disco/v3.0/ids/86c8433246f3de199626a5baca29c7bb/redirect",
                 "18.0.2": "zip+https://api.foojay.io/disco/v3.0/ids/42cdc2341133b795c28c279abeb3fe4e/redirect",
                 "18.0.2-1": "zip+https://api.foojay.io/disco/v3.0/ids/c82f04c849f45bda9c6b7928a81a23d3/redirect",
@@ -256,6 +257,7 @@
                 "8.0.322": "zip+https://api.foojay.io/disco/v3.0/ids/cb8839253ef45a07125b7741fa1a21bf/redirect",
                 "8.0.312": "zip+https://api.foojay.io/disco/v3.0/ids/3d8089717f7c3646021ed1fd2806b1e0/redirect",
                 "8.0.302": "zip+https://api.foojay.io/disco/v3.0/ids/9857d9d3dd1719941c814730401a7c55/redirect",
+                "1.19.0-2": "zip+https://api.foojay.io/disco/v3.0/ids/953c46a4d0125af225aafa7b0348ee1b/redirect",
                 "1.19.0-1": "zip+https://api.foojay.io/disco/v3.0/ids/86c8433246f3de199626a5baca29c7bb/redirect",
                 "1.19.0-0": "zip+https://api.foojay.io/disco/v3.0/ids/39bc43025c2569bea9f234260e0428da/redirect",
                 "1.18.0-2": "zip+https://api.foojay.io/disco/v3.0/ids/42cdc2341133b795c28c279abeb3fe4e/redirect",
@@ -2147,7 +2149,7 @@
                 "19.3.0-2": "zip+https://api.foojay.io/disco/v3.0/ids/117ac5964106738f36eebd47ce230ba3/redirect"
             },
             "jdk@graalvm": {
-                "22.3.1": "zip+https://api.foojay.io/disco/v3.0/ids/de6cbefef1e8af478c13593658c5eb7e/redirect",
+                "22.3.1": "zip+https://api.foojay.io/disco/v3.0/ids/251000f88ce9046bc6835a85c76dd214/redirect",
                 "22.3.0": "zip+https://api.foojay.io/disco/v3.0/ids/42af96158719037f8f6a5e5d02e9701d/redirect",
                 "22.2.0": "zip+https://api.foojay.io/disco/v3.0/ids/7403e9eb10a3db93185ec3311b1f0a9c/redirect",
                 "22.1.0": "zip+https://api.foojay.io/disco/v3.0/ids/109269fee06956d7a53273f0377d5c52/redirect",
@@ -2191,6 +2193,7 @@
                 "22.3": "zip+https://api.foojay.io/disco/v3.0/ids/2251733ed324f1a02c231ae0df8bf8e0/redirect"
             },
             "jdk@graalvm_ce17": {
+                "22.3.1": "zip+https://api.foojay.io/disco/v3.0/ids/bc4f808fb7b7deab1e11286a16074341/redirect",
                 "22.3.0": "zip+https://api.foojay.io/disco/v3.0/ids/011fc238a6171dd529eb51f355f9da5c/redirect",
                 "22.3": "zip+https://api.foojay.io/disco/v3.0/ids/011fc238a6171dd529eb51f355f9da5c/redirect",
                 "22.2.0": "zip+https://api.foojay.io/disco/v3.0/ids/fe89a3eb0cba7923fb8f5ee34b5f99e9/redirect",
@@ -2206,6 +2209,7 @@
                 "21.3": "zip+https://api.foojay.io/disco/v3.0/ids/fb87583eae8f1adb5e91e41624718c5e/redirect"
             },
             "jdk@graalvm-ce-java17": {
+                "22.3.1": "zip+https://api.foojay.io/disco/v3.0/ids/bc4f808fb7b7deab1e11286a16074341/redirect",
                 "22.3.0": "zip+https://api.foojay.io/disco/v3.0/ids/011fc238a6171dd529eb51f355f9da5c/redirect",
                 "22.3": "zip+https://api.foojay.io/disco/v3.0/ids/011fc238a6171dd529eb51f355f9da5c/redirect",
                 "22.2.0": "zip+https://api.foojay.io/disco/v3.0/ids/fe89a3eb0cba7923fb8f5ee34b5f99e9/redirect",
@@ -2234,6 +2238,7 @@
             },
             "jdk@graalvm_ce11": {
                 "21": "zip+https://api.foojay.io/disco/v3.0/ids/5eb072f61bbc89b1c61625308b3ea781/redirect",
+                "22.3.1": "zip+https://api.foojay.io/disco/v3.0/ids/251000f88ce9046bc6835a85c76dd214/redirect",
                 "22.3.0": "zip+https://api.foojay.io/disco/v3.0/ids/42af96158719037f8f6a5e5d02e9701d/redirect",
                 "22.3": "zip+https://api.foojay.io/disco/v3.0/ids/42af96158719037f8f6a5e5d02e9701d/redirect",
                 "22.2.0": "zip+https://api.foojay.io/disco/v3.0/ids/7403e9eb10a3db93185ec3311b1f0a9c/redirect",
@@ -2278,6 +2283,7 @@
             },
             "jdk@graalvm-ce-java11": {
                 "21": "zip+https://api.foojay.io/disco/v3.0/ids/5eb072f61bbc89b1c61625308b3ea781/redirect",
+                "22.3.1": "zip+https://api.foojay.io/disco/v3.0/ids/251000f88ce9046bc6835a85c76dd214/redirect",
                 "22.3.0": "zip+https://api.foojay.io/disco/v3.0/ids/42af96158719037f8f6a5e5d02e9701d/redirect",
                 "22.3": "zip+https://api.foojay.io/disco/v3.0/ids/42af96158719037f8f6a5e5d02e9701d/redirect",
                 "22.2.0": "zip+https://api.foojay.io/disco/v3.0/ids/7403e9eb10a3db93185ec3311b1f0a9c/redirect",
@@ -3814,7 +3820,7 @@
                 "17": "tgz+https://api.foojay.io/disco/v3.0/ids/bac3967963512d0651faeaa3b46c7bb7/redirect",
                 "18": "tgz+https://api.foojay.io/disco/v3.0/ids/3b6d70f9dbcee3ddc0d178d02cbd69a7/redirect",
                 "19": "tgz+https://api.foojay.io/disco/v3.0/ids/e7a6ca1e8581b41a932cbb2ddad15c06/redirect",
-                "19.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/415e92c3a861630254947ed4e8a60a09/redirect",
+                "19.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/7e3b7d982466581bbefe2fcdf96e17c4/redirect",
                 "19.0.1": "tgz+https://api.foojay.io/disco/v3.0/ids/6a82b2c8145c9abb85f7b98136f7aa48/redirect",
                 "18.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/397def45728f30148bdac8700a0797e7/redirect",
                 "18.0.2-1": "tgz+https://api.foojay.io/disco/v3.0/ids/41618b9e8795c212163ea1a7c7cf9b45/redirect",
@@ -3844,7 +3850,7 @@
                 "8.0.322": "tgz+https://api.foojay.io/disco/v3.0/ids/fb351af7c57bfac97a65807ac889830d/redirect",
                 "8.0.312": "tgz+https://api.foojay.io/disco/v3.0/ids/4d6e7423d990f2fcf3f7d7172c8f0245/redirect",
                 "8.0.302": "tgz+https://api.foojay.io/disco/v3.0/ids/6f2a8c0e447bbdfce852734a12739855/redirect",
-                "1.19.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/415e92c3a861630254947ed4e8a60a09/redirect",
+                "1.19.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/7e3b7d982466581bbefe2fcdf96e17c4/redirect",
                 "1.19.0-1": "tgz+https://api.foojay.io/disco/v3.0/ids/6a82b2c8145c9abb85f7b98136f7aa48/redirect",
                 "1.19.0-0": "tgz+https://api.foojay.io/disco/v3.0/ids/e7a6ca1e8581b41a932cbb2ddad15c06/redirect",
                 "1.18.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/397def45728f30148bdac8700a0797e7/redirect",
@@ -3875,24 +3881,8 @@
                 "1.8.0-302": "tgz+https://api.foojay.io/disco/v3.0/ids/6f2a8c0e447bbdfce852734a12739855/redirect"
             },
             "jdk@semeru_certified": {
-                "17.0.5": "tgz+https://api.foojay.io/disco/v3.0/ids/1f3ffed787fa43e2207e81a3d8bb958d/redirect",
-                "17.0.4-1": "tgz+https://api.foojay.io/disco/v3.0/ids/2542f9fcb58f576cf5fcea6a91c6f1c4/redirect",
-                "17.0.3": "tgz+https://api.foojay.io/disco/v3.0/ids/641cd726bd1498c7f7b2499ffe99c9d8/redirect",
-                "17.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/dca9e421d7a5245f6377e8a223e0e1df/redirect",
-                "11.0.17": "tgz+https://api.foojay.io/disco/v3.0/ids/e1787c39625c47d3c2480cba40b73dc3/redirect",
-                "11.0.16-1": "tgz+https://api.foojay.io/disco/v3.0/ids/4eb05d2de8d8f1cf0fad09c34cbda06b/redirect",
-                "11.0.15": "tgz+https://api.foojay.io/disco/v3.0/ids/4cdd10e6651ceea4b10b82c7f9a4f75b/redirect",
-                "11.0.14-1": "tgz+https://api.foojay.io/disco/v3.0/ids/e37543844520f2f90c35eab80dab50c9/redirect",
                 "11.0.13": "tgz+https://api.foojay.io/disco/v3.0/ids/0d3b00aa5e6518ebcd7d06f3afb34f5a/redirect",
                 "11.0.12": "tgz+https://api.foojay.io/disco/v3.0/ids/dcacf5450aa022ed500e6631df070674/redirect",
-                "1.17.0-5": "tgz+https://api.foojay.io/disco/v3.0/ids/1f3ffed787fa43e2207e81a3d8bb958d/redirect",
-                "1.17.0-4": "tgz+https://api.foojay.io/disco/v3.0/ids/2542f9fcb58f576cf5fcea6a91c6f1c4/redirect",
-                "1.17.0-3": "tgz+https://api.foojay.io/disco/v3.0/ids/641cd726bd1498c7f7b2499ffe99c9d8/redirect",
-                "1.17.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/dca9e421d7a5245f6377e8a223e0e1df/redirect",
-                "1.11.0-17": "tgz+https://api.foojay.io/disco/v3.0/ids/e1787c39625c47d3c2480cba40b73dc3/redirect",
-                "1.11.0-16": "tgz+https://api.foojay.io/disco/v3.0/ids/4eb05d2de8d8f1cf0fad09c34cbda06b/redirect",
-                "1.11.0-15": "tgz+https://api.foojay.io/disco/v3.0/ids/4cdd10e6651ceea4b10b82c7f9a4f75b/redirect",
-                "1.11.0-14": "tgz+https://api.foojay.io/disco/v3.0/ids/e37543844520f2f90c35eab80dab50c9/redirect",
                 "1.11.0-13": "tgz+https://api.foojay.io/disco/v3.0/ids/0d3b00aa5e6518ebcd7d06f3afb34f5a/redirect",
                 "1.11.0-12": "tgz+https://api.foojay.io/disco/v3.0/ids/dcacf5450aa022ed500e6631df070674/redirect"
             },
@@ -3903,7 +3893,7 @@
                 "17.0.5": "tgz+https://api.foojay.io/disco/v3.0/ids/901b6238f489086d8ac9eee32e981681/redirect",
                 "17.0.4": "tgz+https://api.foojay.io/disco/v3.0/ids/09f117dca58e15d90889165ad3ad3215/redirect",
                 "17.0.4-1": "tgz+https://api.foojay.io/disco/v3.0/ids/ce002f11282d5393cd64db8f9a22b9c7/redirect",
-                "17.0.3": "tgz+https://api.foojay.io/disco/v3.0/ids/5c4dfc32d3b16a5dc27667ac8b35fb60/redirect",
+                "17.0.3": "tgz+https://api.foojay.io/disco/v3.0/ids/641cd726bd1498c7f7b2499ffe99c9d8/redirect",
                 "17.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/293c3d9659dcccf21d5acae857073626/redirect",
                 "17.0.1": "tgz+https://api.foojay.io/disco/v3.0/ids/69057331d48b8f88944a181edd0d7122/redirect",
                 "16.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/ab6e7111c1a2cd7bf06de9be70ea0304/redirect",
@@ -3925,7 +3915,7 @@
                 "1.18.0-1": "tgz+https://api.foojay.io/disco/v3.0/ids/adeddeb4701acc0bb7147a49d410f2ac/redirect",
                 "1.17.0-5": "tgz+https://api.foojay.io/disco/v3.0/ids/901b6238f489086d8ac9eee32e981681/redirect",
                 "1.17.0-4": "tgz+https://api.foojay.io/disco/v3.0/ids/09f117dca58e15d90889165ad3ad3215/redirect",
-                "1.17.0-3": "tgz+https://api.foojay.io/disco/v3.0/ids/5c4dfc32d3b16a5dc27667ac8b35fb60/redirect",
+                "1.17.0-3": "tgz+https://api.foojay.io/disco/v3.0/ids/641cd726bd1498c7f7b2499ffe99c9d8/redirect",
                 "1.17.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/293c3d9659dcccf21d5acae857073626/redirect",
                 "1.17.0-1": "tgz+https://api.foojay.io/disco/v3.0/ids/69057331d48b8f88944a181edd0d7122/redirect",
                 "1.16.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/ab6e7111c1a2cd7bf06de9be70ea0304/redirect",
@@ -4793,7 +4783,7 @@
                 "19.3.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/50bd40cb68fa37faf1bc27bd2b16f112/redirect"
             },
             "jdk@graalvm": {
-                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/6ea5b16fb8f9fbaaf29faa5d870b6db7/redirect",
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/420bd89306c67f450489f9c989d3ba60/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/ba0de68e6462e4d4be2d7f67bb68c097/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/966d29c02464c27cfa10ff9e2c785348/redirect",
                 "22.1.0": "tgz+https://api.foojay.io/disco/v3.0/ids/61e833ee0a7d88d450152a1120e860b3/redirect",
@@ -4837,6 +4827,7 @@
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/6acb61dbed14bc3b059b9c0d82f60251/redirect"
             },
             "jdk@graalvm_ce17": {
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/28e4f8967dcb7c710307e277b48087ea/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/e663ebbd4ea908acb9135b3b41fdcade/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/e663ebbd4ea908acb9135b3b41fdcade/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/f8f5c5d02791fe9c4c6e380bc9fa9ee0/redirect",
@@ -4852,6 +4843,7 @@
                 "21.3": "tgz+https://api.foojay.io/disco/v3.0/ids/d39468c6a66e042018b95f52512b2961/redirect"
             },
             "jdk@graalvm-ce-java17": {
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/28e4f8967dcb7c710307e277b48087ea/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/e663ebbd4ea908acb9135b3b41fdcade/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/e663ebbd4ea908acb9135b3b41fdcade/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/f8f5c5d02791fe9c4c6e380bc9fa9ee0/redirect",
@@ -4880,6 +4872,7 @@
             },
             "jdk@graalvm_ce11": {
                 "21": "tgz+https://api.foojay.io/disco/v3.0/ids/ad789f06db43ae8d9c1cc9a7cabe02ea/redirect",
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/420bd89306c67f450489f9c989d3ba60/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/ba0de68e6462e4d4be2d7f67bb68c097/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/ba0de68e6462e4d4be2d7f67bb68c097/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/966d29c02464c27cfa10ff9e2c785348/redirect",
@@ -4924,6 +4917,7 @@
             },
             "jdk@graalvm-ce-java11": {
                 "21": "tgz+https://api.foojay.io/disco/v3.0/ids/ad789f06db43ae8d9c1cc9a7cabe02ea/redirect",
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/420bd89306c67f450489f9c989d3ba60/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/ba0de68e6462e4d4be2d7f67bb68c097/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/ba0de68e6462e4d4be2d7f67bb68c097/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/966d29c02464c27cfa10ff9e2c785348/redirect",
@@ -5790,6 +5784,7 @@
                 "17": "tgz+https://api.foojay.io/disco/v3.0/ids/8b67c80125e941a0dbe0b7cffb8aae48/redirect",
                 "18": "tgz+https://api.foojay.io/disco/v3.0/ids/e711dd79ce004b66a06ac6a6f0f5361b/redirect",
                 "19": "tgz+https://api.foojay.io/disco/v3.0/ids/b785565b684e38a5e31de5bc793a051e/redirect",
+                "19.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/2e6e579cad65dcc773b6dd59db7d03be/redirect",
                 "19.0.1": "tgz+https://api.foojay.io/disco/v3.0/ids/592285a5b2efe965400497ceb17a1a0e/redirect",
                 "18.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/6b2d2067f9be2c45b827f38675a294b4/redirect",
                 "18.0.2-1": "tgz+https://api.foojay.io/disco/v3.0/ids/f452b2547d0e6331d8f92cf4814d6612/redirect",
@@ -5819,6 +5814,7 @@
                 "8.0.322": "tgz+https://api.foojay.io/disco/v3.0/ids/db050b097f01d12e7a5c7f6331f0cf25/redirect",
                 "8.0.312": "tgz+https://api.foojay.io/disco/v3.0/ids/33d28f7d6cedbb8f61e74e19b8082829/redirect",
                 "8.0.302": "tgz+https://api.foojay.io/disco/v3.0/ids/10a98bbbffef18bde0b3f4d5e2ddc5dd/redirect",
+                "1.19.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/2e6e579cad65dcc773b6dd59db7d03be/redirect",
                 "1.19.0-1": "tgz+https://api.foojay.io/disco/v3.0/ids/592285a5b2efe965400497ceb17a1a0e/redirect",
                 "1.19.0-0": "tgz+https://api.foojay.io/disco/v3.0/ids/b785565b684e38a5e31de5bc793a051e/redirect",
                 "1.18.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/6b2d2067f9be2c45b827f38675a294b4/redirect",
@@ -5848,36 +5844,18 @@
                 "1.8.0-312": "tgz+https://api.foojay.io/disco/v3.0/ids/33d28f7d6cedbb8f61e74e19b8082829/redirect",
                 "1.8.0-302": "tgz+https://api.foojay.io/disco/v3.0/ids/10a98bbbffef18bde0b3f4d5e2ddc5dd/redirect"
             },
-            "jdk@semeru_certified": {
-                "17.0.5": "tgz+https://api.foojay.io/disco/v3.0/ids/e1e97185b45d8937774ee5ea6797dac9/redirect",
-                "17.0.4-1": "tgz+https://api.foojay.io/disco/v3.0/ids/dcad56ec9aa38abf98dc2df5d304729c/redirect",
-                "17.0.3": "tgz+https://api.foojay.io/disco/v3.0/ids/7001c3528edfb349a51b792a048274e8/redirect",
-                "17.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/a817ce457b7d28de4b9d2eb83bd03983/redirect",
-                "11.0.17": "tgz+https://api.foojay.io/disco/v3.0/ids/642c6545f697267ff8efee6f7677a931/redirect",
-                "11.0.16-1": "tgz+https://api.foojay.io/disco/v3.0/ids/d56bbc466c983a66f2899e7e9530a546/redirect",
-                "11.0.15": "tgz+https://api.foojay.io/disco/v3.0/ids/0ce6e631618c3f16e5ef81b2464dd487/redirect",
-                "11.0.14-1": "tgz+https://api.foojay.io/disco/v3.0/ids/68807c766564d2639c90baf1577bd867/redirect",
-                "1.17.0-5": "tgz+https://api.foojay.io/disco/v3.0/ids/e1e97185b45d8937774ee5ea6797dac9/redirect",
-                "1.17.0-4": "tgz+https://api.foojay.io/disco/v3.0/ids/dcad56ec9aa38abf98dc2df5d304729c/redirect",
-                "1.17.0-3": "tgz+https://api.foojay.io/disco/v3.0/ids/7001c3528edfb349a51b792a048274e8/redirect",
-                "1.17.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/a817ce457b7d28de4b9d2eb83bd03983/redirect",
-                "1.11.0-17": "tgz+https://api.foojay.io/disco/v3.0/ids/642c6545f697267ff8efee6f7677a931/redirect",
-                "1.11.0-16": "tgz+https://api.foojay.io/disco/v3.0/ids/d56bbc466c983a66f2899e7e9530a546/redirect",
-                "1.11.0-15": "tgz+https://api.foojay.io/disco/v3.0/ids/0ce6e631618c3f16e5ef81b2464dd487/redirect",
-                "1.11.0-14": "tgz+https://api.foojay.io/disco/v3.0/ids/68807c766564d2639c90baf1577bd867/redirect"
-            },
             "jdk@semeru": {
                 "18.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/37faf462eae35ab1589c1119783efa29/redirect",
                 "18.0.1": "tgz+https://api.foojay.io/disco/v3.0/ids/2d35b53679c61a17e5a3ffa1a352b631/redirect",
                 "18.0.1-1": "tgz+https://api.foojay.io/disco/v3.0/ids/f8b1cd2ff7efa6e8d5a7816eadce3d83/redirect",
                 "17.0.5": "tgz+https://api.foojay.io/disco/v3.0/ids/8d3ac36da64dd1b32e6304714c0dacbd/redirect",
                 "17.0.4": "tgz+https://api.foojay.io/disco/v3.0/ids/23c447ae4d33870f8d4e28f346ffa6f5/redirect",
-                "17.0.4-1": "tgz+https://api.foojay.io/disco/v3.0/ids/40779224a916be04e9c5e9d464fdc0bf/redirect",
+                "17.0.4-1": "tgz+https://api.foojay.io/disco/v3.0/ids/dcad56ec9aa38abf98dc2df5d304729c/redirect",
                 "17.0.3": "tgz+https://api.foojay.io/disco/v3.0/ids/c81b7f412b498822bdc4f63e0c5e4690/redirect",
                 "17.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/2d49bd97a64593f0bdb430aeda3d0590/redirect",
                 "17.0.1": "tgz+https://api.foojay.io/disco/v3.0/ids/6a74d08566343382bf3e92aef8e476ad/redirect",
                 "16.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/ffc263005676e796e536cb4bd9daba6d/redirect",
-                "11.0.17": "tgz+https://api.foojay.io/disco/v3.0/ids/85dadfdef2f2bf1bc5054b25811411b8/redirect",
+                "11.0.17": "tgz+https://api.foojay.io/disco/v3.0/ids/642c6545f697267ff8efee6f7677a931/redirect",
                 "11.0.16": "tgz+https://api.foojay.io/disco/v3.0/ids/25e47a00094121592598c52e288f9a91/redirect",
                 "11.0.16-1": "tgz+https://api.foojay.io/disco/v3.0/ids/87f88fe261760b7bb9b090bb1edcf11f/redirect",
                 "11.0.15": "tgz+https://api.foojay.io/disco/v3.0/ids/333fb95b40711873f0e4bfffe57f9ceb/redirect",
@@ -5899,7 +5877,7 @@
                 "1.17.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/2d49bd97a64593f0bdb430aeda3d0590/redirect",
                 "1.17.0-1": "tgz+https://api.foojay.io/disco/v3.0/ids/6a74d08566343382bf3e92aef8e476ad/redirect",
                 "1.16.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/ffc263005676e796e536cb4bd9daba6d/redirect",
-                "1.11.0-17": "tgz+https://api.foojay.io/disco/v3.0/ids/85dadfdef2f2bf1bc5054b25811411b8/redirect",
+                "1.11.0-17": "tgz+https://api.foojay.io/disco/v3.0/ids/642c6545f697267ff8efee6f7677a931/redirect",
                 "1.11.0-16": "tgz+https://api.foojay.io/disco/v3.0/ids/25e47a00094121592598c52e288f9a91/redirect",
                 "1.11.0-15": "tgz+https://api.foojay.io/disco/v3.0/ids/333fb95b40711873f0e4bfffe57f9ceb/redirect",
                 "1.11.0-14": "tgz+https://api.foojay.io/disco/v3.0/ids/477c2f165db5765c7e79aa39a681e46d/redirect",
@@ -6428,7 +6406,7 @@
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/84ea6579e0d9586d468e48cce801dbbd/redirect"
             },
             "jdk@graalvm": {
-                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/1d17a42691aa72a7ef2775ea20d71ff3/redirect",
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/a21782701de5ee1389ce25a98f665f36/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/6907cb7c3d8ad7b9d252538565adbf75/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/b0f5315c4a70bffe676914e5fb356a07/redirect",
                 "22.1.0": "tgz+https://api.foojay.io/disco/v3.0/ids/d53621a47cca44ed469640488e06b3d9/redirect",
@@ -6456,6 +6434,7 @@
                 "19.3.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/38953b5d1e3389d810fc7ee3f2017b2d/redirect"
             },
             "jdk@graalvm_ce17": {
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/f6e261aea9b91d97bd807862867d4071/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/00599f5406932570c5f296c5c8a19808/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/00599f5406932570c5f296c5c8a19808/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/4c80581d77b7ad238f52808278c530cf/redirect",
@@ -6471,6 +6450,7 @@
                 "21.3": "tgz+https://api.foojay.io/disco/v3.0/ids/5c3f9ef37d11cfe22afdfdc821caf76f/redirect"
             },
             "jdk@graalvm-ce-java17": {
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/f6e261aea9b91d97bd807862867d4071/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/00599f5406932570c5f296c5c8a19808/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/00599f5406932570c5f296c5c8a19808/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/4c80581d77b7ad238f52808278c530cf/redirect",
@@ -6499,6 +6479,7 @@
             },
             "jdk@graalvm_ce11": {
                 "21": "tgz+https://api.foojay.io/disco/v3.0/ids/8c2f63e4bd34dafb24666bf45e4988da/redirect",
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/a21782701de5ee1389ce25a98f665f36/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/6907cb7c3d8ad7b9d252538565adbf75/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/6907cb7c3d8ad7b9d252538565adbf75/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/b0f5315c4a70bffe676914e5fb356a07/redirect",
@@ -6537,6 +6518,7 @@
             },
             "jdk@graalvm-ce-java11": {
                 "21": "tgz+https://api.foojay.io/disco/v3.0/ids/8c2f63e4bd34dafb24666bf45e4988da/redirect",
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/a21782701de5ee1389ce25a98f665f36/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/6907cb7c3d8ad7b9d252538565adbf75/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/6907cb7c3d8ad7b9d252538565adbf75/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/b0f5315c4a70bffe676914e5fb356a07/redirect",
@@ -7195,6 +7177,7 @@
                 "11.0.14-1": "tgz+https://api.foojay.io/disco/v3.0/ids/02c02cda142002c80b416c504aae94bc/redirect",
                 "11.0.13": "tgz+https://api.foojay.io/disco/v3.0/ids/12264c1b580ee0bf7f5c076d679f4511/redirect",
                 "11.0.12": "tgz+https://api.foojay.io/disco/v3.0/ids/90507dacbac039351a43547814d2a583/redirect",
+                "8.0.362": "tgz+https://api.foojay.io/disco/v3.0/ids/4bb6643c1c4dbdedbe2601f69e0a0076/redirect",
                 "8.0.352": "tgz+https://api.foojay.io/disco/v3.0/ids/7046d83dc5b010f14ae90387f2ac918d/redirect",
                 "8.0.345": "tgz+https://api.foojay.io/disco/v3.0/ids/a03f9db6498e35a16e42e9c8ffdae928/redirect",
                 "8.0.342": "tgz+https://api.foojay.io/disco/v3.0/ids/1d7da527c16d24b6d5e0c98a49dd3ea7/redirect",
@@ -7223,6 +7206,7 @@
                 "1.11.0-14": "tgz+https://api.foojay.io/disco/v3.0/ids/741c1ade72ea8b977f311ed008fc8750/redirect",
                 "1.11.0-13": "tgz+https://api.foojay.io/disco/v3.0/ids/12264c1b580ee0bf7f5c076d679f4511/redirect",
                 "1.11.0-12": "tgz+https://api.foojay.io/disco/v3.0/ids/90507dacbac039351a43547814d2a583/redirect",
+                "1.8.0-362": "tgz+https://api.foojay.io/disco/v3.0/ids/4bb6643c1c4dbdedbe2601f69e0a0076/redirect",
                 "1.8.0-352": "tgz+https://api.foojay.io/disco/v3.0/ids/7046d83dc5b010f14ae90387f2ac918d/redirect",
                 "1.8.0-345": "tgz+https://api.foojay.io/disco/v3.0/ids/a03f9db6498e35a16e42e9c8ffdae928/redirect",
                 "1.8.0-342": "tgz+https://api.foojay.io/disco/v3.0/ids/1d7da527c16d24b6d5e0c98a49dd3ea7/redirect",
@@ -8622,7 +8606,7 @@
                 "19.3.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/5041289a54e03018b020694104c1d088/redirect"
             },
             "jdk@graalvm": {
-                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/510babd0536b679128f5eb63c0608241/redirect",
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/81a50789e372976b70f43a80977b8c5d/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/4a0f3c38136eff2a8e6c9c9810ce414e/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/eef8e2d83403eb73bbfc8c0edbee85fc/redirect",
                 "22.1.0": "tgz+https://api.foojay.io/disco/v3.0/ids/7054d44a8a5cffcc44bb17ff2a3176a8/redirect",
@@ -8666,6 +8650,7 @@
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/6b74226d780781d7bf5ece1de3c2a731/redirect"
             },
             "jdk@graalvm_ce17": {
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/faf3b9172a66acf7a790ea608c4f91e8/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/47abdb7e100fd6f356e5ab9b66deeabe/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/47abdb7e100fd6f356e5ab9b66deeabe/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/24fc344adf20d9aaa48662dfa7475436/redirect",
@@ -8681,6 +8666,7 @@
                 "21.3": "tgz+https://api.foojay.io/disco/v3.0/ids/a1224630d5c1382c5b302014961d1dbf/redirect"
             },
             "jdk@graalvm-ce-java17": {
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/faf3b9172a66acf7a790ea608c4f91e8/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/47abdb7e100fd6f356e5ab9b66deeabe/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/47abdb7e100fd6f356e5ab9b66deeabe/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/24fc344adf20d9aaa48662dfa7475436/redirect",
@@ -8709,6 +8695,7 @@
             },
             "jdk@graalvm_ce11": {
                 "21": "tgz+https://api.foojay.io/disco/v3.0/ids/71ad3e678613edf462632ab8a77a1f32/redirect",
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/81a50789e372976b70f43a80977b8c5d/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/4a0f3c38136eff2a8e6c9c9810ce414e/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/4a0f3c38136eff2a8e6c9c9810ce414e/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/eef8e2d83403eb73bbfc8c0edbee85fc/redirect",
@@ -8753,6 +8740,7 @@
             },
             "jdk@graalvm-ce-java11": {
                 "21": "tgz+https://api.foojay.io/disco/v3.0/ids/71ad3e678613edf462632ab8a77a1f32/redirect",
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/81a50789e372976b70f43a80977b8c5d/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/4a0f3c38136eff2a8e6c9c9810ce414e/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/4a0f3c38136eff2a8e6c9c9810ce414e/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/eef8e2d83403eb73bbfc8c0edbee85fc/redirect",
@@ -9430,6 +9418,7 @@
                 "17.0.3": "tgz+https://api.foojay.io/disco/v3.0/ids/187d03d8797de3ed4a96f2f1d10600e1/redirect",
                 "17.0.2": "tgz+https://api.foojay.io/disco/v3.0/ids/fae138ee78d6a925c7b5ff5d108f3e57/redirect",
                 "17.0.1": "tgz+https://api.foojay.io/disco/v3.0/ids/d115ef1be4153e4acd71219a5a9a8476/redirect",
+                "11.0.18": "tgz+https://api.foojay.io/disco/v3.0/ids/7c047fee9eda8fba1fe1925111d3faa2/redirect",
                 "11.0.17": "tgz+https://api.foojay.io/disco/v3.0/ids/2b5dc4d917750eba32eb1acf62cec901/redirect",
                 "11.0.16": "tgz+https://api.foojay.io/disco/v3.0/ids/29ec19dfd43f5064430e16f6034be9fb/redirect",
                 "11.0.16-1": "tgz+https://api.foojay.io/disco/v3.0/ids/d2d9577fa2947da5c443e02633622104/redirect",
@@ -9446,6 +9435,7 @@
                 "1.17.0-2": "tgz+https://api.foojay.io/disco/v3.0/ids/fae138ee78d6a925c7b5ff5d108f3e57/redirect",
                 "1.17.0-1": "tgz+https://api.foojay.io/disco/v3.0/ids/d115ef1be4153e4acd71219a5a9a8476/redirect",
                 "1.17.0-0": "tgz+https://api.foojay.io/disco/v3.0/ids/235d1c3a369f41e4d8febd9551c4e63b/redirect",
+                "1.11.0-18": "tgz+https://api.foojay.io/disco/v3.0/ids/7c047fee9eda8fba1fe1925111d3faa2/redirect",
                 "1.11.0-17": "tgz+https://api.foojay.io/disco/v3.0/ids/2b5dc4d917750eba32eb1acf62cec901/redirect",
                 "1.11.0-16": "tgz+https://api.foojay.io/disco/v3.0/ids/29ec19dfd43f5064430e16f6034be9fb/redirect",
                 "1.11.0-15": "tgz+https://api.foojay.io/disco/v3.0/ids/0048387fe93867683c9dac98b3d07873/redirect"
@@ -9777,12 +9767,13 @@
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/c82b7ae21be0a4aa939036b7ab48f485/redirect"
             },
             "jdk@graalvm": {
-                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/bdf6acff6915f510eb52c7c02efef712/redirect",
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/7f094bee7c283c8a886273445e950130/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/9927d38888344a93f3803dfd0366a6e3/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/a4f1b24d0970b0c1521451267b57f2ad/redirect",
                 "22.1.0": "tgz+https://api.foojay.io/disco/v3.0/ids/53f1e854cae6dac9bfe3f53c3489b239/redirect"
             },
             "jdk@graalvm_ce17": {
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/369de4fae6693b5d5f3ef7b7abe9289d/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/e16912a2ac39d667edc15893646170d2/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/e16912a2ac39d667edc15893646170d2/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/2de14cb0e64ad8b7fc7e8855a6c134a0/redirect",
@@ -9791,6 +9782,7 @@
                 "22.1": "tgz+https://api.foojay.io/disco/v3.0/ids/46d684c72cd3c9d7832778e776c9dbdf/redirect"
             },
             "jdk@graalvm-ce-java17": {
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/369de4fae6693b5d5f3ef7b7abe9289d/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/e16912a2ac39d667edc15893646170d2/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/e16912a2ac39d667edc15893646170d2/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/2de14cb0e64ad8b7fc7e8855a6c134a0/redirect",
@@ -9799,6 +9791,7 @@
                 "22.1": "tgz+https://api.foojay.io/disco/v3.0/ids/46d684c72cd3c9d7832778e776c9dbdf/redirect"
             },
             "jdk@graalvm_ce11": {
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/7f094bee7c283c8a886273445e950130/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/9927d38888344a93f3803dfd0366a6e3/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/9927d38888344a93f3803dfd0366a6e3/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/a4f1b24d0970b0c1521451267b57f2ad/redirect",
@@ -9807,6 +9800,7 @@
                 "22.1": "tgz+https://api.foojay.io/disco/v3.0/ids/53f1e854cae6dac9bfe3f53c3489b239/redirect"
             },
             "jdk@graalvm-ce-java11": {
+                "22.3.1": "tgz+https://api.foojay.io/disco/v3.0/ids/7f094bee7c283c8a886273445e950130/redirect",
                 "22.3.0": "tgz+https://api.foojay.io/disco/v3.0/ids/9927d38888344a93f3803dfd0366a6e3/redirect",
                 "22.3": "tgz+https://api.foojay.io/disco/v3.0/ids/9927d38888344a93f3803dfd0366a6e3/redirect",
                 "22.2.0": "tgz+https://api.foojay.io/disco/v3.0/ids/a4f1b24d0970b0c1521451267b57f2ad/redirect",
