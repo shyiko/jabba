@@ -14,9 +14,9 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           stable: 'false'
-          go-version: '1.16.15'
+          go-version: '1.19.4'
       - name: fetch
         run: make fetch
       - name: test
-        run: make test 
+        run: make test
 

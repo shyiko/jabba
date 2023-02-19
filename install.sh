@@ -59,7 +59,16 @@ fi
 
 case "$OSTYPE" in
     darwin*)
-    BINARY_URL=https://github.com/Jabba-TEam/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-darwin-amd64
+    case "$(uname -m)" in
+      x86_64*)
+        OSARCH=amd64
+      ;;
+      arm64*)
+        OSARCH=arm64
+      ;;
+    esac
+    printf "Downloading for mac for arch %s" "${OSARCH}"
+    BINARY_URL=https://github.com/Jabba-Team/jabba/releases/download/${JABBA_VERSION}/jabba-${JABBA_VERSION}-darwin-${OSARCH}
     ;;
     linux*)
     case "$(uname -m)" in

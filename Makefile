@@ -29,13 +29,13 @@ build:
 	go build -ldflags "-s -w -X main.version=${VERSION}"
 
 build-release:
-	GOARM=7 gox -verbose \
+	gox -verbose \
 	-ldflags "-X main.version=${VERSION}" \
-	-osarch="windows/386 windows/amd64 linux/386 linux/amd64 darwin/amd64 linux/arm linux/arm64" \
+	-osarch="windows/386 windows/amd64 linux/386 linux/amd64 darwin/amd64 darwin/arm64 linux/arm linux/arm64" \
 	-output="release/{{.Dir}}-${VERSION}-{{.OS}}-{{.Arch}}" .
 
 install: build
-	JABBA_MAKE_INSTALL=true JABBA_VERSION=${VERSION} sh install.sh
+	JABBA_MAKE_INSTALL=true JABBA_VERSION=${VERSION} bash install.sh
 
 publish: clean build-release
 	test -n "$(GITHUB_TOKEN)" # $$GITHUB_TOKEN must be set
