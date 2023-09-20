@@ -135,6 +135,7 @@ func main() {
 				}
 			}
 			vs, err := command.Ls()
+			current := command.Current()
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -145,7 +146,13 @@ func main() {
 				if r != nil && !r.Contains(v) {
 					continue
 				}
-				fmt.Println(v)
+				if current == v.String() {
+					fmt.Print("\033[32m")
+					fmt.Println(v.String() + "*")
+					fmt.Print("\033[0m")
+				} else {
+					fmt.Println(v)
+				}
 			}
 			return nil
 		},
