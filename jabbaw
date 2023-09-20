@@ -1,0 +1,38 @@
+#!/bin/bash -e
+
+JABBA_HOME=${JABBA_HOME:-$JABBA_DIR} # JABBA_DIR is here for backward-compatibility
+JABBA_HOME=${JABBA_HOME:-$HOME/.jabba}
+JABBA_VERSION=${JABBA_VERSION:-latest}
+
+has_command() {
+    command -v "$1" > /dev/null 2>&1
+}
+
+get() {
+    if has_command curl ; then
+        # curl looks for HTTPS_PROXY while wget for https_proxy
+        https_proxy=${https_proxy:-$HTTPS_PROXY}
+        curl -sL "$1"
+    elif has_command wget ; then
+        # curl looks for HTTPS_PROXY while wget for https_proxy
+        HTTPS_PROXY=${HTTPS_PROXY:-$https_proxy}
+        wget -qO- "$1"
+    else
+        echo "[ERROR] This script needs wget or curl to be installed."
+        exit 1
+    fi
+}
+
+if [ "$JABBA_VERSION" == "latest" ]; then
+    # resolving "latest" to an actual tag
+    JABBA_VERSION=$(get https://Jabba-Team.github.io/jabba/latest)
+fi
+
+if [ ! -f "${JABBA_HOME}/bin/jabba" ] || [ "$JABBA_VERSION" != $(${JABBA_HOME}/bin/jabba --version) ]; then
+    get https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash -s -- --skip-rc
+fi
+
+${JABBA_HOME}/bin/jabba install
+export JAVA_HOME=$(${JABBA_HOME}/bin/jabba which --home)
+
+$*
