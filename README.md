@@ -1,4 +1,4 @@
-# jabba ![Latest Version](https://img.shields.io/badge/latest-0.12.1-blue.svg) [![Actions Status](https://github.com/Jabba-Team/jabba/workflows/make%20Jabba/badge.svg)](https://github.com/Jabba-Team/jabba/actions)
+# jabba ![Latest Version](https://img.shields.io/badge/latest-0.13.0-blue.svg) [![Actions Status](https://github.com/Jabba-Team/jabba/workflows/make%20Jabba/badge.svg)](https://github.com/Jabba-Team/jabba/actions)
 
 Java Version Manager inspired by [nvm](https://github.com/creationix/nvm) (Node.js). Written in Go.
 
@@ -29,7 +29,17 @@ The index will give you the list of jdks for your OS and architecture
 
 ... and from custom URLs.
 
+## Install-less
+
+See [jabba-wrapper](jabbaw.md)
+
 ## Installation
+
+#### macOS homebrew
+
+```sh
+brew install jabba
+```
 
 #### macOS / Linux
 
@@ -66,8 +76,6 @@ export JABBA_VERSION=...
 [curl](https://curl.haxx.se/docs/manpage.html#ENVIRONMENT) / 
 [wget](https://www.gnu.org/software/wget/manual/wget.html#Proxies) manpage. 
 Usually simple `http_proxy=http://proxy-server:port https_proxy=http://proxy-server:port curl -sL ...` is enough. 
-
-**NOTE**: The brew package currently points to 0.11.2 of shyiko's jabba.
 
 #### Docker
 
