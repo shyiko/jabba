@@ -157,9 +157,27 @@ if [ "$JABBA_COMMAND" != "" ]; then
     fi
 fi
 
-sed -e "s=\$JABBA_HOME_TO_EXPORT=$JABBA_HOME_TO_EXPORT=g" -e "s=\$JABBA_BIN_TO_EXPORT=$JABBA_BIN_TO_EXPORT=g" jabba.sh > "${JABBA_SHARE}/jabba.sh"
+{
+echo "# https://github.com/Jabba-Team/jabba"
+echo "# This file is intended to be \"sourced\" (i.e. \". ~/.jabba/jabba.sh\")"
+echo ""
+echo "export JABBA_HOME=\"$JABBA_HOME_TO_EXPORT\""
+echo ""
+echo "jabba() {"
+echo "    local fd3=\$(mktemp /tmp/jabba-fd3.XXXXXX)"
+echo "    (JABBA_SHELL_INTEGRATION=ON $JABBA_HOME_TO_EXPORT/bin/jabba \"\$@\" 3>| \${fd3})"
+echo "    local exit_code=\$?"
+echo "    eval \$(cat \${fd3})"
+echo "    rm -f \${fd3}"
+echo "    return \${exit_code}"
+echo "}"
+echo ""
+echo "if [ ! -z \"\$(jabba alias default)\" ]; then"
+echo "    jabba use default"
+echo "fi"
+} > "${JABBA_HOME}/jabba.sh"    
 
-SOURCE_JABBA="\n[ -s \"$JABBA_SHARE/jabba.sh\" ] && source \"$JABBA_SHARE/jabba.sh\""
+SOURCE_JABBA="[ -s \"$JABBA_SHARE/jabba.sh\" ] && source \"$JABBA_SHARE/jabba.sh\""
 
 if [ ! "$SKIP_RC" ]; then
     files=("$HOME/.bashrc")
@@ -197,7 +215,24 @@ if [ ! "$SKIP_RC" ]; then
     fi
 fi
 
-sed -e "s=\$JABBA_HOME_TO_EXPORT=$JABBA_HOME_TO_EXPORT=g" -e "s=\$JABBA_BIN_TO_EXPORT=$JABBA_BIN_TO_EXPORT=g" jabba.fish > "${JABBA_SHARE}/jabba.fish"
+{
+echo "# https://github.com/Jabba-Team/jabba"
+echo "# This file is intended to be \"sourced\" (i.e. \". ~/.jabba/jabba.fish\")"
+echo ""
+echo "set -xg JABBA_HOME \"$JABBA_HOME_TO_EXPORT\""
+echo ""
+echo "function jabba"
+echo "    set fd3 (mktemp /tmp/jabba-fd3.XXXXXX)"
+echo "    env JABBA_SHELL_INTEGRATION=ON $JABBA_HOME_TO_EXPORT/bin/jabba \$argv 3> \$fd3"
+echo "    set exit_code \$status"
+echo "    eval (cat \$fd3 | sed \"s/^export/set -xg/g\" | sed \"s/^unset/set -e/g\" | tr '=' ' ' | sed \"s/:/\\\" \\\"/g\" | tr '\\\\n' ';')"
+echo "    rm -f \$fd3"
+echo "    return \$exit_code"
+echo "end"
+echo ""
+echo "[ ! -z (echo (jabba alias default)) ]; and jabba use default"
+} > "${JABBA_HOME}/jabba.fish"
+
 
 FISH_SOURCE_JABBA="\n[ -s \"$JABBA_SHARE/jabba.fish\" ]; and source \"$JABBA_SHARE/jabba.fish\""
 
