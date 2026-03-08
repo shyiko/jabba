@@ -1277,6 +1277,33 @@
         "1.11.0": "tgz+https://cdn.azul.com/zulu/bin/zulu11.45.27-ca-jdk11.0.10-macosx_aarch64.tar.gz",
         "1.8.282": "tgz+https://cdn.azul.com/zulu/bin/zulu8.52.0.23-ca-jdk8.0.282-macosx_aarch64.tar.gz",
         "1.8.275": "tgz+https://cdn.azul.com/zulu/bin/zulu8.50.0.1017-ca-jdk8.0.275-macos_aarch64.tar.gz"
+      },
+      "jdk@amazon-corretto": {
+        "1.17.0-0.35.1": "tgz+https://corretto.aws/downloads/resources/17.0.0.35.1/amazon-corretto-17.0.0.35.1-macosx-aarch64.tar.gz",
+        "1.11.0-11.9.1": "tgz+https://corretto.aws/downloads/resources/11.0.11.9.1/amazon-corretto-11.0.11.9.1-macosx-aarch64.tar.gz",
+        "1.11.0-10.9.1": "tgz+https://corretto.aws/downloads/resources/11.0.10.9.1/amazon-corretto-11.0.10.9.1-macosx-aarch64.tar.gz",
+        "1.11.0-9.12.1": "tgz+https://corretto.aws/downloads/resources/11.0.9.12.1/amazon-corretto-11.0.9.12.1-macosx-aarch64.tar.gz",
+        "1.11.0-9.11.1": "tgz+https://corretto.aws/downloads/resources/11.0.9.11.1/amazon-corretto-11.0.9.11.1-macosx-aarch64.tar.gz",
+        "1.11.0-8.10.1": "tgz+https://corretto.aws/downloads/resources/11.0.8.10.1/amazon-corretto-11.0.8.10.1-macosx-aarch64.tar.gz",
+        "1.11.0-7.10.1": "tgz+https://corretto.aws/downloads/resources/11.0.7.10.1/amazon-corretto-11.0.7.10.1-macosx-aarch64.tar.gz",
+        "1.11.0-6.10.1": "tgz+https://corretto.aws/downloads/resources/11.0.6.10.1/amazon-corretto-11.0.6.10.1-2-macosx-aarch64.tar.gz",
+        "1.11.0-5.10.2": "tgz+https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.2/amazon-corretto-11.0.5.10.2-macosx-aarch64.tar.gz",
+        "1.11.0-5.10.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/11.0.5.10.1/amazon-corretto-11.0.5.10.1-macosx-aarch64.tar.gz",
+        "1.11.0-4.11.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/11.0.4.11.1/amazon-corretto-11.0.4.11.1-macosx-aarch64.tar.gz",
+        "1.8.292-10.1": "tgz+https://corretto.aws/downloads/resources/8.292.10.1/amazon-corretto-8.292.10.1-macosx-aarch64.tar.gz",
+        "1.8.282-08.1": "tgz+https://corretto.aws/downloads/resources/8.282.08.1/amazon-corretto-8.282.08.1-macosx-aarch64.tar.gz",
+        "1.8.275-01.1": "tgz+https://corretto.aws/downloads/resources/8.275.01.1/amazon-corretto-8.275.01.1-macosx-aarch64.tar.gz",
+        "1.8.272-10.3": "tgz+https://corretto.aws/downloads/resources/8.272.10.3/amazon-corretto-8.272.10.3-macosx-aarch64.tar.gz",
+        "1.8.272-10.1": "tgz+https://corretto.aws/downloads/resources/8.272.10.1/amazon-corretto-8.272.10.1-macosx-aarch64.tar.gz",
+        "1.8.265-01.1": "tgz+https://corretto.aws/downloads/resources/8.265.01.1/amazon-corretto-8.265.01.1-macosx-aarch64.tar.gz",
+        "1.8.262-10.1": "tgz+https://corretto.aws/downloads/resources/8.262.10.1/amazon-corretto-8.262.10.1-macosx-aarch64.tar.gz",
+        "1.8.252-09.1": "tgz+https://corretto.aws/downloads/resources/8.252.09.1/amazon-corretto-8.252.09.1-macosx-aarch64.tar.gz",
+        "1.8.242-08.2": "tgz+https://corretto.aws/downloads/resources/8.242.08.2/amazon-corretto-8.242.08.2-macosx-aarch64.tar.gz",
+        "1.8.242-08.1": "tgz+https://corretto.aws/downloads/resources/8.242.08.1/amazon-corretto-8.242.08.1-macosx-aarch64.tar.gz",
+        "1.8.242-07.1": "tgz+https://corretto.aws/downloads/resources/8.242.07.1/amazon-corretto-8.242.07.1-macosx-aarch64.tar.gz",
+        "1.8.232-09.2": "tgz+https://d3pxv6yz143wms.cloudfront.net/8.232.09.2/amazon-corretto-8.232.09.2-macosx-aarch64.tar.gz",
+        "1.8.232-09.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/8.232.09.1/amazon-corretto-8.232.09.1-macosx-aarch64.tar.gz",
+        "1.8.222-10.1": "tgz+https://d3pxv6yz143wms.cloudfront.net/8.222.10.1/amazon-corretto-8.222.10.1-macosx-aarch64.tar.gz"
       }
     },
     "amd64": {
