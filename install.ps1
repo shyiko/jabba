@@ -2,6 +2,11 @@ $ErrorActionPreference = "Stop"
 
 $jabbaHome = if ($env:JABBA_HOME) { $env:JABBA_HOME } else { if ($env:JABBA_DIR) { $env:JABBA_DIR } else { "$env:USERPROFILE\.jabba" } }
 $jabbaVersion = if ($env:JABBA_VERSION) { $env:JABBA_VERSION } else { "latest" }
+# The Windows values of the Platform enum are:
+# 0 (Win32NT), 1 (Win32S), 2 (Win32Windows) and 3 (WinCE).
+# Other values are larger and indicate non Windows operating systems
+$isOnWindows = [System.Environment]::OSVersion.Platform.value__ -le 3
+$jabbaExecutableName = $isOnWindows ? "jabba.exe" : "jabba"
 
 if ($jabbaVersion -eq "latest")
 {
