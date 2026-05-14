@@ -9,7 +9,8 @@ import (
 
 func Deactivate() ([]string, error) {
 	pth, _ := os.LookupEnv("PATH")
-	rgxp := regexp.MustCompile(regexp.QuoteMeta(filepath.Join(cfg.Dir(), "jdk")) + "[^:]+[:]")
+	plSep := string(os.PathListSeparator)
+	rgxp := regexp.MustCompile(regexp.QuoteMeta(filepath.Join(cfg.Dir(), "jdk")) + "[^" + plSep + "]+[" + plSep + "]")
 	// strip references to ~/.jabba/jdk/*, otherwise leave unchanged
 	pth = rgxp.ReplaceAllString(pth, "")
 	javaHome, overrideWasSet := os.LookupEnv("JAVA_HOME_BEFORE_JABBA")
