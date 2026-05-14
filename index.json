@@ -217,10 +217,14 @@
         "1.8.242-7": "zip+https://github.com/bell-sw/Liberica/releases/download/8u242%2B7/bellsoft-jdk8u242%2B7-windows-amd64.zip",
         "1.8.232-10": "zip+https://github.com/bell-sw/Liberica/releases/download/8u232%2B10/bellsoft-jdk8u232%2B10-windows-amd64.zip"
       },
+      "jdk@graalvm-ce-java17":{
+        "21.3.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java17-windows-amd64-21.3.0.zip"
+      },
       "jdk@graalvm-ce-java16": {
         "21.1.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java16-windows-amd64-21.1.0.zip"
       },
       "jdk@graalvm-ce-java11": {
+        "21.3.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java11-windows-amd64-21.3.0.zip",
         "21.1.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java11-windows-amd64-21.1.0.zip",
         "21.0.0": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.0.0.2/graalvm-ce-java11-windows-amd64-21.0.0.2.zip",
         "20.3.2": "zip+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.3.2/graalvm-ce-java11-windows-amd64-20.3.2.zip",
@@ -639,10 +643,14 @@
         "1.8.0-265": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_aarch64_linux_hotspot_8u265b01.tar.gz",
         "1.8.0-262": "tgz+https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_aarch64_linux_hotspot_8u262b10.tar.gz"
       },
+      "jdk@graalvm-ce-java17": {
+        "21.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java17-linux-aarch64-21.3.0.tar.gz"
+      },
       "jdk@graalvm-ce-java16": {
         "21.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java16-linux-aarch64-21.1.0.tar.gz"
       },
       "jdk@graalvm-ce-java11": {
+        "21.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java11-linux-aarch64-21.3.0.tar.gz",
         "21.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java11-linux-aarch64-21.1.0.tar.gz"
       }
     },
@@ -913,10 +921,14 @@
         "1.7.0-10.70": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.70/linux/x86_64/ibm-java-sdk-7.0-10.70-x86_64-archive.bin",
         "1.7.0": "ia+http://public.dhe.ibm.com/ibmdl/export/pub/systems/cloud/runtimes/java/7.0.10.85/linux/x86_64/ibm-java-sdk-7.0-10.85-x86_64-archive.bin"
       },
+      "jdk@graalvm-ce-java17": {
+        "21.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java17-linux-amd64-21.3.0.tar.gz"
+      },
       "jdk@graalvm-ce-java16": {
         "21.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java16-linux-amd64-21.1.0.tar.gz"
       },
       "jdk@graalvm-ce-java11": {
+        "21.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java11-linux-amd64-21.3.0.tar.gz",
         "21.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java11-linux-amd64-21.1.0.tar.gz",
         "21.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.0.0.2/graalvm-ce-java11-linux-amd64-21.0.0.2.tar.gz",
         "20.3.2": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.3.2/graalvm-ce-java11-linux-amd64-20.3.2.tar.gz",
@@ -1100,10 +1112,14 @@
       }
     },
     "aarch64": {
+      "jdk@graalvm-ce-java17": {
+        "21.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java17-linux-aarch64-21.3.0.tar.gz"
+      },
       "jdk@graalvm-ce-java16": {
         "21.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java16-linux-aarch64-21.1.0.tar.gz"
       },
       "jdk@graalvm-ce-java11": {
+        "21.3.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java11-linux-aarch64-21.3.0.tar.gz",
         "21.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java11-linux-aarch64-21.1.0.tar.gz",
         "21.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.0.0.2/graalvm-ce-java11-linux-aarch64-21.0.0.2.tar.gz",
         "20.3.1": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.3.1.2/graalvm-ce-java11-linux-aarch64-20.3.1.2.tar.gz",
@@ -1452,10 +1468,14 @@
         "1.8.242-7": "zip+https://github.com/bell-sw/Liberica/releases/download/8u242%2B7/bellsoft-jdk8u242%2B7-macos-amd64.zip",
         "1.8.232-10": "zip+https://github.com/bell-sw/Liberica/releases/download/8u232%2B10/bellsoft-jdk8u232%2B10-macos-amd64.zip"
       },
+      "jdk@graalvm-ce-java17": {
+        "21.3.0": "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java17-darwin-amd64-21.3.0.tar.gz"
+      },
       "jdk@graalvm-ce-java16": {
         "21.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java16-darwin-amd64-21.1.0.tar.gz"
       },
       "jdk@graalvm-ce-java11": {
+        "21.3.0": "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.3.0/graalvm-ce-java11-darwin-amd64-21.3.0.tar.gz",
         "21.1.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.1.0/graalvm-ce-java11-darwin-amd64-21.1.0.tar.gz",
         "21.0.0": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-21.0.0.2/graalvm-ce-java11-darwin-amd64-21.0.0.2.tar.gz",
         "20.3.2": "tgz+https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-20.3.2/graalvm-ce-java11-darwin-amd64-20.3.2.tar.gz",
